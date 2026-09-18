@@ -16,9 +16,8 @@
     content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
   >
 
-
   <!-- ========================================
-       KAKAO / OPEN GRAPH
+       OPEN GRAPH
   ======================================== -->
 
   <meta property="og:type" content="website">
@@ -48,15 +47,9 @@
   <meta property="og:image:type" content="image/jpeg">
 
   <meta
-    property="og:image:alt"
-    content="김가현 황진찬 결혼식 초대장"
-  >
-
-  <meta
     property="og:site_name"
     content="Gahyun & Jinchan Wedding"
   >
-
 
   <!-- ========================================
        FONT
@@ -68,16 +61,13 @@
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
   >
 
-
   <style>
 
     @font-face {
       font-family: "RIDIBatang";
-
       src:
         url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/RIDIBatang.woff")
         format("woff");
-
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -109,17 +99,14 @@
         Arial,
         sans-serif;
 
-
-      --winter-sky: #d2e4ed;
-      --winter-blue: #e4eef3;
-      --winter-lilac: #eeeaf3;
-      --winter-ivory: #f8f3ea;
+      --winter-blue: #d7e8ef;
+      --winter-blue-light: #e9f1f4;
+      --winter-ivory: #f8f3eb;
 
       --wedding-red: #9d2631;
       --calendar-heart: #c77d87;
 
       --text: #30363a;
-      --sub: #70777b;
 
     }
 
@@ -144,6 +131,7 @@
       margin: 0;
 
       background: #f7f6f2;
+
       color: var(--text);
 
       font-family: var(--font-body);
@@ -218,12 +206,11 @@
 
       z-index: 1;
 
-      opacity: 0.12;
+      opacity: 0.11;
 
       background-image:
-
         radial-gradient(
-          rgba(55, 83, 99, 0.20) 0.55px,
+          rgba(55,83,99,0.20) 0.55px,
           transparent 0.55px
         );
 
@@ -240,7 +227,6 @@
     ======================================== */
 
     .snow-layer {
-
       position: absolute;
       inset: 0;
 
@@ -266,15 +252,9 @@
         rgba(255,255,255,0.99);
 
       box-shadow:
-
-        0 0 0 1px
-        rgba(126,163,184,0.18),
-
-        0 2px 5px
-        rgba(119,156,178,0.32),
-
-        0 0 10px
-        rgba(255,255,255,0.92);
+        0 0 0 1px rgba(126,163,184,0.18),
+        0 2px 5px rgba(119,156,178,0.32),
+        0 0 10px rgba(255,255,255,0.92);
 
       opacity:
         var(--opacity);
@@ -319,7 +299,7 @@
       }
 
 
-      36% {
+      37% {
 
         transform:
           translate3d(
@@ -375,7 +355,6 @@
 
       overflow: hidden;
 
-
       background:
 
         radial-gradient(
@@ -404,25 +383,20 @@
           #f8f2e8 100%
         );
 
-
       transition:
-
         opacity 0.9s ease,
         visibility 0.9s ease;
     }
 
 
-    .opening
-    .snow-layer {
+    .opening .snow-layer {
       z-index: 3;
     }
 
 
     .opening.hide {
-
       opacity: 0;
       visibility: hidden;
-
       pointer-events: none;
     }
 
@@ -448,8 +422,7 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
       font-family:
         var(--font-en);
@@ -525,14 +498,12 @@
 
       --window-open-height: 345px;
 
-
       position: relative;
 
       width: 310px;
       height: 340px;
 
-      margin:
-        0 auto;
+      margin: 0 auto;
 
       perspective: 1200px;
 
@@ -582,7 +553,6 @@
       border-radius: 3px;
 
       background:
-
         linear-gradient(
           145deg,
           #a82f39,
@@ -590,7 +560,6 @@
         );
 
       box-shadow:
-
         0 22px 48px
         rgba(89,30,38,0.19);
     }
@@ -653,7 +622,6 @@
       background: #fff;
 
       box-shadow:
-
         0 16px 34px
         rgba(54,42,45,0.17);
 
@@ -681,7 +649,6 @@
       overflow: hidden;
 
       background:
-
         linear-gradient(
           145deg,
           #d8e4ea,
@@ -708,7 +675,9 @@
 
 
 
-    /* RED ENVELOPE */
+    /* ========================================
+       ENVELOPE RED
+    ======================================== */
 
     .envelope-flap {
 
@@ -723,7 +692,6 @@
       height: 110px;
 
       background:
-
         linear-gradient(
           180deg,
           #b93b46,
@@ -731,7 +699,6 @@
         );
 
       clip-path:
-
         polygon(
           0 0,
           100% 0,
@@ -776,11 +743,9 @@
       position: absolute;
       inset: 0;
 
-      background:
-        #aa303b;
+      background: #aa303b;
 
       clip-path:
-
         polygon(
           0 0,
           52% 58%,
@@ -794,11 +759,9 @@
       position: absolute;
       inset: 0;
 
-      background:
-        #92242f;
+      background: #92242f;
 
       clip-path:
-
         polygon(
           100% 0,
           48% 58%,
@@ -813,7 +776,6 @@
       inset: 0;
 
       background:
-
         linear-gradient(
           180deg,
           #bb3d47,
@@ -821,7 +783,6 @@
         );
 
       clip-path:
-
         polygon(
           0 100%,
           50% 47%,
@@ -829,9 +790,6 @@
         );
     }
 
-
-
-    /* WHITE HEART */
 
     .envelope-seal {
 
@@ -857,7 +815,6 @@
       line-height: 1;
 
       filter:
-
         drop-shadow(
           0 3px 4px
           rgba(70,20,25,0.13)
@@ -903,8 +860,6 @@
       font-size: 28px;
 
       font-weight: 400;
-
-      line-height: 1.2;
 
       color: #354047;
     }
@@ -953,23 +908,19 @@
 
 
     /* ========================================
-       OPENING ANIMATIONS
+       OPENING ANIMATION
     ======================================== */
 
     @keyframes openingFade {
 
       from {
         opacity: 0;
-
-        transform:
-          translateY(7px);
+        transform: translateY(7px);
       }
 
       to {
         opacity: 1;
-
-        transform:
-          translateY(0);
+        transform: translateY(0);
       }
     }
 
@@ -1074,19 +1025,13 @@
     @keyframes openingTextShow {
 
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(9px);
+        transform: translateY(9px);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
+        transform: translateY(0);
       }
     }
 
@@ -1105,7 +1050,7 @@
 
 
     /* ========================================
-       WEDDING SHORTCUT
+       SHORTCUT
     ======================================== */
 
     .wedding-info-shortcut {
@@ -1128,7 +1073,6 @@
         0 14px;
 
       border:
-
         1px solid
         rgba(0,0,0,0.09);
 
@@ -1175,8 +1119,7 @@
     }
 
 
-    body.page-ready
-    .intro-label {
+    body.page-ready .intro-label {
 
       animation:
         mainReveal
@@ -1184,8 +1127,7 @@
     }
 
 
-    body.page-ready
-    .names {
+    body.page-ready .names {
 
       animation:
         mainReveal
@@ -1196,8 +1138,7 @@
     }
 
 
-    body.page-ready
-    .intro-date {
+    body.page-ready .intro-date {
 
       animation:
         mainReveal
@@ -1208,8 +1149,7 @@
     }
 
 
-    body.page-ready
-    .intro-description {
+    body.page-ready .intro-description {
 
       animation:
         mainReveal
@@ -1220,8 +1160,7 @@
     }
 
 
-    body.page-ready
-    .season-card:nth-child(1) {
+    body.page-ready .season-card:nth-child(1) {
 
       animation:
         mainReveal
@@ -1232,8 +1171,7 @@
     }
 
 
-    body.page-ready
-    .season-card:nth-child(2) {
+    body.page-ready .season-card:nth-child(2) {
 
       animation:
         mainReveal
@@ -1244,8 +1182,7 @@
     }
 
 
-    body.page-ready
-    .season-card:nth-child(3) {
+    body.page-ready .season-card:nth-child(3) {
 
       animation:
         mainReveal
@@ -1256,8 +1193,7 @@
     }
 
 
-    body.page-ready
-    .season-card:nth-child(4) {
+    body.page-ready .season-card:nth-child(4) {
 
       animation:
         mainReveal
@@ -1268,8 +1204,7 @@
     }
 
 
-    body.page-ready
-    .story-hint {
+    body.page-ready .story-hint {
 
       animation:
         mainReveal
@@ -1300,7 +1235,6 @@
         translateY(22px);
 
       transition:
-
         opacity 1s ease,
         transform 1s ease;
     }
@@ -1335,7 +1269,6 @@
       padding:
         80px 20px;
 
-
       background:
 
         radial-gradient(
@@ -1360,9 +1293,7 @@
     }
 
 
-    .intro
-    .snow-layer {
-
+    .intro .snow-layer {
       z-index: 2;
     }
 
@@ -1475,8 +1406,6 @@
 
       overflow: hidden;
 
-      background: #e8e8e8;
-
       cursor: pointer;
 
       text-align: left;
@@ -1497,49 +1426,26 @@
         rgba(0,0,0,0.34);
 
       font-size: 10px;
-
-      transition:
-        transform 0.6s ease;
     }
 
 
-    .season-card:active
-    .season-image {
-
-      transform:
-        scale(1.02);
+    .winter .season-image {
+      background: #d6e5ec;
     }
 
 
-    .winter
-    .season-image {
-
-      background:
-        #d6e5ec;
+    .spring .season-image {
+      background: #ebe4db;
     }
 
 
-    .spring
-    .season-image {
-
-      background:
-        #ebe4db;
+    .summer .season-image {
+      background: #e8decf;
     }
 
 
-    .summer
-    .season-image {
-
-      background:
-        #e8decf;
-    }
-
-
-    .autumn
-    .season-image {
-
-      background:
-        #dccfc6;
+    .autumn .season-image {
+      background: #dccfc6;
     }
 
 
@@ -1558,7 +1464,6 @@
       color: #fff;
 
       background:
-
         linear-gradient(
           180deg,
           transparent 38%,
@@ -1639,7 +1544,6 @@
       padding:
         95px 24px;
 
-
       background:
 
         radial-gradient(
@@ -1664,9 +1568,7 @@
     }
 
 
-    .winter-again
-    .snow-layer {
-
+    .winter-again .snow-layer {
       z-index: 2;
     }
 
@@ -1748,7 +1650,7 @@
 
 
     /* ========================================
-       COMMON SECTION
+       COMMON
     ======================================== */
 
     .section-label {
@@ -1884,7 +1786,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(7, 1fr);
+        repeat(7,1fr);
     }
 
 
@@ -1900,9 +1802,7 @@
     }
 
 
-    .calendar-weekdays
-    span:first-child {
-
+    .calendar-weekdays span:first-child {
       color: #c07a83;
     }
 
@@ -1933,14 +1833,7 @@
 
 
     .calendar-day.sunday {
-
       color: #888;
-    }
-
-
-    .wedding-day {
-
-      color: #fff;
     }
 
 
@@ -1954,7 +1847,7 @@
       z-index: 1;
 
       transform:
-        translate(-50%, -51%);
+        translate(-50%,-51%);
 
       font-family:
         Arial,
@@ -1987,7 +1880,7 @@
 
 
     /* ========================================
-       VENUE
+       VENUE / MAP
     ======================================== */
 
     .venue {
@@ -2025,11 +1918,6 @@
       color: #777;
     }
 
-
-
-    /* ========================================
-       MAP
-    ======================================== */
 
     .map-buttons {
 
@@ -2104,7 +1992,6 @@
 
 
     .parking-toggle-left {
-
       text-align: left;
     }
 
@@ -2156,7 +2043,6 @@
       opacity: 0;
 
       transition:
-
         max-height 0.55s ease,
         opacity 0.4s ease;
     }
@@ -2172,9 +2058,7 @@
 
 
     .parking-content-inner {
-
-      padding-bottom:
-        28px;
+      padding-bottom: 28px;
     }
 
 
@@ -2218,15 +2102,12 @@
 
 
     .parking-label {
-
       font-weight: 600;
-
       color: #555;
     }
 
 
     .parking-value {
-
       color: #777;
     }
 
@@ -2300,7 +2181,6 @@
         105px 24px;
 
       background:
-
         linear-gradient(
           180deg,
           #e7f0f4,
@@ -2355,7 +2235,7 @@
 
 
     /* ========================================
-       VIRTUAL WEDDING INTRO
+       VIRTUAL INTRO
     ======================================== */
 
     .virtual-intro {
@@ -2366,16 +2246,16 @@
       background:
 
         radial-gradient(
-          circle at 50% 12%,
-          rgba(255,255,255,0.92),
-          transparent 33%
+          circle at 50% 10%,
+          rgba(255,255,255,1),
+          transparent 32%
         ),
 
         linear-gradient(
           180deg,
-          #f7f3ec 0%,
-          #eef1ea 58%,
-          #e3ebe5 100%
+          #f8f4ed 0%,
+          #eef2ea 55%,
+          #e0eadf 100%
         );
     }
 
@@ -2388,8 +2268,6 @@
         var(--font-en);
 
       font-size: 36px;
-
-      font-weight: 400;
 
       line-height: 1.25;
     }
@@ -2414,7 +2292,7 @@
 
       line-height: 2;
 
-      color: #657069;
+      color: #627066;
     }
 
 
@@ -2431,7 +2309,7 @@
         rgba(70,87,77,0.35);
 
       background:
-        rgba(255,255,255,0.50);
+        rgba(255,255,255,0.65);
 
       color: #48574f;
 
@@ -2449,19 +2327,18 @@
 
       line-height: 1.7;
 
-      color: #88928c;
+      color: #879189;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        VIRTUAL WEDDING PAGE
-    ======================================== */
+    ================================================== */
 
     .virtual-wedding {
 
       position: fixed;
-
       inset: 0;
 
       z-index: 9000;
@@ -2470,45 +2347,45 @@
 
       flex-direction: column;
 
-      background: #f2efe8;
+      background:
+        #f5f1e9;
     }
 
 
     .virtual-wedding.active {
-
       display: flex;
     }
 
 
 
-    /* TOP BAR */
+    /* TOPBAR */
 
     .virtual-topbar {
 
       position: relative;
 
-      z-index: 30;
+      z-index: 100;
 
-      min-height: 62px;
+      min-height: 64px;
 
       display: flex;
 
       align-items: center;
       justify-content: space-between;
 
-      gap: 10px;
+      gap: 8px;
 
       padding:
-        max(10px, env(safe-area-inset-top))
+        max(10px,env(safe-area-inset-top))
         13px
         10px;
 
       border-bottom:
         1px solid
-        rgba(64,77,67,0.12);
+        rgba(65,82,69,0.10);
 
       background:
-        rgba(250,248,243,0.94);
+        rgba(251,249,245,0.95);
 
       backdrop-filter:
         blur(12px);
@@ -2523,7 +2400,7 @@
       min-height: 42px;
 
       padding:
-        0 9px;
+        0 7px;
 
       border: 0;
 
@@ -2534,7 +2411,7 @@
 
       font-size: 9px;
 
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
 
       cursor: pointer;
     }
@@ -2563,9 +2440,9 @@
 
       margin-top: 2px;
 
-      font-size: 9px;
+      font-size: 8px;
 
-      color: #8a8e89;
+      color: #8b8d87;
     }
 
 
@@ -2574,27 +2451,25 @@
       min-height: 40px;
 
       padding:
-        0 12px;
+        0 11px;
 
       border:
         1px solid
         rgba(80,94,85,0.22);
 
-      border-radius: 20px;
+      border-radius: 22px;
 
       background:
-        rgba(255,255,255,0.8);
+        #fff;
 
-      font-size: 10px;
+      font-size: 9px;
 
       cursor: pointer;
     }
 
 
 
-    /* ========================================
-       VIEWPORT
-    ======================================== */
+    /* VIEWPORT */
 
     .virtual-viewport {
 
@@ -2607,28 +2482,26 @@
       overflow: hidden;
 
       background:
-        #eeeae1;
+        #f0ede4;
 
       cursor: grab;
 
       touch-action: none;
 
       user-select: none;
-
       -webkit-user-select: none;
     }
 
 
     .virtual-viewport.dragging {
-
       cursor: grabbing;
     }
 
 
 
-    /* ========================================
-       WORLD
-    ======================================== */
+    /* ==================================================
+       BOTANICAL WORLD
+    ================================================== */
 
     .virtual-world {
 
@@ -2637,149 +2510,373 @@
       left: 0;
       top: 0;
 
-      width: 920px;
-      height: 620px;
+      width: 1000px;
+      height: 680px;
 
       transform:
         translate3d(0,0,0);
 
-      transform-origin:
-        0 0;
-
-      background:
-
-        radial-gradient(
-          circle at 50% 5%,
-          rgba(255,255,255,0.98),
-          transparent 30%
-        ),
-
-        linear-gradient(
-          180deg,
-          #ece9e1 0%,
-          #f6f3ed 38%,
-          #eeeae0 100%
-        );
-
-      will-change: transform;
-    }
-
-
-
-    /* ========================================
-       HALL BACK WALL
-    ======================================== */
-
-    .hall-back-wall {
-
-      position: absolute;
-
-      left: 85px;
-      top: 18px;
-
-      width: 750px;
-      height: 190px;
+      will-change:
+        transform;
 
       overflow: hidden;
 
-      border-radius:
-        150px 150px 16px 16px;
-
-      border:
-        1px solid
-        rgba(174,164,146,0.32);
-
       background:
 
         radial-gradient(
-          circle at 50% 25%,
-          rgba(255,255,255,0.98),
-          transparent 28%
+          ellipse at 50% 8%,
+          rgba(255,255,255,1),
+          transparent 35%
         ),
 
         linear-gradient(
           180deg,
           #fefdf9 0%,
-          #f2eee5 100%
+          #f6f2e9 44%,
+          #e9e5d9 100%
         );
-
-      box-shadow:
-
-        inset 0 -18px 45px
-        rgba(143,130,106,0.07);
     }
 
 
 
-    /* ARCHED PANELS */
+    /* back wall */
 
-    .hall-arch {
+    .garden-back-wall {
 
       position: absolute;
 
-      top: 32px;
+      left: 74px;
+      top: 23px;
 
-      width: 130px;
-      height: 146px;
+      width: 852px;
+      height: 215px;
+
+      overflow: hidden;
 
       border:
         1px solid
-        rgba(185,177,161,0.50);
+        rgba(190,182,167,0.31);
 
       border-radius:
-        70px 70px 5px 5px;
+        165px 165px 12px 12px;
 
       background:
 
         linear-gradient(
           180deg,
-          rgba(255,255,255,0.96),
-          rgba(244,240,231,0.75)
+          #fffefb,
+          #f4f0e8
         );
-    }
 
-
-    .hall-arch.one {
-      left: 48px;
-    }
-
-
-    .hall-arch.two {
-      left: 205px;
-    }
-
-
-    .hall-arch.three {
-      right: 205px;
-    }
-
-
-    .hall-arch.four {
-      right: 48px;
+      box-shadow:
+        inset 0 -25px 45px
+        rgba(140,126,102,0.06);
     }
 
 
 
-    /* ========================================
-       CHANDELIER
-    ======================================== */
+    /* architectural arches */
+
+    .wall-arch {
+
+      position: absolute;
+
+      top: 46px;
+
+      width: 133px;
+      height: 148px;
+
+      border:
+        1px solid
+        rgba(185,177,160,0.44);
+
+      border-radius:
+        75px 75px 3px 3px;
+
+      background:
+        rgba(255,255,255,0.55);
+    }
+
+
+    .wall-arch.a1 {
+      left: 64px;
+    }
+
+
+    .wall-arch.a2 {
+      left: 220px;
+    }
+
+
+    .wall-arch.a3 {
+      right: 220px;
+    }
+
+
+    .wall-arch.a4 {
+      right: 64px;
+    }
+
+
+
+    /* ==================================================
+       CEILING GREENERY
+    ================================================== */
+
+    .ceiling-garden {
+
+      position: absolute;
+
+      z-index: 16;
+
+      left: 55px;
+      right: 55px;
+      top: -8px;
+
+      height: 100px;
+
+      pointer-events: none;
+    }
+
+
+    .ceiling-green-line {
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      height: 24px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #4e754f,
+          #73966a 25%,
+          #486d4d 50%,
+          #779a70 75%,
+          #4c704e
+        );
+
+      border-radius:
+        0 0 50% 50%;
+
+      opacity: 0.92;
+    }
+
+
+    .hanging-vine {
+
+      position: absolute;
+
+      top: 8px;
+
+      width: 12px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #668b60,
+          #7da073
+        );
+
+      border-radius:
+        60% 30% 70% 40%;
+
+      transform-origin: top;
+
+      animation:
+        vineSway
+        5s ease-in-out
+        infinite alternate;
+    }
+
+
+    .v1 {
+      left: 5%;
+      height: 56px;
+    }
+
+
+    .v2 {
+      left: 12%;
+      height: 82px;
+
+      animation-delay: -2s;
+    }
+
+
+    .v3 {
+      left: 20%;
+      height: 47px;
+    }
+
+
+    .v4 {
+      left: 29%;
+      height: 70px;
+
+      animation-delay: -1.3s;
+    }
+
+
+    .v5 {
+      left: 38%;
+      height: 45px;
+    }
+
+
+    .v6 {
+      left: 48%;
+      height: 78px;
+
+      animation-delay: -2.7s;
+    }
+
+
+    .v7 {
+      left: 58%;
+      height: 53px;
+    }
+
+
+    .v8 {
+      left: 68%;
+      height: 81px;
+
+      animation-delay: -1.8s;
+    }
+
+
+    .v9 {
+      left: 78%;
+      height: 50px;
+    }
+
+
+    .v10 {
+      left: 88%;
+      height: 72px;
+    }
+
+
+    .v11 {
+      left: 96%;
+      height: 56px;
+
+      animation-delay: -2.4s;
+    }
+
+
+    @keyframes vineSway {
+
+      from {
+        transform:
+          rotate(-2deg);
+      }
+
+      to {
+        transform:
+          rotate(2deg);
+      }
+    }
+
+
+
+    /* ceiling tiny flowers */
+
+    .ceiling-flower {
+
+      position: absolute;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+
+      background:
+        #e6c3cf;
+
+      box-shadow:
+
+        11px 6px 0 #efe0bd,
+        -9px 11px 0 #d9c9e5,
+        5px 19px 0 #fff;
+    }
+
+
+    .cf1 {
+      left: 15%;
+      top: 22px;
+    }
+
+
+    .cf2 {
+      left: 34%;
+      top: 12px;
+
+      transform:
+        scale(0.85);
+    }
+
+
+    .cf3 {
+      left: 61%;
+      top: 18px;
+
+      transform:
+        scale(1.1);
+    }
+
+
+    .cf4 {
+      left: 83%;
+      top: 9px;
+
+      transform:
+        scale(0.8);
+    }
+
+
+
+    /* ==================================================
+       CHANDELIERS
+    ================================================== */
 
     .chandelier {
 
       position: absolute;
 
-      z-index: 8;
+      z-index: 20;
 
-      left: 50%;
-      top: 7px;
+      top: 38px;
 
-      width: 100px;
-      height: 94px;
-
-      transform:
-        translateX(-50%);
+      width: 90px;
+      height: 90px;
 
       pointer-events: none;
+    }
+
+
+    .chandelier.main {
+      left: 455px;
+    }
+
+
+    .chandelier.left {
+      left: 172px;
+
+      transform:
+        scale(0.72);
+    }
+
+
+    .chandelier.right {
+      right: 172px;
+
+      transform:
+        scale(0.72);
     }
 
 
@@ -2791,10 +2888,10 @@
       top: 0;
 
       width: 1px;
-      height: 24px;
+      height: 21px;
 
       background:
-        rgba(181,163,125,0.60);
+        #c1ab7e;
     }
 
 
@@ -2803,14 +2900,14 @@
       position: absolute;
 
       left: 50%;
-      top: 23px;
+      top: 21px;
 
-      width: 68px;
-      height: 20px;
+      width: 63px;
+      height: 19px;
 
       border:
         1px solid
-        rgba(188,164,112,0.62);
+        rgba(188,164,112,0.67);
 
       border-radius: 50%;
 
@@ -2823,75 +2920,60 @@
 
       position: absolute;
 
-      top: 39px;
+      top: 38px;
 
       width: 3px;
 
-      border-radius: 10px;
+      border-radius: 5px;
 
       background:
-
         linear-gradient(
           180deg,
-          rgba(255,255,255,0.98),
-          rgba(210,226,225,0.80)
+          #fff,
+          #dce7e4
         );
-
-      transform-origin: top;
 
       animation:
         crystalGlow
-        2.6s ease-in-out
+        2.4s ease-in-out
         infinite alternate;
     }
 
 
-    .crystal.c1 {
-      left: 22px;
-      height: 28px;
+    .c1 {
+      left: 20px;
+      height: 25px;
     }
 
 
-    .crystal.c2 {
-      left: 34px;
-      height: 41px;
-
-      animation-delay:
-        -0.6s;
-    }
-
-
-    .crystal.c3 {
-      left: 48px;
-      height: 49px;
-
-      animation-delay:
-        -1.1s;
-    }
-
-
-    .crystal.c4 {
-      left: 62px;
+    .c2 {
+      left: 31px;
       height: 40px;
-
-      animation-delay:
-        -0.4s;
     }
 
 
-    .crystal.c5 {
-      left: 75px;
-      height: 27px;
+    .c3 {
+      left: 44px;
+      height: 49px;
+    }
 
-      animation-delay:
-        -1.5s;
+
+    .c4 {
+      left: 57px;
+      height: 38px;
+    }
+
+
+    .c5 {
+      left: 69px;
+      height: 25px;
     }
 
 
     @keyframes crystalGlow {
 
       from {
-        opacity: 0.45;
+        opacity: 0.38;
       }
 
       to {
@@ -2901,9 +2983,9 @@
 
 
 
-    /* ========================================
-       STAGE
-    ======================================== */
+    /* ==================================================
+       STAGE / FLORAL ARCH
+    ================================================== */
 
     .hall-stage {
 
@@ -2911,30 +2993,29 @@
 
       z-index: 4;
 
-      left: 312px;
-      top: 115px;
+      left: 340px;
+      top: 133px;
 
-      width: 296px;
-      height: 105px;
-
-      border-radius:
-        10px 10px 35px 35px;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          #faf8f2,
-          #e9e2d4
-        );
+      width: 320px;
+      height: 110px;
 
       border:
         1px solid
-        rgba(183,169,146,0.38);
+        rgba(187,172,146,0.31);
+
+      border-radius:
+        14px 14px 38px 38px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fffdf8,
+          #ebe3d4
+        );
 
       box-shadow:
         0 7px 18px
-        rgba(117,103,80,0.10);
+        rgba(117,103,80,0.09);
     }
 
 
@@ -2943,7 +3024,7 @@
       position: absolute;
 
       left: 50%;
-      top: 11px;
+      top: 13px;
 
       transform:
         translateX(-50%);
@@ -2951,169 +3032,94 @@
       font-family:
         var(--font-en);
 
-      font-size: 11px;
+      font-size: 10px;
 
       letter-spacing: 2px;
 
-      color: #867c6a;
+      color: #857b69;
 
       white-space: nowrap;
     }
 
 
 
-    /* ========================================
-       FLOWERS
-    ======================================== */
+    /* floral arch */
 
-    .flower-cluster {
+    .floral-arch {
 
       position: absolute;
 
       z-index: 8;
 
-      width: 105px;
-      height: 90px;
+      left: 365px;
+      top: 91px;
+
+      width: 270px;
+      height: 160px;
+
+      border:
+        14px solid
+        rgba(103,136,93,0.77);
+
+      border-bottom: 0;
+
+      border-radius:
+        145px 145px 0 0;
 
       pointer-events: none;
     }
 
 
-    .flower-cluster.left {
+    .floral-arch::before,
+    .floral-arch::after {
 
-      left: 258px;
-      top: 107px;
-    }
-
-
-    .flower-cluster.right {
-
-      right: 258px;
-      top: 107px;
-
-      transform:
-        scaleX(-1);
-    }
-
-
-    .leaf {
+      content: "";
 
       position: absolute;
 
-      width: 15px;
-      height: 38px;
-
-      border-radius:
-        100% 0 100% 0;
-
-      background:
-        #839a79;
-    }
-
-
-    .leaf.l1 {
-
-      left: 15px;
-      top: 15px;
-
-      transform:
-        rotate(-45deg);
-    }
-
-
-    .leaf.l2 {
-
-      left: 40px;
-      top: 4px;
-
-      transform:
-        rotate(-15deg);
-    }
-
-
-    .leaf.l3 {
-
-      left: 58px;
-      top: 28px;
-
-      transform:
-        rotate(28deg);
-    }
-
-
-    .leaf.l4 {
-
-      left: 80px;
-      top: 8px;
-
-      transform:
-        rotate(48deg);
-    }
-
-
-    .flower-dot {
-
-      position: absolute;
-
-      width: 18px;
-      height: 18px;
+      width: 62px;
+      height: 62px;
 
       border-radius: 50%;
 
+      background:
+
+        radial-gradient(
+          circle at 30% 30%,
+          #fff 0 10%,
+          #ecd2db 11% 27%,
+          #fff 28% 36%,
+          #e6d7ba 37% 51%,
+          #d8c8e1 52% 65%,
+          #7b9a6e 66% 100%
+        );
+
       box-shadow:
 
-        inset 0 0 0 4px
-        rgba(255,255,255,0.55);
+        35px 9px 0 -11px #f0cbd6,
+        16px 38px 0 -13px #fff,
+        -18px 31px 0 -14px #eadfbf;
     }
 
 
-    .flower-dot.f1 {
+    .floral-arch::before {
 
-      left: 15px;
-      top: 35px;
-
-      background:
-        #e7cbd3;
+      left: -32px;
+      top: 15px;
     }
 
 
-    .flower-dot.f2 {
+    .floral-arch::after {
 
-      left: 42px;
-      top: 27px;
-
-      width: 23px;
-      height: 23px;
-
-      background:
-        #eee0bf;
-    }
-
-
-    .flower-dot.f3 {
-
-      left: 67px;
-      top: 45px;
-
-      background:
-        #d8cce4;
-    }
-
-
-    .flower-dot.f4 {
-
-      left: 35px;
-      top: 57px;
-
-      background:
-        #f4ddd9;
+      right: -32px;
+      top: 15px;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        AISLE
-    ======================================== */
+    ================================================== */
 
     .aisle {
 
@@ -3121,159 +3127,292 @@
 
       z-index: 1;
 
-      left: 395px;
-      top: 205px;
+      left: 428px;
+      top: 230px;
 
-      width: 130px;
-      height: 415px;
+      width: 144px;
+      height: 450px;
+
+      border-left:
+        1px solid
+        rgba(195,185,166,0.23);
+
+      border-right:
+        1px solid
+        rgba(195,185,166,0.23);
 
       background:
 
         linear-gradient(
           90deg,
-          rgba(215,208,194,0.1),
-          rgba(255,255,255,0.86) 12%,
-          rgba(255,255,255,0.98) 50%,
-          rgba(255,255,255,0.86) 88%,
-          rgba(215,208,194,0.1)
-        );
-
-      border-left:
-        1px solid
-        rgba(194,185,170,0.20);
-
-      border-right:
-        1px solid
-        rgba(194,185,170,0.20);
-    }
-
-
-    .aisle-line {
-
-      position: absolute;
-
-      left: 50%;
-      top: 0;
-
-      width: 1px;
-      height: 100%;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          transparent,
-          rgba(202,190,169,0.24),
-          transparent
+          rgba(215,208,194,0.05),
+          rgba(255,255,255,0.91) 12%,
+          #fff 50%,
+          rgba(255,255,255,0.91) 88%,
+          rgba(215,208,194,0.05)
         );
     }
 
 
 
-    /* ========================================
-       AISLE FLOWER ROWS
-    ======================================== */
+    /* ==================================================
+       FULL FLOWER BEDS ALONG AISLE
+    ================================================== */
 
-    .aisle-flower {
+    .flower-bed {
 
       position: absolute;
 
-      z-index: 5;
+      z-index: 7;
 
-      width: 40px;
-      height: 54px;
+      width: 105px;
+      height: 390px;
+
+      top: 250px;
 
       pointer-events: none;
     }
 
 
-    .aisle-flower::before {
+    .flower-bed.left {
 
-      content: "";
-
-      position: absolute;
-
-      left: 17px;
-      bottom: 0;
-
-      width: 5px;
-      height: 34px;
-
-      border-radius: 5px;
-
-      background:
-        #849a7a;
-
-      transform:
-        rotate(6deg);
+      left: 314px;
     }
 
 
-    .aisle-flower::after {
+    .flower-bed.right {
+
+      right: 314px;
+
+      transform:
+        scaleX(-1);
+    }
+
+
+    .flower-spray {
+
+      position: absolute;
+
+      width: 65px;
+      height: 75px;
+    }
+
+
+    .flower-spray::before {
 
       content: "";
 
       position: absolute;
 
-      left: 8px;
-      top: 2px;
+      left: 19px;
+      top: 4px;
 
-      width: 27px;
-      height: 27px;
+      width: 28px;
+      height: 28px;
 
       border-radius: 50%;
 
       background:
 
         radial-gradient(
-          circle at 34% 35%,
-          #fff 0 13%,
-          #edced8 14% 44%,
-          #dbc2d0 45% 100%
+          circle,
+          #fff 0 18%,
+          #edccd7 19% 55%,
+          #d5afbd 56% 100%
         );
+
+      box-shadow:
+
+        -20px 18px 0 -3px #fff,
+
+        20px 24px 0 -5px #ecddbb,
+
+        3px 39px 0 -7px #d7c3e0;
     }
 
 
-    .af1 {
-      left: 350px;
-      top: 265px;
+    .flower-spray::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 29px;
+      top: 25px;
+
+      width: 12px;
+      height: 52px;
+
+      border-radius:
+        100% 0;
+
+      background:
+        #76916d;
+
+      transform:
+        rotate(22deg);
+
+      box-shadow:
+
+        -19px 9px 0 -2px #88a17e,
+
+        18px 13px 0 -2px #7c9975;
     }
 
 
-    .af2 {
-      left: 530px;
-      top: 265px;
+    .fs1 {
+      top: 0;
+      left: 14px;
     }
 
 
-    .af3 {
-      left: 350px;
-      top: 380px;
+    .fs2 {
+      top: 78px;
+      left: 1px;
+
+      transform:
+        scale(0.9);
     }
 
 
-    .af4 {
-      left: 530px;
-      top: 380px;
+    .fs3 {
+      top: 157px;
+      left: 20px;
+
+      transform:
+        scale(1.08);
     }
 
 
-    .af5 {
-      left: 350px;
-      top: 495px;
+    .fs4 {
+      top: 244px;
+      left: 0;
+
+      transform:
+        scale(0.88);
     }
 
 
-    .af6 {
-      left: 530px;
-      top: 495px;
+    .fs5 {
+      top: 318px;
+      left: 22px;
+
+      transform:
+        scale(1);
     }
 
 
 
-    /* ========================================
+    /* ==================================================
+       SIDE TREES
+    ================================================== */
+
+    .garden-tree {
+
+      position: absolute;
+
+      z-index: 5;
+
+      width: 125px;
+      height: 255px;
+
+      pointer-events: none;
+    }
+
+
+    .tree1 {
+
+      left: 44px;
+      top: 170px;
+    }
+
+
+    .tree2 {
+
+      right: 44px;
+      top: 170px;
+
+      transform:
+        scaleX(-1);
+    }
+
+
+    .tree-trunk {
+
+      position: absolute;
+
+      left: 58px;
+      bottom: 8px;
+
+      width: 9px;
+      height: 145px;
+
+      border-radius: 8px;
+
+      background:
+        #887764;
+
+      transform:
+        rotate(4deg);
+    }
+
+
+    .tree-crown {
+
+      position: absolute;
+
+      border-radius:
+        48% 52% 44% 56%;
+
+      background:
+        #78936e;
+
+      box-shadow:
+        inset -12px -12px 0
+        rgba(57,87,55,0.12);
+    }
+
+
+    .tc1 {
+
+      left: 5px;
+      top: 25px;
+
+      width: 73px;
+      height: 85px;
+    }
+
+
+    .tc2 {
+
+      left: 49px;
+      top: 5px;
+
+      width: 74px;
+      height: 90px;
+
+      background:
+        #829c76;
+    }
+
+
+    .tc3 {
+
+      left: 35px;
+      top: 67px;
+
+      width: 82px;
+      height: 93px;
+
+      background:
+        #6f8c67;
+    }
+
+
+
+    /* ==================================================
        CHAIRS
-    ======================================== */
+    ================================================== */
 
     .chair {
 
@@ -3281,220 +3420,72 @@
 
       z-index: 3;
 
-      width: 44px;
-      height: 44px;
-
-      border-radius:
-        22px 22px 8px 8px;
+      width: 43px;
+      height: 43px;
 
       border:
         1px solid
-        rgba(180,170,151,0.30);
+        rgba(176,164,143,0.28);
+
+      border-radius:
+        22px 22px 7px 7px;
 
       background:
-
         linear-gradient(
           180deg,
-          rgba(255,255,255,0.93),
-          rgba(231,226,214,0.90)
+          #fffefa,
+          #e5ded1
         );
 
       box-shadow:
-
         0 4px 10px
-        rgba(112,100,80,0.07);
+        rgba(112,100,80,0.06);
     }
 
 
+    .l11 { left: 202px; top: 290px; }
+    .l12 { left: 255px; top: 290px; }
 
-    /* left rows */
+    .l21 { left: 202px; top: 370px; }
+    .l22 { left: 255px; top: 370px; }
 
-    .chair.l11 { left: 205px; top: 260px; }
-    .chair.l12 { left: 263px; top: 260px; }
+    .l31 { left: 202px; top: 450px; }
+    .l32 { left: 255px; top: 450px; }
 
-    .chair.l21 { left: 205px; top: 335px; }
-    .chair.l22 { left: 263px; top: 335px; }
+    .l41 { left: 202px; top: 530px; }
+    .l42 { left: 255px; top: 530px; }
 
-    .chair.l31 { left: 205px; top: 410px; }
-    .chair.l32 { left: 263px; top: 410px; }
 
-    .chair.l41 { left: 205px; top: 485px; }
-    .chair.l42 { left: 263px; top: 485px; }
+    .r11 { right: 202px; top: 290px; }
+    .r12 { right: 255px; top: 290px; }
 
+    .r21 { right: 202px; top: 370px; }
+    .r22 { right: 255px; top: 370px; }
 
+    .r31 { right: 202px; top: 450px; }
+    .r32 { right: 255px; top: 450px; }
 
-    /* right */
+    .r41 { right: 202px; top: 530px; }
+    .r42 { right: 255px; top: 530px; }
 
-    .chair.r11 { left: 612px; top: 260px; }
-    .chair.r12 { left: 670px; top: 260px; }
 
-    .chair.r21 { left: 612px; top: 335px; }
-    .chair.r22 { left: 670px; top: 335px; }
 
-    .chair.r31 { left: 612px; top: 410px; }
-    .chair.r32 { left: 670px; top: 410px; }
-
-    .chair.r41 { left: 612px; top: 485px; }
-    .chair.r42 { left: 670px; top: 485px; }
-
-
-
-    /* ========================================
-       LARGE GREENERY
-    ======================================== */
-
-    .hall-plant {
-
-      position: absolute;
-
-      z-index: 4;
-
-      width: 90px;
-      height: 115px;
-
-      pointer-events: none;
-    }
-
-
-    .hall-plant.plant-left {
-
-      left: 70px;
-      top: 205px;
-    }
-
-
-    .hall-plant.plant-right {
-
-      right: 70px;
-      top: 205px;
-
-      transform:
-        scaleX(-1);
-    }
-
-
-    .plant-stem {
-
-      position: absolute;
-
-      left: 45px;
-      bottom: 9px;
-
-      width: 4px;
-      height: 84px;
-
-      border-radius: 5px;
-
-      background:
-        #718b6a;
-    }
-
-
-    .plant-leaf {
-
-      position: absolute;
-
-      width: 24px;
-      height: 46px;
-
-      border-radius:
-        100% 0 100% 0;
-
-      background:
-        #88a080;
-    }
-
-
-    .plant-leaf.p1 {
-
-      left: 20px;
-      top: 20px;
-
-      transform:
-        rotate(-55deg);
-    }
-
-
-    .plant-leaf.p2 {
-
-      left: 46px;
-      top: 5px;
-
-      transform:
-        rotate(5deg);
-    }
-
-
-    .plant-leaf.p3 {
-
-      left: 53px;
-      top: 45px;
-
-      transform:
-        rotate(38deg);
-    }
-
-
-    .plant-pot {
-
-      position: absolute;
-
-      left: 29px;
-      bottom: 0;
-
-      width: 36px;
-      height: 23px;
-
-      border-radius:
-        3px 3px 12px 12px;
-
-      background:
-        #d6cabb;
-    }
-
-
-
-    /* ========================================
-       WEDDING COUPLE
-    ======================================== */
-
-    .wedding-couple {
-
-      position: absolute;
-
-      z-index: 15;
-
-      left: 50%;
-      top: 145px;
-
-      display: flex;
-
-      align-items: flex-end;
-
-      gap: 8px;
-
-      transform:
-        translateX(-50%);
-    }
-
-
-
-    /* ========================================
-       HUMAN AVATARS
-    ======================================== */
+    /* ==================================================
+       CHARACTER BASE
+    ================================================== */
 
     .person-avatar {
 
       position: relative;
 
-      width: 46px;
-      height: 65px;
+      width: 52px;
+      height: 72px;
 
       display: inline-block;
 
-      --skin: #f2d8c4;
-      --hair: #4a403c;
-      --outfit: #b8c6be;
+      --skin: #f0d4bf;
+      --hair: #403734;
+      --outfit: #94a795;
     }
 
 
@@ -3502,18 +3493,19 @@
 
       position: absolute;
 
-      left: 6px;
-      bottom: -3px;
+      left: 8px;
+      bottom: -2px;
 
-      width: 36px;
+      width: 37px;
       height: 8px;
 
       border-radius: 50%;
 
       background:
-        rgba(81,71,59,0.12);
+        rgba(74,69,60,0.13);
 
-      filter: blur(2px);
+      filter:
+        blur(2px);
     }
 
 
@@ -3521,39 +3513,19 @@
 
       position: absolute;
 
-      z-index: 4;
+      z-index: 5;
 
-      left: 12px;
-      top: 5px;
+      left: 13px;
+      top: 7px;
 
-      width: 24px;
-      height: 26px;
+      width: 27px;
+      height: 29px;
 
       border-radius:
-        48% 48% 46% 46%;
+        48% 48% 45% 45%;
 
       background:
         var(--skin);
-    }
-
-
-    .person-hair {
-
-      position: absolute;
-
-      z-index: 5;
-
-      left: 10px;
-      top: 2px;
-
-      width: 28px;
-      height: 15px;
-
-      border-radius:
-        16px 16px 8px 8px;
-
-      background:
-        var(--hair);
     }
 
 
@@ -3561,29 +3533,223 @@
 
       position: absolute;
 
-      z-index: 6;
+      z-index: 9;
 
-      top: 16px;
+      top: 20px;
 
-      width: 2px;
-      height: 2px;
+      width: 2.4px;
+      height: 2.4px;
 
       border-radius: 50%;
 
       background:
-        #5c5350;
+        #544a47;
     }
 
 
     .person-eye.left {
-      left: 18px;
+      left: 20px;
     }
 
 
     .person-eye.right {
-      left: 28px;
+      left: 31px;
     }
 
+
+
+    /* ==================================================
+       HAIR
+    ================================================== */
+
+    .person-hair {
+
+      position: absolute;
+
+      z-index: 7;
+
+      left: 11px;
+      top: 3px;
+
+      width: 31px;
+      height: 17px;
+
+      border-radius:
+        18px 18px 8px 8px;
+
+      background:
+        var(--hair);
+    }
+
+
+    .person-hair::before,
+    .person-hair::after {
+
+      content: "";
+
+      position: absolute;
+
+      background:
+        var(--hair);
+    }
+
+
+
+    /* short */
+
+    .hair-short
+    .person-hair {
+
+      height: 16px;
+
+      border-radius:
+        18px 17px 6px 7px;
+
+      transform:
+        rotate(-2deg);
+    }
+
+
+
+    /* bob */
+
+    .hair-bob
+    .person-hair {
+
+      height: 26px;
+
+      border-radius:
+        18px 18px 10px 10px;
+    }
+
+
+    .hair-bob
+    .person-hair::before {
+
+      left: -2px;
+      top: 13px;
+
+      width: 7px;
+      height: 19px;
+
+      border-radius:
+        6px;
+    }
+
+
+    .hair-bob
+    .person-hair::after {
+
+      right: -2px;
+      top: 13px;
+
+      width: 7px;
+      height: 19px;
+
+      border-radius:
+        6px;
+    }
+
+
+
+    /* wave */
+
+    .hair-wave
+    .person-hair {
+
+      height: 21px;
+
+      border-radius:
+        18px 18px 9px 9px;
+    }
+
+
+    .hair-wave
+    .person-hair::before {
+
+      left: -3px;
+      top: 16px;
+
+      width: 8px;
+      height: 28px;
+
+      border-radius:
+        7px 3px 7px 4px;
+
+      box-shadow:
+        29px 0 0
+        var(--hair);
+    }
+
+
+    .hair-wave
+    .person-hair::after {
+
+      left: 2px;
+      top: 29px;
+
+      width: 7px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      box-shadow:
+        8px 4px 0 var(--hair),
+        17px 1px 0 var(--hair),
+        25px 4px 0 var(--hair);
+    }
+
+
+
+    /* long */
+
+    .hair-long
+    .person-hair {
+
+      height: 24px;
+    }
+
+
+    .hair-long
+    .person-hair::before {
+
+      left: -3px;
+      top: 13px;
+
+      width: 8px;
+      height: 40px;
+
+      border-radius:
+        7px;
+
+      box-shadow:
+        29px 0 0
+        var(--hair);
+    }
+
+
+
+    /* HAIR COLORS */
+
+    .hair-black {
+      --hair: #332d2b;
+    }
+
+
+    .hair-brown {
+      --hair: #674c3e;
+    }
+
+
+    .hair-ash {
+      --hair: #756f6b;
+    }
+
+
+
+    /* ==================================================
+       BODY / OUTFIT
+    ================================================== */
 
     .person-body {
 
@@ -3591,17 +3757,17 @@
 
       z-index: 3;
 
-      left: 8px;
-      bottom: 4px;
+      left: 9px;
+      bottom: 5px;
 
-      width: 32px;
-      height: 36px;
-
-      border-radius:
-        14px 14px 7px 7px;
+      width: 34px;
+      height: 38px;
 
       background:
         var(--outfit);
+
+      border-radius:
+        14px 14px 7px 7px;
     }
 
 
@@ -3616,132 +3782,380 @@
       width: 7px;
       height: 18px;
 
-      border-radius:
-        5px;
+      border-radius: 5px;
 
       background:
-        #6c6b67;
+        #6a6965;
     }
 
 
     .person-leg.left {
-      left: 14px;
+      left: 15px;
     }
 
 
     .person-leg.right {
-      left: 27px;
+      left: 29px;
     }
 
 
 
-    /* bride */
+    /* dress */
 
-    .person-bride {
+    .outfit-dress
+    .person-body {
 
-      --hair: #443936;
+      left: 5px;
+
+      width: 43px;
+
+      clip-path:
+        polygon(
+          36% 0,
+          64% 0,
+          100% 100%,
+          0 100%
+        );
+
+      border-radius:
+        11px 11px 4px 4px;
+    }
+
+
+
+    /* suit */
+
+    .outfit-suit
+    .person-body {
+
+      border-radius:
+        10px 10px 5px 5px;
+    }
+
+
+    .outfit-suit
+    .person-body::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: 0;
+
+      width: 1px;
+      height: 28px;
+
+      background:
+        rgba(255,255,255,0.45);
+    }
+
+
+    .outfit-suit
+    .person-body::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 14px;
+      top: 5px;
+
+      width: 6px;
+      height: 8px;
+
+      background:
+        rgba(255,255,255,0.68);
+
+      clip-path:
+        polygon(
+          50% 100%,
+          0 0,
+          100% 0
+        );
+    }
+
+
+
+    /* jacket */
+
+    .outfit-jacket
+    .person-body {
+
+      border-radius:
+        8px;
+    }
+
+
+    .outfit-jacket
+    .person-body::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: 2px;
+
+      width: 1px;
+      height: 32px;
+
+      background:
+        rgba(255,255,255,0.5);
+    }
+
+
+
+    /* knit */
+
+    .outfit-knit
+    .person-body {
+
+      border-radius:
+        18px 18px 9px 9px;
+    }
+
+
+
+    /* OUTFIT COLORS */
+
+    .color-sage {
+      --outfit: #98aa96;
+    }
+
+
+    .color-navy {
+      --outfit: #586a79;
+    }
+
+
+    .color-rose {
+      --outfit: #cda2ad;
+    }
+
+
+    .color-lilac {
+      --outfit: #aea0bd;
+    }
+
+
+    .color-beige {
+      --outfit: #c8bca9;
+    }
+
+
+
+    /* ==================================================
+       ACCESSORIES
+    ================================================== */
+
+    .person-accessory {
+
+      position: absolute;
+
+      z-index: 15;
+
+      pointer-events: none;
+    }
+
+
+
+    /* glasses */
+
+    .accessory-glasses
+    .person-accessory {
+
+      left: 17px;
+      top: 16px;
+
+      width: 9px;
+      height: 7px;
+
+      border:
+        1px solid #625b57;
+
+      border-radius: 50%;
+
+      box-shadow:
+        12px 0 0 -1px #f0d4bf,
+        12px 0 0 0 #625b57;
+    }
+
+
+    .accessory-glasses
+    .person-accessory::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 8px;
+      top: 2px;
+
+      width: 5px;
+      height: 1px;
+
+      background:
+        #625b57;
+    }
+
+
+
+    /* bow */
+
+    .accessory-bow
+    .person-accessory {
+
+      left: 31px;
+      top: 1px;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius:
+        50%;
+
+      background:
+        #d896a5;
+
+      box-shadow:
+        -6px 1px 0 1px #e1a7b4,
+        6px 1px 0 1px #e1a7b4;
+    }
+
+
+
+    /* heartpin */
+
+    .accessory-heartpin
+    .person-accessory {
+
+      left: 33px;
+      top: 5px;
+
+      color:
+        #cf7e8c;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 10px;
+    }
+
+
+    .accessory-heartpin
+    .person-accessory::before {
+
+      content: "♥";
+    }
+
+
+
+    /* bouquet */
+
+    .accessory-bouquet
+    .person-accessory {
+
+      left: 35px;
+      top: 39px;
+
+      width: 15px;
+      height: 15px;
+
+      border-radius: 50%;
+
+      background:
+        #efccd6;
+
+      box-shadow:
+        -7px 2px 0 #fff,
+        -2px -6px 0 #e7dcba,
+        5px -3px 0 #d4c0df;
+    }
+
+
+    .accessory-bouquet
+    .person-accessory::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 4px;
+      top: 11px;
+
+      width: 3px;
+      height: 17px;
+
+      background:
+        #73906b;
+
+      transform:
+        rotate(-24deg);
+    }
+
+
+
+    /* ==================================================
+       BRIDE & GROOM
+    ================================================== */
+
+    .wedding-couple {
+
+      position: absolute;
+
+      z-index: 25;
+
+      left: 50%;
+      top: 161px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      gap: 9px;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .bride-avatar {
+
+      --hair: #413633;
       --outfit: #fffdfa;
     }
 
 
-    .person-bride
+    .bride-avatar
     .person-body {
 
       left: 4px;
 
-      width: 40px;
+      width: 44px;
 
       clip-path:
-
         polygon(
-          35% 0,
-          65% 0,
+          37% 0,
+          63% 0,
           100% 100%,
           0 100%
         );
     }
 
 
+    .groom-avatar {
 
-    /* groom */
-
-    .person-groom {
-
-      --hair: #3d3633;
-      --outfit: #3f4b54;
+      --hair: #332d2b;
+      --outfit: #3f4c55;
     }
 
 
 
-    /* guest colors */
-
-    .style-sage {
-
-      --hair: #514640;
-      --outfit: #9daf9d;
-    }
-
-
-    .style-pink {
-
-      --hair: #554743;
-      --outfit: #d7aeb7;
-    }
-
-
-    .style-navy {
-
-      --hair: #403a38;
-      --outfit: #596878;
-    }
-
-
-    .style-lilac {
-
-      --hair: #51423e;
-      --outfit: #b6a8c5;
-    }
-
-
-    .style-ivory {
-
-      --hair: #554842;
-      --outfit: #cfc5b4;
-    }
-
-
-
-    /* ========================================
-       STATIC NPC
-    ======================================== */
-
-    .npc {
-
-      position: absolute;
-
-      z-index: 10;
-
-      transform:
-        scale(0.88);
-
-      opacity: 0.92;
-
-      pointer-events: none;
-    }
-
-
-    .npc.n1 { left: 213px; top: 275px; }
-    .npc.n2 { left: 671px; top: 350px; }
-    .npc.n3 { left: 270px; top: 430px; }
-    .npc.n4 { left: 614px; top: 505px; }
-    .npc.n5 { left: 205px; top: 505px; }
-    .npc.n6 { left: 675px; top: 275px; }
-
-
-
-    /* ========================================
-       PLAYER
-    ======================================== */
+    /* ==================================================
+       PLAYER / GUESTS
+    ================================================== */
 
     .player-character {
 
@@ -3749,17 +4163,13 @@
 
       z-index: 100;
 
-      width: 50px;
-      height: 72px;
+      width: 55px;
+      height: 78px;
 
       transform:
-        translate(-50%, -80%);
+        translate(-50%,-82%);
 
       pointer-events: none;
-
-      will-change:
-        left,
-        top;
     }
 
 
@@ -3768,28 +4178,26 @@
       position: absolute;
 
       left: 50%;
-      top: -14px;
+      top: -17px;
 
       transform:
         translateX(-50%);
 
       padding:
-        3px 7px;
+        3px 8px;
 
       border-radius: 12px;
 
       background:
-        rgba(255,255,255,0.92);
+        rgba(255,255,255,0.94);
 
       box-shadow:
-        0 2px 7px
-        rgba(64,71,64,0.10);
+        0 2px 8px
+        rgba(68,77,68,0.10);
 
       color: #536159;
 
       font-size: 8px;
-
-      white-space: nowrap;
     }
 
 
@@ -3798,7 +4206,7 @@
 
       animation:
         littleWalk
-        0.32s ease-in-out
+        0.28s ease-in-out
         infinite alternate;
     }
 
@@ -3820,17 +4228,13 @@
 
 
 
-    /* ========================================
-       GUEST ENTRY IN HALL
-    ======================================== */
-
     .hall-guest-entry {
 
       position: absolute;
 
-      z-index: 70;
+      z-index: 75;
 
-      width: 60px;
+      width: 67px;
 
       padding: 0;
 
@@ -3839,7 +4243,7 @@
       background: transparent;
 
       transform:
-        translate(-50%, -80%);
+        translate(-50%,-80%);
 
       cursor: pointer;
 
@@ -3852,6 +4256,46 @@
 
       transform:
         scale(0.88);
+
+      transform-origin:
+        bottom center;
+
+      animation:
+        guestIdle
+        3.2s ease-in-out
+        infinite alternate;
+    }
+
+
+    .hall-guest-entry:nth-child(2n)
+    .person-avatar {
+
+      animation-delay:
+        -1.2s;
+    }
+
+
+    .hall-guest-entry:nth-child(3n)
+    .person-avatar {
+
+      animation-delay:
+        -2.1s;
+    }
+
+
+    @keyframes guestIdle {
+
+      from {
+        transform:
+          scale(0.88)
+          translateY(0);
+      }
+
+      to {
+        transform:
+          scale(0.88)
+          translateY(-2px);
+      }
     }
 
 
@@ -3859,14 +4303,14 @@
 
       display: block;
 
-      max-width: 60px;
+      max-width: 65px;
 
       margin:
-        -5px auto 0;
+        -4px auto 0;
 
       overflow: hidden;
 
-      color: #59635d;
+      color: #536158;
 
       font-size: 8px;
 
@@ -3877,101 +4321,201 @@
 
 
 
-    /* ========================================
-       HALL FLOATING MESSAGE
-    ======================================== */
+    /* ==================================================
+       SPEECH BUBBLE
+    ================================================== */
 
-    .hall-message-card {
+    .guest-speech-bubble {
 
       position: absolute;
 
-      z-index: 150;
+      z-index: 250;
 
-      left: 50%;
-      top: 14px;
-
-      width:
-        calc(100% - 34px);
-
-      max-width: 340px;
+      width: 255px;
 
       padding:
-        13px 16px;
+        15px 17px 14px;
 
       transform:
-        translateX(-50%);
+        translate(-50%,-100%);
 
       border:
         1px solid
-        rgba(86,101,91,0.14);
+        rgba(115,111,96,0.14);
 
-      border-radius: 15px;
+      border-radius:
+        18px;
 
       background:
-        rgba(255,255,255,0.91);
-
-      backdrop-filter:
-        blur(10px);
-
-      -webkit-backdrop-filter:
-        blur(10px);
+        rgba(255,253,248,0.96);
 
       box-shadow:
-        0 8px 24px
-        rgba(60,72,63,0.08);
+        0 12px 32px
+        rgba(64,74,63,0.12);
 
-      color: #5f6963;
+      backdrop-filter:
+        blur(9px);
 
-      font-size: 11px;
+      -webkit-backdrop-filter:
+        blur(9px);
 
-      line-height: 1.65;
+      color: #5e625e;
 
-      text-align: center;
-
-      pointer-events: none;
+      text-align: left;
 
       transition:
-        opacity 0.25s ease,
-        transform 0.25s ease;
+        opacity 0.22s ease,
+        transform 0.22s ease;
     }
 
 
-    .hall-message-card.hidden {
+    .guest-speech-bubble.hidden {
 
       opacity: 0;
 
+      pointer-events: none;
+
       transform:
-        translate(-50%, -7px);
+        translate(-50%,calc(-100% + 5px));
     }
 
 
-    .hall-message-name {
+    .guest-speech-bubble::after {
 
-      display: block;
+      content: "";
 
-      margin-bottom: 3px;
+      position: absolute;
 
-      color: #424e47;
+      left: 50%;
+      bottom: -8px;
 
-      font-weight: 600;
+      width: 15px;
+      height: 15px;
+
+      border-right:
+        1px solid
+        rgba(115,111,96,0.14);
+
+      border-bottom:
+        1px solid
+        rgba(115,111,96,0.14);
+
+      background:
+        rgba(255,253,248,0.97);
+
+      transform:
+        translateX(-50%)
+        rotate(45deg);
+    }
+
+
+    .bubble-top {
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+
+    .bubble-name {
+
+      font-family:
+        var(--font-ko-title);
+
+      font-size: 13px;
+
+      color: #465047;
+    }
+
+
+    .bubble-heart {
+
+      color:
+        #c7838d;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 16px;
+    }
+
+
+    .bubble-message {
+
+      margin-top: 9px;
+
+      font-size: 11px;
+
+      line-height: 1.75;
+
+      color: #646a65;
+    }
+
+
+    .bubble-bottom {
+
+      margin-top: 9px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: flex-end;
+
+      color: #aaa59c;
+
+      font-family:
+        var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 0.8px;
+    }
+
+
+    .bubble-close {
+
+      position: absolute;
+
+      right: 6px;
+      top: -31px;
+
+      width: 27px;
+      height: 27px;
+
+      border:
+        1px solid
+        rgba(90,97,90,0.12);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.92);
+
+      color: #7c827d;
+
+      cursor: pointer;
     }
 
 
 
-    /* ========================================
-       HALL INSTRUCTIONS
-    ======================================== */
+    /* ==================================================
+       HALL INSTRUCTIONS + D-PAD
+    ================================================== */
 
     .hall-instructions {
 
       position: absolute;
 
-      z-index: 145;
+      z-index: 300;
 
-      left: 14px;
-      bottom: 14px;
+      left: 13px;
+      bottom: 13px;
 
-      max-width: 190px;
+      max-width: 175px;
 
       padding:
         9px 11px;
@@ -3979,7 +4523,7 @@
       border-radius: 12px;
 
       background:
-        rgba(255,255,255,0.82);
+        rgba(255,255,255,0.86);
 
       backdrop-filter:
         blur(9px);
@@ -3987,7 +4531,7 @@
       -webkit-backdrop-filter:
         blur(9px);
 
-      color: #758079;
+      color: #737f77;
 
       font-size: 9px;
 
@@ -3997,19 +4541,14 @@
     }
 
 
-
-    /* ========================================
-       D-PAD
-    ======================================== */
-
     .hall-dpad {
 
       position: absolute;
 
-      z-index: 170;
+      z-index: 300;
 
-      right: 13px;
-      bottom: 13px;
+      right: 12px;
+      bottom: 12px;
 
       width: 110px;
       height: 110px;
@@ -4020,8 +4559,8 @@
 
       position: absolute;
 
-      width: 38px;
-      height: 38px;
+      width: 39px;
+      height: 39px;
 
       display: flex;
 
@@ -4032,12 +4571,12 @@
 
       border:
         1px solid
-        rgba(72,88,77,0.18);
+        rgba(72,88,77,0.17);
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.88);
+        rgba(255,255,255,0.91);
 
       box-shadow:
         0 3px 9px
@@ -4052,37 +4591,33 @@
 
 
     .dpad-up {
-
       left: 36px;
       top: 0;
     }
 
 
     .dpad-down {
-
       left: 36px;
       bottom: 0;
     }
 
 
     .dpad-left {
-
       left: 0;
       top: 36px;
     }
 
 
     .dpad-right {
-
       right: 0;
       top: 36px;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        MODAL
-    ======================================== */
+    ================================================== */
 
     .modal {
 
@@ -4104,7 +4639,6 @@
 
 
     .modal.active {
-
       display: flex;
     }
 
@@ -4114,7 +4648,7 @@
       width: 100%;
       max-width: 520px;
 
-      max-height: 88vh;
+      max-height: 90vh;
 
       overflow-y: auto;
 
@@ -4171,8 +4705,7 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
       font-size: 25px;
 
@@ -4181,13 +4714,13 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        FORM
-    ======================================== */
+    ================================================== */
 
     .form-section {
 
-      margin-top: 30px;
+      margin-top: 27px;
     }
 
 
@@ -4202,6 +4735,262 @@
       color: #666;
     }
 
+
+    .text-input,
+    .select-input,
+    .textarea-input {
+
+      width: 100%;
+
+      border:
+        1px solid #d0ccc5;
+
+      border-radius: 0;
+
+      background: #fff;
+
+      color: #333;
+
+      font-size: 13px;
+    }
+
+
+    .text-input,
+    .select-input {
+
+      min-height: 48px;
+
+      padding:
+        0 13px;
+    }
+
+
+    .textarea-input {
+
+      min-height: 90px;
+
+      padding: 13px;
+
+      resize: none;
+
+      line-height: 1.7;
+    }
+
+
+    .submit-button {
+
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 30px;
+
+      border: 0;
+
+      background: #3e4841;
+
+      color: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ==================================================
+       CUSTOMIZER PREVIEW
+    ================================================== */
+
+    .customizer-preview {
+
+      margin-top: 25px;
+
+      padding:
+        25px 10px 19px;
+
+      border:
+        1px solid #e0dcd5;
+
+      border-radius: 17px;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 8%,
+          #fff,
+          transparent 45%
+        ),
+
+        linear-gradient(
+          180deg,
+          #f5f1e9,
+          #edf2ea
+        );
+
+      text-align: center;
+    }
+
+
+    .customizer-preview
+    .person-avatar {
+
+      transform:
+        scale(1.42);
+
+      margin:
+        14px 0 15px;
+    }
+
+
+    .preview-caption {
+
+      margin-top: 12px;
+
+      font-family:
+        var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      color: #92968f;
+    }
+
+
+
+    /* option grid */
+
+    .custom-options {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+
+    .custom-option {
+
+      min-height: 40px;
+
+      padding:
+        0 12px;
+
+      border:
+        1px solid #d8d4cd;
+
+      border-radius: 20px;
+
+      background: #fff;
+
+      color: #666;
+
+      font-size: 10px;
+
+      cursor: pointer;
+    }
+
+
+    .custom-option.active {
+
+      border-color:
+        #788f80;
+
+      background:
+        #eaf1eb;
+
+      color: #46574c;
+    }
+
+
+
+    /* swatches */
+
+    .swatch-option {
+
+      width: 42px;
+      height: 42px;
+
+      padding: 4px;
+
+      border:
+        1px solid #ddd8d0;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      cursor: pointer;
+    }
+
+
+    .swatch-option span {
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      border-radius: 50%;
+
+      border:
+        2px solid #fff;
+    }
+
+
+    .swatch-option.active {
+
+      border-color:
+        #687c6e;
+    }
+
+
+    .hair-black-swatch {
+      background: #332d2b;
+    }
+
+
+    .hair-brown-swatch {
+      background: #674c3e;
+    }
+
+
+    .hair-ash-swatch {
+      background: #756f6b;
+    }
+
+
+    .sage-swatch {
+      background: #98aa96;
+    }
+
+
+    .navy-swatch {
+      background: #586a79;
+    }
+
+
+    .rose-swatch {
+      background: #cda2ad;
+    }
+
+
+    .lilac-swatch {
+      background: #aea0bd;
+    }
+
+
+    .beige-swatch {
+      background: #c8bca9;
+    }
+
+
+
+    /* ========================================
+       RSVP CHOICES
+    ======================================== */
 
     .choice-row {
 
@@ -4255,136 +5044,6 @@
     }
 
 
-    .text-input,
-    .select-input,
-    .textarea-input {
-
-      width: 100%;
-
-      border:
-        1px solid #d0ccc5;
-
-      border-radius: 0;
-
-      background: #fff;
-
-      color: #333;
-
-      font-size: 13px;
-    }
-
-
-    .text-input,
-    .select-input {
-
-      min-height: 48px;
-
-      padding:
-        0 13px;
-    }
-
-
-    .textarea-input {
-
-      min-height: 95px;
-
-      padding: 13px;
-
-      resize: none;
-
-      line-height: 1.7;
-    }
-
-
-    .submit-button {
-
-      width: 100%;
-
-      min-height: 54px;
-
-      margin-top: 32px;
-
-      border: 0;
-
-      background: #333;
-
-      color: #fff;
-
-      font-size: 12px;
-
-      cursor: pointer;
-    }
-
-
-
-    /* ========================================
-       GUEST AVATAR OPTIONS
-    ======================================== */
-
-    .guest-style-options {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(5, 1fr);
-
-      gap: 6px;
-
-      margin-top: 11px;
-    }
-
-
-    .guest-style-option {
-
-      min-width: 0;
-
-      padding:
-        7px 1px;
-
-      border:
-        1px solid #d8d4cd;
-
-      border-radius: 10px;
-
-      background: #fff;
-
-      cursor: pointer;
-    }
-
-
-    .guest-style-option.active {
-
-      border-color:
-        #80968a;
-
-      background:
-        #edf3ef;
-    }
-
-
-    .guest-style-option
-    .person-avatar {
-
-      transform:
-        scale(0.78);
-
-      margin:
-        -6px 0 -5px;
-    }
-
-
-    .guest-style-label {
-
-      display: block;
-
-      margin-top: -4px;
-
-      color: #777;
-
-      font-size: 8px;
-    }
-
-
 
     /* ========================================
        ACCOUNT
@@ -4435,7 +5094,6 @@
 
 
     .account-group.active {
-
       display: block;
     }
 
@@ -4508,7 +5166,7 @@
 
 
     /* ========================================
-       SEASON DETAILS
+       SEASON DETAIL
     ======================================== */
 
     .season-page {
@@ -4523,14 +5181,10 @@
       overflow-y: auto;
 
       background: #f7f6f2;
-
-      -webkit-overflow-scrolling:
-        touch;
     }
 
 
     .season-page.active {
-
       display: block;
     }
 
@@ -4555,8 +5209,7 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
       font-family:
         var(--font-en);
@@ -4598,8 +5251,6 @@
         var(--font-en);
 
       font-size: 44px;
-
-      font-weight: 400;
     }
 
 
@@ -4608,7 +5259,7 @@
       width: 100%;
 
       aspect-ratio:
-        4 / 5;
+        4/5;
 
       margin-top: 42px;
 
@@ -4687,30 +5338,22 @@
 
 
     #season-winter {
-
-      background:
-        #edf3f6;
+      background: #edf3f6;
     }
 
 
     #season-spring {
-
-      background:
-        #f5f2eb;
+      background: #f5f2eb;
     }
 
 
     #season-summer {
-
-      background:
-        #f4efe4;
+      background: #f4efe4;
     }
 
 
     #season-autumn {
-
-      background:
-        #eee8e1;
+      background: #eee8e1;
     }
 
 
@@ -4732,7 +5375,7 @@
         11px 18px;
 
       transform:
-        translate(-50%, 15px);
+        translate(-50%,15px);
 
       border-radius: 30px;
 
@@ -4747,20 +5390,18 @@
       visibility: hidden;
 
       transition:
-
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
+        0.25s ease;
     }
 
 
     .toast.show {
 
       opacity: 1;
+
       visibility: visible;
 
       transform:
-        translate(-50%, 0);
+        translate(-50%,0);
     }
 
 
@@ -4796,7 +5437,7 @@
        MOBILE
     ======================================== */
 
-    @media (max-width: 420px) {
+    @media (max-width:420px) {
 
       .opening-inner {
 
@@ -4805,81 +5446,49 @@
       }
 
 
-      .letter-small {
-
-        margin-bottom: 24px;
-      }
-
-
       .envelope-stage {
 
-        --env-w: 260px;
-        --env-h: 163px;
+        --env-w:260px;
+        --env-h:163px;
 
-        --photo-w: 163px;
-        --photo-h: 204px;
+        --photo-w:163px;
+        --photo-h:204px;
 
-        --photo-bottom: -50px;
-        --photo-rise: -137px;
+        --photo-bottom:-50px;
+        --photo-rise:-137px;
 
-        --window-open-height: 320px;
+        --window-open-height:320px;
 
-        width: 280px;
-        height: 325px;
+        width:280px;
+        height:325px;
       }
 
 
       .envelope-flap {
-
-        height: 101px;
+        height:101px;
       }
 
 
       .envelope-seal {
 
-        top: 64px;
+        top:64px;
 
-        font-size: 27px;
-      }
-
-
-      .opening-names {
-
-        font-size: 26px;
-      }
-
-
-      .intro {
-
-        padding-left: 18px;
-        padding-right: 18px;
+        font-size:27px;
       }
 
 
       .names {
-
-        font-size: 35px;
+        font-size:35px;
       }
 
 
       .again-title {
-
-        font-size: 39px;
+        font-size:39px;
       }
 
 
       .invitation-title {
-
-        font-size: 25px;
-      }
-
-
-      .wedding-calendar {
-
-        max-width: 330px;
-
-        padding-left: 2px;
-        padding-right: 2px;
+        font-size:25px;
       }
 
 
@@ -4891,57 +5500,47 @@
 
 
       .modal {
-
-        padding: 10px;
+        padding:10px;
       }
 
 
       .virtual-top-title-main {
-
-        font-size: 11px;
+        font-size:11px;
       }
 
 
       .virtual-top-title-sub {
-
-        font-size: 8px;
+        display:none;
       }
 
 
-      .virtual-write {
-
-        padding:
-          0 9px;
-
-        font-size: 9px;
+      .guest-speech-bubble {
+        width:225px;
       }
 
     }
 
 
-
     @media
-    (prefers-reduced-motion: reduce) {
+    (prefers-reduced-motion:reduce) {
 
       .snow-layer {
-
-        display: none;
+        display:none;
       }
 
 
       .reveal {
-
-        opacity: 1;
-
-        transform: none;
+        opacity:1;
+        transform:none;
       }
 
 
+      .hanging-vine,
       .crystal,
-      .player-character.walking
+      .hall-guest-entry
       .person-avatar {
 
-        animation: none;
+        animation:none;
       }
 
     }
@@ -5035,11 +5634,9 @@
           Gahyun & Jinchan
         </div>
 
-
         <div class="opening-date">
           JANUARY 30, 2027
         </div>
-
 
         <div class="opening-line"></div>
 
@@ -5051,9 +5648,7 @@
 
 
 
-  <!-- ========================================
-       SHORTCUT
-  ======================================== -->
+  <!-- SHORTCUT -->
 
   <button
     type="button"
@@ -5377,7 +5972,7 @@
 
 
   <!-- ========================================
-       WEDDING
+       WEDDING INFO
   ======================================== -->
 
   <section
@@ -5491,8 +6086,6 @@
 
 
 
-      <!-- VENUE -->
-
       <div class="venue">
 
         <div class="venue-name">
@@ -5538,8 +6131,6 @@
       </div>
 
 
-
-      <!-- PARKING -->
 
       <div
         class="parking-wrap"
@@ -5650,7 +6241,7 @@
 
 
 
-      <!-- ATTENDANCE -->
+      <!-- RSVP -->
 
       <div class="action-section">
 
@@ -5658,11 +6249,9 @@
           ATTENDANCE
         </div>
 
-
         <div class="action-title">
           참석 여부
         </div>
-
 
         <div class="action-description">
 
@@ -5673,7 +6262,6 @@
           소중한 자리를 준비하는 데 도움이 됩니다.
 
         </div>
-
 
         <button
           type="button"
@@ -5695,11 +6283,9 @@
           FOR YOUR HEART
         </div>
 
-
         <div class="action-title">
           마음 전하실 곳
         </div>
-
 
         <div class="action-description">
 
@@ -5710,7 +6296,6 @@
           따뜻한 마음에 깊이 감사드립니다.
 
         </div>
-
 
         <button
           type="button"
@@ -5790,17 +6375,17 @@
 
 
       <div class="virtual-intro-kor">
-        작은 결혼식장에 초대합니다
+        또 하나의 작은 결혼식
       </div>
 
 
       <div class="virtual-intro-text">
 
-        청첩장 속 또 하나의 웨딩홀을 둘러보고,
+        작은 하객이 되어 정원을 둘러보고,
 
         <br>
 
-        작은 하객 캐릭터와 축하 한마디를 남겨주세요.
+        두 사람에게 축하의 한마디를 남겨주세요.
 
       </div>
 
@@ -5816,11 +6401,11 @@
 
       <div class="virtual-small-note">
 
-        홀 안의 빈 곳을 터치하면 캐릭터가 이동하고
+        빈 공간을 터치하면 캐릭터가 이동합니다.
 
         <br>
 
-        화면을 손가락으로 끌어 홀을 둘러볼 수 있어요.
+        다른 하객을 누르면 남긴 축하메시지를 볼 수 있어요.
 
       </div>
 
@@ -5830,9 +6415,9 @@
 
 
 
-  <!-- ========================================
-       VIRTUAL WEDDING PAGE
-  ======================================== -->
+  <!-- ==================================================
+       VIRTUAL WEDDING
+  ================================================== -->
 
   <div
     class="virtual-wedding"
@@ -5868,7 +6453,7 @@
         class="virtual-write"
         id="openHallGuestbook"
       >
-        방명록 +
+        MY GUEST +
       </button>
 
     </div>
@@ -5886,32 +6471,86 @@
       >
 
 
-        <!-- BACK WALL -->
+        <!-- WALL -->
 
-        <div class="hall-back-wall">
+        <div class="garden-back-wall">
 
-          <div class="hall-arch one"></div>
-          <div class="hall-arch two"></div>
-          <div class="hall-arch three"></div>
-          <div class="hall-arch four"></div>
+          <div class="wall-arch a1"></div>
+          <div class="wall-arch a2"></div>
+          <div class="wall-arch a3"></div>
+          <div class="wall-arch a4"></div>
 
         </div>
 
 
 
-        <!-- CHANDELIER -->
+        <!-- CEILING GARDEN -->
 
-        <div class="chandelier">
+        <div class="ceiling-garden">
 
-          <div class="chandelier-line"></div>
+          <div class="ceiling-green-line"></div>
 
-          <div class="chandelier-ring"></div>
+          <span class="hanging-vine v1"></span>
+          <span class="hanging-vine v2"></span>
+          <span class="hanging-vine v3"></span>
+          <span class="hanging-vine v4"></span>
+          <span class="hanging-vine v5"></span>
+          <span class="hanging-vine v6"></span>
+          <span class="hanging-vine v7"></span>
+          <span class="hanging-vine v8"></span>
+          <span class="hanging-vine v9"></span>
+          <span class="hanging-vine v10"></span>
+          <span class="hanging-vine v11"></span>
 
-          <span class="crystal c1"></span>
-          <span class="crystal c2"></span>
-          <span class="crystal c3"></span>
-          <span class="crystal c4"></span>
-          <span class="crystal c5"></span>
+          <span class="ceiling-flower cf1"></span>
+          <span class="ceiling-flower cf2"></span>
+          <span class="ceiling-flower cf3"></span>
+          <span class="ceiling-flower cf4"></span>
+
+        </div>
+
+
+
+        <!-- CHANDELIERS -->
+
+        <div class="chandelier left">
+
+          <span class="chandelier-line"></span>
+          <span class="chandelier-ring"></span>
+
+          <i class="crystal c1"></i>
+          <i class="crystal c2"></i>
+          <i class="crystal c3"></i>
+          <i class="crystal c4"></i>
+          <i class="crystal c5"></i>
+
+        </div>
+
+
+        <div class="chandelier main">
+
+          <span class="chandelier-line"></span>
+          <span class="chandelier-ring"></span>
+
+          <i class="crystal c1"></i>
+          <i class="crystal c2"></i>
+          <i class="crystal c3"></i>
+          <i class="crystal c4"></i>
+          <i class="crystal c5"></i>
+
+        </div>
+
+
+        <div class="chandelier right">
+
+          <span class="chandelier-line"></span>
+          <span class="chandelier-ring"></span>
+
+          <i class="crystal c1"></i>
+          <i class="crystal c2"></i>
+          <i class="crystal c3"></i>
+          <i class="crystal c4"></i>
+          <i class="crystal c5"></i>
 
         </div>
 
@@ -5928,40 +6567,7 @@
         </div>
 
 
-
-        <!-- FLOWER LEFT -->
-
-        <div class="flower-cluster left">
-
-          <span class="leaf l1"></span>
-          <span class="leaf l2"></span>
-          <span class="leaf l3"></span>
-          <span class="leaf l4"></span>
-
-          <span class="flower-dot f1"></span>
-          <span class="flower-dot f2"></span>
-          <span class="flower-dot f3"></span>
-          <span class="flower-dot f4"></span>
-
-        </div>
-
-
-
-        <!-- FLOWER RIGHT -->
-
-        <div class="flower-cluster right">
-
-          <span class="leaf l1"></span>
-          <span class="leaf l2"></span>
-          <span class="leaf l3"></span>
-          <span class="leaf l4"></span>
-
-          <span class="flower-dot f1"></span>
-          <span class="flower-dot f2"></span>
-          <span class="flower-dot f3"></span>
-          <span class="flower-dot f4"></span>
-
-        </div>
+        <div class="floral-arch"></div>
 
 
 
@@ -5970,7 +6576,9 @@
         <div class="wedding-couple">
 
 
-          <div class="person-avatar person-groom">
+          <div
+            class="person-avatar groom-avatar hair-short hair-black outfit-suit color-navy"
+          >
 
             <span class="person-shadow"></span>
 
@@ -5980,17 +6588,20 @@
             <span class="person-body"></span>
 
             <span class="person-head"></span>
-
             <span class="person-hair"></span>
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
+
+            <span class="person-accessory"></span>
 
           </div>
 
 
 
-          <div class="person-avatar person-bride">
+          <div
+            class="person-avatar bride-avatar hair-long hair-brown outfit-dress color-beige"
+          >
 
             <span class="person-shadow"></span>
 
@@ -6000,11 +6611,12 @@
             <span class="person-body"></span>
 
             <span class="person-head"></span>
-
             <span class="person-hair"></span>
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
+
+            <span class="person-accessory"></span>
 
           </div>
 
@@ -6015,22 +6627,57 @@
 
         <!-- AISLE -->
 
-        <div class="aisle">
+        <div class="aisle"></div>
 
-          <div class="aisle-line"></div>
+
+
+        <!-- FLOWER BEDS -->
+
+        <div class="flower-bed left">
+
+          <span class="flower-spray fs1"></span>
+          <span class="flower-spray fs2"></span>
+          <span class="flower-spray fs3"></span>
+          <span class="flower-spray fs4"></span>
+          <span class="flower-spray fs5"></span>
+
+        </div>
+
+
+        <div class="flower-bed right">
+
+          <span class="flower-spray fs1"></span>
+          <span class="flower-spray fs2"></span>
+          <span class="flower-spray fs3"></span>
+          <span class="flower-spray fs4"></span>
+          <span class="flower-spray fs5"></span>
 
         </div>
 
 
 
-        <div class="aisle-flower af1"></div>
-        <div class="aisle-flower af2"></div>
+        <!-- TREES -->
 
-        <div class="aisle-flower af3"></div>
-        <div class="aisle-flower af4"></div>
+        <div class="garden-tree tree1">
 
-        <div class="aisle-flower af5"></div>
-        <div class="aisle-flower af6"></div>
+          <span class="tree-trunk"></span>
+
+          <span class="tree-crown tc1"></span>
+          <span class="tree-crown tc2"></span>
+          <span class="tree-crown tc3"></span>
+
+        </div>
+
+
+        <div class="garden-tree tree2">
+
+          <span class="tree-trunk"></span>
+
+          <span class="tree-crown tc1"></span>
+          <span class="tree-crown tc2"></span>
+          <span class="tree-crown tc3"></span>
+
+        </div>
 
 
 
@@ -6063,151 +6710,9 @@
 
 
 
-        <!-- GREENERY -->
+        <!-- SAVED GUESTS -->
 
-        <div class="hall-plant plant-left">
-
-          <div class="plant-stem"></div>
-
-          <span class="plant-leaf p1"></span>
-          <span class="plant-leaf p2"></span>
-          <span class="plant-leaf p3"></span>
-
-          <div class="plant-pot"></div>
-
-        </div>
-
-
-        <div class="hall-plant plant-right">
-
-          <div class="plant-stem"></div>
-
-          <span class="plant-leaf p1"></span>
-          <span class="plant-leaf p2"></span>
-          <span class="plant-leaf p3"></span>
-
-          <div class="plant-pot"></div>
-
-        </div>
-
-
-
-        <!-- DECORATIVE GUESTS -->
-
-        <div class="npc n1">
-
-          <div class="person-avatar style-sage">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="npc n2">
-
-          <div class="person-avatar style-pink">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="npc n3">
-
-          <div class="person-avatar style-navy">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="npc n4">
-
-          <div class="person-avatar style-lilac">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="npc n5">
-
-          <div class="person-avatar style-ivory">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-        <div class="npc n6">
-
-          <div class="person-avatar style-sage">
-
-            <span class="person-shadow"></span>
-            <span class="person-leg left"></span>
-            <span class="person-leg right"></span>
-            <span class="person-body"></span>
-            <span class="person-head"></span>
-            <span class="person-hair"></span>
-            <span class="person-eye left"></span>
-            <span class="person-eye right"></span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- SAVED GUESTBOOK CHARACTERS -->
-
-        <div
-          id="hallGuestEntries"
-        ></div>
+        <div id="hallGuestEntries"></div>
 
 
 
@@ -6224,7 +6729,7 @@
 
 
           <div
-            class="person-avatar style-sage"
+            class="person-avatar hair-bob hair-brown outfit-dress color-sage accessory-none"
             id="playerAvatar"
           >
 
@@ -6236,13 +6741,59 @@
             <span class="person-body"></span>
 
             <span class="person-head"></span>
-
             <span class="person-hair"></span>
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
 
+            <span class="person-accessory"></span>
+
           </div>
+
+        </div>
+
+
+
+        <!-- SPEECH BUBBLE -->
+
+        <div
+          class="guest-speech-bubble hidden"
+          id="guestSpeechBubble"
+        >
+
+          <button
+            type="button"
+            class="bubble-close"
+            id="bubbleClose"
+          >
+            ×
+          </button>
+
+
+          <div class="bubble-top">
+
+            <div
+              class="bubble-name"
+              id="bubbleName"
+            ></div>
+
+            <div class="bubble-heart">
+              ♡
+            </div>
+
+          </div>
+
+
+          <div
+            class="bubble-message"
+            id="bubbleMessage"
+          ></div>
+
+
+          <div
+            class="bubble-bottom"
+            id="bubbleDate"
+          ></div>
 
         </div>
 
@@ -6251,34 +6802,21 @@
 
 
 
-      <!-- MESSAGE -->
-
-      <div
-        class="hall-message-card hidden"
-        id="hallMessageCard"
-      ></div>
-
-
-
-      <!-- HELP -->
-
       <div class="hall-instructions">
 
-        빈 곳을 터치하면 이동합니다.
+        빈 곳을 톡 누르면 이동
 
         <br>
 
-        화면을 끌어 홀을 둘러보세요.
+        화면을 드래그하면 홀 구경
 
         <br>
 
-        하객 캐릭터를 누르면 축하메시지가 보여요.
+        하객을 누르면 방명록 확인
 
       </div>
 
 
-
-      <!-- D PAD -->
 
       <div class="hall-dpad">
 
@@ -6290,7 +6828,6 @@
           ↑
         </button>
 
-
         <button
           type="button"
           class="dpad-button dpad-left"
@@ -6299,7 +6836,6 @@
           ←
         </button>
 
-
         <button
           type="button"
           class="dpad-button dpad-right"
@@ -6307,7 +6843,6 @@
         >
           →
         </button>
-
 
         <button
           type="button"
@@ -6376,10 +6911,21 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">겨울 사진 1</div>
-        <div class="mini-photo">겨울 사진 2</div>
-        <div class="mini-photo">겨울 사진 3</div>
-        <div class="mini-photo">겨울 사진 4</div>
+        <div class="mini-photo">
+          겨울 사진 1
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 2
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 3
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 4
+        </div>
 
       </div>
 
@@ -6408,7 +6954,6 @@
         ← BACK
       </button>
 
-
       <div class="season-page-header">
 
         <div class="season-page-small">
@@ -6421,11 +6966,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         봄 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -6437,7 +6980,6 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
         <div class="mini-photo">봄 사진 1</div>
@@ -6446,7 +6988,6 @@
         <div class="mini-photo">봄 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         SPRING · OUR DAYS
@@ -6472,7 +7013,6 @@
         ← BACK
       </button>
 
-
       <div class="season-page-header">
 
         <div class="season-page-small">
@@ -6485,11 +7025,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         여름 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -6501,7 +7039,6 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
         <div class="mini-photo">여름 사진 1</div>
@@ -6510,7 +7047,6 @@
         <div class="mini-photo">여름 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         SUMMER · OUR BRIGHT DAYS
@@ -6536,7 +7072,6 @@
         ← BACK
       </button>
 
-
       <div class="season-page-header">
 
         <div class="season-page-small">
@@ -6549,11 +7084,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         가을 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -6565,7 +7098,6 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
         <div class="mini-photo">가을 사진 1</div>
@@ -6574,7 +7106,6 @@
         <div class="mini-photo">가을 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         AUTUMN · OUR PROMISE
@@ -6587,7 +7118,7 @@
 
 
   <!-- ========================================
-       RSVP MODAL
+       RSVP
   ======================================== -->
 
   <div
@@ -6688,7 +7219,6 @@
             성함
           </label>
 
-
           <input
             type="text"
             id="guestName"
@@ -6709,7 +7239,6 @@
           >
             총 참석 인원
           </label>
-
 
           <select
             id="guestCount"
@@ -6733,7 +7262,6 @@
           <div class="form-label">
             참석 여부
           </div>
-
 
           <div class="choice-row">
 
@@ -6796,7 +7324,7 @@
 
 
   <!-- ========================================
-       ACCOUNT MODAL
+       ACCOUNT
   ======================================== -->
 
   <div
@@ -6842,7 +7370,6 @@
         >
           신랑측
         </button>
-
 
         <button
           type="button"
@@ -7026,9 +7553,9 @@
 
 
 
-  <!-- ========================================
-       VIRTUAL GUESTBOOK MODAL
-  ======================================== -->
+  <!-- ==================================================
+       CHARACTER CUSTOMIZER
+  ================================================== -->
 
   <div
     class="modal"
@@ -7042,11 +7569,11 @@
         <div>
 
           <div class="modal-label">
-            VIRTUAL WEDDING
+            MY GUEST
           </div>
 
           <div class="modal-title">
-            작은 하객을 남겨주세요
+            나의 작은 하객 만들기
           </div>
 
         </div>
@@ -7064,6 +7591,39 @@
 
 
 
+      <div class="customizer-preview">
+
+        <div
+          class="person-avatar hair-bob hair-brown outfit-dress color-sage accessory-none"
+          id="customPreviewAvatar"
+        >
+
+          <span class="person-shadow"></span>
+
+          <span class="person-leg left"></span>
+          <span class="person-leg right"></span>
+
+          <span class="person-body"></span>
+
+          <span class="person-head"></span>
+          <span class="person-hair"></span>
+
+          <span class="person-eye left"></span>
+          <span class="person-eye right"></span>
+
+          <span class="person-accessory"></span>
+
+        </div>
+
+
+        <div class="preview-caption">
+          YOUR WEDDING GUEST
+        </div>
+
+      </div>
+
+
+
       <form id="hallGuestbookForm">
 
         <div class="form-section">
@@ -7074,7 +7634,6 @@
           >
             성함
           </label>
-
 
           <input
             type="text"
@@ -7089,174 +7648,281 @@
 
 
 
+        <!-- HAIR -->
+
         <div class="form-section">
 
           <div class="form-label">
-            하객 캐릭터
+            헤어
           </div>
 
 
-          <div class="guest-style-options">
+          <div
+            class="custom-options"
+            data-option-group="hair"
+          >
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="short"
+            >
+              숏
+            </button>
+
+            <button
+              type="button"
+              class="custom-option active"
+              data-option-value="bob"
+            >
+              단발
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="wave"
+            >
+              웨이브
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="long"
+            >
+              긴머리
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- HAIR COLOR -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            헤어 컬러
+          </div>
+
+
+          <div
+            class="custom-options"
+            data-option-group="hairColor"
+          >
+
+            <button
+              type="button"
+              class="swatch-option"
+              data-option-value="black"
+              aria-label="검정색 머리"
+            >
+              <span class="hair-black-swatch"></span>
+            </button>
 
 
             <button
               type="button"
-              class="guest-style-option active"
-              data-guest-style="sage"
+              class="swatch-option active"
+              data-option-value="brown"
+              aria-label="브라운 머리"
             >
-
-              <span class="person-avatar style-sage">
-
-                <span class="person-shadow"></span>
-
-                <span class="person-leg left"></span>
-                <span class="person-leg right"></span>
-
-                <span class="person-body"></span>
-
-                <span class="person-head"></span>
-
-                <span class="person-hair"></span>
-
-                <span class="person-eye left"></span>
-                <span class="person-eye right"></span>
-
-              </span>
-
-              <span class="guest-style-label">
-                Sage
-              </span>
-
+              <span class="hair-brown-swatch"></span>
             </button>
-
 
 
             <button
               type="button"
-              class="guest-style-option"
-              data-guest-style="pink"
+              class="swatch-option"
+              data-option-value="ash"
+              aria-label="애쉬 머리"
             >
-
-              <span class="person-avatar style-pink">
-
-                <span class="person-shadow"></span>
-
-                <span class="person-leg left"></span>
-                <span class="person-leg right"></span>
-
-                <span class="person-body"></span>
-
-                <span class="person-head"></span>
-
-                <span class="person-hair"></span>
-
-                <span class="person-eye left"></span>
-                <span class="person-eye right"></span>
-
-              </span>
-
-              <span class="guest-style-label">
-                Rose
-              </span>
-
+              <span class="hair-ash-swatch"></span>
             </button>
 
+          </div>
+
+        </div>
+
+
+
+        <!-- OUTFIT -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            의상
+          </div>
+
+
+          <div
+            class="custom-options"
+            data-option-group="outfit"
+          >
+
+            <button
+              type="button"
+              class="custom-option active"
+              data-option-value="dress"
+            >
+              Dress
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="suit"
+            >
+              Suit
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="jacket"
+            >
+              Jacket
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="knit"
+            >
+              Knit
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- OUTFIT COLOR -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            의상 컬러
+          </div>
+
+
+          <div
+            class="custom-options"
+            data-option-group="outfitColor"
+          >
+
+            <button
+              type="button"
+              class="swatch-option active"
+              data-option-value="sage"
+              aria-label="세이지"
+            >
+              <span class="sage-swatch"></span>
+            </button>
 
 
             <button
               type="button"
-              class="guest-style-option"
-              data-guest-style="navy"
+              class="swatch-option"
+              data-option-value="navy"
+              aria-label="네이비"
             >
-
-              <span class="person-avatar style-navy">
-
-                <span class="person-shadow"></span>
-
-                <span class="person-leg left"></span>
-                <span class="person-leg right"></span>
-
-                <span class="person-body"></span>
-
-                <span class="person-head"></span>
-
-                <span class="person-hair"></span>
-
-                <span class="person-eye left"></span>
-                <span class="person-eye right"></span>
-
-              </span>
-
-              <span class="guest-style-label">
-                Navy
-              </span>
-
+              <span class="navy-swatch"></span>
             </button>
-
 
 
             <button
               type="button"
-              class="guest-style-option"
-              data-guest-style="lilac"
+              class="swatch-option"
+              data-option-value="rose"
+              aria-label="로즈"
             >
-
-              <span class="person-avatar style-lilac">
-
-                <span class="person-shadow"></span>
-
-                <span class="person-leg left"></span>
-                <span class="person-leg right"></span>
-
-                <span class="person-body"></span>
-
-                <span class="person-head"></span>
-
-                <span class="person-hair"></span>
-
-                <span class="person-eye left"></span>
-                <span class="person-eye right"></span>
-
-              </span>
-
-              <span class="guest-style-label">
-                Lilac
-              </span>
-
+              <span class="rose-swatch"></span>
             </button>
-
 
 
             <button
               type="button"
-              class="guest-style-option"
-              data-guest-style="ivory"
+              class="swatch-option"
+              data-option-value="lilac"
+              aria-label="라일락"
             >
-
-              <span class="person-avatar style-ivory">
-
-                <span class="person-shadow"></span>
-
-                <span class="person-leg left"></span>
-                <span class="person-leg right"></span>
-
-                <span class="person-body"></span>
-
-                <span class="person-head"></span>
-
-                <span class="person-hair"></span>
-
-                <span class="person-eye left"></span>
-                <span class="person-eye right"></span>
-
-              </span>
-
-              <span class="guest-style-label">
-                Ivory
-              </span>
-
+              <span class="lilac-swatch"></span>
             </button>
 
+
+            <button
+              type="button"
+              class="swatch-option"
+              data-option-value="beige"
+              aria-label="베이지"
+            >
+              <span class="beige-swatch"></span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ACCESSORY -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            액세서리
+          </div>
+
+
+          <div
+            class="custom-options"
+            data-option-group="accessory"
+          >
+
+            <button
+              type="button"
+              class="custom-option active"
+              data-option-value="none"
+            >
+              없음
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="glasses"
+            >
+              안경
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="bow"
+            >
+              리본
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="bouquet"
+            >
+              꽃다발
+            </button>
+
+            <button
+              type="button"
+              class="custom-option"
+              data-option-value="heartpin"
+            >
+              하트핀
+            </button>
 
           </div>
 
@@ -7273,7 +7939,6 @@
             축하 한마디
           </label>
 
-
           <textarea
             id="hallGuestMessage"
             class="textarea-input"
@@ -7289,7 +7954,7 @@
           type="submit"
           class="submit-button"
         >
-          웨딩홀에 입장하기
+          이 모습으로 입장하기
         </button>
 
       </form>
@@ -7300,9 +7965,7 @@
 
 
 
-  <!-- ========================================
-       TOAST
-  ======================================== -->
+  <!-- TOAST -->
 
   <div
     class="toast"
@@ -7312,10 +7975,6 @@
   </div>
 
 
-
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
 
   <footer>
 
@@ -7329,14 +7988,14 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        JAVASCRIPT
-  ======================================== -->
+  ================================================== -->
 
   <script>
 
     /* ========================================
-       START TOP
+       START AT TOP
     ======================================== */
 
     if (
@@ -7381,7 +8040,7 @@
 
 
     /* ========================================
-       SNOW MAKER
+       SNOW
     ======================================== */
 
     function createSnow(
@@ -7437,18 +8096,6 @@
           );
 
 
-        const duration =
-          minDuration
-          +
-          Math.random()
-          *
-          (
-            maxDuration
-            -
-            minDuration
-          );
-
-
         snow.style.setProperty(
           "--x",
           Math.random()
@@ -7469,7 +8116,17 @@
 
         snow.style.setProperty(
           "--duration",
-          duration
+          (
+            minDuration
+            +
+            Math.random()
+            *
+            (
+              maxDuration
+              -
+              minDuration
+            )
+          )
           +
           "s"
         );
@@ -7487,13 +8144,11 @@
 
         snow.style.setProperty(
           "--opacity",
-          (
-            0.62
-            +
-            Math.random()
-            *
-            0.35
-          )
+          0.62
+          +
+          Math.random()
+          *
+          0.35
         );
 
 
@@ -7532,7 +8187,6 @@
       }
 
     }
-
 
 
     createSnow(
@@ -7629,7 +8283,6 @@
     }
 
 
-
     document
       .getElementById(
         "openingSkip"
@@ -7648,7 +8301,7 @@
 
 
     /* ========================================
-       WEDDING INFO SHORTCUT
+       WEDDING SHORTCUT
     ======================================== */
 
     document
@@ -7670,10 +8323,8 @@
                   "wedding"
                 )
                 .scrollIntoView({
-
                   behavior:
                     "smooth"
-
                 });
 
             },
@@ -7688,12 +8339,6 @@
     /* ========================================
        REVEAL
     ======================================== */
-
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
-
 
     const revealObserver =
       new IntersectionObserver(
@@ -7731,22 +8376,26 @@
       );
 
 
-    revealElements.forEach(
-      function (
-        element
-      ) {
-
-        revealObserver.observe(
+    document
+      .querySelectorAll(
+        ".reveal"
+      )
+      .forEach(
+        function (
           element
-        );
+        ) {
 
-      }
-    );
+          revealObserver.observe(
+            element
+          );
+
+        }
+      );
 
 
 
     /* ========================================
-       SEASON DETAILS
+       SEASONS
     ======================================== */
 
     document
@@ -7856,7 +8505,7 @@
 
 
     /* ========================================
-       MODALS
+       MODAL
     ======================================== */
 
     const rsvpModal =
@@ -7907,7 +8556,6 @@
       );
 
     }
-
 
 
     document
@@ -7984,38 +8632,6 @@
       );
 
 
-    document
-      .querySelectorAll(
-        ".modal"
-      )
-      .forEach(
-        function (
-          modal
-        ) {
-
-          modal.addEventListener(
-            "click",
-            function (
-              event
-            ) {
-
-              if (
-                event.target === modal
-              ) {
-
-                closeModal(
-                  modal
-                );
-
-              }
-
-            }
-          );
-
-        }
-      );
-
-
 
     /* ========================================
        RSVP
@@ -8034,16 +8650,14 @@
           event.preventDefault();
 
 
-          const name =
-            document
+          if (
+            !document
               .getElementById(
                 "guestName"
               )
               .value
-              .trim();
-
-
-          if (!name) {
+              .trim()
+          ) {
 
             alert(
               "성함을 입력해주세요."
@@ -8064,7 +8678,7 @@
 
 
     /* ========================================
-       ACCOUNT TABS
+       ACCOUNT
     ======================================== */
 
     document
@@ -8103,10 +8717,10 @@
                 )
                 .forEach(
                   function (
-                    group
+                    item
                   ) {
 
-                    group.classList.remove(
+                    item.classList.remove(
                       "active"
                     );
 
@@ -8138,10 +8752,6 @@
 
 
 
-    /* ========================================
-       COPY ACCOUNT
-    ======================================== */
-
     const toast =
       document.getElementById(
         "toast"
@@ -8152,11 +8762,11 @@
 
 
     function showToast(
-      message
+      text
     ) {
 
       toast.textContent =
-        message;
+        text;
 
 
       toast.classList.add(
@@ -8211,42 +8821,30 @@
         error
       ) {
 
-        const textarea =
+        const input =
           document.createElement(
             "textarea"
           );
 
 
-        textarea.value =
+        input.value =
           text;
 
 
-        textarea.setAttribute(
-          "readonly",
-          ""
-        );
-
-
-        textarea.style.position =
+        input.style.position =
           "fixed";
 
 
-        textarea.style.opacity =
+        input.style.opacity =
           "0";
 
 
         document.body.appendChild(
-          textarea
+          input
         );
 
 
-        textarea.select();
-
-
-        textarea.setSelectionRange(
-          0,
-          textarea.value.length
-        );
+        input.select();
 
 
         document.execCommand(
@@ -8254,9 +8852,7 @@
         );
 
 
-        document.body.removeChild(
-          textarea
-        );
+        input.remove();
 
       }
 
@@ -8266,7 +8862,6 @@
       );
 
     }
-
 
 
     document
@@ -8339,9 +8934,157 @@
 
 
 
-    /* ========================================
+    /* ==================================================
+       CHARACTER CUSTOMIZER
+    ================================================== */
+
+    const customState = {
+
+      hair:
+        "bob",
+
+      hairColor:
+        "brown",
+
+      outfit:
+        "dress",
+
+      outfitColor:
+        "sage",
+
+      accessory:
+        "none"
+
+    };
+
+
+    const previewAvatar =
+      document.getElementById(
+        "customPreviewAvatar"
+      );
+
+
+    const playerAvatar =
+      document.getElementById(
+        "playerAvatar"
+      );
+
+
+
+    function characterClass(
+      data
+    ) {
+
+      return [
+        "person-avatar",
+
+        "hair-"
+        +
+        data.hair,
+
+        "hair-"
+        +
+        data.hairColor,
+
+        "outfit-"
+        +
+        data.outfit,
+
+        "color-"
+        +
+        data.outfitColor,
+
+        "accessory-"
+        +
+        data.accessory
+
+      ].join(
+        " "
+      );
+
+    }
+
+
+
+    function updatePreview() {
+
+      previewAvatar.className =
+        characterClass(
+          customState
+        );
+
+    }
+
+
+
+    document
+      .querySelectorAll(
+        "[data-option-group]"
+      )
+      .forEach(
+        function (
+          group
+        ) {
+
+          group
+            .querySelectorAll(
+              "[data-option-value]"
+            )
+            .forEach(
+              function (
+                button
+              ) {
+
+                button.addEventListener(
+                  "click",
+                  function () {
+
+                    const key =
+                      group.dataset.optionGroup;
+
+
+                    customState[key] =
+                      button.dataset.optionValue;
+
+
+                    group
+                      .querySelectorAll(
+                        "[data-option-value]"
+                      )
+                      .forEach(
+                        function (
+                          item
+                        ) {
+
+                          item.classList.remove(
+                            "active"
+                          );
+
+                        }
+                      );
+
+
+                    button.classList.add(
+                      "active"
+                    );
+
+
+                    updatePreview();
+
+                  }
+                );
+
+              }
+            );
+
+        }
+      );
+
+
+
+    /* ==================================================
        VIRTUAL WEDDING
-    ======================================== */
+    ================================================== */
 
     const virtualWedding =
       document.getElementById(
@@ -8367,33 +9110,21 @@
       );
 
 
-    const playerAvatar =
-      document.getElementById(
-        "playerAvatar"
-      );
-
-
-    const hallMessageCard =
-      document.getElementById(
-        "hallMessageCard"
-      );
-
-
     const WORLD_WIDTH =
-      920;
+      1000;
 
 
     const WORLD_HEIGHT =
-      620;
+      680;
 
 
 
     let playerX =
-      460;
+      500;
 
 
     let playerY =
-      565;
+      625;
 
 
     let cameraX =
@@ -8444,22 +9175,14 @@
 
 
 
-    function getCameraBounds() {
-
-      const width =
-        virtualViewport.clientWidth;
-
-
-      const height =
-        virtualViewport.clientHeight;
-
+    function cameraBounds() {
 
       return {
 
         minX:
           Math.min(
             0,
-            width
+            virtualViewport.clientWidth
             -
             WORLD_WIDTH
           ),
@@ -8470,7 +9193,7 @@
         minY:
           Math.min(
             0,
-            height
+            virtualViewport.clientHeight
             -
             WORLD_HEIGHT
           ),
@@ -8487,7 +9210,7 @@
     function applyCamera() {
 
       const bounds =
-        getCameraBounds();
+        cameraBounds();
 
 
       cameraX =
@@ -8534,7 +9257,7 @@
       cameraY =
         virtualViewport.clientHeight
         *
-        0.62
+        0.65
         -
         playerY;
 
@@ -8550,23 +9273,22 @@
       targetY
     ) {
 
+      hideBubble();
+
+
       targetX =
         clamp(
           targetX,
-          80,
-          WORLD_WIDTH
-          -
-          80
+          70,
+          WORLD_WIDTH - 70
         );
 
 
       targetY =
         clamp(
           targetY,
-          225,
-          WORLD_HEIGHT
-          -
-          25
+          245,
+          WORLD_HEIGHT - 15
         );
 
 
@@ -8611,15 +9333,13 @@
 
       const duration =
         clamp(
-          distance
-          *
-          2.2,
+          distance * 2.1,
           240,
-          1000
+          950
         );
 
 
-      const startTime =
+      const start =
         performance.now();
 
 
@@ -8635,9 +9355,7 @@
         const progress =
           Math.min(
             (
-              time
-              -
-              startTime
+              time - start
             )
             /
             duration,
@@ -8649,9 +9367,7 @@
           1
           -
           Math.pow(
-            1
-            -
-            progress,
+            1 - progress,
             3
           );
 
@@ -8659,17 +9375,13 @@
         playerX =
           startX
           +
-          dx
-          *
-          eased;
+          dx * eased;
 
 
         playerY =
           startY
           +
-          dy
-          *
-          eased;
+          dy * eased;
 
 
         placePlayer();
@@ -8679,9 +9391,7 @@
 
 
         if (
-          progress
-          <
-          1
+          progress < 1
         ) {
 
           playerAnimation =
@@ -8691,13 +9401,13 @@
 
         } else {
 
+          playerAnimation =
+            null;
+
+
           playerCharacter.classList.remove(
             "walking"
           );
-
-
-          playerAnimation =
-            null;
 
         }
 
@@ -8729,11 +9439,7 @@
 
 
       setTimeout(
-        function () {
-
-          centerCameraOnPlayer();
-
-        },
+        centerCameraOnPlayer,
         20
       );
 
@@ -8751,6 +9457,9 @@
       document.body.classList.remove(
         "virtual-open"
       );
+
+
+      hideBubble();
 
     }
 
@@ -8777,32 +9486,32 @@
 
 
 
-    /* ========================================
-       DRAG TO PAN + TAP TO MOVE
-    ======================================== */
+    /* ==================================================
+       DRAG & TAP
+    ================================================== */
 
     let pointerDown =
       false;
 
 
-    let pointerStartX =
-      0;
-
-
-    let pointerStartY =
-      0;
-
-
-    let cameraStartX =
-      0;
-
-
-    let cameraStartY =
-      0;
-
-
-    let wasDragged =
+    let dragged =
       false;
+
+
+    let startPointerX =
+      0;
+
+
+    let startPointerY =
+      0;
+
+
+    let startCameraX =
+      0;
+
+
+    let startCameraY =
+      0;
 
 
 
@@ -8816,10 +9525,6 @@
           event.target.closest(
             "button"
           )
-          ||
-          event.target.closest(
-            ".hall-message-card"
-          )
         ) {
 
           return;
@@ -8831,23 +9536,23 @@
           true;
 
 
-        wasDragged =
+        dragged =
           false;
 
 
-        pointerStartX =
+        startPointerX =
           event.clientX;
 
 
-        pointerStartY =
+        startPointerY =
           event.clientY;
 
 
-        cameraStartX =
+        startCameraX =
           cameraX;
 
 
-        cameraStartY =
+        startCameraY =
           cameraY;
 
 
@@ -8871,55 +9576,47 @@
         event
       ) {
 
-        if (
-          !pointerDown
-        ) {
-
+        if (!pointerDown) {
           return;
-
         }
 
 
         const dx =
           event.clientX
           -
-          pointerStartX;
+          startPointerX;
 
 
         const dy =
           event.clientY
           -
-          pointerStartY;
+          startPointerY;
 
 
         if (
-          Math.abs(dx)
-          >
-          7
+          Math.abs(dx) > 7
           ||
-          Math.abs(dy)
-          >
-          7
+          Math.abs(dy) > 7
         ) {
 
-          wasDragged =
+          dragged =
             true;
 
         }
 
 
         if (
-          wasDragged
+          dragged
         ) {
 
           cameraX =
-            cameraStartX
+            startCameraX
             +
             dx;
 
 
           cameraY =
-            cameraStartY
+            startCameraY
             +
             dy;
 
@@ -8939,12 +9636,8 @@
         event
       ) {
 
-        if (
-          !pointerDown
-        ) {
-
+        if (!pointerDown) {
           return;
-
         }
 
 
@@ -8958,7 +9651,7 @@
 
 
         if (
-          !wasDragged
+          !dragged
           &&
           !event.target.closest(
             "button"
@@ -8966,7 +9659,8 @@
         ) {
 
           const rect =
-            virtualViewport.getBoundingClientRect();
+            virtualViewport
+              .getBoundingClientRect();
 
 
           const worldX =
@@ -8997,26 +9691,9 @@
 
 
 
-    virtualViewport.addEventListener(
-      "pointercancel",
-      function () {
-
-        pointerDown =
-          false;
-
-
-        virtualViewport.classList.remove(
-          "dragging"
-        );
-
-      }
-    );
-
-
-
-    /* ========================================
+    /* ==================================================
        D-PAD
-    ======================================== */
+    ================================================== */
 
     document
       .querySelectorAll(
@@ -9031,30 +9708,24 @@
             "click",
             function () {
 
-              const x =
+              movePlayerTo(
+
+                playerX
+                +
                 Number(
                   button.dataset.moveX
                   ||
                   0
-                );
+                ),
 
-
-              const y =
+                playerY
+                +
                 Number(
                   button.dataset.moveY
                   ||
                   0
-                );
+                )
 
-
-              movePlayerTo(
-                playerX
-                +
-                x,
-
-                playerY
-                +
-                y
               );
 
             }
@@ -9065,16 +9736,15 @@
 
 
 
-    /* ========================================
-       HALL GUESTBOOK STORAGE
-    ======================================== */
+    /* ==================================================
+       GUEST STORAGE
+    ================================================== */
 
     const hallStorageKey =
-      "gahyun-jinchan-virtual-wedding-guests";
+      "gahyun-jinchan-virtual-guests-v2";
 
 
-    let hallGuests =
-      [];
+    let hallGuests = [];
 
 
     try {
@@ -9092,66 +9762,39 @@
       error
     ) {
 
-      hallGuests =
-        [];
+      hallGuests = [];
 
     }
-
-
-
-    let selectedGuestStyle =
-      "sage";
 
 
 
     const guestPositions = [
 
-      [325, 305],
-      [595, 305],
+      [330,330],
+      [670,330],
 
-      [323, 378],
-      [597, 378],
+      [330,408],
+      [670,408],
 
-      [325, 452],
-      [595, 452],
+      [330,487],
+      [670,487],
 
-      [330, 530],
-      [590, 530],
+      [335,565],
+      [665,565],
 
-      [150, 380],
-      [770, 380],
+      [170,380],
+      [830,380],
 
-      [145, 485],
-      [775, 485],
+      [165,490],
+      [835,490],
 
-      [375, 575],
-      [545, 575],
+      [400,620],
+      [600,620],
 
-      [265, 570],
-      [655, 570]
+      [275,620],
+      [725,620]
 
     ];
-
-
-
-    function avatarMarkup(
-      style
-    ) {
-
-      return `
-        <span class="person-avatar style-${style}">
-          <span class="person-shadow"></span>
-          <span class="person-leg left"></span>
-          <span class="person-leg right"></span>
-          <span class="person-body"></span>
-          <span class="person-head"></span>
-          <span class="person-hair"></span>
-          <span class="person-eye left"></span>
-          <span class="person-eye right"></span>
-        </span>
-      `;
-
-    }
 
 
 
@@ -9175,39 +9818,184 @@
 
 
 
-    function showHallMessage(
+    function avatarMarkup(
       guest
     ) {
 
-      hallMessageCard.innerHTML =
-        `
-          <span class="hall-message-name">
-            ${escapeHTML(guest.name)}
-          </span>
+      return `
+        <span class="${characterClass(guest)}">
+          <span class="person-shadow"></span>
 
-          ${escapeHTML(guest.message)}
-        `;
+          <span class="person-leg left"></span>
+          <span class="person-leg right"></span>
+
+          <span class="person-body"></span>
+
+          <span class="person-head"></span>
+          <span class="person-hair"></span>
+
+          <span class="person-eye left"></span>
+          <span class="person-eye right"></span>
+
+          <span class="person-accessory"></span>
+        </span>
+      `;
+
+    }
 
 
-      hallMessageCard.classList.remove(
-        "hidden"
+
+    /* ==================================================
+       BUBBLE
+    ================================================== */
+
+    const bubble =
+      document.getElementById(
+        "guestSpeechBubble"
       );
 
 
-      setTimeout(
-        function () {
+    function formatGuestDate(
+      timestamp
+    ) {
 
-          hallMessageCard.classList.add(
-            "hidden"
-          );
+      const date =
+        new Date(
+          timestamp
+        );
 
-        },
-        4500
+
+      const year =
+        date.getFullYear();
+
+
+      const month =
+        String(
+          date.getMonth() + 1
+        )
+        .padStart(
+          2,
+          "0"
+        );
+
+
+      const day =
+        String(
+          date.getDate()
+        )
+        .padStart(
+          2,
+          "0"
+        );
+
+
+      return (
+        year
+        +
+        "."
+        +
+        month
+        +
+        "."
+        +
+        day
       );
 
     }
 
 
+
+    function showBubble(
+      guest,
+      x,
+      y
+    ) {
+
+      document
+        .getElementById(
+          "bubbleName"
+        )
+        .textContent =
+        guest.name;
+
+
+      document
+        .getElementById(
+          "bubbleMessage"
+        )
+        .textContent =
+        guest.message;
+
+
+      document
+        .getElementById(
+          "bubbleDate"
+        )
+        .textContent =
+        formatGuestDate(
+          guest.createdAt
+        );
+
+
+      bubble.style.left =
+        clamp(
+          x,
+          145,
+          WORLD_WIDTH - 145
+        )
+        +
+        "px";
+
+
+      bubble.style.top =
+        Math.max(
+          185,
+          y - 80
+        )
+        +
+        "px";
+
+
+      bubble.classList.remove(
+        "hidden"
+      );
+
+    }
+
+
+
+    function hideBubble() {
+
+      bubble.classList.add(
+        "hidden"
+      );
+
+    }
+
+
+    document
+      .getElementById(
+        "bubbleClose"
+      )
+      .addEventListener(
+        "click",
+        function (
+          event
+        ) {
+
+          event.stopPropagation();
+
+
+          hideBubble();
+
+        }
+      );
+
+
+
+    /* ==================================================
+       RENDER GUESTS
+    ================================================== */
 
     function renderHallGuests() {
 
@@ -9222,9 +10010,7 @@
 
 
       hallGuests
-        .slice(
-          -16
-        )
+        .slice(-16)
         .forEach(
           function (
             guest,
@@ -9267,7 +10053,7 @@
 
             button.innerHTML =
               avatarMarkup(
-                guest.style
+                guest
               )
               +
               `
@@ -9286,8 +10072,14 @@
                 event.stopPropagation();
 
 
-                showHallMessage(
-                  guest
+                showBubble(
+
+                  guest,
+
+                  position[0],
+
+                  position[1]
+
                 );
 
               }
@@ -9304,64 +10096,13 @@
     }
 
 
-
     renderHallGuests();
 
 
 
-    /* ========================================
-       GUEST STYLE SELECT
-    ======================================== */
-
-    document
-      .querySelectorAll(
-        ".guest-style-option"
-      )
-      .forEach(
-        function (
-          option
-        ) {
-
-          option.addEventListener(
-            "click",
-            function () {
-
-              document
-                .querySelectorAll(
-                  ".guest-style-option"
-                )
-                .forEach(
-                  function (
-                    item
-                  ) {
-
-                    item.classList.remove(
-                      "active"
-                    );
-
-                  }
-                );
-
-
-              option.classList.add(
-                "active"
-              );
-
-
-              selectedGuestStyle =
-                option.dataset.guestStyle;
-
-            }
-          );
-
-        }
-      );
-
-
-
-    /* ========================================
-       ADD VIRTUAL GUEST
-    ======================================== */
+    /* ==================================================
+       SUBMIT GUEST
+    ================================================== */
 
     document
       .getElementById(
@@ -9409,7 +10150,7 @@
           }
 
 
-          const entry = {
+          const newGuest = {
 
             name:
               name,
@@ -9417,8 +10158,20 @@
             message:
               message,
 
-            style:
-              selectedGuestStyle,
+            hair:
+              customState.hair,
+
+            hairColor:
+              customState.hairColor,
+
+            outfit:
+              customState.outfit,
+
+            outfitColor:
+              customState.outfitColor,
+
+            accessory:
+              customState.accessory,
 
             createdAt:
               Date.now()
@@ -9427,7 +10180,7 @@
 
 
           hallGuests.push(
-            entry
+            newGuest
           );
 
 
@@ -9451,9 +10204,14 @@
 
 
           playerAvatar.className =
-            "person-avatar style-"
-            +
-            selectedGuestStyle;
+            characterClass(
+              newGuest
+            );
+
+
+          closeModal(
+            hallGuestbookModal
+          );
 
 
           document
@@ -9463,49 +10221,38 @@
             .reset();
 
 
-          document
-            .querySelectorAll(
-              ".guest-style-option"
-            )
-            .forEach(
-              function (
-                item
-              ) {
-
-                item.classList.remove(
-                  "active"
-                );
-
-              }
-            );
-
-
-          document
-            .querySelector(
-              '[data-guest-style="sage"]'
-            )
-            .classList
-            .add(
-              "active"
-            );
-
-
-          selectedGuestStyle =
-            "sage";
-
-
-          closeModal(
-            hallGuestbookModal
-          );
-
-
-          showHallMessage(
-            entry
-          );
-
-
           showToast(
-            "작은 하객 캐릭터가 웨딩홀에 입장했어요."
+            "나의 작은 하객이 웨딩홀에 입장했어요."
+          );
+
+
+          const position =
+            guestPositions[
+              (
+                hallGuests.length
+                -
+                1
+              )
+              %
+              guestPositions.length
+            ];
+
+
+          setTimeout(
+            function () {
+
+              showBubble(
+
+                newGuest,
+
+                position[0],
+
+                position[1]
+
+              );
+
+            },
+            350
           );
 
         }
@@ -9522,9 +10269,11 @@
       function () {
 
         if (
-          virtualWedding.classList.contains(
-            "active"
-          )
+          virtualWedding
+            .classList
+            .contains(
+              "active"
+            )
         ) {
 
           applyCamera();
@@ -9557,18 +10306,18 @@
         }
 
 
-        const activeModal =
+        const modal =
           document.querySelector(
             ".modal.active"
           );
 
 
         if (
-          activeModal
+          modal
         ) {
 
           closeModal(
-            activeModal
+            modal
           );
 
           return;
@@ -9577,9 +10326,24 @@
 
 
         if (
-          virtualWedding.classList.contains(
-            "active"
+          !bubble.classList.contains(
+            "hidden"
           )
+        ) {
+
+          hideBubble();
+
+          return;
+
+        }
+
+
+        if (
+          virtualWedding
+            .classList
+            .contains(
+              "active"
+            )
         ) {
 
           closeVirtualWedding();
@@ -9589,17 +10353,17 @@
         }
 
 
-        const activeSeason =
+        const season =
           document.querySelector(
             ".season-page.active"
           );
 
 
         if (
-          activeSeason
+          season
         ) {
 
-          activeSeason.classList.remove(
+          season.classList.remove(
             "active"
           );
 
