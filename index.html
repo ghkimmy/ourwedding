@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Gahyun & Jinchan | Our Wedding</title>
 
   <style>
+
+    /* ========================================
+       BASIC
+    ======================================== */
+
     * {
       box-sizing: border-box;
     }
@@ -17,56 +27,28 @@
 
     body {
       margin: 0;
+
       background: #f7f6f2;
-      color: #2d2d2d;
+      color: #292929;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Pretendard",
         "Noto Sans KR",
         sans-serif;
+
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* --------------------------------
-       상단 고정 버튼
-    -------------------------------- */
-
-    .wedding-info-shortcut {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      z-index: 100;
-
-      padding: 10px 15px;
-
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(0,0,0,0.12);
-      border-radius: 30px;
-
-      backdrop-filter: blur(10px);
-
-      font-size: 11px;
-      letter-spacing: 1px;
-
-      cursor: pointer;
-    }
-
-    /* --------------------------------
-       기본 레이아웃
-    -------------------------------- */
-
-    section {
-      padding: 70px 22px;
+    button {
+      font-family: inherit;
     }
 
     .inner {
       width: 100%;
       max-width: 540px;
+
       margin: 0 auto;
     }
 
@@ -74,9 +56,45 @@
       text-align: center;
     }
 
-    /* --------------------------------
-       INTRO
-    -------------------------------- */
+
+
+    /* ========================================
+       WEDDING INFO SHORTCUT
+    ======================================== */
+
+    .wedding-info-shortcut {
+      position: fixed;
+
+      top: 18px;
+      right: 18px;
+
+      z-index: 500;
+
+      padding: 10px 15px;
+
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.82);
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      color: #444;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10px;
+
+      letter-spacing: 1.2px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       MAIN / INTRO
+    ======================================== */
 
     .intro {
       min-height: 100vh;
@@ -84,161 +102,241 @@
       display: flex;
       align-items: center;
 
-      background: #f8f7f3;
+      padding: 80px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f4f6f8 0%,
+          #faf9f6 55%,
+          #f7f5f0 100%
+        );
     }
 
     .intro-label {
       text-align: center;
 
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 12px;
+
+      font-size: 10px;
+
       letter-spacing: 4px;
 
-      color: #888;
+      color: #828282;
     }
 
     .names {
-      margin-top: 18px;
+      margin: 25px 0 0;
 
       text-align: center;
 
       font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 39px;
       font-weight: 400;
 
-      font-size: 36px;
-      line-height: 1.25;
+      line-height: 1.15;
+
+      letter-spacing: -0.5px;
     }
 
-    .intro-description {
-      margin-top: 22px;
+    .intro-date {
+      margin-top: 20px;
 
       text-align: center;
 
-      color: #777;
+      font-family: Georgia, "Times New Roman", serif;
 
       font-size: 13px;
-      line-height: 1.9;
+
+      letter-spacing: 2.5px;
+
+      color: #555;
     }
 
-    /* --------------------------------
-       계절 4개
-    -------------------------------- */
+    .intro-description {
+      margin-top: 42px;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #666;
+    }
+
+
+
+    /* ========================================
+       FOUR SEASONS GRID
+    ======================================== */
 
     .season-grid {
-      margin-top: 45px;
-
       display: grid;
+
       grid-template-columns: 1fr 1fr;
-      gap: 9px;
+
+      gap: 8px;
+
+      margin-top: 48px;
     }
 
     .season-card {
       position: relative;
 
+      width: 100%;
+
       aspect-ratio: 4 / 5;
+
+      margin: 0;
+      padding: 0;
+
+      border: 0;
 
       overflow: hidden;
 
-      background: #e8e8e8;
+      appearance: none;
 
       cursor: pointer;
+
+      text-align: left;
+
+      background: #e8e8e8;
     }
 
     .season-image {
       position: absolute;
+
       inset: 0;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      color: rgba(0,0,0,0.35);
-      font-size: 12px;
+      color: rgba(0, 0, 0, 0.35);
 
-      transition: transform 0.5s ease;
+      font-size: 11px;
+
+      transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
     }
 
     .season-card:hover .season-image {
-      transform: scale(1.03);
+      transform: scale(1.025);
     }
 
-    /* 나중에 실제 사진 넣으면 이 배경색들은 사라짐 */
+    /*
+      실제 사진을 넣기 전 임시 배경색
+    */
 
     .winter .season-image {
-      background: #dfe4e7;
+      background: #dce3e7;
     }
 
     .spring .season-image {
-      background: #e9e6dd;
+      background: #e9e5dc;
     }
 
     .summer .season-image {
-      background: #e7e1d3;
+      background: #e6dfd0;
     }
 
     .autumn .season-image {
-      background: #ddd7cf;
+      background: #dcd3ca;
     }
 
     .season-overlay {
       position: absolute;
+
       inset: 0;
 
       display: flex;
+
       flex-direction: column;
       justify-content: flex-end;
 
-      padding: 18px;
+      padding: 17px;
 
       color: white;
 
       background:
         linear-gradient(
-          transparent 45%,
-          rgba(0,0,0,0.42)
+          180deg,
+          transparent 35%,
+          rgba(0, 0, 0, 0.48) 100%
         );
     }
 
     .season-eng {
-      font-family: Georgia, serif;
-      letter-spacing: 2px;
+      font-family: Georgia, "Times New Roman", serif;
+
       font-size: 17px;
+
+      letter-spacing: 2px;
     }
 
     .season-kor {
-      margin-top: 6px;
+      margin-top: 5px;
+
       font-size: 11px;
-      opacity: 0.9;
+
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .season-click {
+      margin-top: 7px;
+
+      font-size: 9px;
+
+      letter-spacing: 1px;
+
+      color: rgba(255, 255, 255, 0.72);
     }
 
     .story-hint {
-      margin-top: 25px;
+      margin-top: 24px;
 
       text-align: center;
 
-      font-size: 11px;
-      color: #aaa;
+      font-family: Georgia, "Times New Roman", serif;
 
-      letter-spacing: 1px;
+      font-size: 9px;
+
+      letter-spacing: 2.5px;
+
+      color: #aaa;
     }
 
-    /* --------------------------------
-       다시 겨울
-    -------------------------------- */
+
+
+    /* ========================================
+       WINTER AGAIN
+    ======================================== */
 
     .winter-again {
-      min-height: 85vh;
+      min-height: 88vh;
 
       display: flex;
       align-items: center;
 
-      background: #e8ecef;
+      padding: 90px 24px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #e9edf0,
+          #f5f5f3
+        );
     }
 
     .again-small {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: 12px;
+      font-size: 10px;
+
       letter-spacing: 4px;
 
       color: #888;
@@ -248,164 +346,190 @@
       margin: 20px 0 0;
 
       font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 43px;
       font-weight: 400;
 
-      font-size: 42px;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
-    .wedding-date {
+    .again-date {
       margin-top: 30px;
 
-      font-family: Georgia, serif;
-      font-size: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 16px;
+
       letter-spacing: 2px;
     }
 
     .again-text {
-      margin-top: 30px;
+      margin-top: 35px;
 
-      font-size: 14px;
-      line-height: 2;
+      font-size: 13px;
+
+      line-height: 2.1;
 
       color: #666;
     }
 
     .fill-winter {
-      margin-top: 38px;
+      margin-top: 42px;
 
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
 
       font-size: 22px;
+
       line-height: 1.7;
     }
 
-    /* --------------------------------
+
+
+    /* ========================================
        INVITATION
-    -------------------------------- */
+    ======================================== */
 
     .invitation {
+      padding: 100px 24px;
+
       background: white;
-      padding-top: 90px;
-      padding-bottom: 90px;
     }
 
     .section-label {
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 10px;
+
       letter-spacing: 4px;
-      font-size: 11px;
 
       color: #999;
     }
 
-    .invitation h2 {
-      margin-top: 20px;
+    .invitation-title {
+      margin-top: 22px;
 
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 29px;
       font-weight: 400;
-      font-size: 30px;
     }
 
     .invitation-text {
-      margin-top: 30px;
+      margin-top: 38px;
 
-      font-size: 14px;
+      font-size: 13px;
+
       line-height: 2.2;
 
       color: #666;
     }
 
-    /* --------------------------------
-       Wedding Day
-    -------------------------------- */
+
+
+    /* ========================================
+       WEDDING INFO
+    ======================================== */
 
     .wedding-info {
-      background: #f5f3ee;
+      padding: 95px 24px;
+
+      background: #f4f2ed;
     }
 
     .wedding-date-big {
-      margin-top: 18px;
+      margin-top: 22px;
 
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
 
       font-size: 32px;
-      font-weight: 400;
     }
 
     .wedding-time {
-      margin-top: 10px;
+      margin-top: 9px;
+
+      font-size: 12px;
+
+      letter-spacing: 1.5px;
 
       color: #777;
-
-      font-size: 13px;
-      letter-spacing: 1px;
     }
 
     .venue {
-      margin-top: 38px;
+      margin-top: 40px;
 
       padding: 30px 0;
 
-      border-top: 1px solid #d7d5d0;
-      border-bottom: 1px solid #d7d5d0;
+      border-top: 1px solid #d5d2cc;
+      border-bottom: 1px solid #d5d2cc;
 
       line-height: 2;
     }
 
     .venue-name {
-      font-size: 17px;
+      font-size: 16px;
+
       font-weight: 600;
     }
 
     .venue-address {
-      margin-top: 6px;
+      margin-top: 5px;
+
+      font-size: 12px;
+
       color: #777;
-      font-size: 13px;
     }
 
     .button-grid {
-      margin-top: 25px;
-
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
-      gap: 10px;
+      gap: 9px;
+
+      margin-top: 27px;
     }
 
-    .button {
-      padding: 14px 10px;
+    .basic-button {
+      min-height: 48px;
 
-      border: 1px solid #ccc;
+      border: 1px solid #cac7c1;
       border-radius: 4px;
 
       background: transparent;
 
-      font-size: 13px;
+      color: #444;
+
+      font-size: 12px;
 
       cursor: pointer;
     }
 
-    /* --------------------------------
-       Guest Snap
-    -------------------------------- */
+
+
+    /* ========================================
+       GUEST SNAP
+    ======================================== */
 
     .guest-snap {
-      background: #e8ecef;
+      padding: 100px 24px;
+
+      background: #e9edf0;
     }
 
     .guest-title {
-      margin-top: 18px;
+      margin-top: 20px;
 
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif;
 
       font-size: 34px;
       font-weight: 400;
     }
 
     .guest-text {
-      margin-top: 25px;
+      margin-top: 28px;
 
-      font-size: 14px;
+      font-size: 13px;
+
       line-height: 2;
 
       color: #666;
@@ -414,50 +538,232 @@
     .guest-button {
       width: 100%;
 
-      margin-top: 30px;
+      min-height: 54px;
 
-      padding: 17px;
+      margin-top: 32px;
 
-      border: none;
+      border: 0;
 
       background: #333;
+
       color: white;
 
-      cursor: pointer;
+      font-size: 12px;
 
-      font-size: 13px;
+      letter-spacing: 0.5px;
+
+      cursor: pointer;
     }
 
-    /* --------------------------------
-       Footer
-    -------------------------------- */
+
+
+    /* ========================================
+       SEASON DETAIL PAGE
+    ======================================== */
+
+    .season-page {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 1000;
+
+      display: none;
+
+      overflow-y: auto;
+
+      background: #f7f6f2;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .season-page.active {
+      display: block;
+    }
+
+    .season-page-inner {
+      width: 100%;
+      max-width: 540px;
+
+      margin: 0 auto;
+
+      padding: 22px 22px 100px;
+    }
+
+    .season-back {
+      min-height: 44px;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #555;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 11px;
+
+      letter-spacing: 1.4px;
+
+      cursor: pointer;
+    }
+
+    .season-page-header {
+      margin-top: 42px;
+
+      text-align: center;
+    }
+
+    .season-page-small {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      color: #999;
+    }
+
+    .season-page-title {
+      margin-top: 13px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 44px;
+      font-weight: 400;
+    }
+
+    .season-page-main-photo {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      margin-top: 42px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: #e3e3e3;
+
+      color: #999;
+
+      font-size: 11px;
+    }
+
+    .season-page-text {
+      margin-top: 33px;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      line-height: 2.1;
+
+      color: #666;
+    }
+
+    .mini-gallery {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 7px;
+
+      margin-top: 35px;
+    }
+
+    .mini-photo {
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: #e5e5e5;
+
+      color: #aaa;
+
+      font-size: 10px;
+    }
+
+    .season-end {
+      margin-top: 50px;
+
+      text-align: center;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      color: #aaa;
+    }
+
+
+
+    /* 각 상세페이지별 아주 미세한 분위기 */
+
+    #season-winter {
+      background: #eef1f3;
+    }
+
+    #season-spring {
+      background: #f5f2eb;
+    }
+
+    #season-summer {
+      background: #f4efe4;
+    }
+
+    #season-autumn {
+      background: #eee8e1;
+    }
+
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
 
     footer {
       padding: 70px 20px;
 
-      background: white;
-
       text-align: center;
 
-      font-family: Georgia, serif;
+      background: white;
 
-      font-size: 12px;
       color: #999;
 
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 10px;
+
       letter-spacing: 2px;
+
+      line-height: 2;
     }
 
-    /* --------------------------------
-       모바일
-    -------------------------------- */
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media (max-width: 420px) {
-      .names {
-        font-size: 32px;
+
+      .intro {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      .again-title {
-        font-size: 38px;
+      .names {
+        font-size: 35px;
       }
 
       .season-overlay {
@@ -467,391 +773,977 @@
       .season-eng {
         font-size: 15px;
       }
+
+      .again-title {
+        font-size: 39px;
+      }
+
+      .wedding-info-shortcut {
+        top: 13px;
+        right: 13px;
+
+        padding: 9px 12px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 
 <body>
 
 
-<!-- 하객이 사계절을 안 보고 바로 예식정보로 이동할 수 있는 버튼 -->
+  <!-- ========================================
+       빠른 예식정보 이동
+  ======================================== -->
 
-<button
-  class="wedding-info-shortcut"
-  onclick="document.getElementById('wedding').scrollIntoView()"
->
-  WEDDING INFO →
-</button>
-
-
-
-<!-- ==================================
-     첫 화면
-================================== -->
-
-<section class="intro">
-
-  <div class="inner">
-
-    <div class="intro-label">
-      OUR FOUR SEASONS
-    </div>
-
-    <h1 class="names">
-      Gahyun & Jinchan
-    </h1>
-
-    <div class="intro-description">
-
-      지난 겨울부터
-      <br>
-
-      봄, 여름, 가을을 지나
-      <br>
-
-      다시 겨울을 맞이하기까지.
-
-    </div>
+  <button
+    type="button"
+    class="wedding-info-shortcut"
+    id="weddingShortcut"
+  >
+    WEDDING INFO →
+  </button>
 
 
-    <!-- 사계절 -->
 
-    <div class="season-grid">
+  <!-- ========================================
+       MAIN
+  ======================================== -->
+
+  <section class="intro" id="main">
+
+    <div class="inner">
+
+      <div class="intro-label">
+        WINTER · SPRING · SUMMER · AUTUMN · WINTER
+      </div>
 
 
-      <!-- WINTER -->
+      <h1 class="names">
+        Gahyun
+        <br>
+        &
+        <br>
+        Jinchan
+      </h1>
 
-      <div class="season-card winter">
 
-        <div class="season-image">
-          겨울 대표사진
-        </div>
+      <div class="intro-date">
+        JANUARY 30, 2027
+      </div>
 
-        <div class="season-overlay">
 
-          <div class="season-eng">
-            WINTER
-          </div>
+      <div class="intro-description">
 
-          <div class="season-kor">
-            우리의 시작
-          </div>
+        우리의 이야기가 시작된 3년 전 겨울,
+        <br>
 
-        </div>
+        몇 번의 봄과 여름, 가을을 함께 지나
+        <br>
+
+        다시 겨울을 맞이합니다.
+
+        <br><br>
+
+        그리고 이 겨울,
+        <br>
+
+        우리는 새로운 계절을 시작합니다.
 
       </div>
 
 
 
-      <!-- SPRING -->
+      <!-- ========================================
+           FOUR SEASONS
+      ======================================== -->
 
-      <div class="season-card spring">
+      <div class="season-grid">
 
-        <div class="season-image">
-          봄 대표사진
-        </div>
 
-        <div class="season-overlay">
+        <!-- WINTER -->
 
-          <div class="season-eng">
-            SPRING
+        <button
+          type="button"
+          class="season-card winter"
+          data-season="winter"
+          aria-label="겨울 이야기 보기"
+        >
+
+          <div class="season-image">
+            겨울 대표사진
           </div>
 
-          <div class="season-kor">
-            피어나는 우리
+          <div class="season-overlay">
+
+            <div class="season-eng">
+              WINTER
+            </div>
+
+            <div class="season-kor">
+              우리의 시작
+            </div>
+
+            <div class="season-click">
+              VIEW STORY →
+            </div>
+
           </div>
 
-        </div>
+        </button>
+
+
+
+        <!-- SPRING -->
+
+        <button
+          type="button"
+          class="season-card spring"
+          data-season="spring"
+          aria-label="봄 이야기 보기"
+        >
+
+          <div class="season-image">
+            봄 대표사진
+          </div>
+
+          <div class="season-overlay">
+
+            <div class="season-eng">
+              SPRING
+            </div>
+
+            <div class="season-kor">
+              피어나는 우리
+            </div>
+
+            <div class="season-click">
+              VIEW STORY →
+            </div>
+
+          </div>
+
+        </button>
+
+
+
+        <!-- SUMMER -->
+
+        <button
+          type="button"
+          class="season-card summer"
+          data-season="summer"
+          aria-label="여름 이야기 보기"
+        >
+
+          <div class="season-image">
+            여름 대표사진
+          </div>
+
+          <div class="season-overlay">
+
+            <div class="season-eng">
+              SUMMER
+            </div>
+
+            <div class="season-kor">
+              빛나는 시간
+            </div>
+
+            <div class="season-click">
+              VIEW STORY →
+            </div>
+
+          </div>
+
+        </button>
+
+
+
+        <!-- AUTUMN -->
+
+        <button
+          type="button"
+          class="season-card autumn"
+          data-season="autumn"
+          aria-label="가을 이야기 보기"
+        >
+
+          <div class="season-image">
+            가을 대표사진
+          </div>
+
+          <div class="season-overlay">
+
+            <div class="season-eng">
+              AUTUMN
+            </div>
+
+            <div class="season-kor">
+              깊어진 시간
+            </div>
+
+            <div class="season-click">
+              VIEW STORY →
+            </div>
+
+          </div>
+
+        </button>
 
       </div>
 
 
 
-      <!-- SUMMER -->
+      <div class="story-hint">
+        TAP EACH SEASON TO SEE OUR STORY
+      </div>
 
-      <div class="season-card summer">
+    </div>
 
-        <div class="season-image">
-          여름 대표사진
+  </section>
+
+
+
+  <!-- ========================================
+       AND WINTER AGAIN
+  ======================================== -->
+
+  <section class="winter-again">
+
+    <div class="inner center">
+
+      <div class="again-small">
+        AND WINTER AGAIN
+      </div>
+
+
+      <h2 class="again-title">
+        Our Winter
+      </h2>
+
+
+      <div class="again-date">
+        JANUARY 30, 2027
+      </div>
+
+
+      <div class="again-text">
+
+        우리의 이야기가 시작된 겨울에서
+        <br>
+
+        몇 번의 계절을 함께 지나
+        <br>
+
+        다시 겨울을 맞이합니다.
+
+      </div>
+
+
+      <div class="fill-winter">
+
+        우리의 겨울을
+        <br>
+
+        함께 채워주세요.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       INVITATION
+  ======================================== -->
+
+  <section class="invitation">
+
+    <div class="inner center">
+
+      <div class="section-label">
+        INVITATION
+      </div>
+
+
+      <h2 class="invitation-title">
+        소중한 분들을 초대합니다
+      </h2>
+
+
+      <div class="invitation-text">
+
+        뒤돌아보면 함께한 일상 속에
+        <br>
+        행복이 있었습니다.
+        <br><br>
+
+        풀리지 않는 고민도 함께 나누고
+        <br>
+        답을 찾겠습니다.
+        <br><br>
+
+        이제 사랑과 믿음으로 한 가정을 이루어
+        <br>
+        서로를 너그러이 보듬으며 살아가려 합니다.
+        <br><br>
+
+        중요한 이 약속의 자리에 함께하시어
+        <br>
+        저희의 앞날을 축복해 주세요.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       WEDDING DAY
+  ======================================== -->
+
+  <section
+    class="wedding-info"
+    id="wedding"
+  >
+
+    <div class="inner center">
+
+      <div class="section-label">
+        WEDDING DAY
+      </div>
+
+
+      <div class="wedding-date-big">
+        January 30, 2027
+      </div>
+
+
+      <div class="wedding-time">
+        SATURDAY · 5:00 PM
+      </div>
+
+
+      <div class="venue">
+
+        <div class="venue-name">
+          엘로라 인 가든
         </div>
 
-        <div class="season-overlay">
 
-          <div class="season-eng">
-            SUMMER
-          </div>
-
-          <div class="season-kor">
-            빛나는 시간
-          </div>
-
+        <div class="venue-address">
+          상세주소 추후 입력
         </div>
 
       </div>
 
 
+      <div class="button-grid">
+
+        <button
+          type="button"
+          class="basic-button"
+          onclick="alert('나중에 지도 링크를 연결할 예정이에요.')"
+        >
+          지도 보기
+        </button>
+
+
+        <button
+          type="button"
+          class="basic-button"
+          onclick="alert('나중에 주차 안내를 연결할 예정이에요.')"
+        >
+          주차 안내
+        </button>
+
+
+        <button
+          type="button"
+          class="basic-button"
+          onclick="alert('나중에 RSVP를 연결할 예정이에요.')"
+        >
+          참석 여부
+        </button>
+
+
+        <button
+          type="button"
+          class="basic-button"
+          onclick="alert('나중에 계좌 정보를 연결할 예정이에요.')"
+        >
+          마음 전하기
+        </button>
 
-      <!-- AUTUMN -->
-
-      <div class="season-card autumn">
-
-        <div class="season-image">
-          가을 대표사진
-        </div>
-
-        <div class="season-overlay">
-
-          <div class="season-eng">
-            AUTUMN
-          </div>
-
-          <div class="season-kor">
-            깊어진 시간
-          </div>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="story-hint">
-      WINTER · SPRING · SUMMER · AUTUMN
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- ==================================
-     다시 겨울
-================================== -->
-
-<section class="winter-again">
-
-  <div class="inner center">
-
-    <div class="again-small">
-      AND WINTER AGAIN
-    </div>
-
-    <h2 class="again-title">
-
-      Our Winter
-
-    </h2>
-
-    <div class="wedding-date">
-
-      JANUARY 30, 2027
-
-    </div>
-
-
-    <div class="again-text">
-
-      우리가 함께 지나온
-      <br>
-
-      사계절의 끝에서
-      <br>
-
-      다시 겨울을 맞이합니다.
-
-    </div>
-
-
-    <div class="fill-winter">
-
-      우리의 겨울을
-      <br>
-
-      함께 채워주세요.
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ==================================
-     초대글
-================================== -->
-
-<section class="invitation">
-
-  <div class="inner center">
-
-    <div class="section-label">
-      INVITATION
-    </div>
-
-    <h2>
-      소중한 분들을 초대합니다
-    </h2>
-
-    <div class="invitation-text">
-
-      뒤돌아보면 함께한 일상 속에
-      <br>
-      행복이 있었습니다.
-      <br><br>
-
-      풀리지 않는 고민도 함께 나누고
-      <br>
-      답을 찾겠습니다.
-      <br><br>
-
-      이제 사랑과 믿음으로 한 가정을 이루어
-      <br>
-      서로를 너그러이 보듬으며 살아가려 합니다.
-      <br><br>
-
-      중요한 이 약속의 자리에 함께하시어
-      <br>
-      저희의 앞날을 축복해 주세요.
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ==================================
-     Wedding Info
-================================== -->
-
-<section
-  class="wedding-info"
-  id="wedding"
->
-
-  <div class="inner center">
-
-    <div class="section-label">
-      WEDDING DAY
-    </div>
-
-
-    <div class="wedding-date-big">
-
-      January 30, 2027
-
-    </div>
-
-
-    <div class="wedding-time">
-
-      SATURDAY · 5:00 PM
-
-    </div>
-
-
-    <div class="venue">
-
-      <div class="venue-name">
-        엘로라 인 가든
-      </div>
-
-      <div class="venue-address">
-        상세 주소는 추후 입력
       </div>
 
     </div>
 
+  </section>
 
-    <div class="button-grid">
 
-      <button class="button">
-        지도 보기
+
+  <!-- ========================================
+       GUEST SNAP
+  ======================================== -->
+
+  <section class="guest-snap">
+
+    <div class="inner center">
+
+      <div class="section-label">
+        GUEST SNAP
+      </div>
+
+
+      <div class="guest-title">
+        Fill Our Winter
+      </div>
+
+
+      <div class="guest-text">
+
+        저희가 보지 못한 오늘의 순간을
+        <br>
+
+        여러분의 시선으로 남겨주세요.
+
+      </div>
+
+
+      <button
+        type="button"
+        class="guest-button"
+        onclick="alert('나중에 하객 사진 업로드 링크를 연결할 예정이에요.')"
+      >
+        사진 & 영상 올리기
       </button>
 
-      <button class="button">
-        주차 안내
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       WINTER DETAIL PAGE
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-winter"
+    aria-hidden="true"
+  >
+
+    <div class="season-page-inner">
+
+      <button
+        type="button"
+        class="season-back"
+      >
+        ← BACK
       </button>
 
-      <button class="button">
-        참석 여부
-      </button>
 
-      <button class="button">
-        마음 전하기
-      </button>
+      <div class="season-page-header">
+
+        <div class="season-page-small">
+          OUR FIRST SEASON
+        </div>
+
+        <div class="season-page-title">
+          Winter
+        </div>
+
+      </div>
+
+
+      <div class="season-page-main-photo">
+        겨울 메인 사진
+      </div>
+
+
+      <div class="season-page-text">
+
+        우리의 이야기가 시작된 겨울.
+        <br><br>
+
+        이곳에는
+        <br>
+        두 사람의 첫 번째 겨울 이야기를
+        <br>
+        담을 예정입니다.
+
+      </div>
+
+
+      <div class="mini-gallery">
+
+        <div class="mini-photo">
+          겨울 사진 1
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 2
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 3
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 4
+        </div>
+
+      </div>
+
+
+      <div class="season-end">
+        WINTER · OUR BEGINNING
+      </div>
 
     </div>
 
   </div>
 
-</section>
 
 
+  <!-- ========================================
+       SPRING DETAIL PAGE
+  ======================================== -->
 
-<!-- ==================================
-     Guest Snap
-================================== -->
+  <div
+    class="season-page"
+    id="season-spring"
+    aria-hidden="true"
+  >
 
-<section class="guest-snap">
+    <div class="season-page-inner">
 
-  <div class="inner center">
+      <button
+        type="button"
+        class="season-back"
+      >
+        ← BACK
+      </button>
 
-    <div class="section-label">
-      GUEST SNAP
+
+      <div class="season-page-header">
+
+        <div class="season-page-small">
+          OUR SPRING
+        </div>
+
+        <div class="season-page-title">
+          Spring
+        </div>
+
+      </div>
+
+
+      <div class="season-page-main-photo">
+        봄 메인 사진
+      </div>
+
+
+      <div class="season-page-text">
+
+        따뜻해진 계절과 함께
+        <br><br>
+
+        우리의 시간에도
+        <br>
+        조금씩 새로운 장면이
+        <br>
+        쌓여갔습니다.
+
+      </div>
+
+
+      <div class="mini-gallery">
+
+        <div class="mini-photo">
+          봄 사진 1
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 2
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 3
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 4
+        </div>
+
+      </div>
+
+
+      <div class="season-end">
+        SPRING · OUR DAYS
+      </div>
+
     </div>
-
-
-    <div class="guest-title">
-      Fill Our Winter
-    </div>
-
-
-    <div class="guest-text">
-
-      저희가 보지 못한
-      <br>
-
-      오늘의 순간을
-      <br>
-
-      여러분의 시선으로 남겨주세요.
-
-    </div>
-
-
-    <button
-      class="guest-button"
-      onclick="alert('나중에 사진 업로드 서비스를 연결할 예정이에요 :)')"
-    >
-
-      사진 & 영상 올리기
-
-    </button>
 
   </div>
 
-</section>
+
+
+  <!-- ========================================
+       SUMMER DETAIL PAGE
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-summer"
+    aria-hidden="true"
+  >
+
+    <div class="season-page-inner">
+
+      <button
+        type="button"
+        class="season-back"
+      >
+        ← BACK
+      </button>
+
+
+      <div class="season-page-header">
+
+        <div class="season-page-small">
+          OUR SUMMER
+        </div>
+
+        <div class="season-page-title">
+          Summer
+        </div>
+
+      </div>
+
+
+      <div class="season-page-main-photo">
+        여름 메인 사진
+      </div>
+
+
+      <div class="season-page-text">
+
+        햇살이 가장 길었던 계절.
+        <br><br>
+
+        함께하는 우리의 시간도
+        <br>
+        한층 더 선명해졌습니다.
+
+      </div>
+
+
+      <div class="mini-gallery">
+
+        <div class="mini-photo">
+          여름 사진 1
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 2
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 3
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 4
+        </div>
+
+      </div>
+
+
+      <div class="season-end">
+        SUMMER · OUR BRIGHT DAYS
+      </div>
+
+    </div>
+
+  </div>
 
 
 
-<footer>
+  <!-- ========================================
+       AUTUMN DETAIL PAGE
+  ======================================== -->
 
-  GAHYUN & JINCHAN
+  <div
+    class="season-page"
+    id="season-autumn"
+    aria-hidden="true"
+  >
 
-  <br><br>
+    <div class="season-page-inner">
 
-  2027. 01. 30
+      <button
+        type="button"
+        class="season-back"
+      >
+        ← BACK
+      </button>
 
-</footer>
+
+      <div class="season-page-header">
+
+        <div class="season-page-small">
+          OUR AUTUMN
+        </div>
+
+        <div class="season-page-title">
+          Autumn
+        </div>
+
+      </div>
+
+
+      <div class="season-page-main-photo">
+        가을 메인 사진
+      </div>
+
+
+      <div class="season-page-text">
+
+        계절이 깊어지는 동안
+        <br><br>
+
+        우리도 함께할
+        <br>
+        다음 계절을 준비하기 시작했습니다.
+
+      </div>
+
+
+      <div class="mini-gallery">
+
+        <div class="mini-photo">
+          가을 사진 1
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 2
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 3
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 4
+        </div>
+
+      </div>
+
+
+      <div class="season-end">
+        AUTUMN · OUR PROMISE
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+    GAHYUN & JINCHAN
+
+    <br>
+
+    2027. 01. 30
+
+  </footer>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+    /*
+      Wedding Info
+    */
+
+    const weddingShortcut =
+      document.getElementById("weddingShortcut");
+
+
+    weddingShortcut.addEventListener(
+      "click",
+      function () {
+
+        document
+          .getElementById("wedding")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      }
+    );
+
+
+
+    /*
+      Season Detail
+    */
+
+    const seasonCards =
+      document.querySelectorAll(".season-card");
+
+    const seasonPages =
+      document.querySelectorAll(".season-page");
+
+    const backButtons =
+      document.querySelectorAll(".season-back");
+
+
+    seasonCards.forEach(function (card) {
+
+      card.addEventListener(
+        "click",
+        function () {
+
+          const season =
+            card.dataset.season;
+
+          const page =
+            document.getElementById(
+              "season-" + season
+            );
+
+
+          if (!page) {
+            return;
+          }
+
+
+          page.classList.add("active");
+
+          page.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+
+          page.scrollTop = 0;
+
+
+          document.body.style.overflow =
+            "hidden";
+
+        }
+      );
+
+    });
+
+
+
+    /*
+      Back
+    */
+
+    backButtons.forEach(function (button) {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          const page =
+            button.closest(
+              ".season-page"
+            );
+
+
+          page.classList.remove(
+            "active"
+          );
+
+
+          page.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+
+          document.body.style.overflow =
+            "";
+
+        }
+      );
+
+    });
+
+
+
+    /*
+      ESC 키로 상세 페이지 닫기
+      PC 테스트할 때 편함
+    */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key !== "Escape") {
+          return;
+        }
+
+
+        const activePage =
+          document.querySelector(
+            ".season-page.active"
+          );
+
+
+        if (!activePage) {
+          return;
+        }
+
+
+        activePage.classList.remove(
+          "active"
+        );
+
+
+        activePage.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+
+        document.body.style.overflow =
+          "";
+
+      }
+    );
+
+  </script>
 
 
 </body>
+
 </html>
