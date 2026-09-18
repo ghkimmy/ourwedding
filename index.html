@@ -16,6 +16,7 @@
     content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
   >
 
+
   <!-- ========================================
        KAKAO / OPEN GRAPH
   ======================================== -->
@@ -72,9 +73,11 @@
 
     @font-face {
       font-family: "RIDIBatang";
+
       src:
         url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/RIDIBatang.woff")
         format("woff");
+
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -82,6 +85,7 @@
 
 
     :root {
+
       --font-body:
         "Pretendard",
         -apple-system,
@@ -105,16 +109,18 @@
         Arial,
         sans-serif;
 
-      --winter-sky: #d4e5ed;
-      --winter-blue: #e6f0f4;
+
+      --winter-sky: #d2e4ed;
+      --winter-blue: #e4eef3;
       --winter-lilac: #eeeaf3;
       --winter-ivory: #f8f3ea;
 
       --wedding-red: #9d2631;
-      --calendar-heart: #c87c86;
+      --calendar-heart: #c77d87;
 
       --text: #30363a;
       --sub: #70777b;
+
     }
 
 
@@ -136,6 +142,7 @@
 
     body {
       margin: 0;
+
       background: #f7f6f2;
       color: var(--text);
 
@@ -149,7 +156,8 @@
 
 
     body.opening-active,
-    body.modal-open {
+    body.modal-open,
+    body.virtual-open {
       overflow: hidden;
     }
 
@@ -182,6 +190,7 @@
     .inner {
       width: 100%;
       max-width: 540px;
+
       margin: 0 auto;
     }
 
@@ -212,6 +221,7 @@
       opacity: 0.12;
 
       background-image:
+
         radial-gradient(
           rgba(55, 83, 99, 0.20) 0.55px,
           transparent 0.55px
@@ -230,6 +240,7 @@
     ======================================== */
 
     .snow-layer {
+
       position: absolute;
       inset: 0;
 
@@ -240,6 +251,7 @@
 
 
     .snow-particle {
+
       position: absolute;
 
       top: -30px;
@@ -251,14 +263,21 @@
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.98);
+        rgba(255,255,255,0.99);
 
       box-shadow:
-        0 0 0 1px rgba(135,170,190,0.17),
-        0 2px 5px rgba(121,158,179,0.30),
-        0 0 10px rgba(255,255,255,0.88);
 
-      opacity: var(--opacity);
+        0 0 0 1px
+        rgba(126,163,184,0.18),
+
+        0 2px 5px
+        rgba(119,156,178,0.32),
+
+        0 0 10px
+        rgba(255,255,255,0.92);
+
+      opacity:
+        var(--opacity);
 
       animation:
         snowFall
@@ -274,24 +293,34 @@
 
 
     .snow-particle.soft {
-      filter: blur(1px);
+      filter:
+        blur(1px);
     }
 
 
     @keyframes snowFall {
 
       0% {
+
         transform:
-          translate3d(0, -30px, 0);
+          translate3d(
+            0,
+            -30px,
+            0
+          );
 
         opacity: 0;
       }
 
+
       8% {
-        opacity: var(--opacity);
+        opacity:
+          var(--opacity);
       }
 
+
       36% {
+
         transform:
           translate3d(
             var(--drift-a),
@@ -300,7 +329,9 @@
           );
       }
 
+
       70% {
+
         transform:
           translate3d(
             var(--drift-b),
@@ -309,7 +340,9 @@
           );
       }
 
+
       100% {
+
         transform:
           translate3d(
             var(--drift-a),
@@ -329,16 +362,19 @@
     ======================================== */
 
     .opening {
+
       position: fixed;
       inset: 0;
 
       z-index: 10000;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
       overflow: hidden;
+
 
       background:
 
@@ -368,25 +404,31 @@
           #f8f2e8 100%
         );
 
+
       transition:
+
         opacity 0.9s ease,
         visibility 0.9s ease;
     }
 
 
-    .opening .snow-layer {
+    .opening
+    .snow-layer {
       z-index: 3;
     }
 
 
     .opening.hide {
+
       opacity: 0;
       visibility: hidden;
+
       pointer-events: none;
     }
 
 
     .opening-skip {
+
       position: absolute;
 
       top:
@@ -405,11 +447,15 @@
         0 14px;
 
       border: 0;
-      background: transparent;
 
-      font-family: var(--font-en);
+      background:
+        transparent;
+
+      font-family:
+        var(--font-en);
 
       font-size: 9px;
+
       letter-spacing: 1.8px;
 
       color:
@@ -420,6 +466,7 @@
 
 
     .opening-inner {
+
       position: relative;
 
       z-index: 5;
@@ -434,11 +481,14 @@
 
 
     .letter-small {
+
       margin-bottom: 31px;
 
-      font-family: var(--font-en);
+      font-family:
+        var(--font-en);
 
       font-size: 9px;
+
       letter-spacing: 4px;
 
       color: #74838a;
@@ -463,6 +513,7 @@
     ======================================== */
 
     .envelope-stage {
+
       --env-w: 285px;
       --env-h: 178px;
 
@@ -474,12 +525,14 @@
 
       --window-open-height: 345px;
 
+
       position: relative;
 
       width: 310px;
       height: 340px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
       perspective: 1200px;
 
@@ -499,6 +552,7 @@
 
 
     .envelope {
+
       position: absolute;
 
       left: 50%;
@@ -519,6 +573,7 @@
 
 
     .envelope-back {
+
       position: absolute;
       inset: 0;
 
@@ -527,6 +582,7 @@
       border-radius: 3px;
 
       background:
+
         linear-gradient(
           145deg,
           #a82f39,
@@ -534,17 +590,17 @@
         );
 
       box-shadow:
+
         0 22px 48px
         rgba(89,30,38,0.19);
     }
 
 
 
-    /* ========================================
-       OPENING PHOTO
-    ======================================== */
+    /* PHOTO */
 
     .photo-window {
+
       position: absolute;
 
       left: 0;
@@ -573,6 +629,7 @@
 
 
     .letter-photo {
+
       position: absolute;
 
       left: 50%;
@@ -596,6 +653,7 @@
       background: #fff;
 
       box-shadow:
+
         0 16px 34px
         rgba(54,42,45,0.17);
 
@@ -611,6 +669,7 @@
 
 
     .letter-photo-inner {
+
       width: 100%;
       height: 100%;
 
@@ -622,6 +681,7 @@
       overflow: hidden;
 
       background:
+
         linear-gradient(
           145deg,
           #d8e4ea,
@@ -637,6 +697,7 @@
 
 
     .letter-photo-inner img {
+
       width: 100%;
       height: 100%;
 
@@ -647,11 +708,10 @@
 
 
 
-    /* ========================================
-       RED ENVELOPE
-    ======================================== */
+    /* RED ENVELOPE */
 
     .envelope-flap {
+
       position: absolute;
 
       z-index: 7;
@@ -663,6 +723,7 @@
       height: 110px;
 
       background:
+
         linear-gradient(
           180deg,
           #b93b46,
@@ -670,6 +731,7 @@
         );
 
       clip-path:
+
         polygon(
           0 0,
           100% 0,
@@ -697,6 +759,7 @@
 
 
     .envelope-front {
+
       position: absolute;
       inset: 0;
 
@@ -709,12 +772,15 @@
 
 
     .envelope-front-left {
+
       position: absolute;
       inset: 0;
 
-      background: #aa303b;
+      background:
+        #aa303b;
 
       clip-path:
+
         polygon(
           0 0,
           52% 58%,
@@ -724,12 +790,15 @@
 
 
     .envelope-front-right {
+
       position: absolute;
       inset: 0;
 
-      background: #92242f;
+      background:
+        #92242f;
 
       clip-path:
+
         polygon(
           100% 0,
           48% 58%,
@@ -739,10 +808,12 @@
 
 
     .envelope-front-bottom {
+
       position: absolute;
       inset: 0;
 
       background:
+
         linear-gradient(
           180deg,
           #bb3d47,
@@ -750,6 +821,7 @@
         );
 
       clip-path:
+
         polygon(
           0 100%,
           50% 47%,
@@ -762,6 +834,7 @@
     /* WHITE HEART */
 
     .envelope-seal {
+
       position: absolute;
 
       z-index: 10;
@@ -780,9 +853,11 @@
         sans-serif;
 
       font-size: 29px;
+
       line-height: 1;
 
       filter:
+
         drop-shadow(
           0 3px 4px
           rgba(70,20,25,0.13)
@@ -803,6 +878,7 @@
     ======================================== */
 
     .opening-text {
+
       margin-top: 1px;
 
       opacity: 0;
@@ -820,6 +896,7 @@
 
 
     .opening-names {
+
       font-family:
         var(--font-en);
 
@@ -834,6 +911,7 @@
 
 
     .opening-date {
+
       margin-top: 12px;
 
       font-family:
@@ -848,6 +926,7 @@
 
 
     .opening-line {
+
       width: 1px;
       height: 27px;
 
@@ -857,7 +936,8 @@
       background:
         rgba(74,99,111,0.28);
 
-      transform-origin: top;
+      transform-origin:
+        top;
 
       transform:
         scaleY(0);
@@ -873,24 +953,31 @@
 
 
     /* ========================================
-       OPENING ANIMATION
+       OPENING ANIMATIONS
     ======================================== */
 
     @keyframes openingFade {
+
       from {
         opacity: 0;
-        transform: translateY(7px);
+
+        transform:
+          translateY(7px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
     }
 
 
     @keyframes envelopeAppear {
+
       from {
+
         opacity: 0;
 
         transform:
@@ -899,6 +986,7 @@
       }
 
       to {
+
         opacity: 1;
 
         transform:
@@ -909,7 +997,9 @@
 
 
     @keyframes sealDisappear {
+
       from {
+
         opacity: 1;
 
         transform:
@@ -918,6 +1008,7 @@
       }
 
       to {
+
         opacity: 0;
 
         transform:
@@ -928,21 +1019,26 @@
 
 
     @keyframes flapOpen {
+
       0% {
-        transform: rotateX(0deg);
+        transform:
+          rotateX(0deg);
       }
 
       42% {
-        transform: rotateX(-105deg);
+        transform:
+          rotateX(-105deg);
       }
 
       100% {
-        transform: rotateX(-180deg);
+        transform:
+          rotateX(-180deg);
       }
     }
 
 
     @keyframes photoWindowOpen {
+
       from {
         height:
           var(--env-h);
@@ -956,13 +1052,16 @@
 
 
     @keyframes photoRise {
+
       from {
+
         transform:
           translateX(-50%)
           translateY(0);
       }
 
       to {
+
         transform:
           translateX(-50%)
           translateY(
@@ -973,19 +1072,27 @@
 
 
     @keyframes openingTextShow {
+
       from {
+
         opacity: 0;
-        transform: translateY(9px);
+
+        transform:
+          translateY(9px);
       }
 
       to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
     }
 
 
     @keyframes lineGrow {
+
       from {
         transform: scaleY(0);
       }
@@ -998,10 +1105,11 @@
 
 
     /* ========================================
-       WEDDING INFO SHORTCUT
+       WEDDING SHORTCUT
     ======================================== */
 
     .wedding-info-shortcut {
+
       position: fixed;
 
       top:
@@ -1020,6 +1128,7 @@
         0 14px;
 
       border:
+
         1px solid
         rgba(0,0,0,0.09);
 
@@ -1049,7 +1158,7 @@
 
 
     /* ========================================
-       REVEAL
+       REVEALS
     ======================================== */
 
     .intro-label,
@@ -1058,6 +1167,7 @@
     .intro-description,
     .season-card,
     .story-hint {
+
       opacity: 0;
 
       transform:
@@ -1065,14 +1175,18 @@
     }
 
 
-    body.page-ready .intro-label {
+    body.page-ready
+    .intro-label {
+
       animation:
         mainReveal
         0.8s ease forwards;
     }
 
 
-    body.page-ready .names {
+    body.page-ready
+    .names {
+
       animation:
         mainReveal
         0.9s ease forwards;
@@ -1082,7 +1196,9 @@
     }
 
 
-    body.page-ready .intro-date {
+    body.page-ready
+    .intro-date {
+
       animation:
         mainReveal
         0.9s ease forwards;
@@ -1092,7 +1208,9 @@
     }
 
 
-    body.page-ready .intro-description {
+    body.page-ready
+    .intro-description {
+
       animation:
         mainReveal
         0.9s ease forwards;
@@ -1102,7 +1220,9 @@
     }
 
 
-    body.page-ready .season-card:nth-child(1) {
+    body.page-ready
+    .season-card:nth-child(1) {
+
       animation:
         mainReveal
         0.8s ease forwards;
@@ -1112,7 +1232,9 @@
     }
 
 
-    body.page-ready .season-card:nth-child(2) {
+    body.page-ready
+    .season-card:nth-child(2) {
+
       animation:
         mainReveal
         0.8s ease forwards;
@@ -1122,7 +1244,9 @@
     }
 
 
-    body.page-ready .season-card:nth-child(3) {
+    body.page-ready
+    .season-card:nth-child(3) {
+
       animation:
         mainReveal
         0.8s ease forwards;
@@ -1132,7 +1256,9 @@
     }
 
 
-    body.page-ready .season-card:nth-child(4) {
+    body.page-ready
+    .season-card:nth-child(4) {
+
       animation:
         mainReveal
         0.8s ease forwards;
@@ -1142,7 +1268,9 @@
     }
 
 
-    body.page-ready .story-hint {
+    body.page-ready
+    .story-hint {
+
       animation:
         mainReveal
         0.8s ease forwards;
@@ -1153,28 +1281,37 @@
 
 
     @keyframes mainReveal {
+
       to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
     }
 
 
     .reveal {
+
       opacity: 0;
 
       transform:
         translateY(22px);
 
       transition:
+
         opacity 1s ease,
         transform 1s ease;
     }
 
 
     .reveal.visible {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
 
 
@@ -1184,6 +1321,7 @@
     ======================================== */
 
     .intro {
+
       position: relative;
 
       min-height: 100vh;
@@ -1196,6 +1334,7 @@
 
       padding:
         80px 20px;
+
 
       background:
 
@@ -1221,18 +1360,23 @@
     }
 
 
-    .intro .snow-layer {
+    .intro
+    .snow-layer {
+
       z-index: 2;
     }
 
 
     .intro > .inner {
+
       position: relative;
+
       z-index: 3;
     }
 
 
     .intro-label {
+
       text-align: center;
 
       font-family:
@@ -1247,6 +1391,7 @@
 
 
     .names {
+
       margin:
         24px 0 0;
 
@@ -1266,6 +1411,7 @@
 
 
     .intro-date {
+
       margin-top: 20px;
 
       text-align: center;
@@ -1282,6 +1428,7 @@
 
 
     .intro-description {
+
       margin-top: 42px;
 
       text-align: center;
@@ -1296,10 +1443,11 @@
 
 
     /* ========================================
-       SEASON CARDS
+       SEASONS
     ======================================== */
 
     .season-grid {
+
       display: grid;
 
       grid-template-columns:
@@ -1312,6 +1460,7 @@
 
 
     .season-card {
+
       position: relative;
 
       width: 100%;
@@ -1335,6 +1484,7 @@
 
 
     .season-image {
+
       position: absolute;
       inset: 0;
 
@@ -1355,36 +1505,46 @@
 
     .season-card:active
     .season-image {
+
       transform:
         scale(1.02);
     }
 
 
-    .winter .season-image {
+    .winter
+    .season-image {
+
       background:
         #d6e5ec;
     }
 
 
-    .spring .season-image {
+    .spring
+    .season-image {
+
       background:
         #ebe4db;
     }
 
 
-    .summer .season-image {
+    .summer
+    .season-image {
+
       background:
         #e8decf;
     }
 
 
-    .autumn .season-image {
+    .autumn
+    .season-image {
+
       background:
         #dccfc6;
     }
 
 
     .season-overlay {
+
       position: absolute;
       inset: 0;
 
@@ -1398,6 +1558,7 @@
       color: #fff;
 
       background:
+
         linear-gradient(
           180deg,
           transparent 38%,
@@ -1407,6 +1568,7 @@
 
 
     .season-eng {
+
       font-family:
         var(--font-en);
 
@@ -1417,6 +1579,7 @@
 
 
     .season-kor {
+
       margin-top: 5px;
 
       font-size: 11px;
@@ -1424,6 +1587,7 @@
 
 
     .season-click {
+
       margin-top: 7px;
 
       font-family:
@@ -1439,6 +1603,7 @@
 
 
     .story-hint {
+
       margin-top: 24px;
 
       text-align: center;
@@ -1460,17 +1625,20 @@
     ======================================== */
 
     .winter-again {
+
       position: relative;
 
       min-height: 88vh;
 
       display: flex;
+
       align-items: center;
 
       overflow: hidden;
 
       padding:
         95px 24px;
+
 
       background:
 
@@ -1496,12 +1664,15 @@
     }
 
 
-    .winter-again .snow-layer {
+    .winter-again
+    .snow-layer {
+
       z-index: 2;
     }
 
 
     .winter-content {
+
       position: relative;
 
       z-index: 3;
@@ -1509,6 +1680,7 @@
 
 
     .again-small {
+
       font-family:
         var(--font-en);
 
@@ -1521,6 +1693,7 @@
 
 
     .again-title {
+
       margin:
         20px 0 0;
 
@@ -1534,6 +1707,7 @@
 
 
     .again-date {
+
       margin-top: 28px;
 
       font-family:
@@ -1546,6 +1720,7 @@
 
 
     .again-text {
+
       margin-top: 36px;
 
       font-size: 13px;
@@ -1557,6 +1732,7 @@
 
 
     .fill-winter {
+
       margin-top: 43px;
 
       font-family:
@@ -1576,6 +1752,7 @@
     ======================================== */
 
     .section-label {
+
       font-family:
         var(--font-en);
 
@@ -1593,6 +1770,7 @@
     ======================================== */
 
     .invitation {
+
       padding:
         105px 24px;
 
@@ -1601,6 +1779,7 @@
 
 
     .invitation-title {
+
       margin-top: 22px;
 
       font-family:
@@ -1616,6 +1795,7 @@
 
 
     .invitation-text {
+
       margin-top: 39px;
 
       font-size: 13px;
@@ -1632,6 +1812,7 @@
     ======================================== */
 
     .wedding-info {
+
       padding:
         100px 24px;
 
@@ -1641,6 +1822,7 @@
 
 
     .wedding-date-big {
+
       margin-top: 22px;
 
       font-family:
@@ -1651,6 +1833,7 @@
 
 
     .wedding-time {
+
       margin-top: 9px;
 
       font-family:
@@ -1670,6 +1853,7 @@
     ======================================== */
 
     .wedding-calendar {
+
       width: 100%;
       max-width: 350px;
 
@@ -1682,6 +1866,7 @@
 
 
     .calendar-month {
+
       margin-bottom: 34px;
 
       font-family:
@@ -1695,6 +1880,7 @@
 
     .calendar-weekdays,
     .calendar-days {
+
       display: grid;
 
       grid-template-columns:
@@ -1703,6 +1889,7 @@
 
 
     .calendar-weekdays {
+
       margin-bottom: 22px;
 
       font-size: 12px;
@@ -1715,11 +1902,13 @@
 
     .calendar-weekdays
     span:first-child {
+
       color: #c07a83;
     }
 
 
     .calendar-days {
+
       row-gap: 17px;
 
       font-size: 12px;
@@ -1731,6 +1920,7 @@
 
 
     .calendar-day {
+
       position: relative;
 
       min-height: 28px;
@@ -1743,16 +1933,19 @@
 
 
     .calendar-day.sunday {
+
       color: #888;
     }
 
 
     .wedding-day {
+
       color: #fff;
     }
 
 
     .calendar-heart {
+
       position: absolute;
 
       left: 50%;
@@ -1777,6 +1970,7 @@
 
 
     .calendar-heart-number {
+
       position: relative;
 
       z-index: 2;
@@ -1797,6 +1991,7 @@
     ======================================== */
 
     .venue {
+
       margin-top: 47px;
 
       padding:
@@ -1811,6 +2006,7 @@
 
 
     .venue-name {
+
       font-family:
         var(--font-ko-title);
 
@@ -1819,6 +2015,7 @@
 
 
     .venue-address {
+
       margin-top: 8px;
 
       font-size: 12px;
@@ -1835,6 +2032,7 @@
     ======================================== */
 
     .map-buttons {
+
       display: grid;
 
       grid-template-columns:
@@ -1847,6 +2045,7 @@
 
 
     .map-button {
+
       min-height: 48px;
 
       display: flex;
@@ -1872,6 +2071,7 @@
     ======================================== */
 
     .parking-wrap {
+
       margin-top: 18px;
 
       border-top:
@@ -1883,6 +2083,7 @@
 
 
     .parking-toggle {
+
       width: 100%;
 
       min-height: 60px;
@@ -1903,11 +2104,13 @@
 
 
     .parking-toggle-left {
+
       text-align: left;
     }
 
 
     .parking-title {
+
       font-family:
         var(--font-en);
 
@@ -1918,6 +2121,7 @@
 
 
     .parking-subtitle {
+
       margin-top: 4px;
 
       font-size: 11px;
@@ -1927,6 +2131,7 @@
 
 
     .parking-plus {
+
       font-size: 21px;
 
       transition:
@@ -1936,12 +2141,14 @@
 
     .parking-wrap.open
     .parking-plus {
+
       transform:
         rotate(45deg);
     }
 
 
     .parking-content {
+
       max-height: 0;
 
       overflow: hidden;
@@ -1949,6 +2156,7 @@
       opacity: 0;
 
       transition:
+
         max-height 0.55s ease,
         opacity 0.4s ease;
     }
@@ -1956,6 +2164,7 @@
 
     .parking-wrap.open
     .parking-content {
+
       max-height: 600px;
 
       opacity: 1;
@@ -1963,26 +2172,34 @@
 
 
     .parking-content-inner {
-      padding-bottom: 28px;
+
+      padding-bottom:
+        28px;
     }
 
 
     .parking-highlight {
+
       margin:
         4px 0 24px;
 
       padding:
         12px 0 18px;
 
+      background: transparent;
+
       font-size: 13px;
 
       line-height: 1.9;
+
+      text-align: center;
 
       color: #666;
     }
 
 
     .parking-row {
+
       display: grid;
 
       grid-template-columns:
@@ -2001,6 +2218,7 @@
 
 
     .parking-label {
+
       font-weight: 600;
 
       color: #555;
@@ -2008,6 +2226,7 @@
 
 
     .parking-value {
+
       color: #777;
     }
 
@@ -2018,6 +2237,7 @@
     ======================================== */
 
     .action-section {
+
       margin-top: 52px;
 
       padding-top: 43px;
@@ -2028,6 +2248,7 @@
 
 
     .action-title {
+
       margin-top: 16px;
 
       font-family:
@@ -2038,6 +2259,7 @@
 
 
     .action-description {
+
       margin-top: 15px;
 
       font-size: 12px;
@@ -2049,6 +2271,7 @@
 
 
     .action-button {
+
       width: 100%;
 
       min-height: 52px;
@@ -2072,10 +2295,12 @@
     ======================================== */
 
     .guest-snap {
+
       padding:
         105px 24px;
 
       background:
+
         linear-gradient(
           180deg,
           #e7f0f4,
@@ -2086,6 +2311,7 @@
 
 
     .guest-title {
+
       margin-top: 20px;
 
       font-family:
@@ -2096,6 +2322,7 @@
 
 
     .guest-text {
+
       margin-top: 28px;
 
       font-size: 13px;
@@ -2107,6 +2334,7 @@
 
 
     .guest-button {
+
       width: 100%;
 
       min-height: 54px;
@@ -2127,231 +2355,1482 @@
 
 
     /* ========================================
-       CHARACTER GUESTBOOK
+       VIRTUAL WEDDING INTRO
     ======================================== */
 
-    .character-guestbook {
+    .virtual-intro {
+
       padding:
-        105px 20px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #f8f4ed 0%,
-          #edf3f5 52%,
-          #dbe9ef 100%
-        );
-    }
-
-
-    .guestbook-title {
-      margin-top: 19px;
-
-      font-family:
-        var(--font-en);
-
-      font-size: 34px;
-
-      font-weight: 400;
-    }
-
-
-    .guestbook-description {
-      margin-top: 24px;
-
-      font-size: 13px;
-
-      line-height: 2;
-
-      color: #657178;
-    }
-
-
-
-    /* 눈밭 */
-
-    .guestbook-board {
-      position: relative;
-
-      width: 100%;
-      max-width: 500px;
-
-      height: 380px;
-
-      margin:
-        39px auto 0;
-
-      overflow: hidden;
-
-      border:
-        1px solid
-        rgba(111,139,153,0.16);
-
-      border-radius:
-        22px;
+        110px 24px;
 
       background:
 
         radial-gradient(
-          circle at 20% 18%,
-          rgba(255,255,255,0.95),
-          transparent 24%
-        ),
-
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(228,220,240,0.52),
+          circle at 50% 12%,
+          rgba(255,255,255,0.92),
           transparent 33%
         ),
 
         linear-gradient(
           180deg,
-          #d2e5ee 0%,
-          #e5eff3 57%,
-          #f9fafa 58%,
-          #f6f5f0 100%
+          #f7f3ec 0%,
+          #eef1ea 58%,
+          #e3ebe5 100%
+        );
+    }
+
+
+    .virtual-intro-title {
+
+      margin-top: 20px;
+
+      font-family:
+        var(--font-en);
+
+      font-size: 36px;
+
+      font-weight: 400;
+
+      line-height: 1.25;
+    }
+
+
+    .virtual-intro-kor {
+
+      margin-top: 15px;
+
+      font-family:
+        var(--font-ko-title);
+
+      font-size: 19px;
+    }
+
+
+    .virtual-intro-text {
+
+      margin-top: 26px;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #657069;
+    }
+
+
+    .virtual-enter-button {
+
+      width: 100%;
+
+      min-height: 56px;
+
+      margin-top: 34px;
+
+      border:
+        1px solid
+        rgba(70,87,77,0.35);
+
+      background:
+        rgba(255,255,255,0.50);
+
+      color: #48574f;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+
+    .virtual-small-note {
+
+      margin-top: 14px;
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+      color: #88928c;
+    }
+
+
+
+    /* ========================================
+       VIRTUAL WEDDING PAGE
+    ======================================== */
+
+    .virtual-wedding {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9000;
+
+      display: none;
+
+      flex-direction: column;
+
+      background: #f2efe8;
+    }
+
+
+    .virtual-wedding.active {
+
+      display: flex;
+    }
+
+
+
+    /* TOP BAR */
+
+    .virtual-topbar {
+
+      position: relative;
+
+      z-index: 30;
+
+      min-height: 62px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      padding:
+        max(10px, env(safe-area-inset-top))
+        13px
+        10px;
+
+      border-bottom:
+        1px solid
+        rgba(64,77,67,0.12);
+
+      background:
+        rgba(250,248,243,0.94);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+    }
+
+
+    .virtual-back {
+
+      min-height: 42px;
+
+      padding:
+        0 9px;
+
+      border: 0;
+
+      background: transparent;
+
+      font-family:
+        var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 1.2px;
+
+      cursor: pointer;
+    }
+
+
+    .virtual-top-title {
+
+      min-width: 0;
+
+      text-align: center;
+    }
+
+
+    .virtual-top-title-main {
+
+      font-family:
+        var(--font-en);
+
+      font-size: 13px;
+
+      letter-spacing: 1px;
+    }
+
+
+    .virtual-top-title-sub {
+
+      margin-top: 2px;
+
+      font-size: 9px;
+
+      color: #8a8e89;
+    }
+
+
+    .virtual-write {
+
+      min-height: 40px;
+
+      padding:
+        0 12px;
+
+      border:
+        1px solid
+        rgba(80,94,85,0.22);
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.8);
+
+      font-size: 10px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       VIEWPORT
+    ======================================== */
+
+    .virtual-viewport {
+
+      position: relative;
+
+      flex: 1;
+
+      min-height: 0;
+
+      overflow: hidden;
+
+      background:
+        #eeeae1;
+
+      cursor: grab;
+
+      touch-action: none;
+
+      user-select: none;
+
+      -webkit-user-select: none;
+    }
+
+
+    .virtual-viewport.dragging {
+
+      cursor: grabbing;
+    }
+
+
+
+    /* ========================================
+       WORLD
+    ======================================== */
+
+    .virtual-world {
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 920px;
+      height: 620px;
+
+      transform:
+        translate3d(0,0,0);
+
+      transform-origin:
+        0 0;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 5%,
+          rgba(255,255,255,0.98),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          180deg,
+          #ece9e1 0%,
+          #f6f3ed 38%,
+          #eeeae0 100%
+        );
+
+      will-change: transform;
+    }
+
+
+
+    /* ========================================
+       HALL BACK WALL
+    ======================================== */
+
+    .hall-back-wall {
+
+      position: absolute;
+
+      left: 85px;
+      top: 18px;
+
+      width: 750px;
+      height: 190px;
+
+      overflow: hidden;
+
+      border-radius:
+        150px 150px 16px 16px;
+
+      border:
+        1px solid
+        rgba(174,164,146,0.32);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(255,255,255,0.98),
+          transparent 28%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fefdf9 0%,
+          #f2eee5 100%
         );
 
       box-shadow:
-        inset 0 1px 0
-        rgba(255,255,255,0.65);
+
+        inset 0 -18px 45px
+        rgba(143,130,106,0.07);
     }
 
 
-    .guestbook-board::before {
-      content: "";
+
+    /* ARCHED PANELS */
+
+    .hall-arch {
 
       position: absolute;
 
-      left: -10%;
-      right: -10%;
-      bottom: -55px;
+      top: 32px;
 
-      height: 180px;
+      width: 130px;
+      height: 146px;
+
+      border:
+        1px solid
+        rgba(185,177,161,0.50);
 
       border-radius:
-        50% 50% 0 0;
+        70px 70px 5px 5px;
 
       background:
-        rgba(255,255,255,0.94);
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.96),
+          rgba(244,240,231,0.75)
+        );
+    }
+
+
+    .hall-arch.one {
+      left: 48px;
+    }
+
+
+    .hall-arch.two {
+      left: 205px;
+    }
+
+
+    .hall-arch.three {
+      right: 205px;
+    }
+
+
+    .hall-arch.four {
+      right: 48px;
+    }
+
+
+
+    /* ========================================
+       CHANDELIER
+    ======================================== */
+
+    .chandelier {
+
+      position: absolute;
+
+      z-index: 8;
+
+      left: 50%;
+      top: 7px;
+
+      width: 100px;
+      height: 94px;
 
       transform:
-        rotate(-2deg);
+        translateX(-50%);
+
+      pointer-events: none;
     }
 
 
-    .guestbook-board::after {
+    .chandelier-line {
+
+      position: absolute;
+
+      left: 50%;
+      top: 0;
+
+      width: 1px;
+      height: 24px;
+
+      background:
+        rgba(181,163,125,0.60);
+    }
+
+
+    .chandelier-ring {
+
+      position: absolute;
+
+      left: 50%;
+      top: 23px;
+
+      width: 68px;
+      height: 20px;
+
+      border:
+        1px solid
+        rgba(188,164,112,0.62);
+
+      border-radius: 50%;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .crystal {
+
+      position: absolute;
+
+      top: 39px;
+
+      width: 3px;
+
+      border-radius: 10px;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.98),
+          rgba(210,226,225,0.80)
+        );
+
+      transform-origin: top;
+
+      animation:
+        crystalGlow
+        2.6s ease-in-out
+        infinite alternate;
+    }
+
+
+    .crystal.c1 {
+      left: 22px;
+      height: 28px;
+    }
+
+
+    .crystal.c2 {
+      left: 34px;
+      height: 41px;
+
+      animation-delay:
+        -0.6s;
+    }
+
+
+    .crystal.c3 {
+      left: 48px;
+      height: 49px;
+
+      animation-delay:
+        -1.1s;
+    }
+
+
+    .crystal.c4 {
+      left: 62px;
+      height: 40px;
+
+      animation-delay:
+        -0.4s;
+    }
+
+
+    .crystal.c5 {
+      left: 75px;
+      height: 27px;
+
+      animation-delay:
+        -1.5s;
+    }
+
+
+    @keyframes crystalGlow {
+
+      from {
+        opacity: 0.45;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+
+
+    /* ========================================
+       STAGE
+    ======================================== */
+
+    .hall-stage {
+
+      position: absolute;
+
+      z-index: 4;
+
+      left: 312px;
+      top: 115px;
+
+      width: 296px;
+      height: 105px;
+
+      border-radius:
+        10px 10px 35px 35px;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          #faf8f2,
+          #e9e2d4
+        );
+
+      border:
+        1px solid
+        rgba(183,169,146,0.38);
+
+      box-shadow:
+        0 7px 18px
+        rgba(117,103,80,0.10);
+    }
+
+
+    .stage-title {
+
+      position: absolute;
+
+      left: 50%;
+      top: 11px;
+
+      transform:
+        translateX(-50%);
+
+      font-family:
+        var(--font-en);
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      color: #867c6a;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* ========================================
+       FLOWERS
+    ======================================== */
+
+    .flower-cluster {
+
+      position: absolute;
+
+      z-index: 8;
+
+      width: 105px;
+      height: 90px;
+
+      pointer-events: none;
+    }
+
+
+    .flower-cluster.left {
+
+      left: 258px;
+      top: 107px;
+    }
+
+
+    .flower-cluster.right {
+
+      right: 258px;
+      top: 107px;
+
+      transform:
+        scaleX(-1);
+    }
+
+
+    .leaf {
+
+      position: absolute;
+
+      width: 15px;
+      height: 38px;
+
+      border-radius:
+        100% 0 100% 0;
+
+      background:
+        #839a79;
+    }
+
+
+    .leaf.l1 {
+
+      left: 15px;
+      top: 15px;
+
+      transform:
+        rotate(-45deg);
+    }
+
+
+    .leaf.l2 {
+
+      left: 40px;
+      top: 4px;
+
+      transform:
+        rotate(-15deg);
+    }
+
+
+    .leaf.l3 {
+
+      left: 58px;
+      top: 28px;
+
+      transform:
+        rotate(28deg);
+    }
+
+
+    .leaf.l4 {
+
+      left: 80px;
+      top: 8px;
+
+      transform:
+        rotate(48deg);
+    }
+
+
+    .flower-dot {
+
+      position: absolute;
+
+      width: 18px;
+      height: 18px;
+
+      border-radius: 50%;
+
+      box-shadow:
+
+        inset 0 0 0 4px
+        rgba(255,255,255,0.55);
+    }
+
+
+    .flower-dot.f1 {
+
+      left: 15px;
+      top: 35px;
+
+      background:
+        #e7cbd3;
+    }
+
+
+    .flower-dot.f2 {
+
+      left: 42px;
+      top: 27px;
+
+      width: 23px;
+      height: 23px;
+
+      background:
+        #eee0bf;
+    }
+
+
+    .flower-dot.f3 {
+
+      left: 67px;
+      top: 45px;
+
+      background:
+        #d8cce4;
+    }
+
+
+    .flower-dot.f4 {
+
+      left: 35px;
+      top: 57px;
+
+      background:
+        #f4ddd9;
+    }
+
+
+
+    /* ========================================
+       AISLE
+    ======================================== */
+
+    .aisle {
+
+      position: absolute;
+
+      z-index: 1;
+
+      left: 395px;
+      top: 205px;
+
+      width: 130px;
+      height: 415px;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(215,208,194,0.1),
+          rgba(255,255,255,0.86) 12%,
+          rgba(255,255,255,0.98) 50%,
+          rgba(255,255,255,0.86) 88%,
+          rgba(215,208,194,0.1)
+        );
+
+      border-left:
+        1px solid
+        rgba(194,185,170,0.20);
+
+      border-right:
+        1px solid
+        rgba(194,185,170,0.20);
+    }
+
+
+    .aisle-line {
+
+      position: absolute;
+
+      left: 50%;
+      top: 0;
+
+      width: 1px;
+      height: 100%;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(202,190,169,0.24),
+          transparent
+        );
+    }
+
+
+
+    /* ========================================
+       AISLE FLOWER ROWS
+    ======================================== */
+
+    .aisle-flower {
+
+      position: absolute;
+
+      z-index: 5;
+
+      width: 40px;
+      height: 54px;
+
+      pointer-events: none;
+    }
+
+
+    .aisle-flower::before {
+
       content: "";
 
       position: absolute;
 
-      left: 30%;
-      right: -15%;
-      bottom: -90px;
+      left: 17px;
+      bottom: 0;
 
-      height: 170px;
+      width: 5px;
+      height: 34px;
 
-      border-radius:
-        50% 50% 0 0;
+      border-radius: 5px;
 
       background:
-        rgba(237,243,244,0.92);
+        #849a7a;
+
+      transform:
+        rotate(6deg);
+    }
+
+
+    .aisle-flower::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 8px;
+      top: 2px;
+
+      width: 27px;
+      height: 27px;
+
+      border-radius: 50%;
+
+      background:
+
+        radial-gradient(
+          circle at 34% 35%,
+          #fff 0 13%,
+          #edced8 14% 44%,
+          #dbc2d0 45% 100%
+        );
+    }
+
+
+    .af1 {
+      left: 350px;
+      top: 265px;
+    }
+
+
+    .af2 {
+      left: 530px;
+      top: 265px;
+    }
+
+
+    .af3 {
+      left: 350px;
+      top: 380px;
+    }
+
+
+    .af4 {
+      left: 530px;
+      top: 380px;
+    }
+
+
+    .af5 {
+      left: 350px;
+      top: 495px;
+    }
+
+
+    .af6 {
+      left: 530px;
+      top: 495px;
+    }
+
+
+
+    /* ========================================
+       CHAIRS
+    ======================================== */
+
+    .chair {
+
+      position: absolute;
+
+      z-index: 3;
+
+      width: 44px;
+      height: 44px;
+
+      border-radius:
+        22px 22px 8px 8px;
+
+      border:
+        1px solid
+        rgba(180,170,151,0.30);
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.93),
+          rgba(231,226,214,0.90)
+        );
+
+      box-shadow:
+
+        0 4px 10px
+        rgba(112,100,80,0.07);
+    }
+
+
+
+    /* left rows */
+
+    .chair.l11 { left: 205px; top: 260px; }
+    .chair.l12 { left: 263px; top: 260px; }
+
+    .chair.l21 { left: 205px; top: 335px; }
+    .chair.l22 { left: 263px; top: 335px; }
+
+    .chair.l31 { left: 205px; top: 410px; }
+    .chair.l32 { left: 263px; top: 410px; }
+
+    .chair.l41 { left: 205px; top: 485px; }
+    .chair.l42 { left: 263px; top: 485px; }
+
+
+
+    /* right */
+
+    .chair.r11 { left: 612px; top: 260px; }
+    .chair.r12 { left: 670px; top: 260px; }
+
+    .chair.r21 { left: 612px; top: 335px; }
+    .chair.r22 { left: 670px; top: 335px; }
+
+    .chair.r31 { left: 612px; top: 410px; }
+    .chair.r32 { left: 670px; top: 410px; }
+
+    .chair.r41 { left: 612px; top: 485px; }
+    .chair.r42 { left: 670px; top: 485px; }
+
+
+
+    /* ========================================
+       LARGE GREENERY
+    ======================================== */
+
+    .hall-plant {
+
+      position: absolute;
+
+      z-index: 4;
+
+      width: 90px;
+      height: 115px;
+
+      pointer-events: none;
+    }
+
+
+    .hall-plant.plant-left {
+
+      left: 70px;
+      top: 205px;
+    }
+
+
+    .hall-plant.plant-right {
+
+      right: 70px;
+      top: 205px;
+
+      transform:
+        scaleX(-1);
+    }
+
+
+    .plant-stem {
+
+      position: absolute;
+
+      left: 45px;
+      bottom: 9px;
+
+      width: 4px;
+      height: 84px;
+
+      border-radius: 5px;
+
+      background:
+        #718b6a;
+    }
+
+
+    .plant-leaf {
+
+      position: absolute;
+
+      width: 24px;
+      height: 46px;
+
+      border-radius:
+        100% 0 100% 0;
+
+      background:
+        #88a080;
+    }
+
+
+    .plant-leaf.p1 {
+
+      left: 20px;
+      top: 20px;
+
+      transform:
+        rotate(-55deg);
+    }
+
+
+    .plant-leaf.p2 {
+
+      left: 46px;
+      top: 5px;
 
       transform:
         rotate(5deg);
     }
 
 
+    .plant-leaf.p3 {
 
-    /* 메시지 말풍선 */
+      left: 53px;
+      top: 45px;
 
-    .guestbook-message-box {
+      transform:
+        rotate(38deg);
+    }
+
+
+    .plant-pot {
+
       position: absolute;
 
-      top: 24px;
+      left: 29px;
+      bottom: 0;
+
+      width: 36px;
+      height: 23px;
+
+      border-radius:
+        3px 3px 12px 12px;
+
+      background:
+        #d6cabb;
+    }
+
+
+
+    /* ========================================
+       WEDDING COUPLE
+    ======================================== */
+
+    .wedding-couple {
+
+      position: absolute;
+
+      z-index: 15;
+
       left: 50%;
+      top: 145px;
 
-      z-index: 6;
+      display: flex;
 
-      width:
-        calc(100% - 44px);
+      align-items: flex-end;
 
-      max-width: 330px;
-
-      min-height: 65px;
-
-      padding:
-        14px 17px;
+      gap: 8px;
 
       transform:
         translateX(-50%);
+    }
 
-      border:
-        1px solid
-        rgba(94,120,133,0.14);
 
-      border-radius: 14px;
+
+    /* ========================================
+       HUMAN AVATARS
+    ======================================== */
+
+    .person-avatar {
+
+      position: relative;
+
+      width: 46px;
+      height: 65px;
+
+      display: inline-block;
+
+      --skin: #f2d8c4;
+      --hair: #4a403c;
+      --outfit: #b8c6be;
+    }
+
+
+    .person-shadow {
+
+      position: absolute;
+
+      left: 6px;
+      bottom: -3px;
+
+      width: 36px;
+      height: 8px;
+
+      border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.82);
+        rgba(81,71,59,0.12);
 
-      backdrop-filter:
-        blur(8px);
-
-      -webkit-backdrop-filter:
-        blur(8px);
-
-      color: #5d686e;
-
-      font-size: 11px;
-
-      line-height: 1.75;
-
-      text-align: center;
-
-      box-shadow:
-        0 7px 20px
-        rgba(78,105,118,0.06);
+      filter: blur(2px);
     }
 
 
-    .guestbook-message-name {
-      display: block;
+    .person-head {
 
-      margin-bottom: 3px;
+      position: absolute;
 
-      font-weight: 600;
+      z-index: 4;
 
-      color: #414c51;
+      left: 12px;
+      top: 5px;
+
+      width: 24px;
+      height: 26px;
+
+      border-radius:
+        48% 48% 46% 46%;
+
+      background:
+        var(--skin);
     }
 
 
+    .person-hair {
 
-    /* 캐릭터 배치 */
-
-    .guestbook-entries {
       position: absolute;
 
       z-index: 5;
 
-      left: 14px;
-      right: 14px;
-      bottom: 24px;
+      left: 10px;
+      top: 2px;
 
-      display: grid;
+      width: 28px;
+      height: 15px;
 
-      grid-template-columns:
-        repeat(5, 1fr);
+      border-radius:
+        16px 16px 8px 8px;
 
-      align-items: end;
-
-      gap:
-        10px 4px;
+      background:
+        var(--hair);
     }
 
 
-    .guestbook-entry {
-      min-width: 0;
+    .person-eye {
+
+      position: absolute;
+
+      z-index: 6;
+
+      top: 16px;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+
+      background:
+        #5c5350;
+    }
+
+
+    .person-eye.left {
+      left: 18px;
+    }
+
+
+    .person-eye.right {
+      left: 28px;
+    }
+
+
+    .person-body {
+
+      position: absolute;
+
+      z-index: 3;
+
+      left: 8px;
+      bottom: 4px;
+
+      width: 32px;
+      height: 36px;
+
+      border-radius:
+        14px 14px 7px 7px;
+
+      background:
+        var(--outfit);
+    }
+
+
+    .person-leg {
+
+      position: absolute;
+
+      z-index: 2;
+
+      bottom: 0;
+
+      width: 7px;
+      height: 18px;
+
+      border-radius:
+        5px;
+
+      background:
+        #6c6b67;
+    }
+
+
+    .person-leg.left {
+      left: 14px;
+    }
+
+
+    .person-leg.right {
+      left: 27px;
+    }
+
+
+
+    /* bride */
+
+    .person-bride {
+
+      --hair: #443936;
+      --outfit: #fffdfa;
+    }
+
+
+    .person-bride
+    .person-body {
+
+      left: 4px;
+
+      width: 40px;
+
+      clip-path:
+
+        polygon(
+          35% 0,
+          65% 0,
+          100% 100%,
+          0 100%
+        );
+    }
+
+
+
+    /* groom */
+
+    .person-groom {
+
+      --hair: #3d3633;
+      --outfit: #3f4b54;
+    }
+
+
+
+    /* guest colors */
+
+    .style-sage {
+
+      --hair: #514640;
+      --outfit: #9daf9d;
+    }
+
+
+    .style-pink {
+
+      --hair: #554743;
+      --outfit: #d7aeb7;
+    }
+
+
+    .style-navy {
+
+      --hair: #403a38;
+      --outfit: #596878;
+    }
+
+
+    .style-lilac {
+
+      --hair: #51423e;
+      --outfit: #b6a8c5;
+    }
+
+
+    .style-ivory {
+
+      --hair: #554842;
+      --outfit: #cfc5b4;
+    }
+
+
+
+    /* ========================================
+       STATIC NPC
+    ======================================== */
+
+    .npc {
+
+      position: absolute;
+
+      z-index: 10;
+
+      transform:
+        scale(0.88);
+
+      opacity: 0.92;
+
+      pointer-events: none;
+    }
+
+
+    .npc.n1 { left: 213px; top: 275px; }
+    .npc.n2 { left: 671px; top: 350px; }
+    .npc.n3 { left: 270px; top: 430px; }
+    .npc.n4 { left: 614px; top: 505px; }
+    .npc.n5 { left: 205px; top: 505px; }
+    .npc.n6 { left: 675px; top: 275px; }
+
+
+
+    /* ========================================
+       PLAYER
+    ======================================== */
+
+    .player-character {
+
+      position: absolute;
+
+      z-index: 100;
+
+      width: 50px;
+      height: 72px;
+
+      transform:
+        translate(-50%, -80%);
+
+      pointer-events: none;
+
+      will-change:
+        left,
+        top;
+    }
+
+
+    .player-you {
+
+      position: absolute;
+
+      left: 50%;
+      top: -14px;
+
+      transform:
+        translateX(-50%);
+
+      padding:
+        3px 7px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,0.92);
+
+      box-shadow:
+        0 2px 7px
+        rgba(64,71,64,0.10);
+
+      color: #536159;
+
+      font-size: 8px;
+
+      white-space: nowrap;
+    }
+
+
+    .player-character.walking
+    .person-avatar {
+
+      animation:
+        littleWalk
+        0.32s ease-in-out
+        infinite alternate;
+    }
+
+
+    @keyframes littleWalk {
+
+      from {
+        transform:
+          translateY(0)
+          rotate(-1deg);
+      }
+
+      to {
+        transform:
+          translateY(-3px)
+          rotate(1deg);
+      }
+    }
+
+
+
+    /* ========================================
+       GUEST ENTRY IN HALL
+    ======================================== */
+
+    .hall-guest-entry {
+
+      position: absolute;
+
+      z-index: 70;
+
+      width: 60px;
 
       padding: 0;
 
@@ -2359,25 +3838,37 @@
 
       background: transparent;
 
+      transform:
+        translate(-50%, -80%);
+
       cursor: pointer;
 
       text-align: center;
     }
 
 
-    .guestbook-entry-name {
+    .hall-guest-entry
+    .person-avatar {
+
+      transform:
+        scale(0.88);
+    }
+
+
+    .hall-entry-name {
+
       display: block;
 
-      max-width: 62px;
+      max-width: 60px;
 
       margin:
-        3px auto 0;
+        -5px auto 0;
 
       overflow: hidden;
 
-      color: #5a666c;
+      color: #59635d;
 
-      font-size: 9px;
+      font-size: 8px;
 
       text-overflow: ellipsis;
 
@@ -2387,362 +3878,435 @@
 
 
     /* ========================================
-       CSS CHARACTER
+       HALL FLOATING MESSAGE
     ======================================== */
 
-    .avatar {
-      position: relative;
+    .hall-message-card {
 
-      width: 44px;
-      height: 55px;
-
-      display: inline-block;
-
-      vertical-align: bottom;
-
-      --face: #fff;
-      --body: #dbe8ee;
-      --line: #5c6569;
-    }
-
-
-    .avatar-head {
       position: absolute;
 
-      z-index: 3;
-
-      left: 8px;
-      top: 10px;
-
-      width: 28px;
-      height: 27px;
-
-      border:
-        1px solid
-        rgba(75,90,98,0.10);
-
-      border-radius:
-        48% 48% 46% 46%;
-
-      background:
-        var(--face);
-    }
-
-
-    .avatar-body {
-      position: absolute;
-
-      z-index: 2;
-
-      left: 6px;
-      bottom: 1px;
-
-      width: 32px;
-      height: 27px;
-
-      border:
-        1px solid
-        rgba(75,90,98,0.08);
-
-      border-radius:
-        52% 52% 38% 38%;
-
-      background:
-        var(--body);
-    }
-
-
-    .avatar-eye {
-      position: absolute;
-
-      top: 11px;
-
-      width: 2.5px;
-      height: 2.5px;
-
-      border-radius: 50%;
-
-      background:
-        var(--line);
-    }
-
-
-    .avatar-eye.left {
-      left: 8px;
-    }
-
-
-    .avatar-eye.right {
-      right: 8px;
-    }
-
-
-    .avatar-nose {
-      position: absolute;
+      z-index: 150;
 
       left: 50%;
-      top: 16px;
+      top: 14px;
 
-      width: 3px;
-      height: 2px;
+      width:
+        calc(100% - 34px);
 
-      border-radius: 50%;
+      max-width: 340px;
 
-      background:
-        var(--line);
+      padding:
+        13px 16px;
 
       transform:
         translateX(-50%);
+
+      border:
+        1px solid
+        rgba(86,101,91,0.14);
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,255,255,0.91);
+
+      backdrop-filter:
+        blur(10px);
+
+      -webkit-backdrop-filter:
+        blur(10px);
+
+      box-shadow:
+        0 8px 24px
+        rgba(60,72,63,0.08);
+
+      color: #5f6963;
+
+      font-size: 11px;
+
+      line-height: 1.65;
+
+      text-align: center;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
     }
 
 
+    .hall-message-card.hidden {
 
-    /* bunny */
-
-    .avatar-bunny {
-      --face: #fafafa;
-      --body: #d9e8ef;
-    }
-
-
-    .avatar-bunny::before,
-    .avatar-bunny::after {
-      content: "";
-
-      position: absolute;
-
-      z-index: 1;
-
-      top: 0;
-
-      width: 9px;
-      height: 22px;
-
-      border-radius:
-        50% 50% 42% 42%;
-
-      background: #fafafa;
-    }
-
-
-    .avatar-bunny::before {
-      left: 10px;
+      opacity: 0;
 
       transform:
-        rotate(-8deg);
+        translate(-50%, -7px);
     }
 
 
-    .avatar-bunny::after {
-      right: 10px;
+    .hall-message-name {
 
-      transform:
-        rotate(8deg);
-    }
+      display: block;
 
+      margin-bottom: 3px;
 
+      color: #424e47;
 
-    /* bear */
-
-    .avatar-bear {
-      --face: #f1e5d6;
-      --body: #dbc8b7;
-    }
-
-
-    .avatar-bear::before,
-    .avatar-bear::after {
-      content: "";
-
-      position: absolute;
-
-      z-index: 1;
-
-      top: 7px;
-
-      width: 11px;
-      height: 11px;
-
-      border-radius: 50%;
-
-      background: #e5d2bf;
-    }
-
-
-    .avatar-bear::before {
-      left: 6px;
-    }
-
-
-    .avatar-bear::after {
-      right: 6px;
-    }
-
-
-
-    /* cat */
-
-    .avatar-cat {
-      --face: #e1e5e8;
-      --body: #cbd4da;
-    }
-
-
-    .avatar-cat::before,
-    .avatar-cat::after {
-      content: "";
-
-      position: absolute;
-
-      z-index: 1;
-
-      top: 6px;
-
-      width: 12px;
-      height: 12px;
-
-      background: #dce2e6;
-
-      transform:
-        rotate(45deg);
-    }
-
-
-    .avatar-cat::before {
-      left: 7px;
-    }
-
-
-    .avatar-cat::after {
-      right: 7px;
-    }
-
-
-
-    /* fox */
-
-    .avatar-fox {
-      --face: #e8cfc3;
-      --body: #c99582;
-    }
-
-
-    .avatar-fox::before,
-    .avatar-fox::after {
-      content: "";
-
-      position: absolute;
-
-      z-index: 1;
-
-      top: 6px;
-
-      width: 13px;
-      height: 13px;
-
-      background: #d8a994;
-
-      transform:
-        rotate(45deg);
-    }
-
-
-    .avatar-fox::before {
-      left: 6px;
-    }
-
-
-    .avatar-fox::after {
-      right: 6px;
-    }
-
-
-
-    /* snowman */
-
-    .avatar-snowman {
-      --face: #fff;
-      --body: #f5f7f7;
-    }
-
-
-    .avatar-snowman
-    .avatar-body {
-      width: 34px;
-      height: 30px;
-
-      left: 5px;
-
-      border-radius: 50%;
+      font-weight: 600;
     }
 
 
 
     /* ========================================
-       CHARACTER SELECTOR
+       HALL INSTRUCTIONS
     ======================================== */
 
-    .character-options {
-      display: grid;
+    .hall-instructions {
 
-      grid-template-columns:
-        repeat(5, 1fr);
+      position: absolute;
 
-      gap: 7px;
+      z-index: 145;
 
-      margin-top: 13px;
+      left: 14px;
+      bottom: 14px;
+
+      max-width: 190px;
+
+      padding:
+        9px 11px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,0.82);
+
+      backdrop-filter:
+        blur(9px);
+
+      -webkit-backdrop-filter:
+        blur(9px);
+
+      color: #758079;
+
+      font-size: 9px;
+
+      line-height: 1.6;
+
+      pointer-events: none;
     }
 
 
-    .character-option {
-      position: relative;
 
-      min-width: 0;
+    /* ========================================
+       D-PAD
+    ======================================== */
 
-      padding:
-        9px 2px 8px;
+    .hall-dpad {
+
+      position: absolute;
+
+      z-index: 170;
+
+      right: 13px;
+      bottom: 13px;
+
+      width: 110px;
+      height: 110px;
+    }
+
+
+    .dpad-button {
+
+      position: absolute;
+
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
 
       border:
-        1px solid #ddd8d1;
+        1px solid
+        rgba(72,88,77,0.18);
 
-      border-radius: 10px;
+      border-radius: 50%;
 
-      background: #fff;
+      background:
+        rgba(255,255,255,0.88);
+
+      box-shadow:
+        0 3px 9px
+        rgba(60,72,62,0.07);
+
+      color: #5f7066;
+
+      font-size: 14px;
 
       cursor: pointer;
     }
 
 
-    .character-option.active {
-      border-color: #879ba5;
+    .dpad-up {
+
+      left: 36px;
+      top: 0;
+    }
+
+
+    .dpad-down {
+
+      left: 36px;
+      bottom: 0;
+    }
+
+
+    .dpad-left {
+
+      left: 0;
+      top: 36px;
+    }
+
+
+    .dpad-right {
+
+      right: 0;
+      top: 36px;
+    }
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    .modal {
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 11000;
+
+      display: none;
+
+      align-items: flex-end;
+      justify-content: center;
+
+      padding: 20px;
 
       background:
-        #edf4f7;
+        rgba(0,0,0,0.38);
     }
 
 
-    .character-option-label {
-      display: block;
+    .modal.active {
 
-      margin-top: 3px;
-
-      font-size: 9px;
-
-      color: #777;
+      display: flex;
     }
 
 
-    .guestbook-add-button {
+    .modal-panel {
+
       width: 100%;
+      max-width: 520px;
 
-      min-height: 54px;
+      max-height: 88vh;
 
-      margin-top: 25px;
+      overflow-y: auto;
+
+      padding:
+        26px 22px 34px;
+
+      border-radius:
+        18px 18px 8px 8px;
+
+      background:
+        #faf9f6;
+    }
+
+
+    .modal-header {
+
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    .modal-label {
+
+      font-family:
+        var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 3px;
+
+      color: #999;
+    }
+
+
+    .modal-title {
+
+      margin-top: 9px;
+
+      font-family:
+        var(--font-ko-title);
+
+      font-size: 24px;
+    }
+
+
+    .modal-close {
+
+      width: 42px;
+      height: 42px;
 
       border: 0;
 
       background:
-        #3d494f;
+        transparent;
+
+      font-size: 25px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       FORM
+    ======================================== */
+
+    .form-section {
+
+      margin-top: 30px;
+    }
+
+
+    .form-label {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-size: 11px;
+
+      color: #666;
+    }
+
+
+    .choice-row {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 8px;
+    }
+
+
+    .choice-input {
+
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+
+    .choice-label {
+
+      min-height: 46px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid #d0ccc5;
+
+      background: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+
+    .choice-input:checked
+    + .choice-label {
+
+      border-color: #555;
+
+      background: #444;
+
+      color: #fff;
+    }
+
+
+    .text-input,
+    .select-input,
+    .textarea-input {
+
+      width: 100%;
+
+      border:
+        1px solid #d0ccc5;
+
+      border-radius: 0;
+
+      background: #fff;
+
+      color: #333;
+
+      font-size: 13px;
+    }
+
+
+    .text-input,
+    .select-input {
+
+      min-height: 48px;
+
+      padding:
+        0 13px;
+    }
+
+
+    .textarea-input {
+
+      min-height: 95px;
+
+      padding: 13px;
+
+      resize: none;
+
+      line-height: 1.7;
+    }
+
+
+    .submit-button {
+
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 32px;
+
+      border: 0;
+
+      background: #333;
 
       color: #fff;
 
@@ -2752,23 +4316,203 @@
     }
 
 
-    .guestbook-preview-note {
-      margin-top: 14px;
 
-      color: #839096;
+    /* ========================================
+       GUEST AVATAR OPTIONS
+    ======================================== */
 
-      font-size: 10px;
+    .guest-style-options {
 
-      line-height: 1.7;
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 6px;
+
+      margin-top: 11px;
+    }
+
+
+    .guest-style-option {
+
+      min-width: 0;
+
+      padding:
+        7px 1px;
+
+      border:
+        1px solid #d8d4cd;
+
+      border-radius: 10px;
+
+      background: #fff;
+
+      cursor: pointer;
+    }
+
+
+    .guest-style-option.active {
+
+      border-color:
+        #80968a;
+
+      background:
+        #edf3ef;
+    }
+
+
+    .guest-style-option
+    .person-avatar {
+
+      transform:
+        scale(0.78);
+
+      margin:
+        -6px 0 -5px;
+    }
+
+
+    .guest-style-label {
+
+      display: block;
+
+      margin-top: -4px;
+
+      color: #777;
+
+      font-size: 8px;
     }
 
 
 
     /* ========================================
-       SEASON DETAIL
+       ACCOUNT
+    ======================================== */
+
+    .account-tabs {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 7px;
+
+      margin-top: 28px;
+    }
+
+
+    .account-tab {
+
+      min-height: 45px;
+
+      border:
+        1px solid #ccc7c0;
+
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+
+    .account-tab.active {
+
+      background: #444;
+
+      border-color: #444;
+
+      color: #fff;
+    }
+
+
+    .account-group {
+
+      display: none;
+
+      margin-top: 25px;
+    }
+
+
+    .account-group.active {
+
+      display: block;
+    }
+
+
+    .account-card {
+
+      padding:
+        20px 0;
+
+      border-bottom:
+        1px solid #dedad4;
+    }
+
+
+    .account-card:first-child {
+
+      border-top:
+        1px solid #dedad4;
+    }
+
+
+    .account-role {
+
+      font-size: 10px;
+
+      color: #999;
+    }
+
+
+    .account-name {
+
+      margin-top: 4px;
+
+      font-family:
+        var(--font-ko-title);
+
+      font-size: 14px;
+    }
+
+
+    .account-number {
+
+      margin-top: 10px;
+
+      font-size: 12px;
+
+      color: #666;
+    }
+
+
+    .account-copy {
+
+      margin-top: 12px;
+
+      min-height: 38px;
+
+      padding:
+        0 15px;
+
+      border:
+        1px solid #c9c5be;
+
+      background: transparent;
+
+      font-size: 11px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       SEASON DETAILS
     ======================================== */
 
     .season-page {
+
       position: fixed;
       inset: 0;
 
@@ -2786,11 +4530,13 @@
 
 
     .season-page.active {
+
       display: block;
     }
 
 
     .season-page-inner {
+
       width: 100%;
       max-width: 540px;
 
@@ -2802,13 +4548,15 @@
 
 
     .season-back {
+
       min-height: 44px;
 
       padding: 0;
 
       border: 0;
 
-      background: transparent;
+      background:
+        transparent;
 
       font-family:
         var(--font-en);
@@ -2822,6 +4570,7 @@
 
 
     .season-page-header {
+
       margin-top: 42px;
 
       text-align: center;
@@ -2829,6 +4578,7 @@
 
 
     .season-page-small {
+
       font-family:
         var(--font-en);
 
@@ -2841,6 +4591,7 @@
 
 
     .season-page-title {
+
       margin-top: 13px;
 
       font-family:
@@ -2853,6 +4604,7 @@
 
 
     .season-page-main-photo {
+
       width: 100%;
 
       aspect-ratio:
@@ -2874,6 +4626,7 @@
 
 
     .season-page-text {
+
       margin-top: 34px;
 
       text-align: center;
@@ -2887,6 +4640,7 @@
 
 
     .mini-gallery {
+
       display: grid;
 
       grid-template-columns:
@@ -2899,6 +4653,7 @@
 
 
     .mini-photo {
+
       aspect-ratio: 1;
 
       display: flex;
@@ -2915,6 +4670,7 @@
 
 
     .season-end {
+
       margin-top: 50px;
 
       text-align: center;
@@ -2931,364 +4687,43 @@
 
 
     #season-winter {
-      background: #edf3f6;
+
+      background:
+        #edf3f6;
     }
 
 
     #season-spring {
-      background: #f5f2eb;
+
+      background:
+        #f5f2eb;
     }
 
 
     #season-summer {
-      background: #f4efe4;
+
+      background:
+        #f4efe4;
     }
 
 
     #season-autumn {
-      background: #eee8e1;
-    }
-
-
-
-    /* ========================================
-       MODAL
-    ======================================== */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-
-      z-index: 3000;
-
-      display: none;
-
-      align-items: flex-end;
-      justify-content: center;
-
-      padding: 20px;
 
       background:
-        rgba(0,0,0,0.38);
-    }
-
-
-    .modal.active {
-      display: flex;
-    }
-
-
-    .modal-panel {
-      width: 100%;
-      max-width: 520px;
-
-      max-height: 88vh;
-
-      overflow-y: auto;
-
-      padding:
-        26px 22px 34px;
-
-      border-radius:
-        18px 18px 8px 8px;
-
-      background:
-        #faf9f6;
-    }
-
-
-    .modal-header {
-      display: flex;
-
-      align-items: flex-start;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-
-    .modal-label {
-      font-family:
-        var(--font-en);
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-
-      color: #999;
-    }
-
-
-    .modal-title {
-      margin-top: 9px;
-
-      font-family:
-        var(--font-ko-title);
-
-      font-size: 24px;
-    }
-
-
-    .modal-close {
-      width: 42px;
-      height: 42px;
-
-      border: 0;
-
-      background: transparent;
-
-      font-size: 25px;
-
-      cursor: pointer;
+        #eee8e1;
     }
 
 
 
     /* ========================================
-       FORM
-    ======================================== */
-
-    .form-section {
-      margin-top: 30px;
-    }
-
-
-    .form-label {
-      display: block;
-
-      margin-bottom: 9px;
-
-      font-size: 11px;
-
-      color: #666;
-    }
-
-
-    .choice-row {
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 8px;
-    }
-
-
-    .choice-input {
-      position: absolute;
-
-      opacity: 0;
-
-      pointer-events: none;
-    }
-
-
-    .choice-label {
-      min-height: 46px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border:
-        1px solid #d0ccc5;
-
-      background: #fff;
-
-      font-size: 12px;
-
-      cursor: pointer;
-    }
-
-
-    .choice-input:checked
-    + .choice-label {
-      border-color: #555;
-
-      background: #444;
-
-      color: #fff;
-    }
-
-
-    .text-input,
-    .select-input,
-    .textarea-input {
-      width: 100%;
-
-      border:
-        1px solid #d0ccc5;
-
-      border-radius: 0;
-
-      background: #fff;
-
-      color: #333;
-
-      font-size: 13px;
-    }
-
-
-    .text-input,
-    .select-input {
-      min-height: 48px;
-
-      padding:
-        0 13px;
-    }
-
-
-    .textarea-input {
-      min-height: 95px;
-
-      padding:
-        13px;
-
-      resize: none;
-
-      line-height: 1.7;
-    }
-
-
-    .submit-button {
-      width: 100%;
-
-      min-height: 54px;
-
-      margin-top: 32px;
-
-      border: 0;
-
-      background: #333;
-
-      color: #fff;
-
-      font-size: 12px;
-
-      cursor: pointer;
-    }
-
-
-
-    /* ========================================
-       ACCOUNT
-    ======================================== */
-
-    .account-tabs {
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 7px;
-
-      margin-top: 28px;
-    }
-
-
-    .account-tab {
-      min-height: 45px;
-
-      border:
-        1px solid #ccc7c0;
-
-      background: transparent;
-
-      cursor: pointer;
-    }
-
-
-    .account-tab.active {
-      background: #444;
-
-      border-color: #444;
-
-      color: #fff;
-    }
-
-
-    .account-group {
-      display: none;
-
-      margin-top: 25px;
-    }
-
-
-    .account-group.active {
-      display: block;
-    }
-
-
-    .account-card {
-      padding:
-        20px 0;
-
-      border-bottom:
-        1px solid #dedad4;
-    }
-
-
-    .account-card:first-child {
-      border-top:
-        1px solid #dedad4;
-    }
-
-
-    .account-role {
-      font-size: 10px;
-
-      color: #999;
-    }
-
-
-    .account-name {
-      margin-top: 4px;
-
-      font-family:
-        var(--font-ko-title);
-
-      font-size: 14px;
-    }
-
-
-    .account-number {
-      margin-top: 10px;
-
-      font-size: 12px;
-
-      color: #666;
-    }
-
-
-    .account-copy {
-      margin-top: 12px;
-
-      min-height: 38px;
-
-      padding:
-        0 15px;
-
-      border:
-        1px solid #c9c5be;
-
-      background: transparent;
-
-      font-size: 11px;
-
-      cursor: pointer;
-    }
-
-
-
-    /* ========================================
-       COPY TOAST
+       TOAST
     ======================================== */
 
     .toast {
+
       position: fixed;
 
-      z-index: 12000;
+      z-index: 13000;
 
       left: 50%;
       bottom: 35px;
@@ -3302,17 +4737,17 @@
       border-radius: 30px;
 
       background:
-        rgba(43,48,51,0.91);
+        rgba(43,48,51,0.92);
 
       color: #fff;
 
       font-size: 11px;
 
       opacity: 0;
-
       visibility: hidden;
 
       transition:
+
         opacity 0.25s ease,
         transform 0.25s ease,
         visibility 0.25s ease;
@@ -3320,8 +4755,8 @@
 
 
     .toast.show {
-      opacity: 1;
 
+      opacity: 1;
       visibility: visible;
 
       transform:
@@ -3335,6 +4770,7 @@
     ======================================== */
 
     footer {
+
       padding:
         70px 20px;
 
@@ -3363,17 +4799,20 @@
     @media (max-width: 420px) {
 
       .opening-inner {
+
         padding-left: 14px;
         padding-right: 14px;
       }
 
 
       .letter-small {
+
         margin-bottom: 24px;
       }
 
 
       .envelope-stage {
+
         --env-w: 260px;
         --env-h: 163px;
 
@@ -3391,11 +4830,13 @@
 
 
       .envelope-flap {
+
         height: 101px;
       }
 
 
       .envelope-seal {
+
         top: 64px;
 
         font-size: 27px;
@@ -3403,32 +4844,38 @@
 
 
       .opening-names {
+
         font-size: 26px;
       }
 
 
       .intro {
+
         padding-left: 18px;
         padding-right: 18px;
       }
 
 
       .names {
+
         font-size: 35px;
       }
 
 
       .again-title {
+
         font-size: 39px;
       }
 
 
       .invitation-title {
+
         font-size: 25px;
       }
 
 
       .wedding-calendar {
+
         max-width: 330px;
 
         padding-left: 2px;
@@ -3437,45 +4884,64 @@
 
 
       .parking-row {
+
         grid-template-columns:
           74px 1fr;
       }
 
 
       .modal {
+
         padding: 10px;
       }
 
 
-      .guestbook-entries {
-        grid-template-columns:
-          repeat(5, 1fr);
+      .virtual-top-title-main {
+
+        font-size: 11px;
       }
 
 
-      .avatar {
-        transform:
-          scale(0.92);
+      .virtual-top-title-sub {
+
+        font-size: 8px;
+      }
+
+
+      .virtual-write {
+
+        padding:
+          0 9px;
+
+        font-size: 9px;
       }
 
     }
 
 
 
-    /* ========================================
-       REDUCED MOTION
-    ======================================== */
-
     @media
     (prefers-reduced-motion: reduce) {
 
       .snow-layer {
+
         display: none;
       }
 
+
       .reveal {
+
         opacity: 1;
+
         transform: none;
+      }
+
+
+      .crystal,
+      .player-character.walking
+      .person-avatar {
+
+        animation: none;
       }
 
     }
@@ -3544,9 +5010,13 @@
 
 
           <div class="envelope-front">
+
             <div class="envelope-front-left"></div>
+
             <div class="envelope-front-right"></div>
+
             <div class="envelope-front-bottom"></div>
+
           </div>
 
 
@@ -3565,9 +5035,11 @@
           Gahyun & Jinchan
         </div>
 
+
         <div class="opening-date">
           JANUARY 30, 2027
         </div>
+
 
         <div class="opening-line"></div>
 
@@ -3661,6 +5133,7 @@
 
       <div class="season-grid">
 
+
         <button
           type="button"
           class="season-card winter"
@@ -3688,6 +5161,7 @@
           </div>
 
         </button>
+
 
 
         <button
@@ -3719,6 +5193,7 @@
         </button>
 
 
+
         <button
           type="button"
           class="season-card summer"
@@ -3748,6 +5223,7 @@
         </button>
 
 
+
         <button
           type="button"
           class="season-card autumn"
@@ -3775,6 +5251,7 @@
           </div>
 
         </button>
+
 
       </div>
 
@@ -3900,7 +5377,7 @@
 
 
   <!-- ========================================
-       WEDDING DAY
+       WEDDING
   ======================================== -->
 
   <section
@@ -4295,78 +5772,557 @@
 
 
   <!-- ========================================
-       CHARACTER GUESTBOOK
+       VIRTUAL WEDDING INTRO
   ======================================== -->
 
-  <section class="character-guestbook reveal">
+  <section class="virtual-intro reveal">
 
     <div class="inner center">
 
       <div class="section-label">
-        WINTER GUESTBOOK
+        VIRTUAL WEDDING
       </div>
 
 
-      <div class="guestbook-title">
-        Leave Your Character
+      <div class="virtual-intro-title">
+        Meet Us in the Garden
       </div>
 
 
-      <div class="guestbook-description">
+      <div class="virtual-intro-kor">
+        작은 결혼식장에 초대합니다
+      </div>
 
-        작은 캐릭터 하나와
+
+      <div class="virtual-intro-text">
+
+        청첩장 속 또 하나의 웨딩홀을 둘러보고,
 
         <br>
 
-        저희에게 전하고 싶은 한마디를 남겨주세요.
+        작은 하객 캐릭터와 축하 한마디를 남겨주세요.
 
       </div>
-
-
-
-      <div class="guestbook-board">
-
-        <div
-          class="guestbook-message-box"
-          id="guestbookMessageBox"
-        >
-
-          캐릭터를 눌러 방명록을 읽어보세요.
-
-        </div>
-
-
-        <div
-          class="guestbook-entries"
-          id="guestbookEntries"
-        ></div>
-
-      </div>
-
 
 
       <button
         type="button"
-        class="guestbook-add-button"
-        id="openGuestbook"
+        class="virtual-enter-button"
+        id="openVirtualWedding"
       >
-        캐릭터와 방명록 남기기
+        온라인 웨딩홀 입장하기 →
       </button>
 
 
-      <div class="guestbook-preview-note">
+      <div class="virtual-small-note">
 
-        현재는 디자인 확인용 미리보기예요.
+        홀 안의 빈 곳을 터치하면 캐릭터가 이동하고
 
         <br>
 
-        저장 기능 연결 후에는 모든 하객이 같은 방명록을 볼 수 있게 만들 수 있어요.
+        화면을 손가락으로 끌어 홀을 둘러볼 수 있어요.
 
       </div>
 
     </div>
 
   </section>
+
+
+
+  <!-- ========================================
+       VIRTUAL WEDDING PAGE
+  ======================================== -->
+
+  <div
+    class="virtual-wedding"
+    id="virtualWedding"
+  >
+
+    <div class="virtual-topbar">
+
+      <button
+        type="button"
+        class="virtual-back"
+        id="closeVirtualWedding"
+      >
+        ← INVITATION
+      </button>
+
+
+      <div class="virtual-top-title">
+
+        <div class="virtual-top-title-main">
+          GAHYUN & JINCHAN
+        </div>
+
+        <div class="virtual-top-title-sub">
+          ELORA IN GARDEN · VIRTUAL WEDDING
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="virtual-write"
+        id="openHallGuestbook"
+      >
+        방명록 +
+      </button>
+
+    </div>
+
+
+
+    <div
+      class="virtual-viewport"
+      id="virtualViewport"
+    >
+
+      <div
+        class="virtual-world"
+        id="virtualWorld"
+      >
+
+
+        <!-- BACK WALL -->
+
+        <div class="hall-back-wall">
+
+          <div class="hall-arch one"></div>
+          <div class="hall-arch two"></div>
+          <div class="hall-arch three"></div>
+          <div class="hall-arch four"></div>
+
+        </div>
+
+
+
+        <!-- CHANDELIER -->
+
+        <div class="chandelier">
+
+          <div class="chandelier-line"></div>
+
+          <div class="chandelier-ring"></div>
+
+          <span class="crystal c1"></span>
+          <span class="crystal c2"></span>
+          <span class="crystal c3"></span>
+          <span class="crystal c4"></span>
+          <span class="crystal c5"></span>
+
+        </div>
+
+
+
+        <!-- STAGE -->
+
+        <div class="hall-stage">
+
+          <div class="stage-title">
+            GAHYUN ♥ JINCHAN
+          </div>
+
+        </div>
+
+
+
+        <!-- FLOWER LEFT -->
+
+        <div class="flower-cluster left">
+
+          <span class="leaf l1"></span>
+          <span class="leaf l2"></span>
+          <span class="leaf l3"></span>
+          <span class="leaf l4"></span>
+
+          <span class="flower-dot f1"></span>
+          <span class="flower-dot f2"></span>
+          <span class="flower-dot f3"></span>
+          <span class="flower-dot f4"></span>
+
+        </div>
+
+
+
+        <!-- FLOWER RIGHT -->
+
+        <div class="flower-cluster right">
+
+          <span class="leaf l1"></span>
+          <span class="leaf l2"></span>
+          <span class="leaf l3"></span>
+          <span class="leaf l4"></span>
+
+          <span class="flower-dot f1"></span>
+          <span class="flower-dot f2"></span>
+          <span class="flower-dot f3"></span>
+          <span class="flower-dot f4"></span>
+
+        </div>
+
+
+
+        <!-- COUPLE -->
+
+        <div class="wedding-couple">
+
+
+          <div class="person-avatar person-groom">
+
+            <span class="person-shadow"></span>
+
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+
+            <span class="person-body"></span>
+
+            <span class="person-head"></span>
+
+            <span class="person-hair"></span>
+
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+
+
+          <div class="person-avatar person-bride">
+
+            <span class="person-shadow"></span>
+
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+
+            <span class="person-body"></span>
+
+            <span class="person-head"></span>
+
+            <span class="person-hair"></span>
+
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- AISLE -->
+
+        <div class="aisle">
+
+          <div class="aisle-line"></div>
+
+        </div>
+
+
+
+        <div class="aisle-flower af1"></div>
+        <div class="aisle-flower af2"></div>
+
+        <div class="aisle-flower af3"></div>
+        <div class="aisle-flower af4"></div>
+
+        <div class="aisle-flower af5"></div>
+        <div class="aisle-flower af6"></div>
+
+
+
+        <!-- CHAIRS -->
+
+        <div class="chair l11"></div>
+        <div class="chair l12"></div>
+
+        <div class="chair l21"></div>
+        <div class="chair l22"></div>
+
+        <div class="chair l31"></div>
+        <div class="chair l32"></div>
+
+        <div class="chair l41"></div>
+        <div class="chair l42"></div>
+
+
+        <div class="chair r11"></div>
+        <div class="chair r12"></div>
+
+        <div class="chair r21"></div>
+        <div class="chair r22"></div>
+
+        <div class="chair r31"></div>
+        <div class="chair r32"></div>
+
+        <div class="chair r41"></div>
+        <div class="chair r42"></div>
+
+
+
+        <!-- GREENERY -->
+
+        <div class="hall-plant plant-left">
+
+          <div class="plant-stem"></div>
+
+          <span class="plant-leaf p1"></span>
+          <span class="plant-leaf p2"></span>
+          <span class="plant-leaf p3"></span>
+
+          <div class="plant-pot"></div>
+
+        </div>
+
+
+        <div class="hall-plant plant-right">
+
+          <div class="plant-stem"></div>
+
+          <span class="plant-leaf p1"></span>
+          <span class="plant-leaf p2"></span>
+          <span class="plant-leaf p3"></span>
+
+          <div class="plant-pot"></div>
+
+        </div>
+
+
+
+        <!-- DECORATIVE GUESTS -->
+
+        <div class="npc n1">
+
+          <div class="person-avatar style-sage">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="npc n2">
+
+          <div class="person-avatar style-pink">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="npc n3">
+
+          <div class="person-avatar style-navy">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="npc n4">
+
+          <div class="person-avatar style-lilac">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="npc n5">
+
+          <div class="person-avatar style-ivory">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="npc n6">
+
+          <div class="person-avatar style-sage">
+
+            <span class="person-shadow"></span>
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+            <span class="person-body"></span>
+            <span class="person-head"></span>
+            <span class="person-hair"></span>
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SAVED GUESTBOOK CHARACTERS -->
+
+        <div
+          id="hallGuestEntries"
+        ></div>
+
+
+
+        <!-- PLAYER -->
+
+        <div
+          class="player-character"
+          id="playerCharacter"
+        >
+
+          <div class="player-you">
+            YOU
+          </div>
+
+
+          <div
+            class="person-avatar style-sage"
+            id="playerAvatar"
+          >
+
+            <span class="person-shadow"></span>
+
+            <span class="person-leg left"></span>
+            <span class="person-leg right"></span>
+
+            <span class="person-body"></span>
+
+            <span class="person-head"></span>
+
+            <span class="person-hair"></span>
+
+            <span class="person-eye left"></span>
+            <span class="person-eye right"></span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- MESSAGE -->
+
+      <div
+        class="hall-message-card hidden"
+        id="hallMessageCard"
+      ></div>
+
+
+
+      <!-- HELP -->
+
+      <div class="hall-instructions">
+
+        빈 곳을 터치하면 이동합니다.
+
+        <br>
+
+        화면을 끌어 홀을 둘러보세요.
+
+        <br>
+
+        하객 캐릭터를 누르면 축하메시지가 보여요.
+
+      </div>
+
+
+
+      <!-- D PAD -->
+
+      <div class="hall-dpad">
+
+        <button
+          type="button"
+          class="dpad-button dpad-up"
+          data-move-y="-70"
+        >
+          ↑
+        </button>
+
+
+        <button
+          type="button"
+          class="dpad-button dpad-left"
+          data-move-x="-70"
+        >
+          ←
+        </button>
+
+
+        <button
+          type="button"
+          class="dpad-button dpad-right"
+          data-move-x="70"
+        >
+          →
+        </button>
+
+
+        <button
+          type="button"
+          class="dpad-button dpad-down"
+          data-move-y="70"
+        >
+          ↓
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 
 
@@ -4900,8 +6856,6 @@
 
 
 
-      <!-- GROOM -->
-
       <div
         class="account-group active"
         id="account-groom"
@@ -4984,8 +6938,6 @@
       </div>
 
 
-
-      <!-- BRIDE -->
 
       <div
         class="account-group"
@@ -5075,12 +7027,12 @@
 
 
   <!-- ========================================
-       GUESTBOOK MODAL
+       VIRTUAL GUESTBOOK MODAL
   ======================================== -->
 
   <div
     class="modal"
-    id="guestbookModal"
+    id="hallGuestbookModal"
   >
 
     <div class="modal-panel">
@@ -5090,11 +7042,11 @@
         <div>
 
           <div class="modal-label">
-            WINTER GUESTBOOK
+            VIRTUAL WEDDING
           </div>
 
           <div class="modal-title">
-            작은 친구를 남겨주세요
+            작은 하객을 남겨주세요
           </div>
 
         </div>
@@ -5112,13 +7064,13 @@
 
 
 
-      <form id="guestbookForm">
+      <form id="hallGuestbookForm">
 
         <div class="form-section">
 
           <label
             class="form-label"
-            for="guestbookName"
+            for="hallGuestName"
           >
             성함
           </label>
@@ -5126,10 +7078,10 @@
 
           <input
             type="text"
-            id="guestbookName"
+            id="hallGuestName"
             class="text-input"
-            placeholder="성함을 입력해주세요"
             maxlength="12"
+            placeholder="성함을 입력해주세요"
             required
           >
 
@@ -5140,30 +7092,39 @@
         <div class="form-section">
 
           <div class="form-label">
-            함께 남길 캐릭터
+            하객 캐릭터
           </div>
 
 
-          <div class="character-options">
+          <div class="guest-style-options">
 
 
             <button
               type="button"
-              class="character-option active"
-              data-character="bunny"
+              class="guest-style-option active"
+              data-guest-style="sage"
             >
 
-              <span class="avatar avatar-bunny">
-                <span class="avatar-head">
-                  <i class="avatar-eye left"></i>
-                  <i class="avatar-eye right"></i>
-                  <i class="avatar-nose"></i>
-                </span>
-                <span class="avatar-body"></span>
+              <span class="person-avatar style-sage">
+
+                <span class="person-shadow"></span>
+
+                <span class="person-leg left"></span>
+                <span class="person-leg right"></span>
+
+                <span class="person-body"></span>
+
+                <span class="person-head"></span>
+
+                <span class="person-hair"></span>
+
+                <span class="person-eye left"></span>
+                <span class="person-eye right"></span>
+
               </span>
 
-              <span class="character-option-label">
-                토끼
+              <span class="guest-style-label">
+                Sage
               </span>
 
             </button>
@@ -5172,21 +7133,30 @@
 
             <button
               type="button"
-              class="character-option"
-              data-character="bear"
+              class="guest-style-option"
+              data-guest-style="pink"
             >
 
-              <span class="avatar avatar-bear">
-                <span class="avatar-head">
-                  <i class="avatar-eye left"></i>
-                  <i class="avatar-eye right"></i>
-                  <i class="avatar-nose"></i>
-                </span>
-                <span class="avatar-body"></span>
+              <span class="person-avatar style-pink">
+
+                <span class="person-shadow"></span>
+
+                <span class="person-leg left"></span>
+                <span class="person-leg right"></span>
+
+                <span class="person-body"></span>
+
+                <span class="person-head"></span>
+
+                <span class="person-hair"></span>
+
+                <span class="person-eye left"></span>
+                <span class="person-eye right"></span>
+
               </span>
 
-              <span class="character-option-label">
-                곰
+              <span class="guest-style-label">
+                Rose
               </span>
 
             </button>
@@ -5195,21 +7165,30 @@
 
             <button
               type="button"
-              class="character-option"
-              data-character="cat"
+              class="guest-style-option"
+              data-guest-style="navy"
             >
 
-              <span class="avatar avatar-cat">
-                <span class="avatar-head">
-                  <i class="avatar-eye left"></i>
-                  <i class="avatar-eye right"></i>
-                  <i class="avatar-nose"></i>
-                </span>
-                <span class="avatar-body"></span>
+              <span class="person-avatar style-navy">
+
+                <span class="person-shadow"></span>
+
+                <span class="person-leg left"></span>
+                <span class="person-leg right"></span>
+
+                <span class="person-body"></span>
+
+                <span class="person-head"></span>
+
+                <span class="person-hair"></span>
+
+                <span class="person-eye left"></span>
+                <span class="person-eye right"></span>
+
               </span>
 
-              <span class="character-option-label">
-                고양이
+              <span class="guest-style-label">
+                Navy
               </span>
 
             </button>
@@ -5218,21 +7197,30 @@
 
             <button
               type="button"
-              class="character-option"
-              data-character="fox"
+              class="guest-style-option"
+              data-guest-style="lilac"
             >
 
-              <span class="avatar avatar-fox">
-                <span class="avatar-head">
-                  <i class="avatar-eye left"></i>
-                  <i class="avatar-eye right"></i>
-                  <i class="avatar-nose"></i>
-                </span>
-                <span class="avatar-body"></span>
+              <span class="person-avatar style-lilac">
+
+                <span class="person-shadow"></span>
+
+                <span class="person-leg left"></span>
+                <span class="person-leg right"></span>
+
+                <span class="person-body"></span>
+
+                <span class="person-head"></span>
+
+                <span class="person-hair"></span>
+
+                <span class="person-eye left"></span>
+                <span class="person-eye right"></span>
+
               </span>
 
-              <span class="character-option-label">
-                여우
+              <span class="guest-style-label">
+                Lilac
               </span>
 
             </button>
@@ -5241,21 +7229,30 @@
 
             <button
               type="button"
-              class="character-option"
-              data-character="snowman"
+              class="guest-style-option"
+              data-guest-style="ivory"
             >
 
-              <span class="avatar avatar-snowman">
-                <span class="avatar-head">
-                  <i class="avatar-eye left"></i>
-                  <i class="avatar-eye right"></i>
-                  <i class="avatar-nose"></i>
-                </span>
-                <span class="avatar-body"></span>
+              <span class="person-avatar style-ivory">
+
+                <span class="person-shadow"></span>
+
+                <span class="person-leg left"></span>
+                <span class="person-leg right"></span>
+
+                <span class="person-body"></span>
+
+                <span class="person-head"></span>
+
+                <span class="person-hair"></span>
+
+                <span class="person-eye left"></span>
+                <span class="person-eye right"></span>
+
               </span>
 
-              <span class="character-option-label">
-                눈사람
+              <span class="guest-style-label">
+                Ivory
               </span>
 
             </button>
@@ -5271,16 +7268,16 @@
 
           <label
             class="form-label"
-            for="guestbookMessage"
+            for="hallGuestMessage"
           >
             축하 한마디
           </label>
 
 
           <textarea
-            id="guestbookMessage"
+            id="hallGuestMessage"
             class="textarea-input"
-            maxlength="80"
+            maxlength="90"
             placeholder="두 사람에게 따뜻한 한마디를 남겨주세요."
             required
           ></textarea>
@@ -5292,7 +7289,7 @@
           type="submit"
           class="submit-button"
         >
-          눈밭에 남기기
+          웨딩홀에 입장하기
         </button>
 
       </form>
@@ -5303,7 +7300,9 @@
 
 
 
-  <!-- TOAST -->
+  <!-- ========================================
+       TOAST
+  ======================================== -->
 
   <div
     class="toast"
@@ -5314,7 +7313,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
 
   <footer>
 
@@ -5328,23 +7329,34 @@
 
 
 
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
   <script>
 
     /* ========================================
-       ALWAYS START AT TOP
+       START TOP
     ======================================== */
 
     if (
       "scrollRestoration"
       in history
     ) {
+
       history.scrollRestoration =
         "manual";
+
     }
 
 
     function resetScrollPosition() {
-      window.scrollTo(0, 0);
+
+      window.scrollTo(
+        0,
+        0
+      );
+
     }
 
 
@@ -5357,17 +7369,19 @@
     window.addEventListener(
       "pageshow",
       function () {
+
         setTimeout(
           resetScrollPosition,
           0
         );
+
       }
     );
 
 
 
     /* ========================================
-       SNOW
+       SNOW MAKER
     ======================================== */
 
     function createSnow(
@@ -5403,9 +7417,11 @@
         if (
           Math.random() > 0.72
         ) {
+
           snow.classList.add(
             "soft"
           );
+
         }
 
 
@@ -5431,22 +7447,6 @@
             -
             minDuration
           );
-
-
-        const driftA =
-          -36
-          +
-          Math.random()
-          *
-          72;
-
-
-        const driftB =
-          -28
-          +
-          Math.random()
-          *
-          56;
 
 
         snow.style.setProperty(
@@ -5499,7 +7499,13 @@
 
         snow.style.setProperty(
           "--drift-a",
-          driftA
+          (
+            -36
+            +
+            Math.random()
+            *
+            72
+          )
           +
           "px"
         );
@@ -5507,7 +7513,13 @@
 
         snow.style.setProperty(
           "--drift-b",
-          driftB
+          (
+            -28
+            +
+            Math.random()
+            *
+            56
+          )
           +
           "px"
         );
@@ -5523,8 +7535,6 @@
 
 
 
-    /* 오프닝: 눈이 확실히 보이도록 */
-
     createSnow(
       document.getElementById(
         "openingSnow"
@@ -5537,9 +7547,6 @@
     );
 
 
-
-    /* 첫 화면: 오프닝보다 조금 잔잔하게 */
-
     createSnow(
       document.getElementById(
         "introSnow"
@@ -5551,9 +7558,6 @@
       17
     );
 
-
-
-    /* 다시 겨울 */
 
     createSnow(
       document.getElementById(
@@ -5584,8 +7588,12 @@
 
     function closeOpening() {
 
-      if (openingClosed) {
+      if (
+        openingClosed
+      ) {
+
         return;
+
       }
 
 
@@ -5598,18 +7606,14 @@
       );
 
 
-      document.body
-        .classList
-        .remove(
-          "opening-active"
-        );
+      document.body.classList.remove(
+        "opening-active"
+      );
 
 
-      document.body
-        .classList
-        .add(
-          "page-ready"
-        );
+      document.body.classList.add(
+        "page-ready"
+      );
 
 
       setTimeout(
@@ -5623,6 +7627,7 @@
       );
 
     }
+
 
 
     document
@@ -5643,7 +7648,7 @@
 
 
     /* ========================================
-       WEDDING INFO
+       WEDDING INFO SHORTCUT
     ======================================== */
 
     document
@@ -5665,7 +7670,10 @@
                   "wedding"
                 )
                 .scrollIntoView({
-                  behavior: "smooth"
+
+                  behavior:
+                    "smooth"
+
                 });
 
             },
@@ -5678,7 +7686,7 @@
 
 
     /* ========================================
-       SCROLL REVEAL
+       REVEAL
     ======================================== */
 
     const revealElements =
@@ -5702,17 +7710,14 @@
                 entry.isIntersecting
               ) {
 
-                entry.target
-                  .classList
-                  .add(
-                    "visible"
-                  );
+                entry.target.classList.add(
+                  "visible"
+                );
 
 
-                revealObserver
-                  .unobserve(
-                    entry.target
-                  );
+                revealObserver.unobserve(
+                  entry.target
+                );
 
               }
 
@@ -5741,7 +7746,7 @@
 
 
     /* ========================================
-       SEASON
+       SEASON DETAILS
     ======================================== */
 
     document
@@ -5841,11 +7846,9 @@
         "click",
         function () {
 
-          parkingWrap
-            .classList
-            .toggle(
-              "open"
-            );
+          parkingWrap.classList.toggle(
+            "open"
+          );
 
         }
       );
@@ -5853,7 +7856,7 @@
 
 
     /* ========================================
-       MODAL
+       MODALS
     ======================================== */
 
     const rsvpModal =
@@ -5868,9 +7871,9 @@
       );
 
 
-    const guestbookModal =
+    const hallGuestbookModal =
       document.getElementById(
-        "guestbookModal"
+        "hallGuestbookModal"
       );
 
 
@@ -5883,11 +7886,9 @@
       );
 
 
-      document.body
-        .classList
-        .add(
-          "modal-open"
-        );
+      document.body.classList.add(
+        "modal-open"
+      );
 
     }
 
@@ -5901,11 +7902,9 @@
       );
 
 
-      document.body
-        .classList
-        .remove(
-          "modal-open"
-        );
+      document.body.classList.remove(
+        "modal-open"
+      );
 
     }
 
@@ -5945,14 +7944,14 @@
 
     document
       .getElementById(
-        "openGuestbook"
+        "openHallGuestbook"
       )
       .addEventListener(
         "click",
         function () {
 
           openModal(
-            guestbookModal
+            hallGuestbookModal
           );
 
         }
@@ -6001,9 +8000,7 @@
             ) {
 
               if (
-                event.target
-                ===
-                modal
+                event.target === modal
               ) {
 
                 closeModal(
@@ -6142,7 +8139,7 @@
 
 
     /* ========================================
-       ACCOUNT COPY
+       COPY ACCOUNT
     ======================================== */
 
     const toast =
@@ -6200,16 +8197,13 @@
           window.isSecureContext
         ) {
 
-          await navigator.clipboard
-            .writeText(
-              text
-            );
+          await navigator.clipboard.writeText(
+            text
+          );
 
         } else {
 
-          throw new Error(
-            "Clipboard API unavailable"
-          );
+          throw new Error();
 
         }
 
@@ -6313,7 +8307,7 @@
             function () {
 
               alert(
-                "계좌번호 입력 후 복사 기능을 연결할 예정이에요."
+                "계좌번호 입력 후 연결할 예정이에요."
               );
 
             }
@@ -6325,26 +8319,770 @@
 
 
     /* ========================================
-       CHARACTER GUESTBOOK
+       GUEST SNAP
     ======================================== */
 
-    const guestbookStorageKey =
-      "gahyun-jinchan-winter-guestbook-preview";
+    document
+      .getElementById(
+        "guestUpload"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+          alert(
+            "사진·영상 업로드 서비스는 추후 연결할 예정이에요."
+          );
+
+        }
+      );
 
 
-    let selectedCharacter =
-      "bunny";
+
+    /* ========================================
+       VIRTUAL WEDDING
+    ======================================== */
+
+    const virtualWedding =
+      document.getElementById(
+        "virtualWedding"
+      );
 
 
-    let guestbookEntries = [];
+    const virtualViewport =
+      document.getElementById(
+        "virtualViewport"
+      );
+
+
+    const virtualWorld =
+      document.getElementById(
+        "virtualWorld"
+      );
+
+
+    const playerCharacter =
+      document.getElementById(
+        "playerCharacter"
+      );
+
+
+    const playerAvatar =
+      document.getElementById(
+        "playerAvatar"
+      );
+
+
+    const hallMessageCard =
+      document.getElementById(
+        "hallMessageCard"
+      );
+
+
+    const WORLD_WIDTH =
+      920;
+
+
+    const WORLD_HEIGHT =
+      620;
+
+
+
+    let playerX =
+      460;
+
+
+    let playerY =
+      565;
+
+
+    let cameraX =
+      0;
+
+
+    let cameraY =
+      0;
+
+
+    let playerAnimation =
+      null;
+
+
+
+    function clamp(
+      value,
+      min,
+      max
+    ) {
+
+      return Math.max(
+        min,
+        Math.min(
+          value,
+          max
+        )
+      );
+
+    }
+
+
+
+    function placePlayer() {
+
+      playerCharacter.style.left =
+        playerX
+        +
+        "px";
+
+
+      playerCharacter.style.top =
+        playerY
+        +
+        "px";
+
+    }
+
+
+
+    function getCameraBounds() {
+
+      const width =
+        virtualViewport.clientWidth;
+
+
+      const height =
+        virtualViewport.clientHeight;
+
+
+      return {
+
+        minX:
+          Math.min(
+            0,
+            width
+            -
+            WORLD_WIDTH
+          ),
+
+        maxX:
+          0,
+
+        minY:
+          Math.min(
+            0,
+            height
+            -
+            WORLD_HEIGHT
+          ),
+
+        maxY:
+          0
+
+      };
+
+    }
+
+
+
+    function applyCamera() {
+
+      const bounds =
+        getCameraBounds();
+
+
+      cameraX =
+        clamp(
+          cameraX,
+          bounds.minX,
+          bounds.maxX
+        );
+
+
+      cameraY =
+        clamp(
+          cameraY,
+          bounds.minY,
+          bounds.maxY
+        );
+
+
+      virtualWorld.style.transform =
+        "translate3d("
+        +
+        cameraX
+        +
+        "px,"
+        +
+        cameraY
+        +
+        "px,0)";
+
+    }
+
+
+
+    function centerCameraOnPlayer() {
+
+      cameraX =
+        virtualViewport.clientWidth
+        /
+        2
+        -
+        playerX;
+
+
+      cameraY =
+        virtualViewport.clientHeight
+        *
+        0.62
+        -
+        playerY;
+
+
+      applyCamera();
+
+    }
+
+
+
+    function movePlayerTo(
+      targetX,
+      targetY
+    ) {
+
+      targetX =
+        clamp(
+          targetX,
+          80,
+          WORLD_WIDTH
+          -
+          80
+        );
+
+
+      targetY =
+        clamp(
+          targetY,
+          225,
+          WORLD_HEIGHT
+          -
+          25
+        );
+
+
+      if (
+        playerAnimation
+      ) {
+
+        cancelAnimationFrame(
+          playerAnimation
+        );
+
+      }
+
+
+      const startX =
+        playerX;
+
+
+      const startY =
+        playerY;
+
+
+      const dx =
+        targetX
+        -
+        startX;
+
+
+      const dy =
+        targetY
+        -
+        startY;
+
+
+      const distance =
+        Math.sqrt(
+          dx * dx
+          +
+          dy * dy
+        );
+
+
+      const duration =
+        clamp(
+          distance
+          *
+          2.2,
+          240,
+          1000
+        );
+
+
+      const startTime =
+        performance.now();
+
+
+      playerCharacter.classList.add(
+        "walking"
+      );
+
+
+      function frame(
+        time
+      ) {
+
+        const progress =
+          Math.min(
+            (
+              time
+              -
+              startTime
+            )
+            /
+            duration,
+            1
+          );
+
+
+        const eased =
+          1
+          -
+          Math.pow(
+            1
+            -
+            progress,
+            3
+          );
+
+
+        playerX =
+          startX
+          +
+          dx
+          *
+          eased;
+
+
+        playerY =
+          startY
+          +
+          dy
+          *
+          eased;
+
+
+        placePlayer();
+
+
+        centerCameraOnPlayer();
+
+
+        if (
+          progress
+          <
+          1
+        ) {
+
+          playerAnimation =
+            requestAnimationFrame(
+              frame
+            );
+
+        } else {
+
+          playerCharacter.classList.remove(
+            "walking"
+          );
+
+
+          playerAnimation =
+            null;
+
+        }
+
+      }
+
+
+      playerAnimation =
+        requestAnimationFrame(
+          frame
+        );
+
+    }
+
+
+
+    function openVirtualWedding() {
+
+      virtualWedding.classList.add(
+        "active"
+      );
+
+
+      document.body.classList.add(
+        "virtual-open"
+      );
+
+
+      placePlayer();
+
+
+      setTimeout(
+        function () {
+
+          centerCameraOnPlayer();
+
+        },
+        20
+      );
+
+    }
+
+
+
+    function closeVirtualWedding() {
+
+      virtualWedding.classList.remove(
+        "active"
+      );
+
+
+      document.body.classList.remove(
+        "virtual-open"
+      );
+
+    }
+
+
+
+    document
+      .getElementById(
+        "openVirtualWedding"
+      )
+      .addEventListener(
+        "click",
+        openVirtualWedding
+      );
+
+
+    document
+      .getElementById(
+        "closeVirtualWedding"
+      )
+      .addEventListener(
+        "click",
+        closeVirtualWedding
+      );
+
+
+
+    /* ========================================
+       DRAG TO PAN + TAP TO MOVE
+    ======================================== */
+
+    let pointerDown =
+      false;
+
+
+    let pointerStartX =
+      0;
+
+
+    let pointerStartY =
+      0;
+
+
+    let cameraStartX =
+      0;
+
+
+    let cameraStartY =
+      0;
+
+
+    let wasDragged =
+      false;
+
+
+
+    virtualViewport.addEventListener(
+      "pointerdown",
+      function (
+        event
+      ) {
+
+        if (
+          event.target.closest(
+            "button"
+          )
+          ||
+          event.target.closest(
+            ".hall-message-card"
+          )
+        ) {
+
+          return;
+
+        }
+
+
+        pointerDown =
+          true;
+
+
+        wasDragged =
+          false;
+
+
+        pointerStartX =
+          event.clientX;
+
+
+        pointerStartY =
+          event.clientY;
+
+
+        cameraStartX =
+          cameraX;
+
+
+        cameraStartY =
+          cameraY;
+
+
+        virtualViewport.classList.add(
+          "dragging"
+        );
+
+
+        virtualViewport.setPointerCapture(
+          event.pointerId
+        );
+
+      }
+    );
+
+
+
+    virtualViewport.addEventListener(
+      "pointermove",
+      function (
+        event
+      ) {
+
+        if (
+          !pointerDown
+        ) {
+
+          return;
+
+        }
+
+
+        const dx =
+          event.clientX
+          -
+          pointerStartX;
+
+
+        const dy =
+          event.clientY
+          -
+          pointerStartY;
+
+
+        if (
+          Math.abs(dx)
+          >
+          7
+          ||
+          Math.abs(dy)
+          >
+          7
+        ) {
+
+          wasDragged =
+            true;
+
+        }
+
+
+        if (
+          wasDragged
+        ) {
+
+          cameraX =
+            cameraStartX
+            +
+            dx;
+
+
+          cameraY =
+            cameraStartY
+            +
+            dy;
+
+
+          applyCamera();
+
+        }
+
+      }
+    );
+
+
+
+    virtualViewport.addEventListener(
+      "pointerup",
+      function (
+        event
+      ) {
+
+        if (
+          !pointerDown
+        ) {
+
+          return;
+
+        }
+
+
+        pointerDown =
+          false;
+
+
+        virtualViewport.classList.remove(
+          "dragging"
+        );
+
+
+        if (
+          !wasDragged
+          &&
+          !event.target.closest(
+            "button"
+          )
+        ) {
+
+          const rect =
+            virtualViewport.getBoundingClientRect();
+
+
+          const worldX =
+            event.clientX
+            -
+            rect.left
+            -
+            cameraX;
+
+
+          const worldY =
+            event.clientY
+            -
+            rect.top
+            -
+            cameraY;
+
+
+          movePlayerTo(
+            worldX,
+            worldY
+          );
+
+        }
+
+      }
+    );
+
+
+
+    virtualViewport.addEventListener(
+      "pointercancel",
+      function () {
+
+        pointerDown =
+          false;
+
+
+        virtualViewport.classList.remove(
+          "dragging"
+        );
+
+      }
+    );
+
+
+
+    /* ========================================
+       D-PAD
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".dpad-button"
+      )
+      .forEach(
+        function (
+          button
+        ) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              const x =
+                Number(
+                  button.dataset.moveX
+                  ||
+                  0
+                );
+
+
+              const y =
+                Number(
+                  button.dataset.moveY
+                  ||
+                  0
+                );
+
+
+              movePlayerTo(
+                playerX
+                +
+                x,
+
+                playerY
+                +
+                y
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* ========================================
+       HALL GUESTBOOK STORAGE
+    ======================================== */
+
+    const hallStorageKey =
+      "gahyun-jinchan-virtual-wedding-guests";
+
+
+    let hallGuests =
+      [];
 
 
     try {
 
-      guestbookEntries =
+      hallGuests =
         JSON.parse(
           localStorage.getItem(
-            guestbookStorageKey
+            hallStorageKey
           )
         )
         ||
@@ -6354,25 +9092,62 @@
       error
     ) {
 
-      guestbookEntries =
+      hallGuests =
         [];
 
     }
 
 
 
-    function avatarHTML(
-      type
+    let selectedGuestStyle =
+      "sage";
+
+
+
+    const guestPositions = [
+
+      [325, 305],
+      [595, 305],
+
+      [323, 378],
+      [597, 378],
+
+      [325, 452],
+      [595, 452],
+
+      [330, 530],
+      [590, 530],
+
+      [150, 380],
+      [770, 380],
+
+      [145, 485],
+      [775, 485],
+
+      [375, 575],
+      [545, 575],
+
+      [265, 570],
+      [655, 570]
+
+    ];
+
+
+
+    function avatarMarkup(
+      style
     ) {
 
       return `
-        <span class="avatar avatar-${type}">
-          <span class="avatar-head">
-            <i class="avatar-eye left"></i>
-            <i class="avatar-eye right"></i>
-            <i class="avatar-nose"></i>
-          </span>
-          <span class="avatar-body"></span>
+        <span class="person-avatar style-${style}">
+          <span class="person-shadow"></span>
+          <span class="person-leg left"></span>
+          <span class="person-leg right"></span>
+          <span class="person-body"></span>
+          <span class="person-head"></span>
+          <span class="person-hair"></span>
+          <span class="person-eye left"></span>
+          <span class="person-eye right"></span>
         </span>
       `;
 
@@ -6400,11 +9175,45 @@
 
 
 
-    function renderGuestbook() {
+    function showHallMessage(
+      guest
+    ) {
+
+      hallMessageCard.innerHTML =
+        `
+          <span class="hall-message-name">
+            ${escapeHTML(guest.name)}
+          </span>
+
+          ${escapeHTML(guest.message)}
+        `;
+
+
+      hallMessageCard.classList.remove(
+        "hidden"
+      );
+
+
+      setTimeout(
+        function () {
+
+          hallMessageCard.classList.add(
+            "hidden"
+          );
+
+        },
+        4500
+      );
+
+    }
+
+
+
+    function renderHallGuests() {
 
       const container =
         document.getElementById(
-          "guestbookEntries"
+          "hallGuestEntries"
         );
 
 
@@ -6412,96 +9221,101 @@
         "";
 
 
-      const visibleEntries =
-        guestbookEntries.slice(
-          -15
-        );
+      hallGuests
+        .slice(
+          -16
+        )
+        .forEach(
+          function (
+            guest,
+            index
+          ) {
+
+            const position =
+              guestPositions[
+                index
+                %
+                guestPositions.length
+              ];
 
 
-      visibleEntries.forEach(
-        function (
-          entry
-        ) {
+            const button =
+              document.createElement(
+                "button"
+              );
 
-          const button =
-            document.createElement(
-              "button"
+
+            button.type =
+              "button";
+
+
+            button.className =
+              "hall-guest-entry";
+
+
+            button.style.left =
+              position[0]
+              +
+              "px";
+
+
+            button.style.top =
+              position[1]
+              +
+              "px";
+
+
+            button.innerHTML =
+              avatarMarkup(
+                guest.style
+              )
+              +
+              `
+                <span class="hall-entry-name">
+                  ${escapeHTML(guest.name)}
+                </span>
+              `;
+
+
+            button.addEventListener(
+              "click",
+              function (
+                event
+              ) {
+
+                event.stopPropagation();
+
+
+                showHallMessage(
+                  guest
+                );
+
+              }
             );
 
 
-          button.type =
-            "button";
+            container.appendChild(
+              button
+            );
 
-
-          button.className =
-            "guestbook-entry";
-
-
-          button.innerHTML =
-            avatarHTML(
-              entry.character
-            )
-            +
-            `
-              <span class="guestbook-entry-name">
-                ${escapeHTML(entry.name)}
-              </span>
-            `;
-
-
-          button.addEventListener(
-            "click",
-            function () {
-
-              const messageBox =
-                document.getElementById(
-                  "guestbookMessageBox"
-                );
-
-
-              messageBox.innerHTML =
-                `
-                  <span class="guestbook-message-name">
-                    ${escapeHTML(entry.name)}
-                  </span>
-
-                  ${escapeHTML(entry.message)}
-                `;
-
-            }
-          );
-
-
-          container.appendChild(
-            button
-          );
-
-        }
-      );
-
-
-      if (
-        guestbookEntries.length
-        ===
-        0
-      ) {
-
-        document
-          .getElementById(
-            "guestbookMessageBox"
-          )
-          .innerHTML =
-          "첫 번째 작은 친구를 눈밭에 남겨주세요.";
-
-      }
+          }
+        );
 
     }
 
 
 
+    renderHallGuests();
+
+
+
+    /* ========================================
+       GUEST STYLE SELECT
+    ======================================== */
+
     document
       .querySelectorAll(
-        ".character-option"
+        ".guest-style-option"
       )
       .forEach(
         function (
@@ -6514,7 +9328,7 @@
 
               document
                 .querySelectorAll(
-                  ".character-option"
+                  ".guest-style-option"
                 )
                 .forEach(
                   function (
@@ -6534,8 +9348,8 @@
               );
 
 
-              selectedCharacter =
-                option.dataset.character;
+              selectedGuestStyle =
+                option.dataset.guestStyle;
 
             }
           );
@@ -6545,9 +9359,13 @@
 
 
 
+    /* ========================================
+       ADD VIRTUAL GUEST
+    ======================================== */
+
     document
       .getElementById(
-        "guestbookForm"
+        "hallGuestbookForm"
       )
       .addEventListener(
         "submit",
@@ -6561,7 +9379,7 @@
           const name =
             document
               .getElementById(
-                "guestbookName"
+                "hallGuestName"
               )
               .value
               .trim();
@@ -6570,7 +9388,7 @@
           const message =
             document
               .getElementById(
-                "guestbookMessage"
+                "hallGuestMessage"
               )
               .value
               .trim();
@@ -6591,60 +9409,63 @@
           }
 
 
-          const newEntry = {
-            name: name,
-            message: message,
-            character:
-              selectedCharacter,
+          const entry = {
+
+            name:
+              name,
+
+            message:
+              message,
+
+            style:
+              selectedGuestStyle,
+
             createdAt:
               Date.now()
+
           };
 
 
-          guestbookEntries.push(
-            newEntry
+          hallGuests.push(
+            entry
           );
 
 
-          localStorage.setItem(
-            guestbookStorageKey,
-            JSON.stringify(
-              guestbookEntries
-            )
-          );
+          try {
+
+            localStorage.setItem(
+              hallStorageKey,
+              JSON.stringify(
+                hallGuests
+              )
+            );
+
+          } catch (
+            error
+          ) {
+
+          }
 
 
-          renderGuestbook();
+          renderHallGuests();
+
+
+          playerAvatar.className =
+            "person-avatar style-"
+            +
+            selectedGuestStyle;
 
 
           document
             .getElementById(
-              "guestbookMessageBox"
-            )
-            .innerHTML =
-            `
-              <span class="guestbook-message-name">
-                ${escapeHTML(name)}
-              </span>
-
-              ${escapeHTML(message)}
-            `;
-
-
-          document
-            .getElementById(
-              "guestbookForm"
+              "hallGuestbookForm"
             )
             .reset();
 
 
-          selectedCharacter =
-            "bunny";
-
-
           document
             .querySelectorAll(
-              ".character-option"
+              ".guest-style-option"
             )
             .forEach(
               function (
@@ -6661,7 +9482,7 @@
 
           document
             .querySelector(
-              '[data-character="bunny"]'
+              '[data-guest-style="sage"]'
             )
             .classList
             .add(
@@ -6669,42 +9490,49 @@
             );
 
 
+          selectedGuestStyle =
+            "sage";
+
+
           closeModal(
-            guestbookModal
+            hallGuestbookModal
+          );
+
+
+          showHallMessage(
+            entry
           );
 
 
           showToast(
-            "작은 친구가 눈밭에 도착했어요."
+            "작은 하객 캐릭터가 웨딩홀에 입장했어요."
           );
 
         }
       );
-
-
-
-    renderGuestbook();
 
 
 
     /* ========================================
-       GUEST SNAP
+       RESIZE
     ======================================== */
 
-    document
-      .getElementById(
-        "guestUpload"
-      )
-      .addEventListener(
-        "click",
-        function () {
+    window.addEventListener(
+      "resize",
+      function () {
 
-          alert(
-            "사진·영상 업로드 서비스는 추후 연결할 예정이에요."
-          );
+        if (
+          virtualWedding.classList.contains(
+            "active"
+          )
+        ) {
+
+          applyCamera();
 
         }
-      );
+
+      }
+    );
 
 
 
@@ -6719,23 +9547,28 @@
       ) {
 
         if (
-          event.key !==
+          event.key
+          !==
           "Escape"
         ) {
+
           return;
+
         }
 
 
-        const modal =
+        const activeModal =
           document.querySelector(
             ".modal.active"
           );
 
 
-        if (modal) {
+        if (
+          activeModal
+        ) {
 
           closeModal(
-            modal
+            activeModal
           );
 
           return;
@@ -6743,15 +9576,30 @@
         }
 
 
-        const season =
+        if (
+          virtualWedding.classList.contains(
+            "active"
+          )
+        ) {
+
+          closeVirtualWedding();
+
+          return;
+
+        }
+
+
+        const activeSeason =
           document.querySelector(
             ".season-page.active"
           );
 
 
-        if (season) {
+        if (
+          activeSeason
+        ) {
 
-          season.classList.remove(
+          activeSeason.classList.remove(
             "active"
           );
 
