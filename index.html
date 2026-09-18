@@ -1,721 +1,5784 @@
-/* ========================================
-   ENVELOPE OPENING
-======================================== */
+<!DOCTYPE html>
+<html lang="ko">
 
-.opening {
-  position: fixed;
-  inset: 0;
+<head>
 
-  z-index: 10000;
+  <meta charset="UTF-8">
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
-  overflow: hidden;
+  <title>Gahyun & Jinchan | Our Wedding</title>
 
-  background:
-    linear-gradient(
-      180deg,
-      #f8f6f1 0%,
-      #f0ece5 100%
-    );
 
-  transition:
-    opacity 0.9s ease,
-    visibility 0.9s ease;
-}
+  <!-- ========================================
+       PRETENDARD
+  ======================================== -->
 
+  <link
+    rel="stylesheet"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  >
 
-.opening.hide {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 
+  <style>
 
-/* SKIP */
+    /* ========================================
+       KOREAN TITLE FONT
+    ======================================== */
 
-.opening-skip {
-  position: absolute;
+    @font-face {
+      font-family: "RIDIBatang";
 
-  top: max(18px, env(safe-area-inset-top));
-  right: 18px;
+      src:
+        url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/RIDIBatang.woff")
+        format("woff");
 
-  z-index: 100;
-
-  min-height: 40px;
-
-  padding: 0 14px;
-
-  border: 0;
-
-  background: transparent;
-
-  font-family: var(--font-en);
-
-  font-size: 9px;
-
-  letter-spacing: 1.8px;
-
-  color: rgba(55, 55, 55, 0.58);
-
-  cursor: pointer;
-}
-
-
-.opening-inner {
-  width: 100%;
-  max-width: 430px;
-
-  padding: 24px;
-
-  text-align: center;
-}
-
-
-.letter-small {
-  margin-bottom: 35px;
-
-  font-family: var(--font-en);
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  color: #96908a;
-
-  opacity: 0;
-
-  transform: translateY(8px);
-
-  animation:
-    openingFade 0.8s ease forwards;
-
-  animation-delay: 0.1s;
-}
-
-
-
-/* ========================================
-   ENVELOPE STAGE
-======================================== */
-
-.envelope-stage {
-  position: relative;
-
-  width: 310px;
-  height: 340px;
-
-  margin: 0 auto;
-
-  perspective: 1100px;
-
-  opacity: 0;
-
-  transform: translateY(13px);
-
-  animation:
-    envelopeAppear 0.8s ease forwards;
-
-  animation-delay: 0.32s;
-}
-
-
-.envelope {
-  position: absolute;
-
-  left: 50%;
-  bottom: 20px;
-
-  width: 285px;
-  height: 178px;
-
-  transform: translateX(-50%);
-
-  transform-style: preserve-3d;
-}
-
-
-
-/* ========================================
-   ENVELOPE BACK
-======================================== */
-
-.envelope-back {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  border-radius: 2px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #9d3037,
-      #882329
-    );
-
-  box-shadow:
-    0 18px 40px rgba(75, 28, 30, 0.16);
-}
-
-
-
-/* ========================================
-   PHOTO REVEAL WINDOW
-
-   핵심:
-   사진은 처음엔 이 창 안에서
-   봉투 높이만큼만 존재하기 때문에
-   봉투 밖으로 절대 안 보임.
-======================================== */
-
-.photo-window {
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 178px;
-
-  z-index: 3;
-
-  overflow: hidden;
-
-  animation:
-    photoWindowOpen 1.3s
-    cubic-bezier(.22,.75,.28,1)
-    forwards;
-
-  animation-delay: 1.35s;
-}
-
-
-
-/* ========================================
-   WEDDING PHOTO
-======================================== */
-
-.letter-photo {
-  position: absolute;
-
-  left: 50%;
-  bottom: -55px;
-
-  width: 178px;
-  height: 222px;
-
-  padding:
-    7px 7px 23px;
-
-  transform:
-    translateX(-50%)
-    translateY(0);
-
-  background: #fff;
-
-  box-shadow:
-    0 14px 30px rgba(40, 30, 30, 0.13);
-
-  animation:
-    photoRise 1.3s
-    cubic-bezier(.22,.75,.28,1)
-    forwards;
-
-  animation-delay: 1.35s;
-}
-
-
-.letter-photo-inner {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      145deg,
-      #d8d5cf,
-      #ebe8e2
-    );
-
-  color: #999;
-
-  font-family: var(--font-body);
-
-  font-size: 9px;
-
-  letter-spacing: 1px;
-}
-
-
-.letter-photo-inner img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-
-/* ========================================
-   RED ENVELOPE FLAP
-======================================== */
-
-.envelope-flap {
-  position: absolute;
-
-  z-index: 7;
-
-  left: 0;
-  top: 0;
-
-  width: 100%;
-  height: 110px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #ad3a40,
-      #982d34
-    );
-
-  clip-path:
-    polygon(
-      0 0,
-      100% 0,
-      50% 100%
-    );
-
-  transform-origin: top center;
-
-  transform: rotateX(0deg);
-
-  backface-visibility: hidden;
-
-  animation:
-    flapOpen 0.9s
-    cubic-bezier(.35,.02,.25,1)
-    forwards;
-
-  animation-delay: 0.82s;
-}
-
-
-
-/* ========================================
-   ENVELOPE FRONT POCKET
-======================================== */
-
-.envelope-front {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 5;
-
-  overflow: hidden;
-
-  pointer-events: none;
-}
-
-
-.envelope-front-left {
-  position: absolute;
-
-  inset: 0;
-
-  background: #a9343a;
-
-  clip-path:
-    polygon(
-      0 0,
-      52% 58%,
-      0 100%
-    );
-}
-
-
-.envelope-front-right {
-  position: absolute;
-
-  inset: 0;
-
-  background: #982c33;
-
-  clip-path:
-    polygon(
-      100% 0,
-      48% 58%,
-      100% 100%
-    );
-}
-
-
-.envelope-front-bottom {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #b83e44,
-      #a53036
-    );
-
-  clip-path:
-    polygon(
-      0 100%,
-      50% 47%,
-      100% 100%
-    );
-}
-
-
-
-/* ========================================
-   SIMPLE WHITE HEART STICKER
-======================================== */
-
-.envelope-seal {
-  position: absolute;
-
-  z-index: 10;
-
-  left: 50%;
-  top: 72px;
-
-  transform:
-    translateX(-50%)
-    scale(1);
-
-  color: #fff;
-
-  font-size: 25px;
-
-  line-height: 1;
-
-  text-shadow:
-    0 2px 5px rgba(70, 20, 25, 0.12);
-
-  animation:
-    sealDisappear 0.28s ease forwards;
-
-  animation-delay: 0.68s;
-}
-
-
-
-/* ========================================
-   OPENING NAME
-======================================== */
-
-.opening-text {
-  margin-top: 3px;
-
-  opacity: 0;
-
-  transform: translateY(9px);
-
-  animation:
-    openingTextShow 0.85s ease forwards;
-
-  animation-delay: 2.35s;
-}
-
-
-.opening-names {
-  font-family: var(--font-en);
-
-  font-size: 28px;
-
-  font-weight: 400;
-
-  line-height: 1.2;
-
-  color: #393735;
-}
-
-
-.opening-date {
-  margin-top: 12px;
-
-  font-family: var(--font-en);
-
-  font-size: 9px;
-
-  letter-spacing: 2.5px;
-
-  color: #7b7873;
-}
-
-
-.opening-line {
-  width: 1px;
-  height: 28px;
-
-  margin: 20px auto 0;
-
-  background:
-    rgba(80, 76, 72, 0.22);
-
-  transform-origin: top;
-
-  transform: scaleY(0);
-
-  animation:
-    lineGrow 0.7s ease forwards;
-
-  animation-delay: 2.75s;
-}
-
-
-
-/* ========================================
-   ANIMATIONS
-======================================== */
-
-@keyframes openingFade {
-
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-
-@keyframes envelopeAppear {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(13px)
-      scale(0.985);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-
-}
-
-
-@keyframes sealDisappear {
-
-  0% {
-    opacity: 1;
-
-    transform:
-      translateX(-50%)
-      scale(1);
-  }
-
-  100% {
-    opacity: 0;
-
-    transform:
-      translateX(-50%)
-      scale(0.82);
-  }
-
-}
-
-
-@keyframes flapOpen {
-
-  0% {
-    transform:
-      rotateX(0deg);
-  }
-
-  45% {
-    transform:
-      rotateX(-105deg);
-  }
-
-  100% {
-    transform:
-      rotateX(-180deg);
-  }
-
-}
-
-
-/*
-  사진을 보여줄 수 있는 영역 자체가
-  봉투 위쪽으로 확장됨.
-*/
-
-@keyframes photoWindowOpen {
-
-  0% {
-    height: 178px;
-  }
-
-  100% {
-    height: 345px;
-  }
-
-}
-
-
-/*
-  사진은 실제로 봉투 내부에서 시작.
-*/
-
-@keyframes photoRise {
-
-  0% {
-    transform:
-      translateX(-50%)
-      translateY(0);
-  }
-
-  100% {
-    transform:
-      translateX(-50%)
-      translateY(-150px);
-  }
-
-}
-
-
-@keyframes openingTextShow {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(9px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-}
-
-
-@keyframes lineGrow {
-
-  from {
-    transform: scaleY(0);
-  }
-
-  to {
-    transform: scaleY(1);
-  }
-
-}
-
-
-
-/* ========================================
-   MOBILE OPENING
-======================================== */
-
-@media (max-width: 420px) {
-
-  .letter-small {
-    margin-bottom: 27px;
-  }
-
-
-  .envelope-stage {
-    width: 280px;
-    height: 325px;
-  }
-
-
-  .envelope {
-    width: 260px;
-    height: 163px;
-  }
-
-
-  .photo-window {
-    height: 163px;
-  }
-
-
-  .letter-photo {
-    width: 163px;
-    height: 204px;
-
-    bottom: -50px;
-  }
-
-
-  .envelope-flap {
-    height: 101px;
-  }
-
-
-  .envelope-seal {
-    top: 65px;
-
-    font-size: 23px;
-  }
-
-
-  .opening-names {
-    font-size: 26px;
-  }
-
-
-  @keyframes photoWindowOpen {
-
-    0% {
-      height: 163px;
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
 
-    100% {
-      height: 320px;
+
+    :root {
+
+      --font-body:
+        "Pretendard",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      --font-ko-title:
+        "RIDIBatang",
+        "Pretendard",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      --font-en:
+        Georgia,
+        "Times New Roman",
+        Arial,
+        sans-serif;
+
+      --bg: #f7f6f2;
+
+      --text: #2d2d2d;
+
+      --sub: #747474;
+
     }
 
-  }
 
 
-  @keyframes photoRise {
+    /* ========================================
+       BASIC
+    ======================================== */
 
-    0% {
+    * {
+      box-sizing: border-box;
+      font-synthesis: none;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      font-family: var(--font-body);
+
+      word-break: keep-all;
+
+      overflow-wrap: break-word;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+
+    body.opening-active,
+    body.modal-open {
+      overflow: hidden;
+    }
+
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: var(--font-body);
+    }
+
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    button {
+      color: inherit;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    .inner {
+
+      width: 100%;
+
+      max-width: 540px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .center {
+      text-align: center;
+    }
+
+
+
+    /* ========================================
+       ENVELOPE OPENING
+    ======================================== */
+
+    .opening {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 10000;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          #faf8f3 0%,
+          #f2eee7 100%
+        );
+
+      transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease;
+
+    }
+
+
+    .opening.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+    }
+
+
+
+    /* SKIP */
+
+    .opening-skip {
+
+      position: absolute;
+
+      top: max(18px, env(safe-area-inset-top));
+
+      right: 18px;
+
+      z-index: 100;
+
+      min-height: 40px;
+
+      padding: 0 14px;
+
+      border: 0;
+
+      background: transparent;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 1.8px;
+
+      color: rgba(55, 55, 55, 0.55);
+
+      cursor: pointer;
+
+    }
+
+
+
+    .opening-inner {
+
+      width: 100%;
+
+      max-width: 430px;
+
+      padding: 22px;
+
+      text-align: center;
+
+    }
+
+
+
+    .letter-small {
+
+      margin-bottom: 31px;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      color: #978f88;
+
+      opacity: 0;
+
+      transform: translateY(7px);
+
+      animation:
+        openingFade 0.8s ease forwards;
+
+      animation-delay: 0.08s;
+
+    }
+
+
+
+    /* ========================================
+       ENVELOPE STAGE
+    ======================================== */
+
+    .envelope-stage {
+
+      --env-w: 285px;
+      --env-h: 178px;
+
+      --photo-w: 178px;
+      --photo-h: 222px;
+
+      --photo-bottom: -55px;
+
+      --photo-rise: -150px;
+
+      --window-open-height: 345px;
+
+      position: relative;
+
+      width: 310px;
+
+      height: 340px;
+
+      margin: 0 auto;
+
+      perspective: 1200px;
+
+      opacity: 0;
+
+      transform:
+        translateY(12px)
+        scale(0.99);
+
+      animation:
+        envelopeAppear 0.8s ease forwards;
+
+      animation-delay: 0.3s;
+
+    }
+
+
+
+    .envelope {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 18px;
+
+      width: var(--env-w);
+
+      height: var(--env-h);
+
+      transform:
+        translateX(-50%);
+
+      transform-style: preserve-3d;
+
+    }
+
+
+
+    /* ========================================
+       ENVELOPE BACK
+    ======================================== */
+
+    .envelope-back {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 1;
+
+      border-radius: 3px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #9d2631,
+          #7f1f29
+        );
+
+      box-shadow:
+        0 18px 40px
+        rgba(93, 24, 31, 0.16);
+
+    }
+
+
+
+    /* ========================================
+       PHOTO WINDOW
+
+       사진이 봉투 밖에서 시작되는 것이
+       보이지 않도록 처음에는 봉투 높이만큼만
+       보여주는 창 안에 완전히 숨겨둠.
+    ======================================== */
+
+    .photo-window {
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 100%;
+
+      height: var(--env-h);
+
+      z-index: 3;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      animation:
+        photoWindowOpen
+        1.35s
+        cubic-bezier(.22,.72,.25,1)
+        forwards;
+
+      animation-delay: 1.35s;
+
+    }
+
+
+
+    /* ========================================
+       WEDDING PHOTO
+    ======================================== */
+
+    .letter-photo {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: var(--photo-bottom);
+
+      width: var(--photo-w);
+
+      height: var(--photo-h);
+
+      padding:
+        7px 7px 23px;
+
       transform:
         translateX(-50%)
         translateY(0);
+
+      background: #fff;
+
+      box-shadow:
+        0 14px 30px
+        rgba(50, 25, 28, 0.15);
+
+      animation:
+        photoRise
+        1.35s
+        cubic-bezier(.22,.72,.25,1)
+        forwards;
+
+      animation-delay: 1.35s;
+
     }
 
-    100% {
+
+
+    .letter-photo-inner {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #d8d5cf,
+          #ebe8e2
+        );
+
+      color: #999;
+
+      font-family: var(--font-body);
+
+      font-size: 9px;
+
+      letter-spacing: 1px;
+
+    }
+
+
+
+    .letter-photo-inner img {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+    }
+
+
+
+    /* ========================================
+       RED ENVELOPE FLAP
+    ======================================== */
+
+    .envelope-flap {
+
+      position: absolute;
+
+      z-index: 7;
+
+      left: 0;
+
+      top: 0;
+
+      width: 100%;
+
+      height: 110px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #b73b45,
+          #962a34
+        );
+
+      clip-path:
+        polygon(
+          0 0,
+          100% 0,
+          50% 100%
+        );
+
+      transform-origin: top center;
+
+      transform: rotateX(0deg);
+
+      backface-visibility: hidden;
+
+      animation:
+        flapOpen
+        0.9s
+        cubic-bezier(.35,.02,.25,1)
+        forwards;
+
+      animation-delay: 0.82s;
+
+    }
+
+
+
+    /* ========================================
+       ENVELOPE FRONT
+    ======================================== */
+
+    .envelope-front {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 5;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+    }
+
+
+
+    .envelope-front-left {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #a92e39;
+
+      clip-path:
+        polygon(
+          0 0,
+          52% 58%,
+          0 100%
+        );
+
+    }
+
+
+
+    .envelope-front-right {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #922530;
+
+      clip-path:
+        polygon(
+          100% 0,
+          48% 58%,
+          100% 100%
+        );
+
+    }
+
+
+
+    .envelope-front-bottom {
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          #b83a44,
+          #a32d38
+        );
+
+      clip-path:
+        polygon(
+          0 100%,
+          50% 47%,
+          100% 100%
+        );
+
+    }
+
+
+
+    /* ========================================
+       WHITE HEART STICKER
+    ======================================== */
+
+    .envelope-seal {
+
+      position: absolute;
+
+      z-index: 10;
+
+      left: 50%;
+
+      top: 70px;
+
+      width: 38px;
+
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
       transform:
         translateX(-50%)
-        translateY(-137px);
+        scale(1);
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      color: #a42e38;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 19px;
+
+      line-height: 1;
+
+      box-shadow:
+        0 3px 9px
+        rgba(73, 22, 27, 0.10);
+
+      animation:
+        sealDisappear
+        0.32s ease forwards;
+
+      animation-delay: 0.67s;
+
     }
 
-  }
 
-}
+
+    /* ========================================
+       OPENING TEXT
+    ======================================== */
+
+    .opening-text {
+
+      margin-top: 1px;
+
+      opacity: 0;
+
+      transform: translateY(9px);
+
+      animation:
+        openingTextShow
+        0.85s ease forwards;
+
+      animation-delay: 2.38s;
+
+    }
+
+
+
+    .opening-names {
+
+      font-family: var(--font-en);
+
+      font-size: 28px;
+
+      font-weight: 400;
+
+      line-height: 1.2;
+
+      color: #393735;
+
+    }
+
+
+
+    .opening-date {
+
+      margin-top: 12px;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 2.5px;
+
+      color: #7b7873;
+
+    }
+
+
+
+    .opening-line {
+
+      width: 1px;
+
+      height: 27px;
+
+      margin: 19px auto 0;
+
+      background:
+        rgba(80,76,72,0.22);
+
+      transform-origin: top;
+
+      transform: scaleY(0);
+
+      animation:
+        lineGrow 0.7s ease forwards;
+
+      animation-delay: 2.75s;
+
+    }
+
+
+
+    /* ========================================
+       OPENING KEYFRAMES
+    ======================================== */
+
+    @keyframes openingFade {
+
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+
+    @keyframes envelopeAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(12px)
+          scale(0.99);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+
+    @keyframes sealDisappear {
+
+      0% {
+
+        opacity: 1;
+
+        transform:
+          translateX(-50%)
+          scale(1);
+
+      }
+
+      100% {
+
+        opacity: 0;
+
+        transform:
+          translateX(-50%)
+          scale(0.82);
+
+      }
+
+    }
+
+
+
+    @keyframes flapOpen {
+
+      0% {
+
+        transform:
+          rotateX(0deg);
+
+      }
+
+      42% {
+
+        transform:
+          rotateX(-105deg);
+
+      }
+
+      100% {
+
+        transform:
+          rotateX(-180deg);
+
+      }
+
+    }
+
+
+
+    @keyframes photoWindowOpen {
+
+      0% {
+        height: var(--env-h);
+      }
+
+      100% {
+        height: var(--window-open-height);
+      }
+
+    }
+
+
+
+    @keyframes photoRise {
+
+      0% {
+
+        transform:
+          translateX(-50%)
+          translateY(0);
+
+      }
+
+      100% {
+
+        transform:
+          translateX(-50%)
+          translateY(var(--photo-rise));
+
+      }
+
+    }
+
+
+
+    @keyframes openingTextShow {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(9px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+
+    @keyframes lineGrow {
+
+      from {
+        transform: scaleY(0);
+      }
+
+      to {
+        transform: scaleY(1);
+      }
+
+    }
+
+
+
+    /* ========================================
+       FIXED WEDDING INFO
+    ======================================== */
+
+    .wedding-info-shortcut {
+
+      position: fixed;
+
+      top: max(18px, env(safe-area-inset-top));
+
+      right: 18px;
+
+      z-index: 500;
+
+      min-height: 40px;
+
+      padding: 0 14px;
+
+      border:
+        1px solid rgba(0,0,0,0.10);
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,0.82);
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+      color: #555;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 1.2px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    /* ========================================
+       MAIN REVEAL
+    ======================================== */
+
+    .intro-label,
+    .names,
+    .intro-date,
+    .intro-description,
+    .season-card,
+    .story-hint {
+
+      opacity: 0;
+
+      transform:
+        translateY(15px);
+
+    }
+
+
+
+    body.page-ready .intro-label {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+    }
+
+
+
+    body.page-ready .names {
+
+      animation:
+        mainReveal 0.9s ease forwards;
+
+      animation-delay: 0.08s;
+
+    }
+
+
+
+    body.page-ready .intro-date {
+
+      animation:
+        mainReveal 0.9s ease forwards;
+
+      animation-delay: 0.16s;
+
+    }
+
+
+
+    body.page-ready .intro-description {
+
+      animation:
+        mainReveal 0.9s ease forwards;
+
+      animation-delay: 0.24s;
+
+    }
+
+
+
+    body.page-ready
+    .season-card:nth-child(1) {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+      animation-delay: 0.38s;
+
+    }
+
+
+
+    body.page-ready
+    .season-card:nth-child(2) {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+      animation-delay: 0.49s;
+
+    }
+
+
+
+    body.page-ready
+    .season-card:nth-child(3) {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+      animation-delay: 0.60s;
+
+    }
+
+
+
+    body.page-ready
+    .season-card:nth-child(4) {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+      animation-delay: 0.71s;
+
+    }
+
+
+
+    body.page-ready .story-hint {
+
+      animation:
+        mainReveal 0.8s ease forwards;
+
+      animation-delay: 0.82s;
+
+    }
+
+
+
+    @keyframes mainReveal {
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+
+    /* ========================================
+       SCROLL REVEAL
+    ======================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(22px);
+
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    }
+
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+
+    /* ========================================
+       INTRO
+    ======================================== */
+
+    .intro {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+
+      padding:
+        80px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f2f4f5 0%,
+          #faf9f6 52%,
+          #f7f5f0 100%
+        );
+
+    }
+
+
+
+    .intro-label {
+
+      text-align: center;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 3.5px;
+
+      color: #858585;
+
+    }
+
+
+
+    .names {
+
+      margin:
+        24px 0 0;
+
+      text-align: center;
+
+      font-family: var(--font-en);
+
+      font-size: 39px;
+
+      font-weight: 400;
+
+      line-height: 1.15;
+
+    }
+
+
+
+    .intro-date {
+
+      margin-top: 20px;
+
+      text-align: center;
+
+      font-family: var(--font-en);
+
+      font-size: 12px;
+
+      letter-spacing: 2.5px;
+
+      color: #555;
+
+    }
+
+
+
+    .intro-description {
+
+      margin-top: 42px;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #666;
+
+    }
+
+
+
+    /* ========================================
+       FOUR SEASONS
+    ======================================== */
+
+    .season-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 8px;
+
+      margin-top: 48px;
+
+    }
+
+
+
+    .season-card {
+
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      margin: 0;
+
+      padding: 0;
+
+      border: 0;
+
+      overflow: hidden;
+
+      background: #e8e8e8;
+
+      cursor: pointer;
+
+      text-align: left;
+
+    }
+
+
+
+    .season-image {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color:
+        rgba(0,0,0,0.34);
+
+      font-size: 10px;
+
+      transition:
+        transform 0.6s ease;
+
+    }
+
+
+
+    .season-card:active
+    .season-image {
+
+      transform:
+        scale(1.02);
+
+    }
+
+
+
+    .winter .season-image {
+      background: #dce3e7;
+    }
+
+
+    .spring .season-image {
+      background: #e9e5dc;
+    }
+
+
+    .summer .season-image {
+      background: #e6dfd0;
+    }
+
+
+    .autumn .season-image {
+      background: #dcd3ca;
+    }
+
+
+
+    .season-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      padding: 17px;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 38%,
+          rgba(0,0,0,0.45) 100%
+        );
+
+    }
+
+
+
+    .season-eng {
+
+      font-family: var(--font-en);
+
+      font-size: 17px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+
+    .season-kor {
+
+      margin-top: 5px;
+
+      font-size: 11px;
+
+      color:
+        rgba(255,255,255,0.92);
+
+    }
+
+
+
+    .season-click {
+
+      margin-top: 7px;
+
+      font-family: var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 1.2px;
+
+      color:
+        rgba(255,255,255,0.7);
+
+    }
+
+
+
+    .story-hint {
+
+      margin-top: 24px;
+
+      text-align: center;
+
+      font-family: var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 2.5px;
+
+      color: #aaa;
+
+    }
+
+
+
+    /* ========================================
+       WINTER AGAIN
+    ======================================== */
+
+    .winter-again {
+
+      min-height: 88vh;
+
+      display: flex;
+
+      align-items: center;
+
+      padding:
+        95px 24px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #e8ecee 0%,
+          #f2f2ef 55%,
+          #f8f7f3 100%
+        );
+
+    }
+
+
+
+    .again-small {
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      color: #8a8a8a;
+
+    }
+
+
+
+    .again-title {
+
+      margin:
+        20px 0 0;
+
+      font-family: var(--font-en);
+
+      font-size: 43px;
+
+      font-weight: 400;
+
+      line-height: 1.2;
+
+    }
+
+
+
+    .again-date {
+
+      margin-top: 28px;
+
+      font-family: var(--font-en);
+
+      font-size: 14px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+
+    .again-text {
+
+      margin-top: 36px;
+
+      font-size: 13px;
+
+      line-height: 2.1;
+
+      color: #666;
+
+    }
+
+
+
+    .fill-winter {
+
+      margin-top: 43px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 21px;
+
+      font-weight: 400;
+
+      line-height: 1.85;
+
+    }
+
+
+
+    /* ========================================
+       INVITATION
+    ======================================== */
+
+    .invitation {
+
+      padding:
+        105px 24px;
+
+      background: #fff;
+
+    }
+
+
+
+    .section-label {
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      color: #999;
+
+    }
+
+
+
+    .invitation-title {
+
+      margin-top: 22px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 27px;
+
+      font-weight: 400;
+
+      line-height: 1.55;
+
+      letter-spacing: -0.03em;
+
+    }
+
+
+
+    .invitation-text {
+
+      margin-top: 39px;
+
+      font-size: 13px;
+
+      line-height: 2.2;
+
+      color: #666;
+
+    }
+
+
+
+    /* ========================================
+       WEDDING INFO
+    ======================================== */
+
+    .wedding-info {
+
+      padding:
+        100px 24px;
+
+      background: #f4f2ed;
+
+    }
+
+
+
+    .wedding-date-big {
+
+      margin-top: 22px;
+
+      font-family: var(--font-en);
+
+      font-size: 31px;
+
+    }
+
+
+
+    .wedding-time {
+
+      margin-top: 9px;
+
+      font-family: var(--font-en);
+
+      font-size: 11px;
+
+      letter-spacing: 1.6px;
+
+      color: #777;
+
+    }
+
+
+
+    .venue {
+
+      margin-top: 40px;
+
+      padding:
+        30px 0;
+
+      border-top:
+        1px solid #d5d2cc;
+
+      border-bottom:
+        1px solid #d5d2cc;
+
+    }
+
+
+
+    .venue-name {
+
+      font-family: var(--font-ko-title);
+
+      font-size: 17px;
+
+      font-weight: 400;
+
+    }
+
+
+
+    .venue-address {
+
+      margin-top: 8px;
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+      color: #777;
+
+    }
+
+
+
+    /* ========================================
+       MAP
+    ======================================== */
+
+    .map-buttons {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 9px;
+
+      margin-top: 25px;
+
+    }
+
+
+
+    .map-button {
+
+      min-height: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid #cac7c1;
+
+      background: transparent;
+
+      font-family: var(--font-en);
+
+      font-size: 10px;
+
+      letter-spacing: 0.8px;
+
+    }
+
+
+
+    /* ========================================
+       PARKING
+    ======================================== */
+
+    .parking-wrap {
+
+      margin-top: 18px;
+
+      border-top:
+        1px solid #d7d3cc;
+
+      border-bottom:
+        1px solid #d7d3cc;
+
+    }
+
+
+
+    .parking-toggle {
+
+      width: 100%;
+
+      min-height: 60px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .parking-toggle-left {
+      text-align: left;
+    }
+
+
+
+    .parking-title {
+
+      font-family: var(--font-en);
+
+      font-size: 11px;
+
+      letter-spacing: 1.4px;
+
+    }
+
+
+
+    .parking-subtitle {
+
+      margin-top: 4px;
+
+      font-size: 11px;
+
+      color: #888;
+
+    }
+
+
+
+    .parking-plus {
+
+      font-size: 21px;
+
+      transition:
+        transform 0.3s ease;
+
+    }
+
+
+
+    .parking-wrap.open
+    .parking-plus {
+
+      transform:
+        rotate(45deg);
+
+    }
+
+
+
+    .parking-content {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      transition:
+        max-height 0.55s ease,
+        opacity 0.4s ease;
+
+    }
+
+
+
+    .parking-wrap.open
+    .parking-content {
+
+      max-height: 600px;
+
+      opacity: 1;
+
+    }
+
+
+
+    .parking-content-inner {
+      padding-bottom: 28px;
+    }
+
+
+
+    .parking-highlight {
+
+      margin:
+        4px 0 24px;
+
+      padding:
+        12px 0 18px;
+
+      background: transparent;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      text-align: center;
+
+      color: #666;
+
+    }
+
+
+
+    .parking-row {
+
+      display: grid;
+
+      grid-template-columns:
+        86px 1fr;
+
+      gap: 12px;
+
+      margin-top: 14px;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      text-align: left;
+
+    }
+
+
+
+    .parking-label {
+
+      font-weight: 600;
+
+      color: #555;
+
+    }
+
+
+
+    .parking-value {
+      color: #777;
+    }
+
+
+
+    /* ========================================
+       ACTION
+    ======================================== */
+
+    .action-section {
+
+      margin-top: 52px;
+
+      padding-top: 43px;
+
+      border-top:
+        1px solid #d5d2cc;
+
+    }
+
+
+
+    .action-title {
+
+      margin-top: 16px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 23px;
+
+      font-weight: 400;
+
+    }
+
+
+
+    .action-description {
+
+      margin-top: 15px;
+
+      font-size: 12px;
+
+      line-height: 1.9;
+
+      color: #777;
+
+    }
+
+
+
+    .action-button {
+
+      width: 100%;
+
+      min-height: 52px;
+
+      margin-top: 24px;
+
+      border:
+        1px solid #aaa69f;
+
+      background: transparent;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.18s ease;
+
+    }
+
+
+
+    .action-button:active {
+
+      transform:
+        scale(0.985);
+
+    }
+
+
+
+    /* ========================================
+       GUEST SNAP
+    ======================================== */
+
+    .guest-snap {
+
+      padding:
+        105px 24px;
+
+      background: #e9edf0;
+
+    }
+
+
+
+    .guest-title {
+
+      margin-top: 20px;
+
+      font-family: var(--font-en);
+
+      font-size: 34px;
+
+      font-weight: 400;
+
+    }
+
+
+
+    .guest-text {
+
+      margin-top: 28px;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #666;
+
+    }
+
+
+
+    .guest-button {
+
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 32px;
+
+      border: 0;
+
+      background: #333;
+
+      color: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    /* ========================================
+       SEASON DETAIL
+    ======================================== */
+
+    .season-page {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 1500;
+
+      display: none;
+
+      overflow-y: auto;
+
+      background: #f7f6f2;
+
+      -webkit-overflow-scrolling: touch;
+
+    }
+
+
+
+    .season-page.active {
+
+      display: block;
+
+      animation:
+        detailShow 0.4s ease;
+
+    }
+
+
+
+    @keyframes detailShow {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+
+    .season-page-inner {
+
+      width: 100%;
+
+      max-width: 540px;
+
+      margin: 0 auto;
+
+      padding:
+        22px 22px 100px;
+
+    }
+
+
+
+    .season-back {
+
+      min-height: 44px;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      font-family: var(--font-en);
+
+      font-size: 10px;
+
+      letter-spacing: 1.4px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .season-page-header {
+
+      margin-top: 42px;
+
+      text-align: center;
+
+    }
+
+
+
+    .season-page-small {
+
+      font-family: var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 4px;
+
+      color: #999;
+
+    }
+
+
+
+    .season-page-title {
+
+      margin-top: 13px;
+
+      font-family: var(--font-en);
+
+      font-size: 44px;
+
+      font-weight: 400;
+
+    }
+
+
+
+    .season-page-main-photo {
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      margin-top: 42px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+
+      background: #e3e3e3;
+
+      color: #999;
+
+      font-size: 11px;
+
+    }
+
+
+
+    .season-page-main-photo img,
+    .mini-photo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+    }
+
+
+
+    .season-page-text {
+
+      margin-top: 34px;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      line-height: 2.1;
+
+      color: #666;
+
+    }
+
+
+
+    .mini-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 7px;
+
+      margin-top: 35px;
+
+    }
+
+
+
+    .mini-photo {
+
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+
+      background: #e5e5e5;
+
+      color: #aaa;
+
+      font-size: 10px;
+
+    }
+
+
+
+    .season-end {
+
+      margin-top: 50px;
+
+      text-align: center;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      color: #aaa;
+
+    }
+
+
+
+    #season-winter {
+      background: #eef1f3;
+    }
+
+
+    #season-spring {
+      background: #f5f2eb;
+    }
+
+
+    #season-summer {
+      background: #f4efe4;
+    }
+
+
+    #season-autumn {
+      background: #eee8e1;
+    }
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 3000;
+
+      display: none;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,0.38);
+
+    }
+
+
+
+    .modal.active {
+      display: flex;
+    }
+
+
+
+    .modal-panel {
+
+      width: 100%;
+
+      max-width: 520px;
+
+      max-height: 88vh;
+
+      overflow-y: auto;
+
+      padding:
+        26px 22px 34px;
+
+      border-radius:
+        18px 18px 8px 8px;
+
+      background: #faf9f6;
+
+      animation:
+        modalOpen 0.35s ease;
+
+    }
+
+
+
+    @keyframes modalOpen {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(25px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+
+    .modal-header {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+    }
+
+
+
+    .modal-label {
+
+      font-family: var(--font-en);
+
+      font-size: 8px;
+
+      letter-spacing: 3px;
+
+      color: #999;
+
+    }
+
+
+
+    .modal-title {
+
+      margin-top: 9px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 24px;
+
+      font-weight: 400;
+
+    }
+
+
+
+    .modal-close {
+
+      width: 42px;
+
+      height: 42px;
+
+      flex: 0 0 42px;
+
+      border: 0;
+
+      background: transparent;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    /* ========================================
+       RSVP
+    ======================================== */
+
+    .form-section {
+      margin-top: 30px;
+    }
+
+
+
+    .form-label {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-size: 11px;
+
+      color: #666;
+
+    }
+
+
+
+    .choice-row {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 8px;
+
+    }
+
+
+
+    .choice-input {
+
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+    }
+
+
+
+    .choice-label {
+
+      min-height: 46px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid #d0ccc5;
+
+      background: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .choice-input:checked
+    + .choice-label {
+
+      border-color: #555;
+
+      background: #444;
+
+      color: #fff;
+
+    }
+
+
+
+    .text-input,
+    .select-input {
+
+      width: 100%;
+
+      min-height: 48px;
+
+      padding:
+        0 13px;
+
+      border:
+        1px solid #d0ccc5;
+
+      border-radius: 0;
+
+      background: #fff;
+
+      color: #333;
+
+      font-size: 13px;
+
+    }
+
+
+
+    .submit-button {
+
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 32px;
+
+      border: 0;
+
+      background: #333;
+
+      color: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .form-note {
+
+      margin-top: 13px;
+
+      text-align: center;
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+      color: #999;
+
+    }
+
+
+
+    /* ========================================
+       ACCOUNT
+    ======================================== */
+
+    .account-tabs {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 7px;
+
+      margin-top: 28px;
+
+    }
+
+
+
+    .account-tab {
+
+      min-height: 45px;
+
+      border:
+        1px solid #ccc7c0;
+
+      background: transparent;
+
+      color: #555;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .account-tab.active {
+
+      background: #444;
+
+      border-color: #444;
+
+      color: #fff;
+
+    }
+
+
+
+    .account-group {
+
+      display: none;
+
+      margin-top: 25px;
+
+    }
+
+
+
+    .account-group.active {
+      display: block;
+    }
+
+
+
+    .account-card {
+
+      padding:
+        20px 0;
+
+      border-bottom:
+        1px solid #dedad4;
+
+    }
+
+
+
+    .account-card:first-child {
+
+      border-top:
+        1px solid #dedad4;
+
+    }
+
+
+
+    .account-role {
+
+      font-size: 10px;
+
+      color: #999;
+
+    }
+
+
+
+    .account-name {
+
+      margin-top: 4px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 14px;
+
+    }
+
+
+
+    .account-number {
+
+      margin-top: 10px;
+
+      font-size: 12px;
+
+      color: #666;
+
+    }
+
+
+
+    .account-copy {
+
+      margin-top: 12px;
+
+      min-height: 38px;
+
+      padding:
+        0 15px;
+
+      border:
+        1px solid #c9c5be;
+
+      background: transparent;
+
+      font-size: 11px;
+
+      color: #555;
+
+      cursor: pointer;
+
+    }
+
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+
+      padding:
+        70px 20px;
+
+      text-align: center;
+
+      background: #fff;
+
+      color: #999;
+
+      font-family: var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      line-height: 2;
+
+    }
+
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 420px) {
+
+
+      .opening-inner {
+
+        padding-left: 14px;
+
+        padding-right: 14px;
+
+      }
+
+
+      .letter-small {
+        margin-bottom: 24px;
+      }
+
+
+      .envelope-stage {
+
+        --env-w: 260px;
+        --env-h: 163px;
+
+        --photo-w: 163px;
+        --photo-h: 204px;
+
+        --photo-bottom: -50px;
+
+        --photo-rise: -137px;
+
+        --window-open-height: 320px;
+
+        width: 280px;
+
+        height: 325px;
+
+      }
+
+
+      .envelope-flap {
+        height: 101px;
+      }
+
+
+      .envelope-seal {
+
+        top: 64px;
+
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 17px;
+
+      }
+
+
+      .opening-names {
+        font-size: 26px;
+      }
+
+
+      .intro {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+      }
+
+
+      .names {
+        font-size: 35px;
+      }
+
+
+      .season-overlay {
+        padding: 14px;
+      }
+
+
+      .again-title {
+        font-size: 39px;
+      }
+
+
+      .invitation-title {
+        font-size: 25px;
+      }
+
+
+      .parking-row {
+
+        grid-template-columns:
+          74px 1fr;
+
+      }
+
+
+      .modal {
+        padding: 10px;
+      }
+
+    }
+
+
+
+    /* ========================================
+       REDUCED MOTION
+    ======================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.01ms !important;
+
+      }
+
+
+      .reveal {
+
+        opacity: 1;
+
+        transform: none;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body class="opening-active">
+
+
+  <!-- ========================================
+       ENVELOPE OPENING
+  ======================================== -->
+
+  <div
+    class="opening"
+    id="opening"
+  >
+
+
+    <button
+      type="button"
+      class="opening-skip"
+      id="openingSkip"
+    >
+      SKIP →
+    </button>
+
+
+
+    <div class="opening-inner">
+
+
+      <div class="letter-small">
+        A LETTER FOR YOU
+      </div>
+
+
+
+      <div class="envelope-stage">
+
+
+        <div class="envelope">
+
+
+          <!-- 봉투 뒤판 -->
+
+          <div class="envelope-back"></div>
+
+
+
+          <!-- ========================================
+               PHOTO
+
+               실제 사진 넣을 때
+
+               WEDDING PHOTO 글자를 지우고
+
+               <img
+                 src="images/opening.jpg"
+                 alt="Gahyun and Jinchan"
+               >
+
+               를 넣으면 됨.
+          ======================================== -->
+
+          <div class="photo-window">
+
+
+            <div class="letter-photo">
+
+
+              <div class="letter-photo-inner">
+
+                WEDDING PHOTO
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- 빨간 봉투 뚜껑 -->
+
+          <div class="envelope-flap"></div>
+
+
+
+          <!-- 봉투 앞부분 -->
+
+          <div class="envelope-front">
+
+
+            <div class="envelope-front-left"></div>
+
+
+            <div class="envelope-front-right"></div>
+
+
+            <div class="envelope-front-bottom"></div>
+
+
+          </div>
+
+
+
+          <!-- 흰색 하트 스티커 -->
+
+          <div class="envelope-seal">
+            ♥
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="opening-text">
+
+
+        <div class="opening-names">
+          Gahyun & Jinchan
+        </div>
+
+
+        <div class="opening-date">
+          JANUARY 30, 2027
+        </div>
+
+
+        <div class="opening-line"></div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       WEDDING INFO SHORTCUT
+  ======================================== -->
+
+  <button
+    type="button"
+    class="wedding-info-shortcut"
+    id="weddingShortcut"
+  >
+    WEDDING INFO →
+  </button>
+
+
+
+  <!-- ========================================
+       MAIN
+  ======================================== -->
+
+  <section
+    class="intro"
+    id="main"
+  >
+
+
+    <div class="inner">
+
+
+      <div class="intro-label">
+
+        WINTER · SPRING · SUMMER · AUTUMN · WINTER
+
+      </div>
+
+
+
+      <h1 class="names">
+
+        Gahyun
+
+        <br>
+
+        &
+
+        <br>
+
+        Jinchan
+
+      </h1>
+
+
+
+      <div class="intro-date">
+
+        JANUARY 30, 2027
+
+      </div>
+
+
+
+      <div class="intro-description">
+
+
+        우리의 이야기가 시작된 3년 전 겨울,
+
+        <br>
+
+        몇 번의 봄과 여름, 가을을 함께 지나
+
+        <br>
+
+        다시 겨울을 맞이합니다.
+
+
+        <br><br>
+
+
+        그리고 이 겨울,
+
+        <br>
+
+        우리는 새로운 계절을 시작합니다.
+
+
+      </div>
+
+
+
+      <!-- ========================================
+           SEASON GRID
+      ======================================== -->
+
+      <div class="season-grid">
+
+
+
+        <button
+          type="button"
+          class="season-card winter"
+          data-season="winter"
+        >
+
+
+          <div class="season-image">
+
+            겨울 대표사진
+
+          </div>
+
+
+          <div class="season-overlay">
+
+
+            <div class="season-eng">
+
+              WINTER
+
+            </div>
+
+
+            <div class="season-kor">
+
+              우리의 시작
+
+            </div>
+
+
+            <div class="season-click">
+
+              VIEW STORY →
+
+            </div>
+
+
+          </div>
+
+
+        </button>
+
+
+
+        <button
+          type="button"
+          class="season-card spring"
+          data-season="spring"
+        >
+
+
+          <div class="season-image">
+
+            봄 대표사진
+
+          </div>
+
+
+          <div class="season-overlay">
+
+
+            <div class="season-eng">
+
+              SPRING
+
+            </div>
+
+
+            <div class="season-kor">
+
+              피어나는 우리
+
+            </div>
+
+
+            <div class="season-click">
+
+              VIEW STORY →
+
+            </div>
+
+
+          </div>
+
+
+        </button>
+
+
+
+        <button
+          type="button"
+          class="season-card summer"
+          data-season="summer"
+        >
+
+
+          <div class="season-image">
+
+            여름 대표사진
+
+          </div>
+
+
+          <div class="season-overlay">
+
+
+            <div class="season-eng">
+
+              SUMMER
+
+            </div>
+
+
+            <div class="season-kor">
+
+              빛나는 시간
+
+            </div>
+
+
+            <div class="season-click">
+
+              VIEW STORY →
+
+            </div>
+
+
+          </div>
+
+
+        </button>
+
+
+
+        <button
+          type="button"
+          class="season-card autumn"
+          data-season="autumn"
+        >
+
+
+          <div class="season-image">
+
+            가을 대표사진
+
+          </div>
+
+
+          <div class="season-overlay">
+
+
+            <div class="season-eng">
+
+              AUTUMN
+
+            </div>
+
+
+            <div class="season-kor">
+
+              깊어진 시간
+
+            </div>
+
+
+            <div class="season-click">
+
+              VIEW STORY →
+
+            </div>
+
+
+          </div>
+
+
+        </button>
+
+
+      </div>
+
+
+
+      <div class="story-hint">
+
+        TAP EACH SEASON TO SEE OUR STORY
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       WINTER AGAIN
+  ======================================== -->
+
+  <section class="winter-again reveal">
+
+
+    <div class="inner center">
+
+
+      <div class="again-small">
+
+        AND WINTER AGAIN
+
+      </div>
+
+
+
+      <h2 class="again-title">
+
+        Our Winter
+
+      </h2>
+
+
+
+      <div class="again-date">
+
+        JANUARY 30, 2027
+
+      </div>
+
+
+
+      <div class="again-text">
+
+
+        우리의 이야기가 시작된 겨울에서
+
+        <br>
+
+        몇 번의 계절을 함께 지나
+
+        <br>
+
+        다시 겨울을 맞이합니다.
+
+
+      </div>
+
+
+
+      <div class="fill-winter">
+
+
+        우리의 겨울을
+
+        <br>
+
+        함께 채워주세요.
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       INVITATION
+  ======================================== -->
+
+  <section class="invitation reveal">
+
+
+    <div class="inner center">
+
+
+      <div class="section-label">
+
+        INVITATION
+
+      </div>
+
+
+
+      <h2 class="invitation-title">
+
+        소중한 분들을 초대합니다
+
+      </h2>
+
+
+
+      <div class="invitation-text">
+
+
+        뒤돌아보면 함께한 일상 속에 행복이 있었습니다.
+
+
+        <br><br>
+
+
+        풀리지 않는 고민도 함께 나누고 답을 찾겠습니다.
+
+
+        <br><br>
+
+
+        이제 사랑과 믿음으로 한 가정을 이루어
+
+        <br>
+
+        서로를 너그러이 보듬으며 살아가려 합니다.
+
+
+        <br><br>
+
+
+        중요한 이 약속의 자리에 함께하시어
+
+        <br>
+
+        저희의 앞날을 축복해 주세요.
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       WEDDING DAY
+  ======================================== -->
+
+  <section
+    class="wedding-info reveal"
+    id="wedding"
+  >
+
+
+    <div class="inner center">
+
+
+      <div class="section-label">
+
+        WEDDING DAY
+
+      </div>
+
+
+
+      <div class="wedding-date-big">
+
+        January 30, 2027
+
+      </div>
+
+
+
+      <div class="wedding-time">
+
+        SATURDAY · 5:00 PM
+
+      </div>
+
+
+
+      <!-- VENUE -->
+
+      <div class="venue">
+
+
+        <div class="venue-name">
+
+          엘로라 인 가든
+
+        </div>
+
+
+
+        <div class="venue-address">
+
+
+          서울특별시 송파구 충민로 52
+
+          <br>
+
+          가든파이브 웍스 1층
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- MAP -->
+
+      <div class="map-buttons">
+
+
+        <a
+          class="map-button"
+          href="https://map.naver.com/p/search/%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          NAVER MAP
+
+        </a>
+
+
+
+        <a
+          class="map-button"
+          href="https://map.kakao.com/?q=%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          KAKAO MAP
+
+        </a>
+
+
+      </div>
+
+
+
+      <!-- PARKING -->
+
+      <div
+        class="parking-wrap"
+        id="parkingWrap"
+      >
+
+
+        <button
+          type="button"
+          class="parking-toggle"
+          id="parkingToggle"
+        >
+
+
+          <div class="parking-toggle-left">
+
+
+            <div class="parking-title">
+
+              PARKING & TRANSPORTATION
+
+            </div>
+
+
+            <div class="parking-subtitle">
+
+              주차 및 교통 안내
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="parking-plus">
+
+            +
+
+          </div>
+
+
+        </button>
+
+
+
+        <div class="parking-content">
+
+
+          <div class="parking-content-inner">
+
+
+
+            <div class="parking-highlight">
+
+
+              넉넉한 주차 공간이 마련되어 있으니
+
+              <br>
+
+              차량 이용이 가능하신 분들은
+
+              <br>
+
+              편하게 차를 가지고 오셔도 됩니다.
+
+
+            </div>
+
+
+
+            <div class="parking-row">
+
+
+              <div class="parking-label">
+
+                주차 위치
+
+              </div>
+
+
+              <div class="parking-value">
+
+                가든파이브 웍스동 B2–B5
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="parking-row">
+
+
+              <div class="parking-label">
+
+                주차 혜택
+
+              </div>
+
+
+              <div class="parking-value">
+
+                하객 3시간 무료
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="parking-row">
+
+
+              <div class="parking-label">
+
+                내비 검색
+
+              </div>
+
+
+              <div class="parking-value">
+
+                우리은행 가든파이브점
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="parking-row">
+
+
+              <div class="parking-label">
+
+                웨딩홀
+
+              </div>
+
+
+              <div class="parking-value">
+
+                주차 후 A/B/C/D동 엘리베이터 이용 → 1층
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ATTENDANCE -->
+
+      <div class="action-section">
+
+
+        <div class="section-label">
+
+          ATTENDANCE
+
+        </div>
+
+
+
+        <div class="action-title">
+
+          참석 여부
+
+        </div>
+
+
+
+        <div class="action-description">
+
+
+          참석 여부를 알려주시면
+
+          <br>
+
+          소중한 자리를 준비하는 데 도움이 됩니다.
+
+
+        </div>
+
+
+
+        <button
+          type="button"
+          class="action-button"
+          id="openRsvp"
+        >
+
+          참석 여부 전달하기
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- HEART -->
+
+      <div class="action-section">
+
+
+        <div class="section-label">
+
+          FOR YOUR HEART
+
+        </div>
+
+
+
+        <div class="action-title">
+
+          마음 전하실 곳
+
+        </div>
+
+
+
+        <div class="action-description">
+
+
+          멀리서도 축하해 주시는
+
+          <br>
+
+          따뜻한 마음에 깊이 감사드립니다.
+
+
+        </div>
+
+
+
+        <button
+          type="button"
+          class="action-button"
+          id="openAccount"
+        >
+
+          마음 전하기
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       GUEST SNAP
+  ======================================== -->
+
+  <section class="guest-snap reveal">
+
+
+    <div class="inner center">
+
+
+      <div class="section-label">
+
+        GUEST SNAP
+
+      </div>
+
+
+
+      <div class="guest-title">
+
+        Fill Our Winter
+
+      </div>
+
+
+
+      <div class="guest-text">
+
+
+        저희가 보지 못한 오늘의 순간을
+
+        <br>
+
+        여러분의 시선으로 남겨주세요.
+
+
+      </div>
+
+
+
+      <button
+        type="button"
+        class="guest-button"
+        id="guestUpload"
+      >
+
+        사진 & 영상 올리기
+
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       WINTER DETAIL
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-winter"
+  >
+
+
+    <div class="season-page-inner">
+
+
+      <button
+        type="button"
+        class="season-back"
+      >
+
+        ← BACK
+
+      </button>
+
+
+
+      <div class="season-page-header">
+
+
+        <div class="season-page-small">
+
+          OUR FIRST SEASON
+
+        </div>
+
+
+        <div class="season-page-title">
+
+          Winter
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-page-main-photo">
+
+        겨울 메인 사진
+
+      </div>
+
+
+
+      <div class="season-page-text">
+
+
+        우리의 이야기가 시작된 겨울.
+
+
+        <br><br>
+
+
+        이곳에는 두 사람의
+        첫 번째 겨울 이야기를 담을 예정입니다.
+
+
+      </div>
+
+
+
+      <div class="mini-gallery">
+
+
+        <div class="mini-photo">
+          겨울 사진 1
+        </div>
+
+
+        <div class="mini-photo">
+          겨울 사진 2
+        </div>
+
+
+        <div class="mini-photo">
+          겨울 사진 3
+        </div>
+
+
+        <div class="mini-photo">
+          겨울 사진 4
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-end">
+
+        WINTER · OUR BEGINNING
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       SPRING DETAIL
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-spring"
+  >
+
+
+    <div class="season-page-inner">
+
+
+      <button
+        type="button"
+        class="season-back"
+      >
+
+        ← BACK
+
+      </button>
+
+
+
+      <div class="season-page-header">
+
+
+        <div class="season-page-small">
+
+          OUR SPRING
+
+        </div>
+
+
+        <div class="season-page-title">
+
+          Spring
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-page-main-photo">
+
+        봄 메인 사진
+
+      </div>
+
+
+
+      <div class="season-page-text">
+
+
+        따뜻해진 계절과 함께
+
+
+        <br><br>
+
+
+        우리의 시간에도
+        새로운 장면들이 쌓여갔습니다.
+
+
+      </div>
+
+
+
+      <div class="mini-gallery">
+
+
+        <div class="mini-photo">
+          봄 사진 1
+        </div>
+
+
+        <div class="mini-photo">
+          봄 사진 2
+        </div>
+
+
+        <div class="mini-photo">
+          봄 사진 3
+        </div>
+
+
+        <div class="mini-photo">
+          봄 사진 4
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-end">
+
+        SPRING · OUR DAYS
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       SUMMER DETAIL
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-summer"
+  >
+
+
+    <div class="season-page-inner">
+
+
+      <button
+        type="button"
+        class="season-back"
+      >
+
+        ← BACK
+
+      </button>
+
+
+
+      <div class="season-page-header">
+
+
+        <div class="season-page-small">
+
+          OUR SUMMER
+
+        </div>
+
+
+        <div class="season-page-title">
+
+          Summer
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-page-main-photo">
+
+        여름 메인 사진
+
+      </div>
+
+
+
+      <div class="season-page-text">
+
+
+        햇살이 가장 길었던 계절.
+
+
+        <br><br>
+
+
+        함께하는 우리의 시간도
+        한층 더 선명해졌습니다.
+
+
+      </div>
+
+
+
+      <div class="mini-gallery">
+
+
+        <div class="mini-photo">
+          여름 사진 1
+        </div>
+
+
+        <div class="mini-photo">
+          여름 사진 2
+        </div>
+
+
+        <div class="mini-photo">
+          여름 사진 3
+        </div>
+
+
+        <div class="mini-photo">
+          여름 사진 4
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-end">
+
+        SUMMER · OUR BRIGHT DAYS
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       AUTUMN DETAIL
+  ======================================== -->
+
+  <div
+    class="season-page"
+    id="season-autumn"
+  >
+
+
+    <div class="season-page-inner">
+
+
+      <button
+        type="button"
+        class="season-back"
+      >
+
+        ← BACK
+
+      </button>
+
+
+
+      <div class="season-page-header">
+
+
+        <div class="season-page-small">
+
+          OUR AUTUMN
+
+        </div>
+
+
+        <div class="season-page-title">
+
+          Autumn
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-page-main-photo">
+
+        가을 메인 사진
+
+      </div>
+
+
+
+      <div class="season-page-text">
+
+
+        계절이 깊어지는 동안
+
+
+        <br><br>
+
+
+        우리도 함께할
+        다음 계절을 준비하기 시작했습니다.
+
+
+      </div>
+
+
+
+      <div class="mini-gallery">
+
+
+        <div class="mini-photo">
+          가을 사진 1
+        </div>
+
+
+        <div class="mini-photo">
+          가을 사진 2
+        </div>
+
+
+        <div class="mini-photo">
+          가을 사진 3
+        </div>
+
+
+        <div class="mini-photo">
+          가을 사진 4
+        </div>
+
+
+      </div>
+
+
+
+      <div class="season-end">
+
+        AUTUMN · OUR PROMISE
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       RSVP MODAL
+  ======================================== -->
+
+  <div
+    class="modal"
+    id="rsvpModal"
+  >
+
+
+    <div class="modal-panel">
+
+
+      <div class="modal-header">
+
+
+        <div>
+
+
+          <div class="modal-label">
+
+            ATTENDANCE
+
+          </div>
+
+
+          <div class="modal-title">
+
+            참석 여부를 알려주세요
+
+          </div>
+
+
+        </div>
+
+
+
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+        >
+
+          ×
+
+        </button>
+
+
+      </div>
+
+
+
+      <form id="rsvpForm">
+
+
+
+        <div class="form-section">
+
+
+          <div class="form-label">
+
+            어느 분의 하객이신가요?
+
+          </div>
+
+
+
+          <div class="choice-row">
+
+
+
+            <div>
+
+
+              <input
+                type="radio"
+                name="side"
+                value="신랑측"
+                id="sideGroom"
+                class="choice-input"
+                checked
+              >
+
+
+              <label
+                for="sideGroom"
+                class="choice-label"
+              >
+
+                신랑측
+
+              </label>
+
+
+            </div>
+
+
+
+            <div>
+
+
+              <input
+                type="radio"
+                name="side"
+                value="신부측"
+                id="sideBride"
+                class="choice-input"
+              >
+
+
+              <label
+                for="sideBride"
+                class="choice-label"
+              >
+
+                신부측
+
+              </label>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="form-section">
+
+
+          <label
+            for="guestName"
+            class="form-label"
+          >
+
+            성함
+
+          </label>
+
+
+
+          <input
+            type="text"
+            id="guestName"
+            class="text-input"
+            placeholder="성함을 입력해주세요"
+            required
+          >
+
+
+        </div>
+
+
+
+        <div class="form-section">
+
+
+          <label
+            for="guestCount"
+            class="form-label"
+          >
+
+            총 참석 인원
+
+          </label>
+
+
+
+          <select
+            id="guestCount"
+            class="select-input"
+          >
+
+
+            <option value="1">
+              1명
+            </option>
+
+
+            <option value="2">
+              2명
+            </option>
+
+
+            <option value="3">
+              3명
+            </option>
+
+
+            <option value="4">
+              4명
+            </option>
+
+
+            <option value="5">
+              5명 이상
+            </option>
+
+
+          </select>
+
+
+        </div>
+
+
+
+        <div class="form-section">
+
+
+          <div class="form-label">
+
+            참석 여부
+
+          </div>
+
+
+
+          <div class="choice-row">
+
+
+
+            <div>
+
+
+              <input
+                type="radio"
+                name="attendance"
+                value="참석"
+                id="attendYes"
+                class="choice-input"
+                checked
+              >
+
+
+              <label
+                for="attendYes"
+                class="choice-label"
+              >
+
+                참석
+
+              </label>
+
+
+            </div>
+
+
+
+            <div>
+
+
+              <input
+                type="radio"
+                name="attendance"
+                value="불참"
+                id="attendNo"
+                class="choice-input"
+              >
+
+
+              <label
+                for="attendNo"
+                class="choice-label"
+              >
+
+                불참
+
+              </label>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+
+          전달하기
+
+        </button>
+
+
+
+        <div class="form-note">
+
+
+          현재는 화면 초안입니다.
+
+          <br>
+
+          추후 실제 참석 명단 저장 기능을 연결할 예정입니다.
+
+
+        </div>
+
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       ACCOUNT MODAL
+  ======================================== -->
+
+  <div
+    class="modal"
+    id="accountModal"
+  >
+
+
+    <div class="modal-panel">
+
+
+      <div class="modal-header">
+
+
+        <div>
+
+
+          <div class="modal-label">
+
+            FOR YOUR HEART
+
+          </div>
+
+
+          <div class="modal-title">
+
+            마음 전하실 곳
+
+          </div>
+
+
+        </div>
+
+
+
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+        >
+
+          ×
+
+        </button>
+
+
+      </div>
+
+
+
+      <div class="account-tabs">
+
+
+        <button
+          type="button"
+          class="account-tab active"
+          data-account="groom"
+        >
+
+          신랑측
+
+        </button>
+
+
+        <button
+          type="button"
+          class="account-tab"
+          data-account="bride"
+        >
+
+          신부측
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- GROOM -->
+
+      <div
+        class="account-group active"
+        id="account-groom"
+      >
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신랑
+
+          </div>
+
+
+          <div class="account-name">
+
+            황진찬
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신랑 아버지
+
+          </div>
+
+
+          <div class="account-name">
+
+            성함 입력 예정
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신랑 어머니
+
+          </div>
+
+
+          <div class="account-name">
+
+            성함 입력 예정
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- BRIDE -->
+
+      <div
+        class="account-group"
+        id="account-bride"
+      >
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신부
+
+          </div>
+
+
+          <div class="account-name">
+
+            김가현
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신부 아버지
+
+          </div>
+
+
+          <div class="account-name">
+
+            성함 입력 예정
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+
+        <div class="account-card">
+
+
+          <div class="account-role">
+
+            신부 어머니
+
+          </div>
+
+
+          <div class="account-name">
+
+            성함 입력 예정
+
+          </div>
+
+
+          <div class="account-number">
+
+            은행명 000-0000-0000
+
+          </div>
+
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+
+            계좌번호 복사
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+
+    GAHYUN & JINCHAN
+
+
+    <br>
+
+
+    2027. 01. 30
+
+
+  </footer>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+
+    /* ========================================
+       OPENING
+    ======================================== */
+
+    const opening =
+      document.getElementById("opening");
+
+
+    const openingSkip =
+      document.getElementById(
+        "openingSkip"
+      );
+
+
+    let openingClosed = false;
+
+
+
+    function closeOpening() {
+
+
+      if (openingClosed) {
+        return;
+      }
+
+
+      openingClosed = true;
+
+
+      opening.classList.add("hide");
+
+
+      document.body
+        .classList
+        .remove("opening-active");
+
+
+      document.body
+        .classList
+        .add("page-ready");
+
+
+      setTimeout(
+        function () {
+
+
+          opening.style.display =
+            "none";
+
+
+        },
+        950
+      );
+
+
+    }
+
+
+
+    openingSkip.addEventListener(
+      "click",
+      closeOpening
+    );
+
+
+
+    /*
+      봉투 등장
+      → 하트 스티커
+      → 봉투 열림
+      → 사진 올라옴
+      → 이름/날짜 등장
+      → 본문
+    */
+
+    setTimeout(
+      closeOpening,
+      4400
+    );
+
+
+
+    /* ========================================
+       WEDDING INFO
+    ======================================== */
+
+    document
+      .getElementById(
+        "weddingShortcut"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          closeOpening();
+
+
+          setTimeout(
+            function () {
+
+
+              document
+                .getElementById(
+                  "wedding"
+                )
+                .scrollIntoView({
+
+                  behavior:
+                    "smooth"
+
+                });
+
+
+            },
+            120
+          );
+
+
+        }
+      );
+
+
+
+    /* ========================================
+       SCROLL REVEAL
+    ======================================== */
+
+    const revealElements =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        function (entries) {
+
+
+          entries.forEach(
+            function (entry) {
+
+
+              if (
+                entry.isIntersecting
+              ) {
+
+
+                entry.target
+                  .classList
+                  .add("visible");
+
+
+                revealObserver
+                  .unobserve(
+                    entry.target
+                  );
+
+
+              }
+
+
+            }
+          );
+
+
+        },
+        {
+
+          threshold: 0.12
+
+        }
+      );
+
+
+
+    revealElements.forEach(
+      function (element) {
+
+
+        revealObserver.observe(
+          element
+        );
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       SEASON DETAIL
+    ======================================== */
+
+    const seasonCards =
+      document.querySelectorAll(
+        ".season-card"
+      );
+
+
+    const seasonBackButtons =
+      document.querySelectorAll(
+        ".season-back"
+      );
+
+
+
+    seasonCards.forEach(
+      function (card) {
+
+
+        card.addEventListener(
+          "click",
+          function () {
+
+
+            const season =
+              card.dataset.season;
+
+
+            const page =
+              document.getElementById(
+                "season-" + season
+              );
+
+
+            if (!page) {
+              return;
+            }
+
+
+            page.classList.add(
+              "active"
+            );
+
+
+            page.scrollTop = 0;
+
+
+            document.body.style.overflow =
+              "hidden";
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    seasonBackButtons.forEach(
+      function (button) {
+
+
+        button.addEventListener(
+          "click",
+          function () {
+
+
+            const page =
+              button.closest(
+                ".season-page"
+              );
+
+
+            page.classList.remove(
+              "active"
+            );
+
+
+            document.body.style.overflow =
+              "";
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       PARKING
+    ======================================== */
+
+    const parkingWrap =
+      document.getElementById(
+        "parkingWrap"
+      );
+
+
+    const parkingToggle =
+      document.getElementById(
+        "parkingToggle"
+      );
+
+
+
+    parkingToggle.addEventListener(
+      "click",
+      function () {
+
+
+        parkingWrap
+          .classList
+          .toggle("open");
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    const rsvpModal =
+      document.getElementById(
+        "rsvpModal"
+      );
+
+
+    const accountModal =
+      document.getElementById(
+        "accountModal"
+      );
+
+
+
+    function openModal(modal) {
+
+
+      modal.classList.add(
+        "active"
+      );
+
+
+      document.body
+        .classList
+        .add(
+          "modal-open"
+        );
+
+
+    }
+
+
+
+    function closeModal(modal) {
+
+
+      modal.classList.remove(
+        "active"
+      );
+
+
+      document.body
+        .classList
+        .remove(
+          "modal-open"
+        );
+
+
+    }
+
+
+
+    document
+      .getElementById(
+        "openRsvp"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          openModal(
+            rsvpModal
+          );
+
+
+        }
+      );
+
+
+
+    document
+      .getElementById(
+        "openAccount"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          openModal(
+            accountModal
+          );
+
+
+        }
+      );
+
+
+
+    document
+      .querySelectorAll(
+        "[data-close-modal]"
+      )
+      .forEach(
+        function (button) {
+
+
+          button.addEventListener(
+            "click",
+            function () {
+
+
+              closeModal(
+                button.closest(
+                  ".modal"
+                )
+              );
+
+
+            }
+          );
+
+
+        }
+      );
+
+
+
+    document
+      .querySelectorAll(
+        ".modal"
+      )
+      .forEach(
+        function (modal) {
+
+
+          modal.addEventListener(
+            "click",
+            function (event) {
+
+
+              if (
+                event.target === modal
+              ) {
+
+
+                closeModal(
+                  modal
+                );
+
+
+              }
+
+
+            }
+          );
+
+
+        }
+      );
+
+
+
+    /* ========================================
+       RSVP
+    ======================================== */
+
+    document
+      .getElementById(
+        "rsvpForm"
+      )
+      .addEventListener(
+        "submit",
+        function (event) {
+
+
+          event.preventDefault();
+
+
+          const guestName =
+            document
+              .getElementById(
+                "guestName"
+              )
+              .value
+              .trim();
+
+
+          if (!guestName) {
+
+
+            alert(
+              "성함을 입력해주세요."
+            );
+
+
+            return;
+
+
+          }
+
+
+          alert(
+            "현재는 화면 초안이에요.\n\n추후 실제 참석 명단 저장 기능을 연결할 예정입니다."
+          );
+
+
+        }
+      );
+
+
+
+    /* ========================================
+       ACCOUNT TABS
+    ======================================== */
+
+    const accountTabs =
+      document.querySelectorAll(
+        ".account-tab"
+      );
+
+
+    const accountGroups =
+      document.querySelectorAll(
+        ".account-group"
+      );
+
+
+
+    accountTabs.forEach(
+      function (tab) {
+
+
+        tab.addEventListener(
+          "click",
+          function () {
+
+
+            const target =
+              tab.dataset.account;
+
+
+            accountTabs.forEach(
+              function (item) {
+
+
+                item.classList.remove(
+                  "active"
+                );
+
+
+              }
+            );
+
+
+            accountGroups.forEach(
+              function (group) {
+
+
+                group.classList.remove(
+                  "active"
+                );
+
+
+              }
+            );
+
+
+            tab.classList.add(
+              "active"
+            );
+
+
+            document
+              .getElementById(
+                "account-" + target
+              )
+              .classList
+              .add(
+                "active"
+              );
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       ACCOUNT COPY PLACEHOLDER
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        "[data-placeholder-copy]"
+      )
+      .forEach(
+        function (button) {
+
+
+          button.addEventListener(
+            "click",
+            function () {
+
+
+              alert(
+                "실제 계좌번호 입력 후 복사 기능을 연결할 예정이에요."
+              );
+
+
+            }
+          );
+
+
+        }
+      );
+
+
+
+    /* ========================================
+       GUEST SNAP
+    ======================================== */
+
+    document
+      .getElementById(
+        "guestUpload"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          alert(
+            "나중에 사진·영상 업로드 서비스를 연결할 예정이에요."
+          );
+
+
+        }
+      );
+
+
+
+    /* ========================================
+       ESC
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+
+        if (
+          event.key !== "Escape"
+        ) {
+          return;
+        }
+
+
+        const activeModal =
+          document.querySelector(
+            ".modal.active"
+          );
+
+
+        if (activeModal) {
+
+
+          closeModal(
+            activeModal
+          );
+
+
+          return;
+
+
+        }
+
+
+        const activeSeason =
+          document.querySelector(
+            ".season-page.active"
+          );
+
+
+        if (activeSeason) {
+
+
+          activeSeason
+            .classList
+            .remove(
+              "active"
+            );
+
+
+          document.body.style.overflow =
+            "";
+
+
+        }
+
+
+      }
+    );
+
+
+  </script>
+
+
+</body>
+
+</html>
