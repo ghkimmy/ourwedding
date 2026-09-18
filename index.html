@@ -10,26 +10,11 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <!-- 카카오톡 인앱 브라우저 캐시 완화 -->
-  <meta
-    http-equiv="Cache-Control"
-    content="no-cache, no-store, must-revalidate"
-  >
-  <meta
-    http-equiv="Pragma"
-    content="no-cache"
-  >
-  <meta
-    http-equiv="Expires"
-    content="0"
-  >
-
   <title>Gahyun & Jinchan | Our Wedding</title>
 
 
   <!-- ========================================
-       WEB FONT
-       Google Fonts 사용하지 않음
+       PRETENDARD
   ======================================== -->
 
   <link
@@ -42,7 +27,7 @@
   <style>
 
     /* ========================================
-       KOREAN SERIF WEB FONT
+       KOREAN TITLE FONT
     ======================================== */
 
     @font-face {
@@ -53,17 +38,10 @@
         format("woff");
 
       font-weight: 400;
-
       font-style: normal;
-
       font-display: swap;
     }
 
-
-
-    /* ========================================
-       FONT SYSTEM
-    ======================================== */
 
     :root {
 
@@ -75,16 +53,13 @@
         Arial,
         sans-serif;
 
-      /*
-        serif를 fallback으로 넣지 않음.
-        카카오톡에서 궁서체로 빠지는 현상 방지
-      */
       --font-ko-title:
         "RIDIBatang",
         "Pretendard",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Arial,
         sans-serif;
 
       --font-en:
@@ -93,17 +68,16 @@
         Arial,
         sans-serif;
 
-      --background:
+      --bg:
         #f7f6f2;
 
       --text:
         #2d2d2d;
 
-      --subtext:
-        #727272;
+      --sub:
+        #747474;
 
     }
-
 
 
     /* ========================================
@@ -112,7 +86,6 @@
 
     * {
       box-sizing: border-box;
-
       font-synthesis: none;
     }
 
@@ -126,7 +99,7 @@
 
       margin: 0;
 
-      background: var(--background);
+      background: var(--bg);
 
       color: var(--text);
 
@@ -134,11 +107,7 @@
 
       word-break: keep-all;
 
-      overflow-wrap: break-word;
-
       -webkit-font-smoothing: antialiased;
-
-      text-rendering: optimizeLegibility;
 
     }
 
@@ -167,9 +136,7 @@
 
 
     button {
-
       color: inherit;
-
     }
 
 
@@ -194,15 +161,13 @@
 
 
     .center {
-
       text-align: center;
-
     }
 
 
 
     /* ========================================
-       CINEMATIC OPENING
+       ENVELOPE OPENING
     ======================================== */
 
     .opening {
@@ -221,7 +186,12 @@
 
       overflow: hidden;
 
-      background: #f3f1ec;
+      background:
+        linear-gradient(
+          180deg,
+          #f7f5f0 0%,
+          #f0ede7 100%
+        );
 
       transition:
         opacity 0.9s ease,
@@ -252,7 +222,7 @@
 
       right: 18px;
 
-      z-index: 20;
+      z-index: 100;
 
       min-height: 40px;
 
@@ -266,7 +236,7 @@
 
       font-size: 9px;
 
-      letter-spacing: 1.7px;
+      letter-spacing: 1.8px;
 
       color: rgba(55, 55, 55, 0.6);
 
@@ -276,15 +246,13 @@
 
 
 
-    /* 전체 오프닝 컨텐츠 */
-
-    .opening-content {
+    .opening-inner {
 
       width: 100%;
 
       max-width: 430px;
 
-      padding: 40px 28px;
+      padding: 24px;
 
       text-align: center;
 
@@ -292,9 +260,9 @@
 
 
 
-    .opening-label {
+    .letter-small {
 
-      margin-bottom: 21px;
+      margin-bottom: 40px;
 
       font-family: var(--font-en);
 
@@ -302,14 +270,14 @@
 
       letter-spacing: 4px;
 
-      color: #8a8a8a;
+      color: #96908a;
 
       opacity: 0;
 
       transform: translateY(8px);
 
       animation:
-        openingFadeUp 0.9s ease forwards;
+        openingFade 0.9s ease forwards;
 
       animation-delay: 0.15s;
 
@@ -317,58 +285,122 @@
 
 
 
-    /*
-      OPENING PHOTO
+    /* ========================================
+       ENVELOPE STAGE
+    ======================================== */
 
-      실제 사진 넣을 때:
-      아래 HTML의 .opening-photo-placeholder 대신
-
-      <img
-        src="images/opening.jpg"
-        class="opening-photo-img"
-        alt="Gahyun and Jinchan"
-      >
-
-      로 교체하면 됨.
-    */
-
-    .opening-photo {
+    .envelope-stage {
 
       position: relative;
 
-      width: min(72vw, 300px);
+      width: 300px;
 
-      aspect-ratio: 4 / 5;
+      height: 330px;
 
       margin: 0 auto;
 
-      overflow: hidden;
-
-      background: #dedbd5;
-
-      box-shadow:
-        0 18px 45px rgba(40, 40, 40, 0.08);
+      perspective: 1000px;
 
       opacity: 0;
 
-      transform: scale(1.025);
+      transform: translateY(15px);
 
       animation:
-        openingPhotoReveal 1.4s
-        cubic-bezier(.22,.75,.32,1)
-        forwards;
+        envelopeAppear 0.9s ease forwards;
 
-      animation-delay: 0.35s;
+      animation-delay: 0.4s;
 
     }
 
 
 
-    .opening-photo-placeholder {
+    /* 봉투 본체 */
+
+    .envelope {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 18px;
+
+      width: 280px;
+
+      height: 175px;
+
+      transform: translateX(-50%);
+
+    }
+
+
+
+    .envelope-back {
 
       position: absolute;
 
       inset: 0;
+
+      z-index: 1;
+
+      background: #ded8cf;
+
+      border-radius: 2px;
+
+      box-shadow:
+        0 14px 35px rgba(50, 45, 40, 0.08);
+
+    }
+
+
+
+    /*
+      봉투 안의 웨딩사진
+    */
+
+    .letter-photo {
+
+      position: absolute;
+
+      z-index: 3;
+
+      left: 50%;
+
+      bottom: 18px;
+
+      width: 176px;
+
+      height: 220px;
+
+      padding: 7px 7px 24px;
+
+      transform:
+        translateX(-50%)
+        translateY(70px)
+        scale(0.84);
+
+      background: #fff;
+
+      box-shadow:
+        0 13px 28px rgba(50, 45, 40, 0.10);
+
+      opacity: 0;
+
+      animation:
+        photoRise 1.25s
+        cubic-bezier(.22,.75,.28,1)
+        forwards;
+
+      animation-delay: 1.35s;
+
+    }
+
+
+
+    .letter-photo-inner {
+
+      width: 100%;
+
+      height: 100%;
 
       display: flex;
 
@@ -376,37 +408,231 @@
 
       justify-content: center;
 
+      overflow: hidden;
+
       background:
         linear-gradient(
           145deg,
-          #d9d7d2,
-          #ebe9e4
+          #d8d5cf,
+          #ebe8e2
         );
+
+      color: #999;
 
       font-family: var(--font-body);
 
-      font-size: 10px;
+      font-size: 9px;
 
       letter-spacing: 1px;
-
-      color: #999;
 
     }
 
 
 
-    .opening-photo-img {
+    .letter-photo-inner img {
 
       width: 100%;
 
       height: 100%;
 
-      object-fit: cover;
-
       display: block;
 
+      object-fit: cover;
+
+    }
+
+
+
+    /*
+      봉투 덮개
+
+      처음에는 앞쪽을 덮고 있고
+      rotateX 되면서 뒤로 젖혀짐
+    */
+
+    .envelope-flap {
+
+      position: absolute;
+
+      z-index: 6;
+
+      left: 0;
+
+      top: 0;
+
+      width: 100%;
+
+      height: 105px;
+
+      background: #e7e1d8;
+
+      clip-path:
+        polygon(
+          0 0,
+          100% 0,
+          50% 100%
+        );
+
+      transform-origin: top center;
+
+      transform: rotateX(0deg);
+
+      backface-visibility: hidden;
+
       animation:
-        openingImageZoom 4.5s ease-out forwards;
+        flapOpen 0.95s
+        cubic-bezier(.35,.02,.25,1)
+        forwards;
+
+      animation-delay: 0.9s;
+
+    }
+
+
+
+    /*
+      봉투 앞주머니
+      사진이 위로 올라올 때 아래쪽을 가려줌
+    */
+
+    .envelope-front {
+
+      position: absolute;
+
+      z-index: 5;
+
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+    }
+
+
+
+    .envelope-front-left {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #e4ded5;
+
+      clip-path:
+        polygon(
+          0 0,
+          52% 58%,
+          0 100%
+        );
+
+    }
+
+
+
+    .envelope-front-right {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #e1dbd2;
+
+      clip-path:
+        polygon(
+          100% 0,
+          48% 58%,
+          100% 100%
+        );
+
+    }
+
+
+
+    .envelope-front-bottom {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #ece6de;
+
+      clip-path:
+        polygon(
+          0 100%,
+          50% 48%,
+          100% 100%
+        );
+
+    }
+
+
+
+    /*
+      봉투 중앙의 작은 인장
+    */
+
+    .envelope-seal {
+
+      position: absolute;
+
+      z-index: 7;
+
+      left: 50%;
+
+      top: 73px;
+
+      width: 34px;
+
+      height: 34px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transform:
+        translateX(-50%)
+        scale(1);
+
+      border-radius: 50%;
+
+      background: #b6aaa0;
+
+      color: #f8f5f0;
+
+      font-family: var(--font-en);
+
+      font-size: 11px;
+
+      opacity: 1;
+
+      animation:
+        sealDisappear 0.35s ease forwards;
+
+      animation-delay: 0.78s;
+
+    }
+
+
+
+    /* ========================================
+       OPENING TEXT
+    ======================================== */
+
+    .opening-text {
+
+      margin-top: 5px;
+
+      opacity: 0;
+
+      transform: translateY(10px);
+
+      animation:
+        openingTextShow 0.9s ease forwards;
+
+      animation-delay: 2.25s;
 
     }
 
@@ -414,26 +640,15 @@
 
     .opening-names {
 
-      margin-top: 24px;
-
       font-family: var(--font-en);
 
-      font-size: 29px;
+      font-size: 28px;
 
       font-weight: 400;
 
       line-height: 1.2;
 
-      color: #343434;
-
-      opacity: 0;
-
-      transform: translateY(10px);
-
-      animation:
-        openingFadeUp 0.9s ease forwards;
-
-      animation-delay: 0.95s;
+      color: #393735;
 
     }
 
@@ -441,24 +656,15 @@
 
     .opening-date {
 
-      margin-top: 13px;
+      margin-top: 12px;
 
       font-family: var(--font-en);
 
-      font-size: 10px;
+      font-size: 9px;
 
-      letter-spacing: 2.4px;
+      letter-spacing: 2.5px;
 
-      color: #777;
-
-      opacity: 0;
-
-      transform: translateY(8px);
-
-      animation:
-        openingFadeUp 0.9s ease forwards;
-
-      animation-delay: 1.15s;
+      color: #7b7873;
 
     }
 
@@ -468,40 +674,99 @@
 
       width: 1px;
 
-      height: 35px;
+      height: 28px;
 
-      margin: 22px auto 0;
+      margin: 20px auto 0;
 
-      background: rgba(80, 80, 80, 0.25);
+      background:
+        rgba(80, 76, 72, 0.22);
 
       transform-origin: top;
 
       transform: scaleY(0);
 
       animation:
-        lineGrow 0.8s ease forwards;
+        lineGrow 0.7s ease forwards;
 
-      animation-delay: 1.45s;
+      animation-delay: 2.7s;
 
     }
 
 
 
-    @keyframes openingPhotoReveal {
+    /* ========================================
+       OPENING KEYFRAMES
+    ======================================== */
+
+    @keyframes openingFade {
 
       from {
-
         opacity: 0;
-
-        transform: scale(1.035);
-
+        transform: translateY(8px);
       }
 
       to {
-
         opacity: 1;
+        transform: translateY(0);
+      }
 
-        transform: scale(1);
+    }
+
+
+
+    @keyframes envelopeAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+
+    @keyframes sealDisappear {
+
+      to {
+        opacity: 0;
+        transform:
+          translateX(-50%)
+          scale(0.85);
+      }
+
+    }
+
+
+
+    @keyframes flapOpen {
+
+      0% {
+
+        transform:
+          rotateX(0deg);
+
+        background: #e7e1d8;
+
+      }
+
+      45% {
+
+        transform:
+          rotateX(-100deg);
+
+      }
+
+      100% {
+
+        transform:
+          rotateX(-180deg);
+
+        background: #d8d2ca;
 
       }
 
@@ -509,7 +774,41 @@
 
 
 
-    @keyframes openingFadeUp {
+    @keyframes photoRise {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translateX(-50%)
+          translateY(70px)
+          scale(0.84);
+
+      }
+
+      20% {
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translateX(-50%)
+          translateY(-110px)
+          scale(1);
+
+      }
+
+    }
+
+
+
+    @keyframes openingTextShow {
 
       from {
 
@@ -534,33 +833,11 @@
     @keyframes lineGrow {
 
       from {
-
         transform: scaleY(0);
-
       }
 
       to {
-
         transform: scaleY(1);
-
-      }
-
-    }
-
-
-
-    @keyframes openingImageZoom {
-
-      from {
-
-        transform: scale(1.045);
-
-      }
-
-      to {
-
-        transform: scale(1);
-
       }
 
     }
@@ -568,7 +845,7 @@
 
 
     /* ========================================
-       FIXED WEDDING INFO
+       WEDDING INFO SHORTCUT
     ======================================== */
 
     .wedding-info-shortcut {
@@ -586,14 +863,12 @@
       padding: 0 14px;
 
       border:
-
-        1px solid rgba(0, 0, 0, 0.10);
+        1px solid rgba(0,0,0,0.10);
 
       border-radius: 30px;
 
       background:
-
-        rgba(255, 255, 255, 0.82);
+        rgba(255,255,255,0.82);
 
       backdrop-filter: blur(10px);
 
@@ -614,7 +889,7 @@
 
 
     /* ========================================
-       MAIN OPEN ANIMATION
+       MAIN INTRO ANIMATION
     ======================================== */
 
     .intro-label,
@@ -626,7 +901,7 @@
 
       opacity: 0;
 
-      transform: translateY(16px);
+      transform: translateY(15px);
 
     }
 
@@ -655,7 +930,7 @@
       animation:
         mainReveal 0.9s ease forwards;
 
-      animation-delay: 0.18s;
+      animation-delay: 0.16s;
 
     }
 
@@ -665,7 +940,7 @@
       animation:
         mainReveal 0.9s ease forwards;
 
-      animation-delay: 0.28s;
+      animation-delay: 0.24s;
 
     }
 
@@ -674,9 +949,9 @@
     .season-card:nth-child(1) {
 
       animation:
-        cardReveal 0.8s ease forwards;
+        mainReveal 0.8s ease forwards;
 
-      animation-delay: 0.42s;
+      animation-delay: 0.38s;
 
     }
 
@@ -685,9 +960,9 @@
     .season-card:nth-child(2) {
 
       animation:
-        cardReveal 0.8s ease forwards;
+        mainReveal 0.8s ease forwards;
 
-      animation-delay: 0.53s;
+      animation-delay: 0.49s;
 
     }
 
@@ -696,9 +971,9 @@
     .season-card:nth-child(3) {
 
       animation:
-        cardReveal 0.8s ease forwards;
+        mainReveal 0.8s ease forwards;
 
-      animation-delay: 0.64s;
+      animation-delay: 0.60s;
 
     }
 
@@ -707,9 +982,9 @@
     .season-card:nth-child(4) {
 
       animation:
-        cardReveal 0.8s ease forwards;
+        mainReveal 0.8s ease forwards;
 
-      animation-delay: 0.75s;
+      animation-delay: 0.71s;
 
     }
 
@@ -719,7 +994,7 @@
       animation:
         mainReveal 0.8s ease forwards;
 
-      animation-delay: 0.88s;
+      animation-delay: 0.82s;
 
     }
 
@@ -739,34 +1014,8 @@
 
 
 
-    @keyframes cardReveal {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(14px)
-          scale(0.99);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
-
-      }
-
-    }
-
-
-
     /* ========================================
-       SCROLL REVEAL
+       SCROLL
     ======================================== */
 
     .reveal {
@@ -794,7 +1043,7 @@
 
 
     /* ========================================
-       INTRO
+       MAIN
     ======================================== */
 
     .intro {
@@ -806,7 +1055,6 @@
       align-items: center;
 
       padding:
-
         80px 20px;
 
       background:
@@ -830,7 +1078,7 @@
 
       font-size: 9px;
 
-      letter-spacing: 3.6px;
+      letter-spacing: 3.5px;
 
       color: #858585;
 
@@ -841,7 +1089,6 @@
     .names {
 
       margin:
-
         24px 0 0;
 
       text-align: center;
@@ -903,7 +1150,6 @@
       display: grid;
 
       grid-template-columns:
-
         1fr 1fr;
 
       gap: 8px;
@@ -952,53 +1198,44 @@
 
       justify-content: center;
 
-      font-family: var(--font-body);
-
       font-size: 10px;
 
-      color: rgba(0, 0, 0, 0.34);
+      color:
+        rgba(0,0,0,0.34);
 
       transition:
-        transform 0.65s
-        cubic-bezier(.22,.75,.32,1);
+        transform 0.6s ease;
 
     }
 
 
 
-    .season-card:active .season-image {
+    .season-card:active
+    .season-image {
 
-      transform: scale(1.018);
+      transform: scale(1.02);
 
     }
 
 
 
     .winter .season-image {
-
       background: #dce3e7;
-
     }
 
 
     .spring .season-image {
-
       background: #e9e5dc;
-
     }
 
 
     .summer .season-image {
-
       background: #e6dfd0;
-
     }
 
 
     .autumn .season-image {
-
       background: #dcd3ca;
-
     }
 
 
@@ -1024,7 +1261,7 @@
         linear-gradient(
           180deg,
           transparent 38%,
-          rgba(0, 0, 0, 0.45) 100%
+          rgba(0,0,0,0.45) 100%
         );
 
     }
@@ -1047,12 +1284,10 @@
 
       margin-top: 5px;
 
-      font-family: var(--font-body);
-
       font-size: 11px;
 
       color:
-        rgba(255, 255, 255, 0.92);
+        rgba(255,255,255,0.92);
 
     }
 
@@ -1069,7 +1304,7 @@
       letter-spacing: 1.2px;
 
       color:
-        rgba(255, 255, 255, 0.7);
+        rgba(255,255,255,0.7);
 
     }
 
@@ -1095,8 +1330,6 @@
 
     /* ========================================
        WINTER AGAIN
-       눈 효과 삭제
-       배경만 아주 은은하게 전환
     ======================================== */
 
     .winter-again {
@@ -1108,7 +1341,6 @@
       align-items: center;
 
       padding:
-
         95px 24px;
 
       background:
@@ -1141,7 +1373,6 @@
     .again-title {
 
       margin:
-
         20px 0 0;
 
       font-family: var(--font-en);
@@ -1207,10 +1438,9 @@
     .invitation {
 
       padding:
-
         105px 24px;
 
-      background: #fff;
+      background: white;
 
     }
 
@@ -1252,8 +1482,6 @@
 
       margin-top: 39px;
 
-      font-family: var(--font-body);
-
       font-size: 13px;
 
       line-height: 2.2;
@@ -1271,7 +1499,6 @@
     .wedding-info {
 
       padding:
-
         100px 24px;
 
       background: #f4f2ed;
@@ -1313,7 +1540,6 @@
       margin-top: 40px;
 
       padding:
-
         30px 0;
 
       border-top:
@@ -1331,8 +1557,6 @@
       font-family: var(--font-ko-title);
 
       font-size: 17px;
-
-      font-weight: 400;
 
     }
 
@@ -1361,7 +1585,6 @@
       display: grid;
 
       grid-template-columns:
-
         1fr 1fr;
 
       gap: 9px;
@@ -1425,7 +1648,8 @@
 
       align-items: center;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       padding: 0;
 
@@ -1440,9 +1664,7 @@
 
 
     .parking-toggle-left {
-
       text-align: left;
-
     }
 
 
@@ -1474,8 +1696,6 @@
     .parking-plus {
 
       font-size: 21px;
-
-      font-weight: 300;
 
       transition:
         transform 0.3s ease;
@@ -1522,9 +1742,7 @@
 
 
     .parking-content-inner {
-
       padding-bottom: 28px;
-
     }
 
 
@@ -1532,11 +1750,9 @@
     .parking-highlight {
 
       margin:
-
         4px 0 24px;
 
       padding:
-
         12px 0 18px;
 
       background: transparent;
@@ -1558,7 +1774,6 @@
       display: grid;
 
       grid-template-columns:
-
         86px 1fr;
 
       gap: 12px;
@@ -1586,9 +1801,7 @@
 
 
     .parking-value {
-
       color: #777;
-
     }
 
 
@@ -1617,8 +1830,6 @@
       font-family: var(--font-ko-title);
 
       font-size: 23px;
-
-      font-weight: 400;
 
     }
 
@@ -1655,22 +1866,6 @@
 
       cursor: pointer;
 
-      transition:
-
-        transform 0.18s ease,
-        background 0.25s ease;
-
-    }
-
-
-
-    .action-button:active {
-
-      transform: scale(0.985);
-
-      background:
-        rgba(255,255,255,0.5);
-
     }
 
 
@@ -1682,7 +1877,6 @@
     .guest-snap {
 
       padding:
-
         105px 24px;
 
       background: #e9edf0;
@@ -1698,8 +1892,6 @@
       font-family: var(--font-en);
 
       font-size: 34px;
-
-      font-weight: 400;
 
     }
 
@@ -1737,17 +1929,6 @@
 
       cursor: pointer;
 
-      transition:
-        transform 0.18s ease;
-
-    }
-
-
-
-    .guest-button:active {
-
-      transform: scale(0.985);
-
     }
 
 
@@ -1770,8 +1951,6 @@
 
       background: #f7f6f2;
 
-      -webkit-overflow-scrolling: touch;
-
     }
 
 
@@ -1781,24 +1960,20 @@
       display: block;
 
       animation:
-        seasonPageOpen 0.45s ease;
+        detailShow 0.4s ease;
 
     }
 
 
 
-    @keyframes seasonPageOpen {
+    @keyframes detailShow {
 
       from {
-
         opacity: 0;
-
       }
 
       to {
-
         opacity: 1;
-
       }
 
     }
@@ -1814,7 +1989,6 @@
       margin: 0 auto;
 
       padding:
-
         22px 22px 100px;
 
     }
@@ -1899,24 +2073,9 @@
 
       background: #e3e3e3;
 
-      font-size: 11px;
-
       color: #999;
 
-    }
-
-
-
-    .season-page-main-photo img,
-    .mini-photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      display: block;
-
-      object-fit: cover;
+      font-size: 11px;
 
     }
 
@@ -1943,7 +2102,6 @@
       display: grid;
 
       grid-template-columns:
-
         1fr 1fr;
 
       gap: 7px;
@@ -1964,13 +2122,11 @@
 
       justify-content: center;
 
-      overflow: hidden;
-
       background: #e5e5e5;
 
-      font-size: 10px;
-
       color: #aaa;
+
+      font-size: 10px;
 
     }
 
@@ -1995,30 +2151,22 @@
 
 
     #season-winter {
-
       background: #eef1f3;
-
     }
 
 
     #season-spring {
-
       background: #f5f2eb;
-
     }
 
 
     #season-summer {
-
       background: #f4efe4;
-
     }
 
 
     #season-autumn {
-
       background: #eee8e1;
-
     }
 
 
@@ -2051,9 +2199,7 @@
 
 
     .modal.active {
-
       display: flex;
-
     }
 
 
@@ -2069,39 +2215,12 @@
       overflow-y: auto;
 
       padding:
-
         26px 22px 34px;
 
       border-radius:
-
         18px 18px 8px 8px;
 
       background: #faf9f6;
-
-      animation:
-        modalOpen 0.35s ease;
-
-    }
-
-
-
-    @keyframes modalOpen {
-
-      from {
-
-        opacity: 0;
-
-        transform: translateY(25px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
 
     }
 
@@ -2111,9 +2230,8 @@
 
       display: flex;
 
-      align-items: flex-start;
-
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       gap: 20px;
 
@@ -2143,8 +2261,6 @@
 
       font-size: 24px;
 
-      font-weight: 400;
-
     }
 
 
@@ -2155,15 +2271,11 @@
 
       height: 42px;
 
-      flex: 0 0 42px;
-
       border: 0;
 
       background: transparent;
 
       font-size: 25px;
-
-      color: #666;
 
       cursor: pointer;
 
@@ -2172,13 +2284,11 @@
 
 
     /* ========================================
-       RSVP
+       FORM
     ======================================== */
 
     .form-section {
-
       margin-top: 30px;
-
     }
 
 
@@ -2202,7 +2312,6 @@
       display: grid;
 
       grid-template-columns:
-
         1fr 1fr;
 
       gap: 8px;
@@ -2216,8 +2325,6 @@
       position: absolute;
 
       opacity: 0;
-
-      pointer-events: none;
 
     }
 
@@ -2240,16 +2347,12 @@
 
       font-size: 12px;
 
-      cursor: pointer;
-
     }
 
 
 
     .choice-input:checked
     + .choice-label {
-
-      border-color: #555;
 
       background: #444;
 
@@ -2267,7 +2370,6 @@
       min-height: 48px;
 
       padding:
-
         0 13px;
 
       border:
@@ -2276,10 +2378,6 @@
       border-radius: 0;
 
       background: white;
-
-      color: #333;
-
-      font-size: 13px;
 
     }
 
@@ -2298,10 +2396,6 @@
       background: #333;
 
       color: white;
-
-      font-size: 12px;
-
-      cursor: pointer;
 
     }
 
@@ -2332,7 +2426,6 @@
       display: grid;
 
       grid-template-columns:
-
         1fr 1fr;
 
       gap: 7px;
@@ -2352,12 +2445,6 @@
 
       background: transparent;
 
-      color: #555;
-
-      font-size: 12px;
-
-      cursor: pointer;
-
     }
 
 
@@ -2365,8 +2452,6 @@
     .account-tab.active {
 
       background: #444;
-
-      border-color: #444;
 
       color: white;
 
@@ -2385,9 +2470,7 @@
 
 
     .account-group.active {
-
       display: block;
-
     }
 
 
@@ -2395,19 +2478,9 @@
     .account-card {
 
       padding:
-
         20px 0;
 
       border-bottom:
-        1px solid #dedad4;
-
-    }
-
-
-
-    .account-card:first-child {
-
-      border-top:
         1px solid #dedad4;
 
     }
@@ -2455,7 +2528,6 @@
       min-height: 38px;
 
       padding:
-
         0 15px;
 
       border:
@@ -2463,29 +2535,20 @@
 
       background: transparent;
 
-      font-size: 11px;
-
-      color: #555;
-
-      cursor: pointer;
-
     }
 
 
 
-    /* ========================================
-       FOOTER
-    ======================================== */
-
     footer {
 
       padding:
-
         70px 20px;
 
       text-align: center;
 
       background: white;
+
+      color: #999;
 
       font-family: var(--font-en);
 
@@ -2494,8 +2557,6 @@
       letter-spacing: 2px;
 
       line-height: 2;
-
-      color: #999;
 
     }
 
@@ -2507,25 +2568,60 @@
 
     @media (max-width: 420px) {
 
-      .opening-content {
 
-        padding-left: 20px;
+      .opening-inner {
 
-        padding-right: 20px;
+        padding-left: 14px;
+
+        padding-right: 14px;
 
       }
 
 
-      .opening-photo {
+      .letter-small {
 
-        width: min(68vw, 285px);
+        margin-bottom: 29px;
+
+      }
+
+
+      .envelope-stage {
+
+        width: 280px;
+
+        height: 315px;
+
+      }
+
+
+      .envelope {
+
+        width: 260px;
+
+        height: 162px;
+
+      }
+
+
+      .letter-photo {
+
+        width: 164px;
+
+        height: 205px;
+
+      }
+
+
+      .envelope-seal {
+
+        top: 68px;
 
       }
 
 
       .opening-names {
 
-        font-size: 27px;
+        font-size: 26px;
 
       }
 
@@ -2540,53 +2636,35 @@
 
 
       .names {
-
         font-size: 35px;
-
       }
 
 
       .season-overlay {
-
         padding: 14px;
-
-      }
-
-
-      .season-eng {
-
-        font-size: 15px;
-
       }
 
 
       .again-title {
-
         font-size: 39px;
-
       }
 
 
       .invitation-title {
-
         font-size: 25px;
-
       }
 
 
       .parking-row {
 
         grid-template-columns:
-
           74px 1fr;
 
       }
 
 
       .modal {
-
         padding: 10px;
-
       }
 
     }
@@ -2606,14 +2684,10 @@
         animation-duration:
           0.01ms !important;
 
-        animation-iteration-count:
-          1 !important;
-
         transition-duration:
           0.01ms !important;
 
       }
-
 
       .reveal {
 
@@ -2635,13 +2709,14 @@
 
 
   <!-- ========================================
-       CINEMATIC OPENING
+       ENVELOPE OPENING
   ======================================== -->
 
   <div
     class="opening"
     id="opening"
   >
+
 
     <button
       type="button"
@@ -2652,64 +2727,109 @@
     </button>
 
 
-    <div class="opening-content">
+
+    <div class="opening-inner">
 
 
-      <div class="opening-label">
-        YOU'RE INVITED
+      <div class="letter-small">
+        A LETTER FOR YOU
       </div>
 
 
 
-      <div class="opening-photo">
+      <div class="envelope-stage">
 
-        <!--
-          실제 사진 넣기 전 임시 화면
-        -->
 
-        <div class="opening-photo-placeholder">
-          WEDDING PHOTO
+        <div class="envelope">
+
+
+          <div class="envelope-back"></div>
+
+
+
+          <!--
+            웨딩사진
+
+            지금은 임시 박스.
+
+            나중에는
+
+            <div class="letter-photo-inner">
+              <img
+                src="images/opening.jpg"
+                alt="Gahyun and Jinchan"
+              >
+            </div>
+
+            로 교체하면 됨.
+          -->
+
+          <div class="letter-photo">
+
+            <div class="letter-photo-inner">
+              WEDDING PHOTO
+            </div>
+
+          </div>
+
+
+
+          <div class="envelope-flap"></div>
+
+
+
+          <div class="envelope-front">
+
+            <div class="envelope-front-left"></div>
+
+            <div class="envelope-front-right"></div>
+
+            <div class="envelope-front-bottom"></div>
+
+          </div>
+
+
+
+          <div class="envelope-seal">
+            G&J
+          </div>
+
+
         </div>
 
 
-        <!--
-
-        실제 사진 넣을 때는
-        위 placeholder를 지우고 아래처럼 사용:
-
-        <img
-          src="images/opening.jpg"
-          class="opening-photo-img"
-          alt="Gahyun and Jinchan"
-        >
-
-        -->
-
       </div>
 
 
 
-      <div class="opening-names">
-        Gahyun & Jinchan
+      <div class="opening-text">
+
+
+        <div class="opening-names">
+          Gahyun & Jinchan
+        </div>
+
+
+        <div class="opening-date">
+          JANUARY 30, 2027
+        </div>
+
+
+        <div class="opening-line"></div>
+
+
       </div>
-
-
-      <div class="opening-date">
-        JANUARY 30, 2027
-      </div>
-
-
-      <div class="opening-line"></div>
 
 
     </div>
+
 
   </div>
 
 
 
   <!-- ========================================
-       WEDDING INFO SHORTCUT
+       WEDDING INFO
   ======================================== -->
 
   <button
@@ -2778,15 +2898,10 @@
 
 
 
-      <!-- ========================================
-           FOUR SEASONS
-      ======================================== -->
-
       <div class="season-grid">
 
 
         <button
-          type="button"
           class="season-card winter"
           data-season="winter"
         >
@@ -2794,7 +2909,6 @@
           <div class="season-image">
             겨울 대표사진
           </div>
-
 
           <div class="season-overlay">
 
@@ -2817,7 +2931,6 @@
 
 
         <button
-          type="button"
           class="season-card spring"
           data-season="spring"
         >
@@ -2825,7 +2938,6 @@
           <div class="season-image">
             봄 대표사진
           </div>
-
 
           <div class="season-overlay">
 
@@ -2848,7 +2960,6 @@
 
 
         <button
-          type="button"
           class="season-card summer"
           data-season="summer"
         >
@@ -2856,7 +2967,6 @@
           <div class="season-image">
             여름 대표사진
           </div>
-
 
           <div class="season-overlay">
 
@@ -2879,7 +2989,6 @@
 
 
         <button
-          type="button"
           class="season-card autumn"
           data-season="autumn"
         >
@@ -2887,7 +2996,6 @@
           <div class="season-image">
             가을 대표사진
           </div>
-
 
           <div class="season-overlay">
 
@@ -2927,6 +3035,7 @@
   ======================================== -->
 
   <section class="winter-again reveal">
+
 
     <div class="inner center">
 
@@ -2981,6 +3090,7 @@
 
   <section class="invitation reveal">
 
+
     <div class="inner center">
 
 
@@ -3034,6 +3144,7 @@
     id="wedding"
   >
 
+
     <div class="inner center">
 
 
@@ -3053,15 +3164,11 @@
 
 
 
-      <!-- VENUE -->
-
       <div class="venue">
-
 
         <div class="venue-name">
           엘로라 인 가든
         </div>
-
 
         <div class="venue-address">
 
@@ -3073,12 +3180,9 @@
 
         </div>
 
-
       </div>
 
 
-
-      <!-- MAP -->
 
       <div class="map-buttons">
 
@@ -3087,7 +3191,6 @@
           class="map-button"
           href="https://map.naver.com/p/search/%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
           target="_blank"
-          rel="noopener noreferrer"
         >
           NAVER MAP
         </a>
@@ -3097,7 +3200,6 @@
           class="map-button"
           href="https://map.kakao.com/?q=%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
           target="_blank"
-          rel="noopener noreferrer"
         >
           KAKAO MAP
         </a>
@@ -3107,15 +3209,13 @@
 
 
 
-      <!-- PARKING -->
-
       <div
         class="parking-wrap"
         id="parkingWrap"
       >
 
+
         <button
-          type="button"
           class="parking-toggle"
           id="parkingToggle"
         >
@@ -3145,6 +3245,7 @@
 
         <div class="parking-content">
 
+
           <div class="parking-content-inner">
 
 
@@ -3161,7 +3262,6 @@
             </div>
 
 
-
             <div class="parking-row">
 
               <div class="parking-label">
@@ -3173,7 +3273,6 @@
               </div>
 
             </div>
-
 
 
             <div class="parking-row">
@@ -3189,7 +3288,6 @@
             </div>
 
 
-
             <div class="parking-row">
 
               <div class="parking-label">
@@ -3201,7 +3299,6 @@
               </div>
 
             </div>
-
 
 
             <div class="parking-row">
@@ -3225,10 +3322,6 @@
       </div>
 
 
-
-      <!-- ========================================
-           ATTENDANCE
-      ======================================== -->
 
       <div class="action-section">
 
@@ -3254,7 +3347,6 @@
 
 
         <button
-          type="button"
           class="action-button"
           id="openRsvp"
         >
@@ -3265,10 +3357,6 @@
       </div>
 
 
-
-      <!-- ========================================
-           FOR YOUR HEART
-      ======================================== -->
 
       <div class="action-section">
 
@@ -3294,7 +3382,6 @@
 
 
         <button
-          type="button"
           class="action-button"
           id="openAccount"
         >
@@ -3342,9 +3429,8 @@
 
 
       <button
-        type="button"
         class="guest-button"
-        id="guestUploadButton"
+        id="guestUpload"
       >
         사진 & 영상 올리기
       </button>
@@ -3352,13 +3438,12 @@
 
     </div>
 
-
   </section>
 
 
 
   <!-- ========================================
-       WINTER DETAIL
+       SEASON DETAILS
   ======================================== -->
 
   <div
@@ -3368,14 +3453,9 @@
 
     <div class="season-page-inner">
 
-
-      <button
-        type="button"
-        class="season-back"
-      >
+      <button class="season-back">
         ← BACK
       </button>
-
 
       <div class="season-page-header">
 
@@ -3389,11 +3469,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         겨울 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -3406,42 +3484,24 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          겨울 사진 1
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 2
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 3
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 4
-        </div>
+        <div class="mini-photo">겨울 사진 1</div>
+        <div class="mini-photo">겨울 사진 2</div>
+        <div class="mini-photo">겨울 사진 3</div>
+        <div class="mini-photo">겨울 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         WINTER · OUR BEGINNING
       </div>
-
 
     </div>
 
   </div>
 
 
-
-  <!-- ========================================
-       SPRING DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
@@ -3450,14 +3510,9 @@
 
     <div class="season-page-inner">
 
-
-      <button
-        type="button"
-        class="season-back"
-      >
+      <button class="season-back">
         ← BACK
       </button>
-
 
       <div class="season-page-header">
 
@@ -3471,11 +3526,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         봄 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -3488,42 +3541,24 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          봄 사진 1
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 2
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 3
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 4
-        </div>
+        <div class="mini-photo">봄 사진 1</div>
+        <div class="mini-photo">봄 사진 2</div>
+        <div class="mini-photo">봄 사진 3</div>
+        <div class="mini-photo">봄 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         SPRING · OUR DAYS
       </div>
-
 
     </div>
 
   </div>
 
 
-
-  <!-- ========================================
-       SUMMER DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
@@ -3532,14 +3567,9 @@
 
     <div class="season-page-inner">
 
-
-      <button
-        type="button"
-        class="season-back"
-      >
+      <button class="season-back">
         ← BACK
       </button>
-
 
       <div class="season-page-header">
 
@@ -3553,11 +3583,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         여름 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -3570,42 +3598,24 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          여름 사진 1
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 2
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 3
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 4
-        </div>
+        <div class="mini-photo">여름 사진 1</div>
+        <div class="mini-photo">여름 사진 2</div>
+        <div class="mini-photo">여름 사진 3</div>
+        <div class="mini-photo">여름 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         SUMMER · OUR BRIGHT DAYS
       </div>
-
 
     </div>
 
   </div>
 
 
-
-  <!-- ========================================
-       AUTUMN DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
@@ -3614,14 +3624,9 @@
 
     <div class="season-page-inner">
 
-
-      <button
-        type="button"
-        class="season-back"
-      >
+      <button class="season-back">
         ← BACK
       </button>
-
 
       <div class="season-page-header">
 
@@ -3635,11 +3640,9 @@
 
       </div>
 
-
       <div class="season-page-main-photo">
         가을 메인 사진
       </div>
-
 
       <div class="season-page-text">
 
@@ -3652,32 +3655,18 @@
 
       </div>
 
-
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          가을 사진 1
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 2
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 3
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 4
-        </div>
+        <div class="mini-photo">가을 사진 1</div>
+        <div class="mini-photo">가을 사진 2</div>
+        <div class="mini-photo">가을 사진 3</div>
+        <div class="mini-photo">가을 사진 4</div>
 
       </div>
-
 
       <div class="season-end">
         AUTUMN · OUR PROMISE
       </div>
-
 
     </div>
 
@@ -3699,13 +3688,11 @@
 
       <div class="modal-header">
 
-
         <div>
 
           <div class="modal-label">
             ATTENDANCE
           </div>
-
 
           <div class="modal-title">
             참석 여부를 알려주세요
@@ -3713,15 +3700,12 @@
 
         </div>
 
-
         <button
-          type="button"
           class="modal-close"
           data-close-modal
         >
           ×
         </button>
-
 
       </div>
 
@@ -3739,21 +3723,19 @@
 
           <div class="choice-row">
 
-
             <div>
 
               <input
-                type="radio"
-                name="side"
-                value="신랑측"
-                id="sideGroom"
                 class="choice-input"
+                type="radio"
+                id="sideGroom"
+                name="side"
                 checked
               >
 
               <label
-                for="sideGroom"
                 class="choice-label"
+                for="sideGroom"
               >
                 신랑측
               </label>
@@ -3761,26 +3743,23 @@
             </div>
 
 
-
             <div>
 
               <input
-                type="radio"
-                name="side"
-                value="신부측"
-                id="sideBride"
                 class="choice-input"
+                type="radio"
+                id="sideBride"
+                name="side"
               >
 
               <label
-                for="sideBride"
                 class="choice-label"
+                for="sideBride"
               >
                 신부측
               </label>
 
             </div>
-
 
           </div>
 
@@ -3791,19 +3770,17 @@
         <div class="form-section">
 
           <label
-            for="guestName"
             class="form-label"
+            for="guestName"
           >
             성함
           </label>
 
-
           <input
-            type="text"
-            id="guestName"
             class="text-input"
+            id="guestName"
+            type="text"
             placeholder="성함을 입력해주세요"
-            required
           >
 
         </div>
@@ -3813,37 +3790,22 @@
         <div class="form-section">
 
           <label
-            for="guestCount"
             class="form-label"
+            for="guestCount"
           >
             총 참석 인원
           </label>
 
-
           <select
-            id="guestCount"
             class="select-input"
+            id="guestCount"
           >
 
-            <option value="1">
-              1명
-            </option>
-
-            <option value="2">
-              2명
-            </option>
-
-            <option value="3">
-              3명
-            </option>
-
-            <option value="4">
-              4명
-            </option>
-
-            <option value="5">
-              5명 이상
-            </option>
+            <option>1명</option>
+            <option>2명</option>
+            <option>3명</option>
+            <option>4명</option>
+            <option>5명 이상</option>
 
           </select>
 
@@ -3857,24 +3819,21 @@
             참석 여부
           </div>
 
-
           <div class="choice-row">
-
 
             <div>
 
               <input
+                class="choice-input"
                 type="radio"
                 name="attendance"
-                value="참석"
                 id="attendYes"
-                class="choice-input"
                 checked
               >
 
               <label
-                for="attendYes"
                 class="choice-label"
+                for="attendYes"
               >
                 참석
               </label>
@@ -3882,26 +3841,23 @@
             </div>
 
 
-
             <div>
 
               <input
+                class="choice-input"
                 type="radio"
                 name="attendance"
-                value="불참"
                 id="attendNo"
-                class="choice-input"
               >
 
               <label
-                for="attendNo"
                 class="choice-label"
+                for="attendNo"
               >
                 불참
               </label>
 
             </div>
-
 
           </div>
 
@@ -3910,8 +3866,8 @@
 
 
         <button
-          type="submit"
           class="submit-button"
+          type="submit"
         >
           전달하기
         </button>
@@ -3951,13 +3907,11 @@
 
       <div class="modal-header">
 
-
         <div>
 
           <div class="modal-label">
             FOR YOUR HEART
           </div>
-
 
           <div class="modal-title">
             마음 전하실 곳
@@ -3965,15 +3919,12 @@
 
         </div>
 
-
         <button
-          type="button"
           class="modal-close"
           data-close-modal
         >
           ×
         </button>
-
 
       </div>
 
@@ -3981,36 +3932,28 @@
 
       <div class="account-tabs">
 
-
         <button
-          type="button"
           class="account-tab active"
           data-account="groom"
         >
           신랑측
         </button>
 
-
         <button
-          type="button"
           class="account-tab"
           data-account="bride"
         >
           신부측
         </button>
 
-
       </div>
 
 
-
-      <!-- GROOM -->
 
       <div
         class="account-group active"
         id="account-groom"
       >
-
 
         <div class="account-card">
 
@@ -4027,7 +3970,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4035,7 +3977,6 @@
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -4053,7 +3994,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4061,7 +4001,6 @@
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -4079,7 +4018,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4088,18 +4026,14 @@
 
         </div>
 
-
       </div>
 
 
-
-      <!-- BRIDE -->
 
       <div
         class="account-group"
         id="account-bride"
       >
-
 
         <div class="account-card">
 
@@ -4116,7 +4050,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4124,7 +4057,6 @@
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -4142,7 +4074,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4150,7 +4081,6 @@
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -4168,7 +4098,6 @@
           </div>
 
           <button
-            type="button"
             class="account-copy"
             data-placeholder-copy
           >
@@ -4176,7 +4105,6 @@
           </button>
 
         </div>
-
 
       </div>
 
@@ -4186,10 +4114,6 @@
   </div>
 
 
-
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
 
   <footer>
 
@@ -4204,15 +4128,13 @@
 
 
   <!-- ========================================
-       JAVASCRIPT
+       JS
   ======================================== -->
 
   <script>
 
 
-    /* ========================================
-       OPENING
-    ======================================== */
+    /* OPENING */
 
     const opening =
       document.getElementById("opening");
@@ -4240,7 +4162,9 @@
       opening.classList.add("hide");
 
 
-      document.body.classList.add("page-ready");
+      document.body
+        .classList
+        .add("page-ready");
 
 
       setTimeout(
@@ -4263,21 +4187,19 @@
     );
 
 
-
     /*
-      약 3.3초 후 자연스럽게 본문 시작
+      봉투 → 사진 → 이름까지 보고
+      약 4.3초 후 본문 시작
     */
 
     setTimeout(
       closeOpening,
-      3300
+      4300
     );
 
 
 
-    /* ========================================
-       WEDDING INFO SHORTCUT
-    ======================================== */
+    /* WEDDING INFO */
 
     document
       .getElementById("weddingShortcut")
@@ -4292,13 +4214,13 @@
           setTimeout(
             function () {
 
+
               document
                 .getElementById("wedding")
                 .scrollIntoView({
-
                   behavior: "smooth"
-
                 });
+
 
             },
             120
@@ -4310,16 +4232,13 @@
 
 
 
-    /* ========================================
-       SCROLL REVEAL
-    ======================================== */
+    /* SCROLL */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
 
-
-    const revealObserver =
+    const observer =
       new IntersectionObserver(
         function (entries) {
 
@@ -4336,10 +4255,9 @@
                   .add("visible");
 
 
-                revealObserver
-                  .unobserve(
-                    entry.target
-                  );
+                observer.unobserve(
+                  entry.target
+                );
 
 
               }
@@ -4351,163 +4269,121 @@
 
         },
         {
-
           threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(
+      function (element) {
+
+        observer.observe(element);
+
+      }
+    );
+
+
+
+    /* SEASONS */
+
+    document
+      .querySelectorAll(".season-card")
+      .forEach(
+        function (card) {
+
+
+          card.addEventListener(
+            "click",
+            function () {
+
+
+              const page =
+                document.getElementById(
+                  "season-" +
+                  card.dataset.season
+                );
+
+
+              page.classList.add("active");
+
+
+              page.scrollTop = 0;
+
+
+              document.body.style.overflow =
+                "hidden";
+
+
+            }
+          );
+
 
         }
       );
 
 
 
-    revealElements.forEach(
-      function (element) {
-
-        revealObserver.observe(element);
-
-      }
-    );
+    document
+      .querySelectorAll(".season-back")
+      .forEach(
+        function (button) {
 
 
-
-    /* ========================================
-       SEASON DETAIL
-    ======================================== */
-
-    const seasonCards =
-      document.querySelectorAll(
-        ".season-card"
-      );
+          button.addEventListener(
+            "click",
+            function () {
 
 
-    const seasonBackButtons =
-      document.querySelectorAll(
-        ".season-back"
-      );
+              button
+                .closest(".season-page")
+                .classList
+                .remove("active");
 
 
-
-    seasonCards.forEach(
-      function (card) {
-
-
-        card.addEventListener(
-          "click",
-          function () {
+              document.body.style.overflow =
+                "";
 
 
-            const season =
-              card.dataset.season;
-
-
-            const page =
-              document.getElementById(
-                "season-" + season
-              );
-
-
-            if (!page) {
-              return;
             }
+          );
 
 
-            page.classList.add("active");
-
-
-            page.scrollTop = 0;
-
-
-            document.body.style.overflow =
-              "hidden";
-
-
-          }
-        );
-
-
-      }
-    );
+        }
+      );
 
 
 
-    seasonBackButtons.forEach(
-      function (button) {
-
-
-        button.addEventListener(
-          "click",
-          function () {
-
-
-            const page =
-              button.closest(
-                ".season-page"
-              );
-
-
-            page.classList.remove(
-              "active"
-            );
-
-
-            document.body.style.overflow =
-              "";
-
-
-          }
-        );
-
-
-      }
-    );
-
-
-
-    /* ========================================
-       PARKING
-    ======================================== */
+    /* PARKING */
 
     const parkingWrap =
-      document.getElementById(
-        "parkingWrap"
+      document.getElementById("parkingWrap");
+
+
+    document
+      .getElementById("parkingToggle")
+      .addEventListener(
+        "click",
+        function () {
+
+
+          parkingWrap
+            .classList
+            .toggle("open");
+
+
+        }
       );
 
 
-    const parkingToggle =
-      document.getElementById(
-        "parkingToggle"
-      );
 
-
-
-    parkingToggle.addEventListener(
-      "click",
-      function () {
-
-
-        parkingWrap
-          .classList
-          .toggle("open");
-
-
-      }
-    );
-
-
-
-    /* ========================================
-       MODAL
-    ======================================== */
+    /* MODAL */
 
     const rsvpModal =
-      document.getElementById(
-        "rsvpModal"
-      );
+      document.getElementById("rsvpModal");
 
 
     const accountModal =
-      document.getElementById(
-        "accountModal"
-      );
+      document.getElementById("accountModal");
 
 
 
@@ -4547,9 +4423,7 @@
         "click",
         function () {
 
-
           openModal(rsvpModal);
-
 
         }
       );
@@ -4562,9 +4436,7 @@
         "click",
         function () {
 
-
           openModal(accountModal);
-
 
         }
       );
@@ -4611,9 +4483,7 @@
 
               if (event.target === modal) {
 
-
                 closeModal(modal);
-
 
               }
 
@@ -4627,9 +4497,7 @@
 
 
 
-    /* ========================================
-       RSVP
-    ======================================== */
+    /* RSVP */
 
     document
       .getElementById("rsvpForm")
@@ -4641,19 +4509,17 @@
           event.preventDefault();
 
 
-          const guestName =
+          const name =
             document
               .getElementById("guestName")
               .value
               .trim();
 
 
-          if (!guestName) {
+          if (!name) {
 
 
-            alert(
-              "성함을 입력해주세요."
-            );
+            alert("성함을 입력해주세요.");
 
 
             return;
@@ -4663,7 +4529,7 @@
 
 
           alert(
-            "현재는 화면 초안이에요.\n\n추후 실제 참석 명단 저장 기능을 연결하면 됩니다."
+            "현재는 화면 초안이에요.\n추후 실제 저장 기능을 연결할 예정입니다."
           );
 
 
@@ -4672,24 +4538,22 @@
 
 
 
-    /* ========================================
-       ACCOUNT TAB
-    ======================================== */
+    /* ACCOUNT TABS */
 
-    const accountTabs =
+    const tabs =
       document.querySelectorAll(
         ".account-tab"
       );
 
 
-    const accountGroups =
+    const groups =
       document.querySelectorAll(
         ".account-group"
       );
 
 
 
-    accountTabs.forEach(
+    tabs.forEach(
       function (tab) {
 
 
@@ -4698,44 +4562,31 @@
           function () {
 
 
-            const target =
-              tab.dataset.account;
-
-
-            accountTabs.forEach(
+            tabs.forEach(
               function (item) {
 
-
-                item.classList.remove(
-                  "active"
-                );
-
+                item.classList.remove("active");
 
               }
             );
 
 
-            accountGroups.forEach(
+            groups.forEach(
               function (group) {
 
-
-                group.classList.remove(
-                  "active"
-                );
-
+                group.classList.remove("active");
 
               }
             );
 
 
-            tab.classList.add(
-              "active"
-            );
+            tab.classList.add("active");
 
 
             document
               .getElementById(
-                "account-" + target
+                "account-" +
+                tab.dataset.account
               )
               .classList
               .add("active");
@@ -4749,10 +4600,6 @@
     );
 
 
-
-    /* ========================================
-       ACCOUNT COPY PLACEHOLDER
-    ======================================== */
 
     document
       .querySelectorAll(
@@ -4781,84 +4628,20 @@
 
 
 
-    /* ========================================
-       GUEST SNAP PLACEHOLDER
-    ======================================== */
-
     document
-      .getElementById(
-        "guestUploadButton"
-      )
+      .getElementById("guestUpload")
       .addEventListener(
         "click",
         function () {
 
 
           alert(
-            "나중에 하객 사진·영상 업로드 서비스를 연결할 예정이에요."
+            "나중에 사진·영상 업로드 서비스를 연결할 예정이에요."
           );
 
 
         }
       );
-
-
-
-    /* ========================================
-       ESC
-    ======================================== */
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-
-        if (event.key !== "Escape") {
-          return;
-        }
-
-
-        const activeModal =
-          document.querySelector(
-            ".modal.active"
-          );
-
-
-        if (activeModal) {
-
-
-          closeModal(activeModal);
-
-
-          return;
-
-
-        }
-
-
-        const activeSeason =
-          document.querySelector(
-            ".season-page.active"
-          );
-
-
-        if (activeSeason) {
-
-
-          activeSeason
-            .classList
-            .remove("active");
-
-
-          document.body.style.overflow =
-            "";
-
-
-        }
-
-
-      }
-    );
 
 
   </script>
