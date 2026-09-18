@@ -41,8 +41,24 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    button {
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    button,
+    input,
+    select {
       font-family: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .inner {
@@ -59,7 +75,7 @@
 
 
     /* ========================================
-       WEDDING INFO SHORTCUT
+       FIXED WEDDING INFO BUTTON
     ======================================== */
 
     .wedding-info-shortcut {
@@ -75,7 +91,7 @@
       border: 1px solid rgba(0, 0, 0, 0.12);
       border-radius: 30px;
 
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
 
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -83,6 +99,7 @@
       color: #444;
 
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 10px;
 
       letter-spacing: 1.2px;
@@ -93,7 +110,7 @@
 
 
     /* ========================================
-       MAIN / INTRO
+       MAIN
     ======================================== */
 
     .intro {
@@ -136,8 +153,6 @@
       font-weight: 400;
 
       line-height: 1.15;
-
-      letter-spacing: -0.5px;
     }
 
     .intro-date {
@@ -169,7 +184,7 @@
 
 
     /* ========================================
-       FOUR SEASONS GRID
+       FOUR SEASONS
     ======================================== */
 
     .season-grid {
@@ -196,13 +211,11 @@
 
       overflow: hidden;
 
-      appearance: none;
+      background: #e8e8e8;
 
       cursor: pointer;
 
       text-align: left;
-
-      background: #e8e8e8;
     }
 
     .season-image {
@@ -219,18 +232,12 @@
 
       font-size: 11px;
 
-      transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
+      transition: transform 0.5s ease;
     }
 
     .season-card:hover .season-image {
       transform: scale(1.025);
     }
-
-    /*
-      실제 사진을 넣기 전 임시 배경색
-    */
 
     .winter .season-image {
       background: #dce3e7;
@@ -462,42 +469,221 @@
       border-top: 1px solid #d5d2cc;
       border-bottom: 1px solid #d5d2cc;
 
-      line-height: 2;
+      line-height: 1.8;
     }
 
     .venue-name {
-      font-size: 16px;
+      font-size: 17px;
 
       font-weight: 600;
     }
 
     .venue-address {
-      margin-top: 5px;
+      margin-top: 7px;
 
       font-size: 12px;
 
       color: #777;
+
+      line-height: 1.8;
     }
 
-    .button-grid {
+
+
+    /* ========================================
+       MAP
+    ======================================== */
+
+    .map-buttons {
       display: grid;
 
       grid-template-columns: 1fr 1fr;
 
       gap: 9px;
 
-      margin-top: 27px;
+      margin-top: 25px;
     }
 
-    .basic-button {
+    .map-button {
       min-height: 48px;
 
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
       border: 1px solid #cac7c1;
-      border-radius: 4px;
 
       background: transparent;
 
-      color: #444;
+      font-size: 11px;
+
+      letter-spacing: 0.7px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       PARKING ACCORDION
+    ======================================== */
+
+    .parking-wrap {
+      margin-top: 18px;
+
+      border-top: 1px solid #d7d3cc;
+      border-bottom: 1px solid #d7d3cc;
+    }
+
+    .parking-toggle {
+      width: 100%;
+
+      min-height: 58px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #333;
+
+      cursor: pointer;
+    }
+
+    .parking-toggle-left {
+      text-align: left;
+    }
+
+    .parking-title {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 12px;
+
+      letter-spacing: 1.5px;
+    }
+
+    .parking-subtitle {
+      margin-top: 4px;
+
+      font-size: 11px;
+
+      color: #888;
+    }
+
+    .parking-plus {
+      font-size: 21px;
+
+      font-weight: 300;
+
+      transition: transform 0.25s ease;
+    }
+
+    .parking-wrap.open .parking-plus {
+      transform: rotate(45deg);
+    }
+
+    .parking-content {
+      display: none;
+
+      padding: 0 0 28px;
+
+      text-align: left;
+    }
+
+    .parking-wrap.open .parking-content {
+      display: block;
+    }
+
+    .parking-highlight {
+      margin: 4px 0 24px;
+
+      padding: 18px;
+
+      background: rgba(255,255,255,0.6);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      text-align: center;
+    }
+
+    .parking-row {
+      display: grid;
+
+      grid-template-columns: 86px 1fr;
+
+      gap: 12px;
+
+      margin-top: 14px;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+    .parking-label {
+      font-weight: 600;
+
+      color: #555;
+    }
+
+    .parking-value {
+      color: #777;
+    }
+
+
+
+    /* ========================================
+       ACTION SECTIONS
+    ======================================== */
+
+    .action-section {
+      margin-top: 50px;
+
+      padding-top: 42px;
+
+      border-top: 1px solid #d5d2cc;
+    }
+
+    .action-title {
+      margin-top: 16px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .action-description {
+      margin-top: 15px;
+
+      font-size: 12px;
+
+      line-height: 1.9;
+
+      color: #777;
+    }
+
+    .action-button {
+      width: 100%;
+
+      min-height: 52px;
+
+      margin-top: 24px;
+
+      border: 1px solid #aaa69f;
+
+      background: transparent;
+
+      color: #333;
 
       font-size: 12px;
 
@@ -550,15 +736,13 @@
 
       font-size: 12px;
 
-      letter-spacing: 0.5px;
-
       cursor: pointer;
     }
 
 
 
     /* ========================================
-       SEASON DETAIL PAGE
+       SEASON DETAIL
     ======================================== */
 
     .season-page {
@@ -705,10 +889,6 @@
       color: #aaa;
     }
 
-
-
-    /* 각 상세페이지별 아주 미세한 분위기 */
-
     #season-winter {
       background: #eef1f3;
     }
@@ -723,6 +903,301 @@
 
     #season-autumn {
       background: #eee8e1;
+    }
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    .modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 2000;
+
+      display: none;
+
+      align-items: flex-end;
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: 100%;
+      max-width: 520px;
+
+      max-height: 88vh;
+
+      overflow-y: auto;
+
+      padding: 26px 22px 34px;
+
+      border-radius: 18px 18px 8px 8px;
+
+      background: #faf9f6;
+    }
+
+    .modal-header {
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .modal-label {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      color: #999;
+    }
+
+    .modal-title {
+      margin-top: 9px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .modal-close {
+      width: 42px;
+      height: 42px;
+
+      flex: 0 0 42px;
+
+      border: 0;
+
+      background: transparent;
+
+      font-size: 25px;
+
+      color: #666;
+
+      cursor: pointer;
+    }
+
+
+
+    /* ========================================
+       RSVP FORM
+    ======================================== */
+
+    .form-section {
+      margin-top: 30px;
+    }
+
+    .form-label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-size: 11px;
+
+      color: #666;
+    }
+
+    .choice-row {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+    }
+
+    .choice-input {
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .choice-label {
+      min-height: 46px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #d0ccc5;
+
+      background: white;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+    .choice-input:checked + .choice-label {
+      border-color: #555;
+
+      background: #444;
+
+      color: white;
+    }
+
+    .text-input,
+    .select-input {
+      width: 100%;
+
+      min-height: 48px;
+
+      padding: 0 13px;
+
+      border: 1px solid #d0ccc5;
+
+      border-radius: 0;
+
+      background: white;
+
+      color: #333;
+
+      font-size: 13px;
+    }
+
+    .submit-button {
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 32px;
+
+      border: 0;
+
+      background: #333;
+
+      color: white;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+    .form-note {
+      margin-top: 13px;
+
+      text-align: center;
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+      color: #999;
+    }
+
+
+
+    /* ========================================
+       ACCOUNT
+    ======================================== */
+
+    .account-tabs {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 7px;
+
+      margin-top: 28px;
+    }
+
+    .account-tab {
+      min-height: 45px;
+
+      border: 1px solid #ccc7c0;
+
+      background: transparent;
+
+      color: #555;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+    .account-tab.active {
+      background: #444;
+
+      border-color: #444;
+
+      color: white;
+    }
+
+    .account-group {
+      display: none;
+
+      margin-top: 25px;
+    }
+
+    .account-group.active {
+      display: block;
+    }
+
+    .account-card {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #dedad4;
+    }
+
+    .account-card:first-child {
+      border-top: 1px solid #dedad4;
+    }
+
+    .account-role {
+      font-size: 10px;
+
+      color: #999;
+    }
+
+    .account-name {
+      margin-top: 4px;
+
+      font-size: 14px;
+
+      font-weight: 600;
+    }
+
+    .account-number {
+      margin-top: 10px;
+
+      font-size: 12px;
+
+      color: #666;
+    }
+
+    .account-copy {
+      margin-top: 12px;
+
+      min-height: 38px;
+
+      padding: 0 15px;
+
+      border: 1px solid #c9c5be;
+
+      background: transparent;
+
+      font-size: 11px;
+
+      color: #555;
+
+      cursor: pointer;
     }
 
 
@@ -785,6 +1260,14 @@
         padding: 9px 12px;
       }
 
+      .parking-row {
+        grid-template-columns: 74px 1fr;
+      }
+
+      .modal {
+        padding: 10px;
+      }
+
     }
 
   </style>
@@ -797,7 +1280,7 @@
 
 
   <!-- ========================================
-       빠른 예식정보 이동
+       WEDDING INFO SHORTCUT
   ======================================== -->
 
   <button
@@ -814,7 +1297,10 @@
        MAIN
   ======================================== -->
 
-  <section class="intro" id="main">
+  <section
+    class="intro"
+    id="main"
+  >
 
     <div class="inner">
 
@@ -858,20 +1344,15 @@
 
 
 
-      <!-- ========================================
-           FOUR SEASONS
-      ======================================== -->
+      <!-- FOUR SEASONS -->
 
       <div class="season-grid">
 
-
-        <!-- WINTER -->
 
         <button
           type="button"
           class="season-card winter"
           data-season="winter"
-          aria-label="겨울 이야기 보기"
         >
 
           <div class="season-image">
@@ -898,13 +1379,10 @@
 
 
 
-        <!-- SPRING -->
-
         <button
           type="button"
           class="season-card spring"
           data-season="spring"
-          aria-label="봄 이야기 보기"
         >
 
           <div class="season-image">
@@ -931,13 +1409,10 @@
 
 
 
-        <!-- SUMMER -->
-
         <button
           type="button"
           class="season-card summer"
           data-season="summer"
-          aria-label="여름 이야기 보기"
         >
 
           <div class="season-image">
@@ -964,13 +1439,10 @@
 
 
 
-        <!-- AUTUMN -->
-
         <button
           type="button"
           class="season-card autumn"
           data-season="autumn"
-          aria-label="가을 이야기 보기"
         >
 
           <div class="season-image">
@@ -998,7 +1470,6 @@
       </div>
 
 
-
       <div class="story-hint">
         TAP EACH SEASON TO SEE OUR STORY
       </div>
@@ -1010,7 +1481,7 @@
 
 
   <!-- ========================================
-       AND WINTER AGAIN
+       WINTER AGAIN
   ======================================== -->
 
   <section class="winter-again">
@@ -1133,6 +1604,9 @@
       </div>
 
 
+
+      <!-- VENUE -->
+
       <div class="venue">
 
         <div class="venue-name">
@@ -1141,50 +1615,225 @@
 
 
         <div class="venue-address">
-          상세주소 추후 입력
+
+          서울특별시 송파구 충민로 52
+          <br>
+
+          가든파이브 웍스 1층
+
         </div>
 
       </div>
 
 
-      <div class="button-grid">
+
+      <!-- MAP -->
+
+      <div class="map-buttons">
+
+        <a
+          class="map-button"
+          href="https://map.naver.com/p/search/%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NAVER MAP
+        </a>
+
+
+        <a
+          class="map-button"
+          href="https://map.kakao.com/?q=%EC%97%98%EB%A1%9C%EB%9D%BC%20%EC%9D%B8%20%EA%B0%80%EB%93%A0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          KAKAO MAP
+        </a>
+
+      </div>
+
+
+
+      <!-- PARKING -->
+
+      <div
+        class="parking-wrap"
+        id="parkingWrap"
+      >
 
         <button
           type="button"
-          class="basic-button"
-          onclick="alert('나중에 지도 링크를 연결할 예정이에요.')"
+          class="parking-toggle"
+          id="parkingToggle"
         >
-          지도 보기
+
+          <div class="parking-toggle-left">
+
+            <div class="parking-title">
+              PARKING & TRANSPORTATION
+            </div>
+
+            <div class="parking-subtitle">
+              주차 및 교통 안내
+            </div>
+
+          </div>
+
+          <div class="parking-plus">
+            +
+          </div>
+
         </button>
 
 
-        <button
-          type="button"
-          class="basic-button"
-          onclick="alert('나중에 주차 안내를 연결할 예정이에요.')"
-        >
-          주차 안내
-        </button>
+        <div class="parking-content">
 
 
-        <button
-          type="button"
-          class="basic-button"
-          onclick="alert('나중에 RSVP를 연결할 예정이에요.')"
-        >
+          <div class="parking-highlight">
+
+            넉넉한 주차 공간이 마련되어 있으니
+            <br>
+
+            차량 이용이 가능하신 분들은
+            <br>
+
+            편하게 차를 가지고 오셔도 됩니다.
+
+          </div>
+
+
+          <div class="parking-row">
+
+            <div class="parking-label">
+              주차 위치
+            </div>
+
+            <div class="parking-value">
+              가든파이브 웍스동 B2–B5
+            </div>
+
+          </div>
+
+
+          <div class="parking-row">
+
+            <div class="parking-label">
+              주차 혜택
+            </div>
+
+            <div class="parking-value">
+              하객 3시간 무료
+            </div>
+
+          </div>
+
+
+          <div class="parking-row">
+
+            <div class="parking-label">
+              내비 검색
+            </div>
+
+            <div class="parking-value">
+              우리은행 가든파이브점
+            </div>
+
+          </div>
+
+
+          <div class="parking-row">
+
+            <div class="parking-label">
+              웨딩홀
+            </div>
+
+            <div class="parking-value">
+              주차 후 A/B/C/D동 엘리베이터 이용 → 1층
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ========================================
+           ATTENDANCE
+      ======================================== -->
+
+      <div class="action-section">
+
+        <div class="section-label">
+          ATTENDANCE
+        </div>
+
+
+        <div class="action-title">
           참석 여부
-        </button>
+        </div>
+
+
+        <div class="action-description">
+
+          참석 여부를 알려주시면
+          <br>
+
+          소중한 자리를 준비하는 데 도움이 됩니다.
+
+        </div>
 
 
         <button
           type="button"
-          class="basic-button"
-          onclick="alert('나중에 계좌 정보를 연결할 예정이에요.')"
+          class="action-button"
+          id="openRsvp"
+        >
+          참석 여부 전달하기
+        </button>
+
+      </div>
+
+
+
+      <!-- ========================================
+           ACCOUNT
+      ======================================== -->
+
+      <div class="action-section">
+
+        <div class="section-label">
+          FOR YOUR HEART
+        </div>
+
+
+        <div class="action-title">
+          마음 전하실 곳
+        </div>
+
+
+        <div class="action-description">
+
+          멀리서도 축하해 주시는
+          <br>
+
+          따뜻한 마음에 깊이 감사드립니다.
+
+        </div>
+
+
+        <button
+          type="button"
+          class="action-button"
+          id="openAccount"
         >
           마음 전하기
         </button>
 
       </div>
+
 
     </div>
 
@@ -1235,7 +1884,7 @@
 
 
   <!-- ========================================
-       WINTER DETAIL PAGE
+       SEASON DETAIL - WINTER
   ======================================== -->
 
   <div
@@ -1277,32 +1926,20 @@
         우리의 이야기가 시작된 겨울.
         <br><br>
 
-        이곳에는
+        이곳에는 두 사람의
         <br>
-        두 사람의 첫 번째 겨울 이야기를
-        <br>
-        담을 예정입니다.
+
+        첫 번째 겨울 이야기를 담을 예정입니다.
 
       </div>
 
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          겨울 사진 1
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 2
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 3
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 4
-        </div>
+        <div class="mini-photo">겨울 사진 1</div>
+        <div class="mini-photo">겨울 사진 2</div>
+        <div class="mini-photo">겨울 사진 3</div>
+        <div class="mini-photo">겨울 사진 4</div>
 
       </div>
 
@@ -1318,7 +1955,7 @@
 
 
   <!-- ========================================
-       SPRING DETAIL PAGE
+       SEASON DETAIL - SPRING
   ======================================== -->
 
   <div
@@ -1362,30 +1999,18 @@
 
         우리의 시간에도
         <br>
-        조금씩 새로운 장면이
-        <br>
-        쌓여갔습니다.
+
+        새로운 장면들이 쌓여갔습니다.
 
       </div>
 
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          봄 사진 1
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 2
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 3
-        </div>
-
-        <div class="mini-photo">
-          봄 사진 4
-        </div>
+        <div class="mini-photo">봄 사진 1</div>
+        <div class="mini-photo">봄 사진 2</div>
+        <div class="mini-photo">봄 사진 3</div>
+        <div class="mini-photo">봄 사진 4</div>
 
       </div>
 
@@ -1401,7 +2026,7 @@
 
 
   <!-- ========================================
-       SUMMER DETAIL PAGE
+       SEASON DETAIL - SUMMER
   ======================================== -->
 
   <div
@@ -1445,6 +2070,7 @@
 
         함께하는 우리의 시간도
         <br>
+
         한층 더 선명해졌습니다.
 
       </div>
@@ -1452,21 +2078,10 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          여름 사진 1
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 2
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 3
-        </div>
-
-        <div class="mini-photo">
-          여름 사진 4
-        </div>
+        <div class="mini-photo">여름 사진 1</div>
+        <div class="mini-photo">여름 사진 2</div>
+        <div class="mini-photo">여름 사진 3</div>
+        <div class="mini-photo">여름 사진 4</div>
 
       </div>
 
@@ -1482,7 +2097,7 @@
 
 
   <!-- ========================================
-       AUTUMN DETAIL PAGE
+       SEASON DETAIL - AUTUMN
   ======================================== -->
 
   <div
@@ -1526,6 +2141,7 @@
 
         우리도 함께할
         <br>
+
         다음 계절을 준비하기 시작했습니다.
 
       </div>
@@ -1533,27 +2149,507 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          가을 사진 1
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 2
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 3
-        </div>
-
-        <div class="mini-photo">
-          가을 사진 4
-        </div>
+        <div class="mini-photo">가을 사진 1</div>
+        <div class="mini-photo">가을 사진 2</div>
+        <div class="mini-photo">가을 사진 3</div>
+        <div class="mini-photo">가을 사진 4</div>
 
       </div>
 
 
       <div class="season-end">
         AUTUMN · OUR PROMISE
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+       RSVP MODAL
+  ======================================== -->
+
+  <div
+    class="modal"
+    id="rsvpModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-panel">
+
+      <div class="modal-header">
+
+        <div>
+
+          <div class="modal-label">
+            ATTENDANCE
+          </div>
+
+          <div class="modal-title">
+            참석 여부를 알려주세요
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+        >
+          ×
+        </button>
+
+      </div>
+
+
+
+      <form id="rsvpForm">
+
+
+        <!-- 신랑 / 신부측 -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            어느 분의 하객이신가요?
+          </div>
+
+
+          <div class="choice-row">
+
+            <div>
+
+              <input
+                type="radio"
+                name="side"
+                value="신랑측"
+                id="sideGroom"
+                class="choice-input"
+                checked
+              >
+
+              <label
+                for="sideGroom"
+                class="choice-label"
+              >
+                신랑측
+              </label>
+
+            </div>
+
+
+            <div>
+
+              <input
+                type="radio"
+                name="side"
+                value="신부측"
+                id="sideBride"
+                class="choice-input"
+              >
+
+              <label
+                for="sideBride"
+                class="choice-label"
+              >
+                신부측
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- 이름 -->
+
+        <div class="form-section">
+
+          <label
+            class="form-label"
+            for="guestName"
+          >
+            성함
+          </label>
+
+          <input
+            type="text"
+            id="guestName"
+            class="text-input"
+            placeholder="성함을 입력해주세요"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- 동행 인원 -->
+
+        <div class="form-section">
+
+          <label
+            class="form-label"
+            for="guestCount"
+          >
+            총 참석 인원
+          </label>
+
+
+          <select
+            id="guestCount"
+            class="select-input"
+          >
+
+            <option value="1">
+              1명
+            </option>
+
+            <option value="2">
+              2명
+            </option>
+
+            <option value="3">
+              3명
+            </option>
+
+            <option value="4">
+              4명
+            </option>
+
+            <option value="5">
+              5명 이상
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- 참석 / 불참 -->
+
+        <div class="form-section">
+
+          <div class="form-label">
+            참석 여부
+          </div>
+
+
+          <div class="choice-row">
+
+            <div>
+
+              <input
+                type="radio"
+                name="attendance"
+                value="참석"
+                id="attendYes"
+                class="choice-input"
+                checked
+              >
+
+              <label
+                for="attendYes"
+                class="choice-label"
+              >
+                참석
+              </label>
+
+            </div>
+
+
+            <div>
+
+              <input
+                type="radio"
+                name="attendance"
+                value="불참"
+                id="attendNo"
+                class="choice-input"
+              >
+
+              <label
+                for="attendNo"
+                class="choice-label"
+              >
+                불참
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          전달하기
+        </button>
+
+
+        <div class="form-note">
+
+          현재는 화면 초안입니다.
+          <br>
+
+          추후 저장 기능을 연결하면 실제 참석 명단을 받을 수 있어요.
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+       ACCOUNT MODAL
+  ======================================== -->
+
+  <div
+    class="modal"
+    id="accountModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-panel">
+
+      <div class="modal-header">
+
+        <div>
+
+          <div class="modal-label">
+            FOR YOUR HEART
+          </div>
+
+          <div class="modal-title">
+            마음 전하실 곳
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+        >
+          ×
+        </button>
+
+      </div>
+
+
+
+      <!-- 탭 -->
+
+      <div class="account-tabs">
+
+        <button
+          type="button"
+          class="account-tab active"
+          data-account="groom"
+        >
+          신랑측
+        </button>
+
+
+        <button
+          type="button"
+          class="account-tab"
+          data-account="bride"
+        >
+          신부측
+        </button>
+
+      </div>
+
+
+
+      <!-- 신랑측 -->
+
+      <div
+        class="account-group active"
+        id="account-groom"
+      >
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신랑
+          </div>
+
+          <div class="account-name">
+            황진찬
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신랑 아버지
+          </div>
+
+          <div class="account-name">
+            성함 입력 예정
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신랑 어머니
+          </div>
+
+          <div class="account-name">
+            성함 입력 예정
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 신부측 -->
+
+      <div
+        class="account-group"
+        id="account-bride"
+      >
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신부
+          </div>
+
+          <div class="account-name">
+            김가현
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신부 아버지
+          </div>
+
+          <div class="account-name">
+            성함 입력 예정
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
+
+
+        <div class="account-card">
+
+          <div class="account-role">
+            신부 어머니
+          </div>
+
+          <div class="account-name">
+            성함 입력 예정
+          </div>
+
+          <div class="account-number">
+            은행명 000-0000-0000
+          </div>
+
+          <button
+            type="button"
+            class="account-copy"
+            data-placeholder-copy
+          >
+            계좌번호 복사
+          </button>
+
+        </div>
+
       </div>
 
     </div>
@@ -1584,9 +2680,9 @@
 
   <script>
 
-    /*
-      Wedding Info
-    */
+    /* ========================================
+       WEDDING INFO
+    ======================================== */
 
     const weddingShortcut =
       document.getElementById("weddingShortcut");
@@ -1607,15 +2703,12 @@
 
 
 
-    /*
-      Season Detail
-    */
+    /* ========================================
+       SEASONS
+    ======================================== */
 
     const seasonCards =
       document.querySelectorAll(".season-card");
-
-    const seasonPages =
-      document.querySelectorAll(".season-page");
 
     const backButtons =
       document.querySelectorAll(".season-back");
@@ -1629,6 +2722,7 @@
 
           const season =
             card.dataset.season;
+
 
           const page =
             document.getElementById(
@@ -1651,7 +2745,6 @@
 
           page.scrollTop = 0;
 
-
           document.body.style.overflow =
             "hidden";
 
@@ -1662,10 +2755,6 @@
 
 
 
-    /*
-      Back
-    */
-
     backButtons.forEach(function (button) {
 
       button.addEventListener(
@@ -1673,14 +2762,10 @@
         function () {
 
           const page =
-            button.closest(
-              ".season-page"
-            );
+            button.closest(".season-page");
 
 
-          page.classList.remove(
-            "active"
-          );
+          page.classList.remove("active");
 
 
           page.setAttribute(
@@ -1699,10 +2784,269 @@
 
 
 
-    /*
-      ESC 키로 상세 페이지 닫기
-      PC 테스트할 때 편함
-    */
+    /* ========================================
+       PARKING
+    ======================================== */
+
+    const parkingWrap =
+      document.getElementById("parkingWrap");
+
+    const parkingToggle =
+      document.getElementById("parkingToggle");
+
+
+    parkingToggle.addEventListener(
+      "click",
+      function () {
+
+        parkingWrap.classList.toggle("open");
+
+      }
+    );
+
+
+
+    /* ========================================
+       MODALS
+    ======================================== */
+
+    const rsvpModal =
+      document.getElementById("rsvpModal");
+
+    const accountModal =
+      document.getElementById("accountModal");
+
+
+    function openModal(modal) {
+
+      modal.classList.add("active");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    function closeModal(modal) {
+
+      modal.classList.remove("active");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+    }
+
+
+
+    document
+      .getElementById("openRsvp")
+      .addEventListener(
+        "click",
+        function () {
+
+          openModal(rsvpModal);
+
+        }
+      );
+
+
+    document
+      .getElementById("openAccount")
+      .addEventListener(
+        "click",
+        function () {
+
+          openModal(accountModal);
+
+        }
+      );
+
+
+
+    document
+      .querySelectorAll("[data-close-modal]")
+      .forEach(function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            const modal =
+              button.closest(".modal");
+
+            closeModal(modal);
+
+          }
+        );
+
+      });
+
+
+
+    document
+      .querySelectorAll(".modal")
+      .forEach(function (modal) {
+
+        modal.addEventListener(
+          "click",
+          function (event) {
+
+            if (event.target === modal) {
+
+              closeModal(modal);
+
+            }
+
+          }
+        );
+
+      });
+
+
+
+    /* ========================================
+       RSVP
+    ======================================== */
+
+    document
+      .getElementById("rsvpForm")
+      .addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById("guestName")
+              .value
+              .trim();
+
+
+          if (!name) {
+
+            alert("성함을 입력해주세요.");
+
+            return;
+
+          }
+
+
+          alert(
+            "참석 여부 화면은 정상 작동해요!\\n\\n" +
+            "다음 단계에서 실제 저장 기능을 연결하면 됩니다."
+          );
+
+        }
+      );
+
+
+
+    /* ========================================
+       ACCOUNT TABS
+    ======================================== */
+
+    const accountTabs =
+      document.querySelectorAll(
+        ".account-tab"
+      );
+
+
+    const accountGroups =
+      document.querySelectorAll(
+        ".account-group"
+      );
+
+
+    accountTabs.forEach(function (tab) {
+
+      tab.addEventListener(
+        "click",
+        function () {
+
+          const target =
+            tab.dataset.account;
+
+
+          accountTabs.forEach(
+            function (item) {
+
+              item.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          accountGroups.forEach(
+            function (group) {
+
+              group.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          tab.classList.add("active");
+
+
+          document
+            .getElementById(
+              "account-" + target
+            )
+            .classList.add("active");
+
+        }
+      );
+
+    });
+
+
+
+    /* ========================================
+       PLACEHOLDER COPY
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        "[data-placeholder-copy]"
+      )
+      .forEach(function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            alert(
+              "실제 계좌번호를 입력한 뒤 복사 기능을 연결할 예정이에요."
+            );
+
+          }
+        );
+
+      });
+
+
+
+    /* ========================================
+       ESC
+    ======================================== */
 
     document.addEventListener(
       "keydown",
@@ -1713,30 +3057,44 @@
         }
 
 
-        const activePage =
+        const activeModal =
+          document.querySelector(
+            ".modal.active"
+          );
+
+
+        if (activeModal) {
+
+          closeModal(activeModal);
+
+          return;
+
+        }
+
+
+        const activeSeason =
           document.querySelector(
             ".season-page.active"
           );
 
 
-        if (!activePage) {
-          return;
+        if (activeSeason) {
+
+          activeSeason.classList.remove(
+            "active"
+          );
+
+
+          activeSeason.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+
+          document.body.style.overflow =
+            "";
+
         }
-
-
-        activePage.classList.remove(
-          "active"
-        );
-
-
-        activePage.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-
-        document.body.style.overflow =
-          "";
 
       }
     );
