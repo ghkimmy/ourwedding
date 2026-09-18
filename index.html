@@ -16,15 +16,11 @@
     content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
   >
 
-
   <!-- ========================================
        KAKAO / OPEN GRAPH
   ======================================== -->
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     property="og:url"
@@ -46,20 +42,9 @@
     content="https://ghkimmy.github.io/ourwedding/images/og-wedding.jpg"
   >
 
-  <meta
-    property="og:image:width"
-    content="1200"
-  >
-
-  <meta
-    property="og:image:height"
-    content="630"
-  >
-
-  <meta
-    property="og:image:type"
-    content="image/jpeg"
-  >
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
 
   <meta
     property="og:image:alt"
@@ -73,7 +58,7 @@
 
 
   <!-- ========================================
-       PRETENDARD
+       FONT
   ======================================== -->
 
   <link
@@ -85,17 +70,11 @@
 
   <style>
 
-    /* ========================================
-       FONT
-    ======================================== */
-
     @font-face {
       font-family: "RIDIBatang";
-
       src:
         url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/RIDIBatang.woff")
         format("woff");
-
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -103,7 +82,6 @@
 
 
     :root {
-
       --font-body:
         "Pretendard",
         -apple-system,
@@ -127,29 +105,16 @@
         Arial,
         sans-serif;
 
-
-      /* WINTER PASTEL */
-
-      --snow-white: #f8fbfd;
-
-      --winter-blue: #eef5f8;
-
-      --winter-blue-deep: #dce8ee;
-
-      --winter-lilac: #f3f0f7;
-
-      --winter-ivory: #f8f5ee;
-
-      --winter-rose: #d8c5cb;
+      --winter-sky: #d4e5ed;
+      --winter-blue: #e6f0f4;
+      --winter-lilac: #eeeaf3;
+      --winter-ivory: #f8f3ea;
 
       --wedding-red: #9d2631;
+      --calendar-heart: #c87c86;
 
-      --calendar-heart: #ca858d;
-
-      --text: #303030;
-
-      --sub: #747474;
-
+      --text: #30363a;
+      --sub: #70777b;
     }
 
 
@@ -170,21 +135,16 @@
 
 
     body {
-
       margin: 0;
-
       background: #f7f6f2;
-
       color: var(--text);
 
       font-family: var(--font-body);
 
       word-break: keep-all;
-
       overflow-wrap: break-word;
 
       -webkit-font-smoothing: antialiased;
-
     }
 
 
@@ -220,13 +180,9 @@
 
 
     .inner {
-
       width: 100%;
-
       max-width: 540px;
-
       margin: 0 auto;
-
     }
 
 
@@ -237,45 +193,72 @@
 
 
     /* ========================================
+       WINTER TEXTURE
+    ======================================== */
+
+    .opening::after,
+    .intro::after,
+    .winter-again::after {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 1;
+
+      opacity: 0.12;
+
+      background-image:
+        radial-gradient(
+          rgba(55, 83, 99, 0.20) 0.55px,
+          transparent 0.55px
+        );
+
+      background-size:
+        4px 4px;
+
+      mix-blend-mode: multiply;
+    }
+
+
+
+    /* ========================================
        SNOW
     ======================================== */
 
     .snow-layer {
-
       position: absolute;
-
       inset: 0;
 
       overflow: hidden;
 
       pointer-events: none;
-
     }
 
 
     .snow-particle {
-
       position: absolute;
 
-      top: -20px;
-
+      top: -30px;
       left: var(--x);
 
       width: var(--size);
-
       height: var(--size);
 
       border-radius: 50%;
 
       background:
-        rgba(255, 255, 255, var(--opacity));
-
-      filter:
-        blur(var(--blur));
+        rgba(255,255,255,0.98);
 
       box-shadow:
-        0 0 8px
-        rgba(255,255,255,0.25);
+        0 0 0 1px rgba(135,170,190,0.17),
+        0 2px 5px rgba(121,158,179,0.30),
+        0 0 10px rgba(255,255,255,0.88);
+
+      opacity: var(--opacity);
 
       animation:
         snowFall
@@ -284,56 +267,57 @@
         var(--delay)
         infinite;
 
+      will-change:
+        transform,
+        opacity;
+    }
+
+
+    .snow-particle.soft {
+      filter: blur(1px);
     }
 
 
     @keyframes snowFall {
 
       0% {
-
         transform:
-          translate3d(
-            0,
-            -30px,
-            0
-          );
+          translate3d(0, -30px, 0);
 
         opacity: 0;
-
       }
 
-
-      10% {
-
-        opacity:
-          var(--opacity);
-
+      8% {
+        opacity: var(--opacity);
       }
 
-
-      50% {
-
+      36% {
         transform:
           translate3d(
-            var(--drift),
-            50vh,
+            var(--drift-a),
+            38vh,
             0
           );
-
       }
 
+      70% {
+        transform:
+          translate3d(
+            var(--drift-b),
+            76vh,
+            0
+          );
+      }
 
       100% {
-
         transform:
           translate3d(
-            calc(var(--drift) * -0.5),
-            110vh,
+            var(--drift-a),
+            112vh,
             0
           );
 
-        opacity: 0;
-
+        opacity: 0.12;
       }
 
     }
@@ -341,85 +325,68 @@
 
 
     /* ========================================
-       ENVELOPE OPENING
+       OPENING
     ======================================== */
 
     .opening {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 10000;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
 
-
-      /*
-        새해의 맑은 눈 오는 날 느낌
-      */
-
       background:
 
         radial-gradient(
-          circle at 15% 12%,
-          rgba(255,255,255,0.95),
-          transparent 34%
+          circle at 12% 8%,
+          rgba(255,255,255,0.80),
+          transparent 25%
         ),
 
         radial-gradient(
-          circle at 90% 10%,
-          rgba(241,237,248,0.85),
-          transparent 38%
+          circle at 88% 14%,
+          rgba(219,210,235,0.58),
+          transparent 36%
         ),
 
         radial-gradient(
-          circle at 50% 100%,
-          rgba(248,244,236,0.92),
-          transparent 47%
+          circle at 48% 92%,
+          rgba(251,241,225,0.78),
+          transparent 45%
         ),
 
         linear-gradient(
           180deg,
-          #edf5f9 0%,
-          #f6f8f9 45%,
-          #f8f5ef 100%
+          #d2e4ed 0%,
+          #e2edf2 35%,
+          #efedf1 68%,
+          #f8f2e8 100%
         );
-
 
       transition:
         opacity 0.9s ease,
         visibility 0.9s ease;
-
     }
 
 
     .opening .snow-layer {
-
-      z-index: 1;
-
+      z-index: 3;
     }
 
 
     .opening.hide {
-
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
-
     }
 
 
     .opening-skip {
-
       position: absolute;
 
       top:
@@ -434,54 +401,47 @@
 
       min-height: 40px;
 
-      padding: 0 14px;
+      padding:
+        0 14px;
 
       border: 0;
-
       background: transparent;
 
       font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 1.8px;
 
       color:
-        rgba(65,70,75,0.52);
+        rgba(51,67,76,0.58);
 
       cursor: pointer;
-
     }
 
 
     .opening-inner {
-
       position: relative;
 
       z-index: 5;
 
       width: 100%;
-
       max-width: 430px;
 
       padding: 22px;
 
       text-align: center;
-
     }
 
 
     .letter-small {
-
       margin-bottom: 31px;
 
       font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 4px;
 
-      color: #8c9196;
+      color: #74838a;
 
       opacity: 0;
 
@@ -490,41 +450,33 @@
 
       animation:
         openingFade
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.08s;
-
+      animation-delay:
+        0.08s;
     }
 
 
 
     /* ========================================
-       ENVELOPE STAGE
+       ENVELOPE
     ======================================== */
 
     .envelope-stage {
-
       --env-w: 285px;
-
       --env-h: 178px;
 
       --photo-w: 178px;
-
       --photo-h: 222px;
 
       --photo-bottom: -55px;
-
       --photo-rise: -150px;
 
       --window-open-height: 345px;
 
-
       position: relative;
 
       width: 310px;
-
       height: 340px;
 
       margin: 0 auto;
@@ -539,21 +491,17 @@
 
       animation:
         envelopeAppear
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.3s;
-
+      animation-delay:
+        0.3s;
     }
 
 
     .envelope {
-
       position: absolute;
 
       left: 50%;
-
       bottom: 18px;
 
       width:
@@ -567,17 +515,11 @@
 
       transform-style:
         preserve-3d;
-
     }
 
 
-
-    /* ENVELOPE BACK */
-
     .envelope-back {
-
       position: absolute;
-
       inset: 0;
 
       z-index: 1;
@@ -585,7 +527,6 @@
       border-radius: 3px;
 
       background:
-
         linear-gradient(
           145deg,
           #a82f39,
@@ -593,24 +534,20 @@
         );
 
       box-shadow:
-
-        0 22px 45px
-        rgba(92,31,39,0.18);
-
+        0 22px 48px
+        rgba(89,30,38,0.19);
     }
 
 
 
     /* ========================================
-       PHOTO
+       OPENING PHOTO
     ======================================== */
 
     .photo-window {
-
       position: absolute;
 
       left: 0;
-
       bottom: 0;
 
       width: 100%;
@@ -630,13 +567,12 @@
         cubic-bezier(.22,.72,.25,1)
         forwards;
 
-      animation-delay: 1.35s;
-
+      animation-delay:
+        1.35s;
     }
 
 
     .letter-photo {
-
       position: absolute;
 
       left: 50%;
@@ -660,9 +596,8 @@
       background: #fff;
 
       box-shadow:
-
-        0 15px 32px
-        rgba(58,42,45,0.16);
+        0 16px 34px
+        rgba(54,42,45,0.17);
 
       animation:
         photoRise
@@ -670,54 +605,44 @@
         cubic-bezier(.22,.72,.25,1)
         forwards;
 
-      animation-delay: 1.35s;
-
+      animation-delay:
+        1.35s;
     }
 
 
     .letter-photo-inner {
-
       width: 100%;
-
       height: 100%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
 
-
       background:
-
         linear-gradient(
           145deg,
-          #dce5ea,
-          #f2f0ec
+          #d8e4ea,
+          #f2efea
         );
 
-
-      color: #8e979b;
+      color: #89949a;
 
       font-size: 9px;
 
       letter-spacing: 1px;
-
     }
 
 
     .letter-photo-inner img {
-
       width: 100%;
-
       height: 100%;
 
       display: block;
 
       object-fit: cover;
-
     }
 
 
@@ -727,21 +652,17 @@
     ======================================== */
 
     .envelope-flap {
-
       position: absolute;
 
       z-index: 7;
 
       left: 0;
-
       top: 0;
 
       width: 100%;
-
       height: 110px;
 
       background:
-
         linear-gradient(
           180deg,
           #b93b46,
@@ -749,7 +670,6 @@
         );
 
       clip-path:
-
         polygon(
           0 0,
           100% 0,
@@ -771,16 +691,13 @@
         cubic-bezier(.35,.02,.25,1)
         forwards;
 
-      animation-delay: 0.82s;
-
+      animation-delay:
+        0.82s;
     }
 
 
-
     .envelope-front {
-
       position: absolute;
-
       inset: 0;
 
       z-index: 5;
@@ -788,58 +705,44 @@
       overflow: hidden;
 
       pointer-events: none;
-
     }
 
 
     .envelope-front-left {
-
       position: absolute;
-
       inset: 0;
 
-      background:
-        #aa303b;
+      background: #aa303b;
 
       clip-path:
-
         polygon(
           0 0,
           52% 58%,
           0 100%
         );
-
     }
 
 
     .envelope-front-right {
-
       position: absolute;
-
       inset: 0;
 
-      background:
-        #92242f;
+      background: #92242f;
 
       clip-path:
-
         polygon(
           100% 0,
           48% 58%,
           100% 100%
         );
-
     }
 
 
     .envelope-front-bottom {
-
       position: absolute;
-
       inset: 0;
 
       background:
-
         linear-gradient(
           180deg,
           #bb3d47,
@@ -847,29 +750,23 @@
         );
 
       clip-path:
-
         polygon(
           0 100%,
           50% 47%,
           100% 100%
         );
-
     }
 
 
 
-    /* ========================================
-       WHITE HEART
-    ======================================== */
+    /* WHITE HEART */
 
     .envelope-seal {
-
       position: absolute;
 
       z-index: 10;
 
       left: 50%;
-
       top: 70px;
 
       transform:
@@ -883,24 +780,20 @@
         sans-serif;
 
       font-size: 29px;
-
       line-height: 1;
 
       filter:
-
         drop-shadow(
           0 3px 4px
-          rgba(70,20,25,0.12)
+          rgba(70,20,25,0.13)
         );
 
       animation:
         sealDisappear
-        0.32s
-        ease
-        forwards;
+        0.32s ease forwards;
 
-      animation-delay: 0.67s;
-
+      animation-delay:
+        0.67s;
     }
 
 
@@ -910,7 +803,6 @@
     ======================================== */
 
     .opening-text {
-
       margin-top: 1px;
 
       opacity: 0;
@@ -920,17 +812,14 @@
 
       animation:
         openingTextShow
-        0.85s
-        ease
-        forwards;
+        0.85s ease forwards;
 
-      animation-delay: 2.38s;
-
+      animation-delay:
+        2.38s;
     }
 
 
     .opening-names {
-
       font-family:
         var(--font-en);
 
@@ -940,13 +829,11 @@
 
       line-height: 1.2;
 
-      color: #414246;
-
+      color: #354047;
     }
 
 
     .opening-date {
-
       margin-top: 12px;
 
       font-family:
@@ -956,22 +843,19 @@
 
       letter-spacing: 2.5px;
 
-      color: #7b8084;
-
+      color: #65737a;
     }
 
 
     .opening-line {
-
       width: 1px;
-
       height: 27px;
 
       margin:
         19px auto 0;
 
       background:
-        rgba(100,110,116,0.22);
+        rgba(74,99,111,0.28);
 
       transform-origin: top;
 
@@ -980,200 +864,135 @@
 
       animation:
         lineGrow
-        0.7s
-        ease
-        forwards;
+        0.7s ease forwards;
 
-      animation-delay: 2.75s;
-
+      animation-delay:
+        2.75s;
     }
 
 
 
     /* ========================================
-       OPENING ANIMATIONS
+       OPENING ANIMATION
     ======================================== */
 
     @keyframes openingFade {
-
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(7px);
-
+        transform: translateY(7px);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
     @keyframes envelopeAppear {
-
       from {
-
         opacity: 0;
 
         transform:
           translateY(12px)
           scale(0.99);
-
       }
 
       to {
-
         opacity: 1;
 
         transform:
           translateY(0)
           scale(1);
-
       }
-
     }
 
 
     @keyframes sealDisappear {
-
       from {
-
         opacity: 1;
 
         transform:
           translateX(-50%)
           scale(1);
-
       }
 
       to {
-
         opacity: 0;
 
         transform:
           translateX(-50%)
           scale(0.82);
-
       }
-
     }
 
 
     @keyframes flapOpen {
-
       0% {
-
-        transform:
-          rotateX(0deg);
-
+        transform: rotateX(0deg);
       }
 
       42% {
-
-        transform:
-          rotateX(-105deg);
-
+        transform: rotateX(-105deg);
       }
 
       100% {
-
-        transform:
-          rotateX(-180deg);
-
+        transform: rotateX(-180deg);
       }
-
     }
 
 
     @keyframes photoWindowOpen {
-
       from {
-
         height:
           var(--env-h);
-
       }
 
       to {
-
         height:
           var(--window-open-height);
-
       }
-
     }
 
 
     @keyframes photoRise {
-
       from {
-
         transform:
           translateX(-50%)
           translateY(0);
-
       }
 
       to {
-
         transform:
           translateX(-50%)
           translateY(
             var(--photo-rise)
           );
-
       }
-
     }
 
 
     @keyframes openingTextShow {
-
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(9px);
-
+        transform: translateY(9px);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
     @keyframes lineGrow {
-
       from {
-
-        transform:
-          scaleY(0);
-
+        transform: scaleY(0);
       }
 
       to {
-
-        transform:
-          scaleY(1);
-
+        transform: scaleY(1);
       }
-
     }
 
 
@@ -1183,7 +1002,6 @@
     ======================================== */
 
     .wedding-info-shortcut {
-
       position: fixed;
 
       top:
@@ -1202,14 +1020,13 @@
         0 14px;
 
       border:
-
         1px solid
         rgba(0,0,0,0.09);
 
       border-radius: 30px;
 
       background:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,0.80);
 
       backdrop-filter:
         blur(10px);
@@ -1227,13 +1044,12 @@
       letter-spacing: 1.2px;
 
       cursor: pointer;
-
     }
 
 
 
     /* ========================================
-       MAIN REVEAL
+       REVEAL
     ======================================== */
 
     .intro-label,
@@ -1242,180 +1058,123 @@
     .intro-description,
     .season-card,
     .story-hint {
-
       opacity: 0;
 
       transform:
         translateY(15px);
-
     }
 
 
-    body.page-ready
-    .intro-label {
-
+    body.page-ready .intro-label {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
-
+        0.8s ease forwards;
     }
 
 
-    body.page-ready
-    .names {
-
+    body.page-ready .names {
       animation:
         mainReveal
-        0.9s
-        ease
-        forwards;
+        0.9s ease forwards;
 
-      animation-delay: 0.08s;
-
+      animation-delay:
+        0.08s;
     }
 
 
-    body.page-ready
-    .intro-date {
-
+    body.page-ready .intro-date {
       animation:
         mainReveal
-        0.9s
-        ease
-        forwards;
+        0.9s ease forwards;
 
-      animation-delay: 0.16s;
-
+      animation-delay:
+        0.16s;
     }
 
 
-    body.page-ready
-    .intro-description {
-
+    body.page-ready .intro-description {
       animation:
         mainReveal
-        0.9s
-        ease
-        forwards;
+        0.9s ease forwards;
 
-      animation-delay: 0.24s;
-
+      animation-delay:
+        0.24s;
     }
 
 
-    body.page-ready
-    .season-card:nth-child(1) {
-
+    body.page-ready .season-card:nth-child(1) {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.38s;
-
+      animation-delay:
+        0.38s;
     }
 
 
-    body.page-ready
-    .season-card:nth-child(2) {
-
+    body.page-ready .season-card:nth-child(2) {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.49s;
-
+      animation-delay:
+        0.49s;
     }
 
 
-    body.page-ready
-    .season-card:nth-child(3) {
-
+    body.page-ready .season-card:nth-child(3) {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.60s;
-
+      animation-delay:
+        0.60s;
     }
 
 
-    body.page-ready
-    .season-card:nth-child(4) {
-
+    body.page-ready .season-card:nth-child(4) {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.71s;
-
+      animation-delay:
+        0.71s;
     }
 
 
-    body.page-ready
-    .story-hint {
-
+    body.page-ready .story-hint {
       animation:
         mainReveal
-        0.8s
-        ease
-        forwards;
+        0.8s ease forwards;
 
-      animation-delay: 0.82s;
-
+      animation-delay:
+        0.82s;
     }
 
 
     @keyframes mainReveal {
-
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
-
-    /* ========================================
-       SCROLL REVEAL
-    ======================================== */
-
     .reveal {
-
       opacity: 0;
 
       transform:
         translateY(22px);
 
       transition:
-
         opacity 1s ease,
         transform 1s ease;
-
     }
 
 
     .reveal.visible {
-
       opacity: 1;
-
-      transform:
-        translateY(0);
-
+      transform: translateY(0);
     }
 
 
@@ -1425,6 +1184,7 @@
     ======================================== */
 
     .intro {
+      position: relative;
 
       min-height: 100vh;
 
@@ -1432,35 +1192,47 @@
 
       align-items: center;
 
+      overflow: hidden;
+
       padding:
         80px 20px;
-
-
-      /*
-        눈이 그친 직후의
-        맑은 겨울 아침
-      */
 
       background:
 
         radial-gradient(
-          circle at 85% 5%,
-          rgba(245,241,249,0.85),
+          circle at 88% 5%,
+          rgba(224,214,237,0.60),
           transparent 34%
+        ),
+
+        radial-gradient(
+          circle at 10% 67%,
+          rgba(255,255,255,0.78),
+          transparent 33%
         ),
 
         linear-gradient(
           180deg,
-          #edf4f8 0%,
-          #f7f8f6 48%,
-          #f8f5ef 100%
+          #d8e8ef 0%,
+          #e7f0f4 43%,
+          #f2f3f1 73%,
+          #f8f3eb 100%
         );
+    }
 
+
+    .intro .snow-layer {
+      z-index: 2;
+    }
+
+
+    .intro > .inner {
+      position: relative;
+      z-index: 3;
     }
 
 
     .intro-label {
-
       text-align: center;
 
       font-family:
@@ -1470,13 +1242,11 @@
 
       letter-spacing: 3.5px;
 
-      color: #858b90;
-
+      color: #73848d;
     }
 
 
     .names {
-
       margin:
         24px 0 0;
 
@@ -1491,13 +1261,11 @@
 
       line-height: 1.15;
 
-      color: #353a3e;
-
+      color: #323c41;
     }
 
 
     .intro-date {
-
       margin-top: 20px;
 
       text-align: center;
@@ -1509,13 +1277,11 @@
 
       letter-spacing: 2.5px;
 
-      color: #666d71;
-
+      color: #55656d;
     }
 
 
     .intro-description {
-
       margin-top: 42px;
 
       text-align: center;
@@ -1524,18 +1290,16 @@
 
       line-height: 2;
 
-      color: #697074;
-
+      color: #5f6c72;
     }
 
 
 
     /* ========================================
-       FOUR SEASONS
+       SEASON CARDS
     ======================================== */
 
     .season-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -1544,20 +1308,18 @@
       gap: 8px;
 
       margin-top: 48px;
-
     }
 
 
     .season-card {
-
       position: relative;
 
       width: 100%;
 
-      aspect-ratio: 4 / 5;
+      aspect-ratio:
+        4 / 5;
 
       margin: 0;
-
       padding: 0;
 
       border: 0;
@@ -1569,20 +1331,16 @@
       cursor: pointer;
 
       text-align: left;
-
     }
 
 
     .season-image {
-
       position: absolute;
-
       inset: 0;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       color:
@@ -1592,109 +1350,80 @@
 
       transition:
         transform 0.6s ease;
-
     }
 
 
     .season-card:active
     .season-image {
-
       transform:
         scale(1.02);
-
     }
 
 
-    .winter
-    .season-image {
-
+    .winter .season-image {
       background:
-        #dce8ee;
-
+        #d6e5ec;
     }
 
 
-    .spring
-    .season-image {
-
+    .spring .season-image {
       background:
-        #ece7df;
-
+        #ebe4db;
     }
 
 
-    .summer
-    .season-image {
-
+    .summer .season-image {
       background:
-        #e9e0cf;
-
+        #e8decf;
     }
 
 
-    .autumn
-    .season-image {
-
+    .autumn .season-image {
       background:
-        #ddd3ca;
-
+        #dccfc6;
     }
 
 
     .season-overlay {
-
       position: absolute;
-
       inset: 0;
 
       display: flex;
 
       flex-direction: column;
-
-      justify-content:
-        flex-end;
+      justify-content: flex-end;
 
       padding: 17px;
 
       color: #fff;
 
       background:
-
         linear-gradient(
           180deg,
           transparent 38%,
           rgba(0,0,0,0.44) 100%
         );
-
     }
 
 
     .season-eng {
-
       font-family:
         var(--font-en);
 
       font-size: 17px;
 
       letter-spacing: 2px;
-
     }
 
 
     .season-kor {
-
       margin-top: 5px;
 
       font-size: 11px;
-
-      color:
-        rgba(255,255,255,0.92);
-
     }
 
 
     .season-click {
-
       margin-top: 7px;
 
       font-family:
@@ -1705,13 +1434,11 @@
       letter-spacing: 1.2px;
 
       color:
-        rgba(255,255,255,0.7);
-
+        rgba(255,255,255,0.72);
     }
 
 
     .story-hint {
-
       margin-top: 24px;
 
       text-align: center;
@@ -1723,8 +1450,7 @@
 
       letter-spacing: 2.5px;
 
-      color: #a0a5a8;
-
+      color: #8e9ba2;
     }
 
 
@@ -1734,13 +1460,11 @@
     ======================================== */
 
     .winter-again {
-
       position: relative;
 
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -1748,50 +1472,43 @@
       padding:
         95px 24px;
 
-
       background:
 
         radial-gradient(
-          circle at 16% 18%,
-          rgba(255,255,255,0.9),
-          transparent 31%
+          circle at 15% 18%,
+          rgba(255,255,255,0.83),
+          transparent 29%
         ),
 
         radial-gradient(
-          circle at 90% 15%,
-          rgba(239,235,247,0.75),
+          circle at 91% 10%,
+          rgba(218,208,236,0.55),
           transparent 38%
         ),
 
         linear-gradient(
           180deg,
-          #e9f2f6 0%,
-          #f4f7f7 52%,
-          #faf7f1 100%
+          #d6e6ed 0%,
+          #e6eff3 42%,
+          #f1f2f1 70%,
+          #f8f3eb 100%
         );
-
     }
 
 
-    .winter-again
-    .snow-layer {
-
-      z-index: 1;
-
+    .winter-again .snow-layer {
+      z-index: 2;
     }
 
 
     .winter-content {
-
       position: relative;
 
       z-index: 3;
-
     }
 
 
     .again-small {
-
       font-family:
         var(--font-en);
 
@@ -1799,13 +1516,11 @@
 
       letter-spacing: 4px;
 
-      color: #8a9196;
-
+      color: #738189;
     }
 
 
     .again-title {
-
       margin:
         20px 0 0;
 
@@ -1815,16 +1530,10 @@
       font-size: 43px;
 
       font-weight: 400;
-
-      line-height: 1.2;
-
-      color: #3f4549;
-
     }
 
 
     .again-date {
-
       margin-top: 28px;
 
       font-family:
@@ -1833,27 +1542,21 @@
       font-size: 14px;
 
       letter-spacing: 2px;
-
-      color: #565d61;
-
     }
 
 
     .again-text {
-
       margin-top: 36px;
 
       font-size: 13px;
 
       line-height: 2.1;
 
-      color: #6d7377;
-
+      color: #606d73;
     }
 
 
     .fill-winter {
-
       margin-top: 43px;
 
       font-family:
@@ -1861,12 +1564,26 @@
 
       font-size: 21px;
 
-      font-weight: 400;
-
       line-height: 1.85;
 
-      color: #52585c;
+      color: #414d53;
+    }
 
+
+
+    /* ========================================
+       COMMON SECTION
+    ======================================== */
+
+    .section-label {
+      font-family:
+        var(--font-en);
+
+      font-size: 9px;
+
+      letter-spacing: 4px;
+
+      color: #999;
     }
 
 
@@ -1876,32 +1593,14 @@
     ======================================== */
 
     .invitation {
-
       padding:
         105px 24px;
 
-      background:
-        #fff;
-
-    }
-
-
-    .section-label {
-
-      font-family:
-        var(--font-en);
-
-      font-size: 9px;
-
-      letter-spacing: 4px;
-
-      color: #999;
-
+      background: #fff;
     }
 
 
     .invitation-title {
-
       margin-top: 22px;
 
       font-family:
@@ -1909,18 +1608,14 @@
 
       font-size: 27px;
 
-      font-weight: 400;
-
       line-height: 1.55;
 
       letter-spacing:
         -0.03em;
-
     }
 
 
     .invitation-text {
-
       margin-top: 39px;
 
       font-size: 13px;
@@ -1928,7 +1623,6 @@
       line-height: 2.2;
 
       color: #666;
-
     }
 
 
@@ -1938,30 +1632,25 @@
     ======================================== */
 
     .wedding-info {
-
       padding:
         100px 24px;
 
       background:
         #f5f3ee;
-
     }
 
 
     .wedding-date-big {
-
       margin-top: 22px;
 
       font-family:
         var(--font-en);
 
       font-size: 31px;
-
     }
 
 
     .wedding-time {
-
       margin-top: 9px;
 
       font-family:
@@ -1972,7 +1661,6 @@
       letter-spacing: 1.6px;
 
       color: #777;
-
     }
 
 
@@ -1982,9 +1670,7 @@
     ======================================== */
 
     .wedding-calendar {
-
       width: 100%;
-
       max-width: 350px;
 
       margin:
@@ -1992,14 +1678,10 @@
 
       padding:
         0 8px 6px;
-
-      text-align: center;
-
     }
 
 
     .calendar-month {
-
       margin-bottom: 34px;
 
       font-family:
@@ -2007,25 +1689,20 @@
 
       font-size: 15px;
 
-      color:
-        #bd7b83;
-
+      color: #b66e78;
     }
 
 
     .calendar-weekdays,
     .calendar-days {
-
       display: grid;
 
       grid-template-columns:
         repeat(7, 1fr);
-
     }
 
 
     .calendar-weekdays {
-
       margin-bottom: 22px;
 
       font-size: 12px;
@@ -2033,21 +1710,16 @@
       font-weight: 500;
 
       color: #555;
-
     }
 
 
     .calendar-weekdays
     span:first-child {
-
-      color:
-        #c9838b;
-
+      color: #c07a83;
     }
 
 
     .calendar-days {
-
       row-gap: 17px;
 
       font-size: 12px;
@@ -2055,12 +1727,10 @@
       font-weight: 300;
 
       color: #666;
-
     }
 
 
     .calendar-day {
-
       position: relative;
 
       min-height: 28px;
@@ -2068,37 +1738,24 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
     }
 
 
     .calendar-day.sunday {
-
       color: #888;
-
     }
 
 
-
-    /* wedding day */
-
     .wedding-day {
-
-      position: relative;
-
       color: #fff;
-
     }
 
 
     .calendar-heart {
-
       position: absolute;
 
       left: 50%;
-
       top: 50%;
 
       z-index: 1;
@@ -2116,12 +1773,10 @@
 
       color:
         var(--calendar-heart);
-
     }
 
 
     .calendar-heart-number {
-
       position: relative;
 
       z-index: 2;
@@ -2133,7 +1788,6 @@
       font-size: 11px;
 
       font-weight: 500;
-
     }
 
 
@@ -2143,7 +1797,6 @@
     ======================================== */
 
     .venue {
-
       margin-top: 47px;
 
       padding:
@@ -2154,22 +1807,18 @@
 
       border-bottom:
         1px solid #d5d2cc;
-
     }
 
 
     .venue-name {
-
       font-family:
         var(--font-ko-title);
 
       font-size: 17px;
-
     }
 
 
     .venue-address {
-
       margin-top: 8px;
 
       font-size: 12px;
@@ -2177,7 +1826,6 @@
       line-height: 1.8;
 
       color: #777;
-
     }
 
 
@@ -2187,7 +1835,6 @@
     ======================================== */
 
     .map-buttons {
-
       display: grid;
 
       grid-template-columns:
@@ -2196,24 +1843,19 @@
       gap: 9px;
 
       margin-top: 25px;
-
     }
 
 
     .map-button {
-
       min-height: 48px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       border:
         1px solid #cac7c1;
-
-      background: transparent;
 
       font-family:
         var(--font-en);
@@ -2221,7 +1863,6 @@
       font-size: 10px;
 
       letter-spacing: 0.8px;
-
     }
 
 
@@ -2231,7 +1872,6 @@
     ======================================== */
 
     .parking-wrap {
-
       margin-top: 18px;
 
       border-top:
@@ -2239,12 +1879,10 @@
 
       border-bottom:
         1px solid #d7d3cc;
-
     }
 
 
     .parking-toggle {
-
       width: 100%;
 
       min-height: 60px;
@@ -2252,9 +1890,7 @@
       display: flex;
 
       align-items: center;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       padding: 0;
 
@@ -2263,61 +1899,49 @@
       background: transparent;
 
       cursor: pointer;
-
     }
 
 
     .parking-toggle-left {
-
       text-align: left;
-
     }
 
 
     .parking-title {
-
       font-family:
         var(--font-en);
 
       font-size: 11px;
 
       letter-spacing: 1.4px;
-
     }
 
 
     .parking-subtitle {
-
       margin-top: 4px;
 
       font-size: 11px;
 
       color: #888;
-
     }
 
 
     .parking-plus {
-
       font-size: 21px;
 
       transition:
         transform 0.3s ease;
-
     }
 
 
     .parking-wrap.open
     .parking-plus {
-
       transform:
         rotate(45deg);
-
     }
 
 
     .parking-content {
-
       max-height: 0;
 
       overflow: hidden;
@@ -2325,56 +1949,40 @@
       opacity: 0;
 
       transition:
-
-        max-height
-        0.55s ease,
-
-        opacity
-        0.4s ease;
-
+        max-height 0.55s ease,
+        opacity 0.4s ease;
     }
 
 
     .parking-wrap.open
     .parking-content {
-
       max-height: 600px;
 
       opacity: 1;
-
     }
 
 
     .parking-content-inner {
-
       padding-bottom: 28px;
-
     }
 
 
     .parking-highlight {
-
       margin:
         4px 0 24px;
 
       padding:
         12px 0 18px;
 
-      background: transparent;
-
       font-size: 13px;
 
       line-height: 1.9;
 
-      text-align: center;
-
       color: #666;
-
     }
 
 
     .parking-row {
-
       display: grid;
 
       grid-template-columns:
@@ -2389,23 +1997,18 @@
       line-height: 1.7;
 
       text-align: left;
-
     }
 
 
     .parking-label {
-
       font-weight: 600;
 
       color: #555;
-
     }
 
 
     .parking-value {
-
       color: #777;
-
     }
 
 
@@ -2415,31 +2018,26 @@
     ======================================== */
 
     .action-section {
-
       margin-top: 52px;
 
       padding-top: 43px;
 
       border-top:
         1px solid #d5d2cc;
-
     }
 
 
     .action-title {
-
       margin-top: 16px;
 
       font-family:
         var(--font-ko-title);
 
       font-size: 23px;
-
     }
 
 
     .action-description {
-
       margin-top: 15px;
 
       font-size: 12px;
@@ -2447,12 +2045,10 @@
       line-height: 1.9;
 
       color: #777;
-
     }
 
 
     .action-button {
-
       width: 100%;
 
       min-height: 52px;
@@ -2467,7 +2063,6 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
@@ -2477,35 +2072,30 @@
     ======================================== */
 
     .guest-snap {
-
       padding:
         105px 24px;
 
       background:
-
         linear-gradient(
           180deg,
-          #edf3f6,
-          #f6f5f1
+          #e7f0f4,
+          #f1f3f2 65%,
+          #f8f4ed
         );
-
     }
 
 
     .guest-title {
-
       margin-top: 20px;
 
       font-family:
         var(--font-en);
 
       font-size: 34px;
-
     }
 
 
     .guest-text {
-
       margin-top: 28px;
 
       font-size: 13px;
@@ -2513,12 +2103,10 @@
       line-height: 2;
 
       color: #666;
-
     }
 
 
     .guest-button {
-
       width: 100%;
 
       min-height: 54px;
@@ -2527,14 +2115,651 @@
 
       border: 0;
 
-      background: #3f4346;
+      background: #3d484e;
 
       color: #fff;
 
       font-size: 12px;
 
       cursor: pointer;
+    }
 
+
+
+    /* ========================================
+       CHARACTER GUESTBOOK
+    ======================================== */
+
+    .character-guestbook {
+      padding:
+        105px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f8f4ed 0%,
+          #edf3f5 52%,
+          #dbe9ef 100%
+        );
+    }
+
+
+    .guestbook-title {
+      margin-top: 19px;
+
+      font-family:
+        var(--font-en);
+
+      font-size: 34px;
+
+      font-weight: 400;
+    }
+
+
+    .guestbook-description {
+      margin-top: 24px;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #657178;
+    }
+
+
+
+    /* 눈밭 */
+
+    .guestbook-board {
+      position: relative;
+
+      width: 100%;
+      max-width: 500px;
+
+      height: 380px;
+
+      margin:
+        39px auto 0;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(111,139,153,0.16);
+
+      border-radius:
+        22px;
+
+      background:
+
+        radial-gradient(
+          circle at 20% 18%,
+          rgba(255,255,255,0.95),
+          transparent 24%
+        ),
+
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(228,220,240,0.52),
+          transparent 33%
+        ),
+
+        linear-gradient(
+          180deg,
+          #d2e5ee 0%,
+          #e5eff3 57%,
+          #f9fafa 58%,
+          #f6f5f0 100%
+        );
+
+      box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,0.65);
+    }
+
+
+    .guestbook-board::before {
+      content: "";
+
+      position: absolute;
+
+      left: -10%;
+      right: -10%;
+      bottom: -55px;
+
+      height: 180px;
+
+      border-radius:
+        50% 50% 0 0;
+
+      background:
+        rgba(255,255,255,0.94);
+
+      transform:
+        rotate(-2deg);
+    }
+
+
+    .guestbook-board::after {
+      content: "";
+
+      position: absolute;
+
+      left: 30%;
+      right: -15%;
+      bottom: -90px;
+
+      height: 170px;
+
+      border-radius:
+        50% 50% 0 0;
+
+      background:
+        rgba(237,243,244,0.92);
+
+      transform:
+        rotate(5deg);
+    }
+
+
+
+    /* 메시지 말풍선 */
+
+    .guestbook-message-box {
+      position: absolute;
+
+      top: 24px;
+      left: 50%;
+
+      z-index: 6;
+
+      width:
+        calc(100% - 44px);
+
+      max-width: 330px;
+
+      min-height: 65px;
+
+      padding:
+        14px 17px;
+
+      transform:
+        translateX(-50%);
+
+      border:
+        1px solid
+        rgba(94,120,133,0.14);
+
+      border-radius: 14px;
+
+      background:
+        rgba(255,255,255,0.82);
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
+      color: #5d686e;
+
+      font-size: 11px;
+
+      line-height: 1.75;
+
+      text-align: center;
+
+      box-shadow:
+        0 7px 20px
+        rgba(78,105,118,0.06);
+    }
+
+
+    .guestbook-message-name {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-weight: 600;
+
+      color: #414c51;
+    }
+
+
+
+    /* 캐릭터 배치 */
+
+    .guestbook-entries {
+      position: absolute;
+
+      z-index: 5;
+
+      left: 14px;
+      right: 14px;
+      bottom: 24px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      align-items: end;
+
+      gap:
+        10px 4px;
+    }
+
+
+    .guestbook-entry {
+      min-width: 0;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      text-align: center;
+    }
+
+
+    .guestbook-entry-name {
+      display: block;
+
+      max-width: 62px;
+
+      margin:
+        3px auto 0;
+
+      overflow: hidden;
+
+      color: #5a666c;
+
+      font-size: 9px;
+
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* ========================================
+       CSS CHARACTER
+    ======================================== */
+
+    .avatar {
+      position: relative;
+
+      width: 44px;
+      height: 55px;
+
+      display: inline-block;
+
+      vertical-align: bottom;
+
+      --face: #fff;
+      --body: #dbe8ee;
+      --line: #5c6569;
+    }
+
+
+    .avatar-head {
+      position: absolute;
+
+      z-index: 3;
+
+      left: 8px;
+      top: 10px;
+
+      width: 28px;
+      height: 27px;
+
+      border:
+        1px solid
+        rgba(75,90,98,0.10);
+
+      border-radius:
+        48% 48% 46% 46%;
+
+      background:
+        var(--face);
+    }
+
+
+    .avatar-body {
+      position: absolute;
+
+      z-index: 2;
+
+      left: 6px;
+      bottom: 1px;
+
+      width: 32px;
+      height: 27px;
+
+      border:
+        1px solid
+        rgba(75,90,98,0.08);
+
+      border-radius:
+        52% 52% 38% 38%;
+
+      background:
+        var(--body);
+    }
+
+
+    .avatar-eye {
+      position: absolute;
+
+      top: 11px;
+
+      width: 2.5px;
+      height: 2.5px;
+
+      border-radius: 50%;
+
+      background:
+        var(--line);
+    }
+
+
+    .avatar-eye.left {
+      left: 8px;
+    }
+
+
+    .avatar-eye.right {
+      right: 8px;
+    }
+
+
+    .avatar-nose {
+      position: absolute;
+
+      left: 50%;
+      top: 16px;
+
+      width: 3px;
+      height: 2px;
+
+      border-radius: 50%;
+
+      background:
+        var(--line);
+
+      transform:
+        translateX(-50%);
+    }
+
+
+
+    /* bunny */
+
+    .avatar-bunny {
+      --face: #fafafa;
+      --body: #d9e8ef;
+    }
+
+
+    .avatar-bunny::before,
+    .avatar-bunny::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 1;
+
+      top: 0;
+
+      width: 9px;
+      height: 22px;
+
+      border-radius:
+        50% 50% 42% 42%;
+
+      background: #fafafa;
+    }
+
+
+    .avatar-bunny::before {
+      left: 10px;
+
+      transform:
+        rotate(-8deg);
+    }
+
+
+    .avatar-bunny::after {
+      right: 10px;
+
+      transform:
+        rotate(8deg);
+    }
+
+
+
+    /* bear */
+
+    .avatar-bear {
+      --face: #f1e5d6;
+      --body: #dbc8b7;
+    }
+
+
+    .avatar-bear::before,
+    .avatar-bear::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 1;
+
+      top: 7px;
+
+      width: 11px;
+      height: 11px;
+
+      border-radius: 50%;
+
+      background: #e5d2bf;
+    }
+
+
+    .avatar-bear::before {
+      left: 6px;
+    }
+
+
+    .avatar-bear::after {
+      right: 6px;
+    }
+
+
+
+    /* cat */
+
+    .avatar-cat {
+      --face: #e1e5e8;
+      --body: #cbd4da;
+    }
+
+
+    .avatar-cat::before,
+    .avatar-cat::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 1;
+
+      top: 6px;
+
+      width: 12px;
+      height: 12px;
+
+      background: #dce2e6;
+
+      transform:
+        rotate(45deg);
+    }
+
+
+    .avatar-cat::before {
+      left: 7px;
+    }
+
+
+    .avatar-cat::after {
+      right: 7px;
+    }
+
+
+
+    /* fox */
+
+    .avatar-fox {
+      --face: #e8cfc3;
+      --body: #c99582;
+    }
+
+
+    .avatar-fox::before,
+    .avatar-fox::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 1;
+
+      top: 6px;
+
+      width: 13px;
+      height: 13px;
+
+      background: #d8a994;
+
+      transform:
+        rotate(45deg);
+    }
+
+
+    .avatar-fox::before {
+      left: 6px;
+    }
+
+
+    .avatar-fox::after {
+      right: 6px;
+    }
+
+
+
+    /* snowman */
+
+    .avatar-snowman {
+      --face: #fff;
+      --body: #f5f7f7;
+    }
+
+
+    .avatar-snowman
+    .avatar-body {
+      width: 34px;
+      height: 30px;
+
+      left: 5px;
+
+      border-radius: 50%;
+    }
+
+
+
+    /* ========================================
+       CHARACTER SELECTOR
+    ======================================== */
+
+    .character-options {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 7px;
+
+      margin-top: 13px;
+    }
+
+
+    .character-option {
+      position: relative;
+
+      min-width: 0;
+
+      padding:
+        9px 2px 8px;
+
+      border:
+        1px solid #ddd8d1;
+
+      border-radius: 10px;
+
+      background: #fff;
+
+      cursor: pointer;
+    }
+
+
+    .character-option.active {
+      border-color: #879ba5;
+
+      background:
+        #edf4f7;
+    }
+
+
+    .character-option-label {
+      display: block;
+
+      margin-top: 3px;
+
+      font-size: 9px;
+
+      color: #777;
+    }
+
+
+    .guestbook-add-button {
+      width: 100%;
+
+      min-height: 54px;
+
+      margin-top: 25px;
+
+      border: 0;
+
+      background:
+        #3d494f;
+
+      color: #fff;
+
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+
+
+    .guestbook-preview-note {
+      margin-top: 14px;
+
+      color: #839096;
+
+      font-size: 10px;
+
+      line-height: 1.7;
     }
 
 
@@ -2544,9 +2769,7 @@
     ======================================== */
 
     .season-page {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 1500;
@@ -2559,51 +2782,26 @@
 
       -webkit-overflow-scrolling:
         touch;
-
     }
 
 
     .season-page.active {
-
       display: block;
-
-      animation:
-        detailShow
-        0.4s
-        ease;
-
-    }
-
-
-    @keyframes detailShow {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-
     }
 
 
     .season-page-inner {
-
       width: 100%;
-
       max-width: 540px;
 
       margin: 0 auto;
 
       padding:
         22px 22px 100px;
-
     }
 
 
     .season-back {
-
       min-height: 44px;
 
       padding: 0;
@@ -2620,21 +2818,17 @@
       letter-spacing: 1.4px;
 
       cursor: pointer;
-
     }
 
 
     .season-page-header {
-
       margin-top: 42px;
 
       text-align: center;
-
     }
 
 
     .season-page-small {
-
       font-family:
         var(--font-en);
 
@@ -2643,12 +2837,10 @@
       letter-spacing: 4px;
 
       color: #999;
-
     }
 
 
     .season-page-title {
-
       margin-top: 13px;
 
       font-family:
@@ -2657,51 +2849,31 @@
       font-size: 44px;
 
       font-weight: 400;
-
     }
 
 
     .season-page-main-photo {
-
       width: 100%;
 
-      aspect-ratio: 4 / 5;
+      aspect-ratio:
+        4 / 5;
 
       margin-top: 42px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
-      overflow: hidden;
 
       background: #e3e3e3;
 
       color: #999;
 
       font-size: 11px;
-
-    }
-
-
-    .season-page-main-photo img,
-    .mini-photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      display: block;
-
-      object-fit: cover;
-
     }
 
 
     .season-page-text {
-
       margin-top: 34px;
 
       text-align: center;
@@ -2711,12 +2883,10 @@
       line-height: 2.1;
 
       color: #666;
-
     }
 
 
     .mini-gallery {
-
       display: grid;
 
       grid-template-columns:
@@ -2725,33 +2895,26 @@
       gap: 7px;
 
       margin-top: 35px;
-
     }
 
 
     .mini-photo {
-
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
-      overflow: hidden;
 
       background: #e5e5e5;
 
       color: #aaa;
 
       font-size: 10px;
-
     }
 
 
     .season-end {
-
       margin-top: 50px;
 
       text-align: center;
@@ -2764,39 +2927,26 @@
       letter-spacing: 2px;
 
       color: #aaa;
-
     }
 
 
     #season-winter {
-
-      background:
-        #eef4f7;
-
+      background: #edf3f6;
     }
 
 
     #season-spring {
-
-      background:
-        #f5f2eb;
-
+      background: #f5f2eb;
     }
 
 
     #season-summer {
-
-      background:
-        #f4efe4;
-
+      background: #f4efe4;
     }
 
 
     #season-autumn {
-
-      background:
-        #eee8e1;
-
+      background: #eee8e1;
     }
 
 
@@ -2806,9 +2956,7 @@
     ======================================== */
 
     .modal {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 3000;
@@ -2816,28 +2964,22 @@
       display: none;
 
       align-items: flex-end;
-
       justify-content: center;
 
       padding: 20px;
 
       background:
         rgba(0,0,0,0.38);
-
     }
 
 
     .modal.active {
-
       display: flex;
-
     }
 
 
     .modal-panel {
-
       width: 100%;
-
       max-width: 520px;
 
       max-height: 88vh;
@@ -2852,24 +2994,20 @@
 
       background:
         #faf9f6;
-
     }
 
 
     .modal-header {
-
       display: flex;
 
-      justify-content:
-        space-between;
+      align-items: flex-start;
+      justify-content: space-between;
 
       gap: 20px;
-
     }
 
 
     .modal-label {
-
       font-family:
         var(--font-en);
 
@@ -2878,26 +3016,21 @@
       letter-spacing: 3px;
 
       color: #999;
-
     }
 
 
     .modal-title {
-
       margin-top: 9px;
 
       font-family:
         var(--font-ko-title);
 
       font-size: 24px;
-
     }
 
 
     .modal-close {
-
       width: 42px;
-
       height: 42px;
 
       border: 0;
@@ -2907,7 +3040,6 @@
       font-size: 25px;
 
       cursor: pointer;
-
     }
 
 
@@ -2917,14 +3049,11 @@
     ======================================== */
 
     .form-section {
-
       margin-top: 30px;
-
     }
 
 
     .form-label {
-
       display: block;
 
       margin-bottom: 9px;
@@ -2932,41 +3061,34 @@
       font-size: 11px;
 
       color: #666;
-
     }
 
 
     .choice-row {
-
       display: grid;
 
       grid-template-columns:
         1fr 1fr;
 
       gap: 8px;
-
     }
 
 
     .choice-input {
-
       position: absolute;
 
       opacity: 0;
 
       pointer-events: none;
-
     }
 
 
     .choice-label {
-
       min-height: 46px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       border:
@@ -2977,31 +3099,23 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
     .choice-input:checked
     + .choice-label {
-
       border-color: #555;
 
       background: #444;
 
       color: #fff;
-
     }
 
 
     .text-input,
-    .select-input {
-
+    .select-input,
+    .textarea-input {
       width: 100%;
-
-      min-height: 48px;
-
-      padding:
-        0 13px;
 
       border:
         1px solid #d0ccc5;
@@ -3013,12 +3127,31 @@
       color: #333;
 
       font-size: 13px;
+    }
 
+
+    .text-input,
+    .select-input {
+      min-height: 48px;
+
+      padding:
+        0 13px;
+    }
+
+
+    .textarea-input {
+      min-height: 95px;
+
+      padding:
+        13px;
+
+      resize: none;
+
+      line-height: 1.7;
     }
 
 
     .submit-button {
-
       width: 100%;
 
       min-height: 54px;
@@ -3034,22 +3167,6 @@
       font-size: 12px;
 
       cursor: pointer;
-
-    }
-
-
-    .form-note {
-
-      margin-top: 13px;
-
-      text-align: center;
-
-      font-size: 10px;
-
-      line-height: 1.7;
-
-      color: #999;
-
     }
 
 
@@ -3059,7 +3176,6 @@
     ======================================== */
 
     .account-tabs {
-
       display: grid;
 
       grid-template-columns:
@@ -3068,12 +3184,10 @@
       gap: 7px;
 
       margin-top: 28px;
-
     }
 
 
     .account-tab {
-
       min-height: 45px;
 
       border:
@@ -3081,93 +3195,73 @@
 
       background: transparent;
 
-      color: #555;
-
       cursor: pointer;
-
     }
 
 
     .account-tab.active {
-
       background: #444;
 
       border-color: #444;
 
       color: #fff;
-
     }
 
 
     .account-group {
-
       display: none;
 
       margin-top: 25px;
-
     }
 
 
     .account-group.active {
-
       display: block;
-
     }
 
 
     .account-card {
-
       padding:
         20px 0;
 
       border-bottom:
         1px solid #dedad4;
-
     }
 
 
     .account-card:first-child {
-
       border-top:
         1px solid #dedad4;
-
     }
 
 
     .account-role {
-
       font-size: 10px;
 
       color: #999;
-
     }
 
 
     .account-name {
-
       margin-top: 4px;
 
       font-family:
         var(--font-ko-title);
 
       font-size: 14px;
-
     }
 
 
     .account-number {
-
       margin-top: 10px;
 
       font-size: 12px;
 
       color: #666;
-
     }
 
 
     .account-copy {
-
       margin-top: 12px;
 
       min-height: 38px;
@@ -3182,10 +3276,56 @@
 
       font-size: 11px;
 
-      color: #555;
-
       cursor: pointer;
+    }
 
+
+
+    /* ========================================
+       COPY TOAST
+    ======================================== */
+
+    .toast {
+      position: fixed;
+
+      z-index: 12000;
+
+      left: 50%;
+      bottom: 35px;
+
+      padding:
+        11px 18px;
+
+      transform:
+        translate(-50%, 15px);
+
+      border-radius: 30px;
+
+      background:
+        rgba(43,48,51,0.91);
+
+      color: #fff;
+
+      font-size: 11px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    .toast.show {
+      opacity: 1;
+
+      visibility: visible;
+
+      transform:
+        translate(-50%, 0);
     }
 
 
@@ -3195,7 +3335,6 @@
     ======================================== */
 
     footer {
-
       padding:
         70px 20px;
 
@@ -3213,7 +3352,6 @@
       letter-spacing: 2px;
 
       line-height: 2;
-
     }
 
 
@@ -3224,137 +3362,100 @@
 
     @media (max-width: 420px) {
 
-
       .opening-inner {
-
         padding-left: 14px;
-
         padding-right: 14px;
-
       }
 
 
       .letter-small {
-
         margin-bottom: 24px;
-
       }
 
 
       .envelope-stage {
-
         --env-w: 260px;
-
         --env-h: 163px;
 
         --photo-w: 163px;
-
         --photo-h: 204px;
 
         --photo-bottom: -50px;
-
         --photo-rise: -137px;
 
         --window-open-height: 320px;
 
-
         width: 280px;
-
         height: 325px;
-
       }
 
 
       .envelope-flap {
-
         height: 101px;
-
       }
 
 
       .envelope-seal {
-
         top: 64px;
 
         font-size: 27px;
-
       }
 
 
       .opening-names {
-
         font-size: 26px;
-
       }
 
 
       .intro {
-
         padding-left: 18px;
-
         padding-right: 18px;
-
       }
 
 
       .names {
-
         font-size: 35px;
-
-      }
-
-
-      .season-overlay {
-
-        padding: 14px;
-
       }
 
 
       .again-title {
-
         font-size: 39px;
-
       }
 
 
       .invitation-title {
-
         font-size: 25px;
-
       }
 
 
       .wedding-calendar {
-
         max-width: 330px;
 
         padding-left: 2px;
-
         padding-right: 2px;
-
-      }
-
-
-      .calendar-days {
-
-        row-gap: 16px;
-
       }
 
 
       .parking-row {
-
         grid-template-columns:
           74px 1fr;
-
       }
 
 
       .modal {
-
         padding: 10px;
+      }
 
+
+      .guestbook-entries {
+        grid-template-columns:
+          repeat(5, 1fr);
+      }
+
+
+      .avatar {
+        transform:
+          scale(0.92);
       }
 
     }
@@ -3368,36 +3469,13 @@
     @media
     (prefers-reduced-motion: reduce) {
 
-
-      *,
-      *::before,
-      *::after {
-
-        animation-duration:
-          0.01ms !important;
-
-        animation-iteration-count:
-          1 !important;
-
-        transition-duration:
-          0.01ms !important;
-
-      }
-
-
       .snow-layer {
-
         display: none;
-
       }
-
 
       .reveal {
-
         opacity: 1;
-
         transform: none;
-
       }
 
     }
@@ -3412,7 +3490,7 @@
 
 
   <!-- ========================================
-       ENVELOPE OPENING
+       OPENING
   ======================================== -->
 
   <div
@@ -3420,14 +3498,10 @@
     id="opening"
   >
 
-
-    <!-- 은은한 눈 -->
-
     <div
       class="snow-layer"
       id="openingSnow"
     ></div>
-
 
 
     <button
@@ -3439,127 +3513,74 @@
     </button>
 
 
-
     <div class="opening-inner">
 
-
       <div class="letter-small">
-
         A LETTER FOR YOU
-
       </div>
-
 
 
       <div class="envelope-stage">
 
-
         <div class="envelope">
-
 
           <div class="envelope-back"></div>
 
 
-
-          <!--
-            실제 사진 넣을 때:
-
-            WEDDING PHOTO 글자를 지우고
-
-            <img
-              src="images/opening.jpg"
-              alt="Gahyun and Jinchan"
-            >
-
-            로 변경
-          -->
-
           <div class="photo-window">
-
 
             <div class="letter-photo">
 
-
               <div class="letter-photo-inner">
-
                 WEDDING PHOTO
-
               </div>
-
 
             </div>
 
-
           </div>
-
 
 
           <div class="envelope-flap"></div>
 
 
-
           <div class="envelope-front">
-
-
             <div class="envelope-front-left"></div>
-
-
             <div class="envelope-front-right"></div>
-
-
             <div class="envelope-front-bottom"></div>
-
-
           </div>
-
 
 
           <div class="envelope-seal">
-
             ♥
-
           </div>
-
 
         </div>
 
-
       </div>
-
 
 
       <div class="opening-text">
 
-
         <div class="opening-names">
-
           Gahyun & Jinchan
-
         </div>
-
 
         <div class="opening-date">
-
           JANUARY 30, 2027
-
         </div>
-
 
         <div class="opening-line"></div>
 
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
 
   <!-- ========================================
-       WEDDING INFO SHORTCUT
+       SHORTCUT
   ======================================== -->
 
   <button
@@ -3567,15 +3588,13 @@
     class="wedding-info-shortcut"
     id="weddingShortcut"
   >
-
     WEDDING INFO →
-
   </button>
 
 
 
   <!-- ========================================
-       MAIN
+       INTRO
   ======================================== -->
 
   <section
@@ -3583,16 +3602,17 @@
     id="main"
   >
 
+    <div
+      class="snow-layer"
+      id="introSnow"
+    ></div>
+
 
     <div class="inner">
 
-
       <div class="intro-label">
-
         WINTER · SPRING · SUMMER · AUTUMN · WINTER
-
       </div>
-
 
 
       <h1 class="names">
@@ -3610,17 +3630,12 @@
       </h1>
 
 
-
       <div class="intro-date">
-
         JANUARY 30, 2027
-
       </div>
 
 
-
       <div class="intro-description">
-
 
         우리의 이야기가 시작된 3년 전 겨울,
 
@@ -3632,9 +3647,7 @@
 
         다시 겨울을 맞이합니다.
 
-
         <br><br>
-
 
         그리고 이 겨울,
 
@@ -3642,18 +3655,11 @@
 
         우리는 새로운 계절을 시작합니다.
 
-
       </div>
 
 
 
-      <!-- ========================================
-           SEASONS
-      ======================================== -->
-
       <div class="season-grid">
-
-
 
         <button
           type="button"
@@ -3661,43 +3667,27 @@
           data-season="winter"
         >
 
-
           <div class="season-image">
-
             겨울 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               WINTER
-
             </div>
-
 
             <div class="season-kor">
-
               우리의 시작
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
-
 
           </div>
 
-
         </button>
-
 
 
         <button
@@ -3706,43 +3696,27 @@
           data-season="spring"
         >
 
-
           <div class="season-image">
-
             봄 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               SPRING
-
             </div>
-
 
             <div class="season-kor">
-
               피어나는 우리
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
-
 
           </div>
 
-
         </button>
-
 
 
         <button
@@ -3751,43 +3725,27 @@
           data-season="summer"
         >
 
-
           <div class="season-image">
-
             여름 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               SUMMER
-
             </div>
-
 
             <div class="season-kor">
-
               빛나는 시간
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
-
 
           </div>
 
-
         </button>
-
 
 
         <button
@@ -3796,57 +3754,36 @@
           data-season="autumn"
         >
 
-
           <div class="season-image">
-
             가을 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               AUTUMN
-
             </div>
-
 
             <div class="season-kor">
-
               깊어진 시간
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
-
 
           </div>
 
-
         </button>
 
-
       </div>
-
 
 
       <div class="story-hint">
-
         TAP EACH SEASON TO SEE OUR STORY
-
       </div>
 
-
     </div>
-
 
   </section>
 
@@ -3858,43 +3795,30 @@
 
   <section class="winter-again reveal">
 
-
     <div
       class="snow-layer"
       id="winterSnow"
     ></div>
 
 
-
     <div class="inner center winter-content">
 
-
       <div class="again-small">
-
         AND WINTER AGAIN
-
       </div>
-
 
 
       <h2 class="again-title">
-
         Our Winter
-
       </h2>
 
 
-
       <div class="again-date">
-
         JANUARY 30, 2027
-
       </div>
 
 
-
       <div class="again-text">
-
 
         우리의 이야기가 시작된 겨울에서
 
@@ -3906,13 +3830,10 @@
 
         다시 겨울을 맞이합니다.
 
-
       </div>
 
 
-
       <div class="fill-winter">
-
 
         우리의 겨울을
 
@@ -3920,12 +3841,9 @@
 
         함께 채워주세요.
 
-
       </div>
 
-
     </div>
-
 
   </section>
 
@@ -3937,40 +3855,27 @@
 
   <section class="invitation reveal">
 
-
     <div class="inner center">
 
-
       <div class="section-label">
-
         INVITATION
-
       </div>
 
 
-
       <h2 class="invitation-title">
-
         소중한 분들을 초대합니다
-
       </h2>
-
 
 
       <div class="invitation-text">
 
-
         뒤돌아보면 함께한 일상 속에 행복이 있었습니다.
 
-
         <br><br>
-
 
         풀리지 않는 고민도 함께 나누고 답을 찾겠습니다.
 
-
         <br><br>
-
 
         이제 사랑과 믿음으로 한 가정을 이루어
 
@@ -3978,9 +3883,7 @@
 
         서로를 너그러이 보듬으며 살아가려 합니다.
 
-
         <br><br>
-
 
         중요한 이 약속의 자리에 함께하시어
 
@@ -3988,12 +3891,9 @@
 
         저희의 앞날을 축복해 주세요.
 
-
       </div>
 
-
     </div>
-
 
   </section>
 
@@ -4008,268 +3908,122 @@
     id="wedding"
   >
 
-
     <div class="inner center">
 
-
       <div class="section-label">
-
         WEDDING DAY
-
       </div>
-
 
 
       <div class="wedding-date-big">
-
         January 30, 2027
-
       </div>
-
 
 
       <div class="wedding-time">
-
         SATURDAY · 5:00 PM
-
       </div>
 
 
 
-      <!-- ========================================
-           CALENDAR
-      ======================================== -->
+      <!-- CALENDAR -->
 
       <div class="wedding-calendar">
 
-
         <div class="calendar-month">
-
           1월
-
         </div>
-
 
 
         <div class="calendar-weekdays">
 
-
           <span>일</span>
-
           <span>월</span>
-
           <span>화</span>
-
           <span>수</span>
-
           <span>목</span>
-
           <span>금</span>
-
           <span>토</span>
 
-
         </div>
-
 
 
         <div class="calendar-days">
 
-
-          <!-- 1 week -->
-
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
           <span class="calendar-day"></span>
 
-          <span class="calendar-day"></span>
+          <span class="calendar-day">1</span>
+          <span class="calendar-day">2</span>
 
-          <span class="calendar-day"></span>
+          <span class="calendar-day sunday">3</span>
+          <span class="calendar-day">4</span>
+          <span class="calendar-day">5</span>
+          <span class="calendar-day">6</span>
+          <span class="calendar-day">7</span>
+          <span class="calendar-day">8</span>
+          <span class="calendar-day">9</span>
 
-          <span class="calendar-day"></span>
+          <span class="calendar-day sunday">10</span>
+          <span class="calendar-day">11</span>
+          <span class="calendar-day">12</span>
+          <span class="calendar-day">13</span>
+          <span class="calendar-day">14</span>
+          <span class="calendar-day">15</span>
+          <span class="calendar-day">16</span>
 
-          <span class="calendar-day"></span>
+          <span class="calendar-day sunday">17</span>
+          <span class="calendar-day">18</span>
+          <span class="calendar-day">19</span>
+          <span class="calendar-day">20</span>
+          <span class="calendar-day">21</span>
+          <span class="calendar-day">22</span>
+          <span class="calendar-day">23</span>
 
+          <span class="calendar-day sunday">24</span>
+          <span class="calendar-day">25</span>
+          <span class="calendar-day">26</span>
+          <span class="calendar-day">27</span>
+          <span class="calendar-day">28</span>
+          <span class="calendar-day">29</span>
 
-          <span class="calendar-day">
-            1
-          </span>
-
-
-          <span class="calendar-day">
-            2
-          </span>
-
-
-
-          <span class="calendar-day sunday">
-            3
-          </span>
-
-          <span class="calendar-day">
-            4
-          </span>
-
-          <span class="calendar-day">
-            5
-          </span>
-
-          <span class="calendar-day">
-            6
-          </span>
-
-          <span class="calendar-day">
-            7
-          </span>
-
-          <span class="calendar-day">
-            8
-          </span>
-
-          <span class="calendar-day">
-            9
-          </span>
-
-
-
-          <span class="calendar-day sunday">
-            10
-          </span>
-
-          <span class="calendar-day">
-            11
-          </span>
-
-          <span class="calendar-day">
-            12
-          </span>
-
-          <span class="calendar-day">
-            13
-          </span>
-
-          <span class="calendar-day">
-            14
-          </span>
-
-          <span class="calendar-day">
-            15
-          </span>
-
-          <span class="calendar-day">
-            16
-          </span>
-
-
-
-          <span class="calendar-day sunday">
-            17
-          </span>
-
-          <span class="calendar-day">
-            18
-          </span>
-
-          <span class="calendar-day">
-            19
-          </span>
-
-          <span class="calendar-day">
-            20
-          </span>
-
-          <span class="calendar-day">
-            21
-          </span>
-
-          <span class="calendar-day">
-            22
-          </span>
-
-          <span class="calendar-day">
-            23
-          </span>
-
-
-
-          <span class="calendar-day sunday">
-            24
-          </span>
-
-          <span class="calendar-day">
-            25
-          </span>
-
-          <span class="calendar-day">
-            26
-          </span>
-
-          <span class="calendar-day">
-            27
-          </span>
-
-          <span class="calendar-day">
-            28
-          </span>
-
-          <span class="calendar-day">
-            29
-          </span>
-
-
-
-          <!-- WEDDING DAY -->
 
           <span class="calendar-day wedding-day">
 
-
             <span class="calendar-heart">
-
               ♥
-
             </span>
-
 
             <span class="calendar-heart-number">
-
               30
-
             </span>
 
-
           </span>
-
 
 
           <span class="calendar-day sunday">
-
             31
-
           </span>
 
-
         </div>
-
 
       </div>
 
 
 
-      <!-- ========================================
-           VENUE
-      ======================================== -->
+      <!-- VENUE -->
 
       <div class="venue">
 
-
         <div class="venue-name">
-
           엘로라 인 가든
-
         </div>
 
 
-
         <div class="venue-address">
-
 
           서울특별시 송파구 충민로 52
 
@@ -4277,20 +4031,13 @@
 
           가든파이브 웍스 1층
 
-
         </div>
-
 
       </div>
 
 
 
-      <!-- ========================================
-           MAP
-      ======================================== -->
-
       <div class="map-buttons">
-
 
         <a
           class="map-button"
@@ -4298,11 +4045,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           NAVER MAP
-
         </a>
-
 
 
         <a
@@ -4311,25 +4055,19 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           KAKAO MAP
-
         </a>
-
 
       </div>
 
 
 
-      <!-- ========================================
-           PARKING
-      ======================================== -->
+      <!-- PARKING -->
 
       <div
         class="parking-wrap"
         id="parkingWrap"
       >
-
 
         <button
           type="button"
@@ -4337,47 +4075,31 @@
           id="parkingToggle"
         >
 
-
           <div class="parking-toggle-left">
 
-
             <div class="parking-title">
-
               PARKING & TRANSPORTATION
-
             </div>
-
 
             <div class="parking-subtitle">
-
               주차 및 교통 안내
-
             </div>
 
-
           </div>
-
 
 
           <div class="parking-plus">
-
             +
-
           </div>
-
 
         </button>
 
 
-
         <div class="parking-content">
-
 
           <div class="parking-content-inner">
 
-
             <div class="parking-highlight">
-
 
               넉넉한 주차 공간이 마련되어 있으니
 
@@ -4389,129 +4111,83 @@
 
               편하게 차를 가지고 오셔도 됩니다.
 
-
             </div>
-
 
 
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 주차 위치
-
               </div>
 
-
               <div class="parking-value">
-
                 가든파이브 웍스동 B2–B5
-
               </div>
-
 
             </div>
 
 
-
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 주차 혜택
-
               </div>
 
-
               <div class="parking-value">
-
                 하객 3시간 무료
-
               </div>
-
 
             </div>
 
 
-
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 내비 검색
-
               </div>
-
 
               <div class="parking-value">
-
                 우리은행 가든파이브점
-
               </div>
 
-
             </div>
-
 
 
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 웨딩홀
-
               </div>
-
 
               <div class="parking-value">
-
                 주차 후 A/B/C/D동 엘리베이터 이용 → 1층
-
               </div>
 
-
             </div>
-
 
           </div>
 
-
         </div>
-
 
       </div>
 
 
 
-      <!-- ========================================
-           ATTENDANCE
-      ======================================== -->
+      <!-- ATTENDANCE -->
 
       <div class="action-section">
 
-
         <div class="section-label">
-
           ATTENDANCE
-
         </div>
-
 
 
         <div class="action-title">
-
           참석 여부
-
         </div>
 
 
-
         <div class="action-description">
-
 
           참석 여부를 알려주시면
 
@@ -4519,9 +4195,7 @@
 
           소중한 자리를 준비하는 데 도움이 됩니다.
 
-
         </div>
-
 
 
         <button
@@ -4529,41 +4203,28 @@
           class="action-button"
           id="openRsvp"
         >
-
           참석 여부 전달하기
-
         </button>
-
 
       </div>
 
 
 
-      <!-- ========================================
-           HEART
-      ======================================== -->
+      <!-- ACCOUNT -->
 
       <div class="action-section">
 
-
         <div class="section-label">
-
           FOR YOUR HEART
-
         </div>
-
 
 
         <div class="action-title">
-
           마음 전하실 곳
-
         </div>
 
 
-
         <div class="action-description">
-
 
           멀리서도 축하해 주시는
 
@@ -4571,9 +4232,7 @@
 
           따뜻한 마음에 깊이 감사드립니다.
 
-
         </div>
-
 
 
         <button
@@ -4581,17 +4240,12 @@
           class="action-button"
           id="openAccount"
         >
-
           마음 전하기
-
         </button>
-
 
       </div>
 
-
     </div>
-
 
   </section>
 
@@ -4603,28 +4257,19 @@
 
   <section class="guest-snap reveal">
 
-
     <div class="inner center">
 
-
       <div class="section-label">
-
         GUEST SNAP
-
       </div>
-
 
 
       <div class="guest-title">
-
         Fill Our Winter
-
       </div>
 
 
-
       <div class="guest-text">
-
 
         저희가 보지 못한 오늘의 순간을
 
@@ -4632,9 +4277,7 @@
 
         여러분의 시선으로 남겨주세요.
 
-
       </div>
-
 
 
       <button
@@ -4642,14 +4285,86 @@
         class="guest-button"
         id="guestUpload"
       >
-
         사진 & 영상 올리기
-
       </button>
-
 
     </div>
 
+  </section>
+
+
+
+  <!-- ========================================
+       CHARACTER GUESTBOOK
+  ======================================== -->
+
+  <section class="character-guestbook reveal">
+
+    <div class="inner center">
+
+      <div class="section-label">
+        WINTER GUESTBOOK
+      </div>
+
+
+      <div class="guestbook-title">
+        Leave Your Character
+      </div>
+
+
+      <div class="guestbook-description">
+
+        작은 캐릭터 하나와
+
+        <br>
+
+        저희에게 전하고 싶은 한마디를 남겨주세요.
+
+      </div>
+
+
+
+      <div class="guestbook-board">
+
+        <div
+          class="guestbook-message-box"
+          id="guestbookMessageBox"
+        >
+
+          캐릭터를 눌러 방명록을 읽어보세요.
+
+        </div>
+
+
+        <div
+          class="guestbook-entries"
+          id="guestbookEntries"
+        ></div>
+
+      </div>
+
+
+
+      <button
+        type="button"
+        class="guestbook-add-button"
+        id="openGuestbook"
+      >
+        캐릭터와 방명록 남기기
+      </button>
+
+
+      <div class="guestbook-preview-note">
+
+        현재는 디자인 확인용 미리보기예요.
+
+        <br>
+
+        저장 기능 연결 후에는 모든 하객이 같은 방명록을 볼 수 있게 만들 수 있어요.
+
+      </div>
+
+    </div>
 
   </section>
 
@@ -4664,111 +4379,60 @@
     id="season-winter"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR FIRST SEASON
-
         </div>
-
 
         <div class="season-page-title">
-
           Winter
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         겨울 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         우리의 이야기가 시작된 겨울.
-
 
         <br><br>
 
-
-        이곳에는 두 사람의
-        첫 번째 겨울 이야기를 담을 예정입니다.
-
+        이곳에는 두 사람의 첫 번째 겨울 이야기를 담을 예정입니다.
 
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-
-          겨울 사진 1
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          겨울 사진 2
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          겨울 사진 3
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          겨울 사진 4
-
-        </div>
-
+        <div class="mini-photo">겨울 사진 1</div>
+        <div class="mini-photo">겨울 사진 2</div>
+        <div class="mini-photo">겨울 사진 3</div>
+        <div class="mini-photo">겨울 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         WINTER · OUR BEGINNING
-
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -4779,111 +4443,60 @@
     id="season-spring"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR SPRING
-
         </div>
-
 
         <div class="season-page-title">
-
           Spring
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         봄 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         따뜻해진 계절과 함께
-
 
         <br><br>
 
-
-        우리의 시간에도
-        새로운 장면들이 쌓여갔습니다.
-
+        우리의 시간에도 새로운 장면들이 쌓여갔습니다.
 
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-
-          봄 사진 1
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          봄 사진 2
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          봄 사진 3
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          봄 사진 4
-
-        </div>
-
+        <div class="mini-photo">봄 사진 1</div>
+        <div class="mini-photo">봄 사진 2</div>
+        <div class="mini-photo">봄 사진 3</div>
+        <div class="mini-photo">봄 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         SPRING · OUR DAYS
-
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -4894,111 +4507,60 @@
     id="season-summer"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR SUMMER
-
         </div>
-
 
         <div class="season-page-title">
-
           Summer
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         여름 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         햇살이 가장 길었던 계절.
-
 
         <br><br>
 
-
-        함께하는 우리의 시간도
-        한층 더 선명해졌습니다.
-
+        함께하는 우리의 시간도 한층 더 선명해졌습니다.
 
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-
-          여름 사진 1
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          여름 사진 2
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          여름 사진 3
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          여름 사진 4
-
-        </div>
-
+        <div class="mini-photo">여름 사진 1</div>
+        <div class="mini-photo">여름 사진 2</div>
+        <div class="mini-photo">여름 사진 3</div>
+        <div class="mini-photo">여름 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         SUMMER · OUR BRIGHT DAYS
-
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -5009,118 +4571,67 @@
     id="season-autumn"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR AUTUMN
-
         </div>
-
 
         <div class="season-page-title">
-
           Autumn
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         가을 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         계절이 깊어지는 동안
-
 
         <br><br>
 
-
-        우리도 함께할
-        다음 계절을 준비하기 시작했습니다.
-
+        우리도 함께할 다음 계절을 준비하기 시작했습니다.
 
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-
-          가을 사진 1
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          가을 사진 2
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          가을 사진 3
-
-        </div>
-
-
-        <div class="mini-photo">
-
-          가을 사진 4
-
-        </div>
-
+        <div class="mini-photo">가을 사진 1</div>
+        <div class="mini-photo">가을 사진 2</div>
+        <div class="mini-photo">가을 사진 3</div>
+        <div class="mini-photo">가을 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         AUTUMN · OUR PROMISE
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
 
   <!-- ========================================
-       RSVP
+       RSVP MODAL
   ======================================== -->
 
   <div
@@ -5128,32 +4639,21 @@
     id="rsvpModal"
   >
 
-
     <div class="modal-panel">
-
 
       <div class="modal-header">
 
-
         <div>
 
-
           <div class="modal-label">
-
             ATTENDANCE
-
           </div>
-
 
           <div class="modal-title">
-
             참석 여부를 알려주세요
-
           </div>
 
-
         </div>
-
 
 
         <button
@@ -5161,11 +4661,8 @@
           class="modal-close"
           data-close-modal
         >
-
           ×
-
         </button>
-
 
       </div>
 
@@ -5173,23 +4670,16 @@
 
       <form id="rsvpForm">
 
-
         <div class="form-section">
 
-
           <div class="form-label">
-
             어느 분의 하객이신가요?
-
           </div>
-
 
 
           <div class="choice-row">
 
-
             <div>
-
 
               <input
                 type="radio"
@@ -5199,23 +4689,17 @@
                 checked
               >
 
-
               <label
                 for="sideGroom"
                 class="choice-label"
               >
-
                 신랑측
-
               </label>
-
 
             </div>
 
 
-
             <div>
-
 
               <input
                 type="radio"
@@ -5224,22 +4708,16 @@
                 class="choice-input"
               >
 
-
               <label
                 for="sideBride"
                 class="choice-label"
               >
-
                 신부측
-
               </label>
-
 
             </div>
 
-
           </div>
-
 
         </div>
 
@@ -5247,14 +4725,11 @@
 
         <div class="form-section">
 
-
           <label
             class="form-label"
             for="guestName"
           >
-
             성함
-
           </label>
 
 
@@ -5266,21 +4741,17 @@
             required
           >
 
-
         </div>
 
 
 
         <div class="form-section">
 
-
           <label
             class="form-label"
             for="guestCount"
           >
-
             총 참석 인원
-
           </label>
 
 
@@ -5289,34 +4760,13 @@
             class="select-input"
           >
 
-
-            <option>
-              1명
-            </option>
-
-
-            <option>
-              2명
-            </option>
-
-
-            <option>
-              3명
-            </option>
-
-
-            <option>
-              4명
-            </option>
-
-
-            <option>
-              5명 이상
-            </option>
-
+            <option>1명</option>
+            <option>2명</option>
+            <option>3명</option>
+            <option>4명</option>
+            <option>5명 이상</option>
 
           </select>
-
 
         </div>
 
@@ -5324,20 +4774,14 @@
 
         <div class="form-section">
 
-
           <div class="form-label">
-
             참석 여부
-
           </div>
-
 
 
           <div class="choice-row">
 
-
             <div>
-
 
               <input
                 type="radio"
@@ -5347,23 +4791,17 @@
                 checked
               >
 
-
               <label
                 for="attendYes"
                 class="choice-label"
               >
-
                 참석
-
               </label>
-
 
             </div>
 
 
-
             <div>
-
 
               <input
                 type="radio"
@@ -5372,63 +4810,37 @@
                 class="choice-input"
               >
 
-
               <label
                 for="attendNo"
                 class="choice-label"
               >
-
                 불참
-
               </label>
-
 
             </div>
 
-
           </div>
 
-
         </div>
-
 
 
         <button
           type="submit"
           class="submit-button"
         >
-
           전달하기
-
         </button>
-
-
-
-        <div class="form-note">
-
-
-          현재는 화면 초안입니다.
-
-          <br>
-
-          추후 실제 참석 명단 저장 기능을 연결할 예정입니다.
-
-
-        </div>
-
 
       </form>
 
-
     </div>
-
 
   </div>
 
 
 
   <!-- ========================================
-       ACCOUNT
+       ACCOUNT MODAL
   ======================================== -->
 
   <div
@@ -5436,32 +4848,21 @@
     id="accountModal"
   >
 
-
     <div class="modal-panel">
-
 
       <div class="modal-header">
 
-
         <div>
 
-
           <div class="modal-label">
-
             FOR YOUR HEART
-
           </div>
-
 
           <div class="modal-title">
-
             마음 전하실 곳
-
           </div>
 
-
         </div>
-
 
 
         <button
@@ -5469,11 +4870,8 @@
           class="modal-close"
           data-close-modal
         >
-
           ×
-
         </button>
-
 
       </div>
 
@@ -5481,15 +4879,12 @@
 
       <div class="account-tabs">
 
-
         <button
           type="button"
           class="account-tab active"
           data-account="groom"
         >
-
           신랑측
-
         </button>
 
 
@@ -5498,21 +4893,19 @@
           class="account-tab"
           data-account="bride"
         >
-
           신부측
-
         </button>
-
 
       </div>
 
 
 
+      <!-- GROOM -->
+
       <div
         class="account-group active"
         id="account-groom"
       >
-
 
         <div class="account-card">
 
@@ -5537,7 +4930,6 @@
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -5565,7 +4957,6 @@
         </div>
 
 
-
         <div class="account-card">
 
           <div class="account-role">
@@ -5590,16 +4981,16 @@
 
         </div>
 
-
       </div>
 
 
+
+      <!-- BRIDE -->
 
       <div
         class="account-group"
         id="account-bride"
       >
-
 
         <div class="account-card">
 
@@ -5612,19 +5003,18 @@
           </div>
 
           <div class="account-number">
-            은행명 000-0000-0000
+            우리은행 1002264153487
           </div>
 
           <button
             type="button"
             class="account-copy"
-            data-placeholder-copy
+            data-copy-value="1002264153487"
           >
             계좌번호 복사
           </button>
 
         </div>
-
 
 
         <div class="account-card">
@@ -5652,7 +5042,6 @@
         </div>
 
 
-
         <div class="account-card">
 
           <div class="account-role">
@@ -5677,23 +5066,257 @@
 
         </div>
 
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
 
   <!-- ========================================
-       FOOTER
+       GUESTBOOK MODAL
   ======================================== -->
 
-  <footer>
+  <div
+    class="modal"
+    id="guestbookModal"
+  >
 
+    <div class="modal-panel">
+
+      <div class="modal-header">
+
+        <div>
+
+          <div class="modal-label">
+            WINTER GUESTBOOK
+          </div>
+
+          <div class="modal-title">
+            작은 친구를 남겨주세요
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+        >
+          ×
+        </button>
+
+      </div>
+
+
+
+      <form id="guestbookForm">
+
+        <div class="form-section">
+
+          <label
+            class="form-label"
+            for="guestbookName"
+          >
+            성함
+          </label>
+
+
+          <input
+            type="text"
+            id="guestbookName"
+            class="text-input"
+            placeholder="성함을 입력해주세요"
+            maxlength="12"
+            required
+          >
+
+        </div>
+
+
+
+        <div class="form-section">
+
+          <div class="form-label">
+            함께 남길 캐릭터
+          </div>
+
+
+          <div class="character-options">
+
+
+            <button
+              type="button"
+              class="character-option active"
+              data-character="bunny"
+            >
+
+              <span class="avatar avatar-bunny">
+                <span class="avatar-head">
+                  <i class="avatar-eye left"></i>
+                  <i class="avatar-eye right"></i>
+                  <i class="avatar-nose"></i>
+                </span>
+                <span class="avatar-body"></span>
+              </span>
+
+              <span class="character-option-label">
+                토끼
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              class="character-option"
+              data-character="bear"
+            >
+
+              <span class="avatar avatar-bear">
+                <span class="avatar-head">
+                  <i class="avatar-eye left"></i>
+                  <i class="avatar-eye right"></i>
+                  <i class="avatar-nose"></i>
+                </span>
+                <span class="avatar-body"></span>
+              </span>
+
+              <span class="character-option-label">
+                곰
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              class="character-option"
+              data-character="cat"
+            >
+
+              <span class="avatar avatar-cat">
+                <span class="avatar-head">
+                  <i class="avatar-eye left"></i>
+                  <i class="avatar-eye right"></i>
+                  <i class="avatar-nose"></i>
+                </span>
+                <span class="avatar-body"></span>
+              </span>
+
+              <span class="character-option-label">
+                고양이
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              class="character-option"
+              data-character="fox"
+            >
+
+              <span class="avatar avatar-fox">
+                <span class="avatar-head">
+                  <i class="avatar-eye left"></i>
+                  <i class="avatar-eye right"></i>
+                  <i class="avatar-nose"></i>
+                </span>
+                <span class="avatar-body"></span>
+              </span>
+
+              <span class="character-option-label">
+                여우
+              </span>
+
+            </button>
+
+
+
+            <button
+              type="button"
+              class="character-option"
+              data-character="snowman"
+            >
+
+              <span class="avatar avatar-snowman">
+                <span class="avatar-head">
+                  <i class="avatar-eye left"></i>
+                  <i class="avatar-eye right"></i>
+                  <i class="avatar-nose"></i>
+                </span>
+                <span class="avatar-body"></span>
+              </span>
+
+              <span class="character-option-label">
+                눈사람
+              </span>
+
+            </button>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="form-section">
+
+          <label
+            class="form-label"
+            for="guestbookMessage"
+          >
+            축하 한마디
+          </label>
+
+
+          <textarea
+            id="guestbookMessage"
+            class="textarea-input"
+            maxlength="80"
+            placeholder="두 사람에게 따뜻한 한마디를 남겨주세요."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          눈밭에 남기기
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- TOAST -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+    계좌번호가 복사되었습니다.
+  </div>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
 
     GAHYUN & JINCHAN
 
@@ -5701,39 +5324,27 @@
 
     2027. 01. 30
 
-
   </footer>
 
 
 
-  <!-- ========================================
-       JAVASCRIPT
-  ======================================== -->
-
   <script>
 
     /* ========================================
-       ALWAYS START TOP
+       ALWAYS START AT TOP
     ======================================== */
 
     if (
       "scrollRestoration"
       in history
     ) {
-
       history.scrollRestoration =
         "manual";
-
     }
 
 
     function resetScrollPosition() {
-
-      window.scrollTo(
-        0,
-        0
-      );
-
+      window.scrollTo(0, 0);
     }
 
 
@@ -5746,48 +5357,31 @@
     window.addEventListener(
       "pageshow",
       function () {
-
         setTimeout(
           resetScrollPosition,
           0
         );
-
       }
     );
 
 
 
     /* ========================================
-       SNOW MAKER
+       SNOW
     ======================================== */
 
     function createSnow(
       container,
       count,
-      options = {}
+      minSize,
+      maxSize,
+      minDuration,
+      maxDuration
     ) {
-
 
       if (!container) {
         return;
       }
-
-
-      const minSize =
-        options.minSize || 2;
-
-
-      const maxSize =
-        options.maxSize || 6;
-
-
-      const minDuration =
-        options.minDuration || 8;
-
-
-      const maxDuration =
-        options.maxDuration || 16;
-
 
 
       for (
@@ -5796,15 +5390,23 @@
         i++
       ) {
 
-
-        const particle =
+        const snow =
           document.createElement(
             "span"
           );
 
 
-        particle.className =
+        snow.className =
           "snow-particle";
+
+
+        if (
+          Math.random() > 0.72
+        ) {
+          snow.classList.add(
+            "soft"
+          );
+        }
 
 
         const size =
@@ -5831,154 +5433,137 @@
           );
 
 
-        const delay =
-          Math.random()
-          *
-          -15;
-
-
-        const opacity =
-          0.26
+        const driftA =
+          -36
           +
           Math.random()
           *
-          0.48;
+          72;
 
 
-        const blur =
+        const driftB =
+          -28
+          +
           Math.random()
           *
-          1.8;
+          56;
 
 
-        const drift =
-          (
-            -22
-            +
-            Math.random()
-            *
-            44
-          )
+        snow.style.setProperty(
+          "--x",
+          Math.random()
+          *
+          100
           +
-          "px";
-
-
-        particle
-          .style
-          .setProperty(
-            "--x",
-            Math.random()
-            *
-            100
-            +
-            "%"
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--size",
-            size
-            +
-            "px"
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--duration",
-            duration
-            +
-            "s"
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--delay",
-            delay
-            +
-            "s"
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--opacity",
-            opacity
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--blur",
-            blur
-            +
-            "px"
-          );
-
-
-        particle
-          .style
-          .setProperty(
-            "--drift",
-            drift
-          );
-
-
-        container.appendChild(
-          particle
+          "%"
         );
 
 
-      }
+        snow.style.setProperty(
+          "--size",
+          size
+          +
+          "px"
+        );
 
+
+        snow.style.setProperty(
+          "--duration",
+          duration
+          +
+          "s"
+        );
+
+
+        snow.style.setProperty(
+          "--delay",
+          Math.random()
+          *
+          -18
+          +
+          "s"
+        );
+
+
+        snow.style.setProperty(
+          "--opacity",
+          (
+            0.62
+            +
+            Math.random()
+            *
+            0.35
+          )
+        );
+
+
+        snow.style.setProperty(
+          "--drift-a",
+          driftA
+          +
+          "px"
+        );
+
+
+        snow.style.setProperty(
+          "--drift-b",
+          driftB
+          +
+          "px"
+        );
+
+
+        container.appendChild(
+          snow
+        );
+
+      }
 
     }
 
 
 
-    /*
-      오프닝:
-      조금 더 눈이 보임
-    */
+    /* 오프닝: 눈이 확실히 보이도록 */
 
     createSnow(
       document.getElementById(
         "openingSnow"
       ),
-      28,
-      {
-        minSize: 2,
-        maxSize: 7,
-        minDuration: 8,
-        maxDuration: 16
-      }
+      50,
+      3,
+      10,
+      7,
+      14
     );
 
 
 
-    /*
-      마지막 겨울:
-      더 잔잔하게
-    */
+    /* 첫 화면: 오프닝보다 조금 잔잔하게 */
+
+    createSnow(
+      document.getElementById(
+        "introSnow"
+      ),
+      34,
+      2.5,
+      8,
+      9,
+      17
+    );
+
+
+
+    /* 다시 겨울 */
 
     createSnow(
       document.getElementById(
         "winterSnow"
       ),
-      20,
-      {
-        minSize: 2,
-        maxSize: 5,
-        minDuration: 10,
-        maxDuration: 18
-      }
+      32,
+      2.5,
+      8,
+      9,
+      17
     );
 
 
@@ -5993,26 +5578,14 @@
       );
 
 
-    const openingSkip =
-      document.getElementById(
-        "openingSkip"
-      );
-
-
     let openingClosed =
       false;
 
 
-
     function closeOpening() {
 
-
-      if (
-        openingClosed
-      ) {
-
+      if (openingClosed) {
         return;
-
       }
 
 
@@ -6020,11 +5593,9 @@
         true;
 
 
-      opening
-        .classList
-        .add(
-          "hide"
-        );
+      opening.classList.add(
+        "hide"
+      );
 
 
       document.body
@@ -6051,17 +5622,17 @@
         950
       );
 
-
     }
 
 
-
-    openingSkip
+    document
+      .getElementById(
+        "openingSkip"
+      )
       .addEventListener(
         "click",
         closeOpening
       );
-
 
 
     setTimeout(
@@ -6083,30 +5654,23 @@
         "click",
         function () {
 
-
           closeOpening();
 
 
           setTimeout(
             function () {
 
-
               document
                 .getElementById(
                   "wedding"
                 )
                 .scrollIntoView({
-
-                  behavior:
-                    "smooth"
-
+                  behavior: "smooth"
                 });
-
 
             },
             120
           );
-
 
         }
       );
@@ -6129,21 +5693,16 @@
           entries
         ) {
 
-
           entries.forEach(
             function (
               entry
             ) {
 
-
               if (
-                entry
-                  .isIntersecting
+                entry.isIntersecting
               ) {
 
-
-                entry
-                  .target
+                entry.target
                   .classList
                   .add(
                     "visible"
@@ -6155,13 +5714,10 @@
                     entry.target
                   );
 
-
               }
-
 
             }
           );
-
 
         },
         {
@@ -6170,22 +5726,17 @@
       );
 
 
+    revealElements.forEach(
+      function (
+        element
+      ) {
 
-    revealElements
-      .forEach(
-        function (
+        revealObserver.observe(
           element
-        ) {
+        );
 
-
-          revealObserver
-            .observe(
-              element
-            );
-
-
-        }
-      );
+      }
+    );
 
 
 
@@ -6202,53 +5753,40 @@
           card
         ) {
 
+          card.addEventListener(
+            "click",
+            function () {
 
-          card
-            .addEventListener(
-              "click",
-              function () {
-
-
-                const page =
-                  document
-                    .getElementById(
-                      "season-"
-                      +
-                      card
-                        .dataset
-                        .season
-                    );
+              const page =
+                document.getElementById(
+                  "season-"
+                  +
+                  card.dataset.season
+                );
 
 
-                if (!page) {
-                  return;
-                }
-
-
-                page
-                  .classList
-                  .add(
-                    "active"
-                  );
-
-
-                page.scrollTop =
-                  0;
-
-
-                document.body
-                  .style
-                  .overflow =
-                  "hidden";
-
-
+              if (!page) {
+                return;
               }
-            );
 
+
+              page.classList.add(
+                "active"
+              );
+
+
+              page.scrollTop =
+                0;
+
+
+              document.body.style.overflow =
+                "hidden";
+
+            }
+          );
 
         }
       );
-
 
 
     document
@@ -6260,32 +5798,25 @@
           button
         ) {
 
+          button.addEventListener(
+            "click",
+            function () {
 
-          button
-            .addEventListener(
-              "click",
-              function () {
-
-
-                button
-                  .closest(
-                    ".season-page"
-                  )
-                  .classList
-                  .remove(
-                    "active"
-                  );
+              button
+                .closest(
+                  ".season-page"
+                )
+                .classList
+                .remove(
+                  "active"
+                );
 
 
-                document.body
-                  .style
-                  .overflow =
-                  "";
+              document.body.style.overflow =
+                "";
 
-
-              }
-            );
-
+            }
+          );
 
         }
       );
@@ -6310,13 +5841,11 @@
         "click",
         function () {
 
-
           parkingWrap
             .classList
             .toggle(
               "open"
             );
-
 
         }
       );
@@ -6324,7 +5853,7 @@
 
 
     /* ========================================
-       MODALS
+       MODAL
     ======================================== */
 
     const rsvpModal =
@@ -6339,17 +5868,19 @@
       );
 
 
+    const guestbookModal =
+      document.getElementById(
+        "guestbookModal"
+      );
+
 
     function openModal(
       modal
     ) {
 
-
-      modal
-        .classList
-        .add(
-          "active"
-        );
+      modal.classList.add(
+        "active"
+      );
 
 
       document.body
@@ -6358,21 +5889,16 @@
           "modal-open"
         );
 
-
     }
-
 
 
     function closeModal(
       modal
     ) {
 
-
-      modal
-        .classList
-        .remove(
-          "active"
-        );
+      modal.classList.remove(
+        "active"
+      );
 
 
       document.body
@@ -6380,7 +5906,6 @@
         .remove(
           "modal-open"
         );
-
 
     }
 
@@ -6394,15 +5919,12 @@
         "click",
         function () {
 
-
           openModal(
             rsvpModal
           );
 
-
         }
       );
-
 
 
     document
@@ -6413,15 +5935,28 @@
         "click",
         function () {
 
-
           openModal(
             accountModal
           );
 
-
         }
       );
 
+
+    document
+      .getElementById(
+        "openGuestbook"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+          openModal(
+            guestbookModal
+          );
+
+        }
+      );
 
 
     document
@@ -6433,28 +5968,21 @@
           button
         ) {
 
+          button.addEventListener(
+            "click",
+            function () {
 
-          button
-            .addEventListener(
-              "click",
-              function () {
+              closeModal(
+                button.closest(
+                  ".modal"
+                )
+              );
 
-
-                closeModal(
-                  button
-                    .closest(
-                      ".modal"
-                    )
-                );
-
-
-              }
-            );
-
+            }
+          );
 
         }
       );
-
 
 
     document
@@ -6466,33 +5994,26 @@
           modal
         ) {
 
+          modal.addEventListener(
+            "click",
+            function (
+              event
+            ) {
 
-          modal
-            .addEventListener(
-              "click",
-              function (
-                event
+              if (
+                event.target
+                ===
+                modal
               ) {
 
-
-                if (
-                  event.target
-                  ===
+                closeModal(
                   modal
-                ) {
-
-
-                  closeModal(
-                    modal
-                  );
-
-
-                }
-
+                );
 
               }
-            );
 
+            }
+          );
 
         }
       );
@@ -6513,9 +6034,7 @@
           event
         ) {
 
-
-          event
-            .preventDefault();
+          event.preventDefault();
 
 
           const name =
@@ -6529,22 +6048,18 @@
 
           if (!name) {
 
-
             alert(
               "성함을 입력해주세요."
             );
 
-
             return;
-
 
           }
 
 
           alert(
-            "현재는 화면 초안이에요.\n\n추후 실제 참석 명단 저장 기능을 연결할 예정입니다."
+            "현재는 화면 초안이에요.\n추후 실제 참석 명단 저장 기능을 연결할 예정입니다."
           );
-
 
         }
       );
@@ -6555,96 +6070,71 @@
        ACCOUNT TABS
     ======================================== */
 
-    const accountTabs =
-      document.querySelectorAll(
+    document
+      .querySelectorAll(
         ".account-tab"
-      );
-
-
-    const accountGroups =
-      document.querySelectorAll(
-        ".account-group"
-      );
-
-
-
-    accountTabs
+      )
       .forEach(
         function (
           tab
         ) {
 
+          tab.addEventListener(
+            "click",
+            function () {
 
-          tab
-            .addEventListener(
-              "click",
-              function () {
+              document
+                .querySelectorAll(
+                  ".account-tab"
+                )
+                .forEach(
+                  function (
+                    item
+                  ) {
 
+                    item.classList.remove(
+                      "active"
+                    );
 
-                const target =
-                  tab
-                    .dataset
-                    .account;
-
-
-                accountTabs
-                  .forEach(
-                    function (
-                      item
-                    ) {
-
-
-                      item
-                        .classList
-                        .remove(
-                          "active"
-                        );
+                  }
+                );
 
 
-                    }
-                  );
+              document
+                .querySelectorAll(
+                  ".account-group"
+                )
+                .forEach(
+                  function (
+                    group
+                  ) {
+
+                    group.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
 
 
-                accountGroups
-                  .forEach(
-                    function (
-                      group
-                    ) {
+              tab.classList.add(
+                "active"
+              );
 
 
-                      group
-                        .classList
-                        .remove(
-                          "active"
-                        );
+              document
+                .getElementById(
+                  "account-"
+                  +
+                  tab.dataset.account
+                )
+                .classList
+                .add(
+                  "active"
+                );
 
-
-                    }
-                  );
-
-
-                tab
-                  .classList
-                  .add(
-                    "active"
-                  );
-
-
-                document
-                  .getElementById(
-                    "account-"
-                    +
-                    target
-                  )
-                  .classList
-                  .add(
-                    "active"
-                  );
-
-
-              }
-            );
-
+            }
+          );
 
         }
       );
@@ -6652,8 +6142,162 @@
 
 
     /* ========================================
-       PLACEHOLDER
+       ACCOUNT COPY
     ======================================== */
+
+    const toast =
+      document.getElementById(
+        "toast"
+      );
+
+
+    let toastTimer;
+
+
+    function showToast(
+      message
+    ) {
+
+      toast.textContent =
+        message;
+
+
+      toast.classList.add(
+        "show"
+      );
+
+
+      clearTimeout(
+        toastTimer
+      );
+
+
+      toastTimer =
+        setTimeout(
+          function () {
+
+            toast.classList.remove(
+              "show"
+            );
+
+          },
+          1800
+        );
+
+    }
+
+
+
+    async function copyText(
+      text
+    ) {
+
+      try {
+
+        if (
+          navigator.clipboard
+          &&
+          window.isSecureContext
+        ) {
+
+          await navigator.clipboard
+            .writeText(
+              text
+            );
+
+        } else {
+
+          throw new Error(
+            "Clipboard API unavailable"
+          );
+
+        }
+
+      } catch (
+        error
+      ) {
+
+        const textarea =
+          document.createElement(
+            "textarea"
+          );
+
+
+        textarea.value =
+          text;
+
+
+        textarea.setAttribute(
+          "readonly",
+          ""
+        );
+
+
+        textarea.style.position =
+          "fixed";
+
+
+        textarea.style.opacity =
+          "0";
+
+
+        document.body.appendChild(
+          textarea
+        );
+
+
+        textarea.select();
+
+
+        textarea.setSelectionRange(
+          0,
+          textarea.value.length
+        );
+
+
+        document.execCommand(
+          "copy"
+        );
+
+
+        document.body.removeChild(
+          textarea
+        );
+
+      }
+
+
+      showToast(
+        "계좌번호가 복사되었습니다."
+      );
+
+    }
+
+
+
+    document
+      .querySelectorAll(
+        "[data-copy-value]"
+      )
+      .forEach(
+        function (
+          button
+        ) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              copyText(
+                button.dataset.copyValue
+              );
+
+            }
+          );
+
+        }
+      );
+
 
     document
       .querySelectorAll(
@@ -6664,26 +6308,388 @@
           button
         ) {
 
+          button.addEventListener(
+            "click",
+            function () {
 
-          button
-            .addEventListener(
-              "click",
-              function () {
+              alert(
+                "계좌번호 입력 후 복사 기능을 연결할 예정이에요."
+              );
 
-
-                alert(
-                  "실제 계좌번호 입력 후 복사 기능을 연결할 예정이에요."
-                );
-
-
-              }
-            );
-
+            }
+          );
 
         }
       );
 
 
+
+    /* ========================================
+       CHARACTER GUESTBOOK
+    ======================================== */
+
+    const guestbookStorageKey =
+      "gahyun-jinchan-winter-guestbook-preview";
+
+
+    let selectedCharacter =
+      "bunny";
+
+
+    let guestbookEntries = [];
+
+
+    try {
+
+      guestbookEntries =
+        JSON.parse(
+          localStorage.getItem(
+            guestbookStorageKey
+          )
+        )
+        ||
+        [];
+
+    } catch (
+      error
+    ) {
+
+      guestbookEntries =
+        [];
+
+    }
+
+
+
+    function avatarHTML(
+      type
+    ) {
+
+      return `
+        <span class="avatar avatar-${type}">
+          <span class="avatar-head">
+            <i class="avatar-eye left"></i>
+            <i class="avatar-eye right"></i>
+            <i class="avatar-nose"></i>
+          </span>
+          <span class="avatar-body"></span>
+        </span>
+      `;
+
+    }
+
+
+
+    function escapeHTML(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.textContent =
+        value;
+
+
+      return div.innerHTML;
+
+    }
+
+
+
+    function renderGuestbook() {
+
+      const container =
+        document.getElementById(
+          "guestbookEntries"
+        );
+
+
+      container.innerHTML =
+        "";
+
+
+      const visibleEntries =
+        guestbookEntries.slice(
+          -15
+        );
+
+
+      visibleEntries.forEach(
+        function (
+          entry
+        ) {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+
+          button.type =
+            "button";
+
+
+          button.className =
+            "guestbook-entry";
+
+
+          button.innerHTML =
+            avatarHTML(
+              entry.character
+            )
+            +
+            `
+              <span class="guestbook-entry-name">
+                ${escapeHTML(entry.name)}
+              </span>
+            `;
+
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              const messageBox =
+                document.getElementById(
+                  "guestbookMessageBox"
+                );
+
+
+              messageBox.innerHTML =
+                `
+                  <span class="guestbook-message-name">
+                    ${escapeHTML(entry.name)}
+                  </span>
+
+                  ${escapeHTML(entry.message)}
+                `;
+
+            }
+          );
+
+
+          container.appendChild(
+            button
+          );
+
+        }
+      );
+
+
+      if (
+        guestbookEntries.length
+        ===
+        0
+      ) {
+
+        document
+          .getElementById(
+            "guestbookMessageBox"
+          )
+          .innerHTML =
+          "첫 번째 작은 친구를 눈밭에 남겨주세요.";
+
+      }
+
+    }
+
+
+
+    document
+      .querySelectorAll(
+        ".character-option"
+      )
+      .forEach(
+        function (
+          option
+        ) {
+
+          option.addEventListener(
+            "click",
+            function () {
+
+              document
+                .querySelectorAll(
+                  ".character-option"
+                )
+                .forEach(
+                  function (
+                    item
+                  ) {
+
+                    item.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+              option.classList.add(
+                "active"
+              );
+
+
+              selectedCharacter =
+                option.dataset.character;
+
+            }
+          );
+
+        }
+      );
+
+
+
+    document
+      .getElementById(
+        "guestbookForm"
+      )
+      .addEventListener(
+        "submit",
+        function (
+          event
+        ) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById(
+                "guestbookName"
+              )
+              .value
+              .trim();
+
+
+          const message =
+            document
+              .getElementById(
+                "guestbookMessage"
+              )
+              .value
+              .trim();
+
+
+          if (
+            !name
+            ||
+            !message
+          ) {
+
+            alert(
+              "성함과 축하 한마디를 모두 입력해주세요."
+            );
+
+            return;
+
+          }
+
+
+          const newEntry = {
+            name: name,
+            message: message,
+            character:
+              selectedCharacter,
+            createdAt:
+              Date.now()
+          };
+
+
+          guestbookEntries.push(
+            newEntry
+          );
+
+
+          localStorage.setItem(
+            guestbookStorageKey,
+            JSON.stringify(
+              guestbookEntries
+            )
+          );
+
+
+          renderGuestbook();
+
+
+          document
+            .getElementById(
+              "guestbookMessageBox"
+            )
+            .innerHTML =
+            `
+              <span class="guestbook-message-name">
+                ${escapeHTML(name)}
+              </span>
+
+              ${escapeHTML(message)}
+            `;
+
+
+          document
+            .getElementById(
+              "guestbookForm"
+            )
+            .reset();
+
+
+          selectedCharacter =
+            "bunny";
+
+
+          document
+            .querySelectorAll(
+              ".character-option"
+            )
+            .forEach(
+              function (
+                item
+              ) {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+          document
+            .querySelector(
+              '[data-character="bunny"]'
+            )
+            .classList
+            .add(
+              "active"
+            );
+
+
+          closeModal(
+            guestbookModal
+          );
+
+
+          showToast(
+            "작은 친구가 눈밭에 도착했어요."
+          );
+
+        }
+      );
+
+
+
+    renderGuestbook();
+
+
+
+    /* ========================================
+       GUEST SNAP
+    ======================================== */
 
     document
       .getElementById(
@@ -6693,17 +6699,72 @@
         "click",
         function () {
 
-
           alert(
-            "나중에 사진·영상 업로드 서비스를 연결할 예정이에요."
+            "사진·영상 업로드 서비스는 추후 연결할 예정이에요."
           );
-
 
         }
       );
 
-  </script>
 
+
+    /* ========================================
+       ESC
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (
+        event
+      ) {
+
+        if (
+          event.key !==
+          "Escape"
+        ) {
+          return;
+        }
+
+
+        const modal =
+          document.querySelector(
+            ".modal.active"
+          );
+
+
+        if (modal) {
+
+          closeModal(
+            modal
+          );
+
+          return;
+
+        }
+
+
+        const season =
+          document.querySelector(
+            ".season-page.active"
+          );
+
+
+        if (season) {
+
+          season.classList.remove(
+            "active"
+          );
+
+
+          document.body.style.overflow =
+            "";
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 
