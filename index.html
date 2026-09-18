@@ -10,7 +10,94 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <title>Gahyun & Jinchan | Our Wedding</title>
+  <!-- ========================================
+       BASIC META
+  ======================================== -->
+
+  <title>김가현 ♥ 황진찬 결혼합니다.</title>
+
+  <meta
+    name="description"
+    content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
+  >
+
+
+  <!-- ========================================
+       KAKAO / OPEN GRAPH
+  ======================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://ghkimmy.github.io/ourwedding/"
+  >
+
+  <meta
+    property="og:title"
+    content="김가현 ♥ 황진찬 결혼합니다."
+  >
+
+  <meta
+    property="og:description"
+    content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
+  >
+
+  <meta
+    property="og:image"
+    content="https://ghkimmy.github.io/ourwedding/images/og-wedding.jpg"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="김가현 황진찬 결혼식 초대장"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Gahyun & Jinchan Wedding"
+  >
+
+
+  <!-- 기타 SNS 공유 호환 -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="김가현 ♥ 황진찬 결혼합니다."
+  >
+
+  <meta
+    name="twitter:description"
+    content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://ghkimmy.github.io/ourwedding/images/og-wedding.jpg"
+  >
 
 
   <!-- ========================================
@@ -25,10 +112,6 @@
 
 
   <style>
-
-    /* ========================================
-       KOREAN TITLE FONT
-    ======================================== */
 
     @font-face {
       font-family: "RIDIBatang";
@@ -75,7 +158,6 @@
       --sub: #747474;
 
     }
-
 
 
     /* ========================================
@@ -146,7 +228,6 @@
     .inner {
 
       width: 100%;
-
       max-width: 540px;
 
       margin: 0 auto;
@@ -175,7 +256,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
@@ -204,9 +284,6 @@
 
     }
 
-
-
-    /* SKIP */
 
     .opening-skip {
 
@@ -239,7 +316,6 @@
     }
 
 
-
     .opening-inner {
 
       width: 100%;
@@ -251,7 +327,6 @@
       text-align: center;
 
     }
-
 
 
     .letter-small {
@@ -321,7 +396,6 @@
     }
 
 
-
     .envelope {
 
       position: absolute;
@@ -331,7 +405,6 @@
       bottom: 18px;
 
       width: var(--env-w);
-
       height: var(--env-h);
 
       transform:
@@ -341,11 +414,6 @@
 
     }
 
-
-
-    /* ========================================
-       ENVELOPE BACK
-    ======================================== */
 
     .envelope-back {
 
@@ -374,10 +442,6 @@
 
     /* ========================================
        PHOTO WINDOW
-
-       사진이 봉투 밖에서 시작되는 것이
-       보이지 않도록 처음에는 봉투 높이만큼만
-       보여주는 창 안에 완전히 숨겨둠.
     ======================================== */
 
     .photo-window {
@@ -385,7 +449,6 @@
       position: absolute;
 
       left: 0;
-
       bottom: 0;
 
       width: 100%;
@@ -409,11 +472,6 @@
     }
 
 
-
-    /* ========================================
-       WEDDING PHOTO
-    ======================================== */
-
     .letter-photo {
 
       position: absolute;
@@ -423,7 +481,6 @@
       bottom: var(--photo-bottom);
 
       width: var(--photo-w);
-
       height: var(--photo-h);
 
       padding:
@@ -450,17 +507,14 @@
     }
 
 
-
     .letter-photo-inner {
 
       width: 100%;
-
       height: 100%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
@@ -483,11 +537,9 @@
     }
 
 
-
     .letter-photo-inner img {
 
       width: 100%;
-
       height: 100%;
 
       display: block;
@@ -499,7 +551,7 @@
 
 
     /* ========================================
-       RED ENVELOPE FLAP
+       RED ENVELOPE
     ======================================== */
 
     .envelope-flap {
@@ -509,11 +561,9 @@
       z-index: 7;
 
       left: 0;
-
       top: 0;
 
       width: 100%;
-
       height: 110px;
 
       background:
@@ -547,11 +597,6 @@
     }
 
 
-
-    /* ========================================
-       ENVELOPE FRONT
-    ======================================== */
-
     .envelope-front {
 
       position: absolute;
@@ -565,7 +610,6 @@
       pointer-events: none;
 
     }
-
 
 
     .envelope-front-left {
@@ -586,7 +630,6 @@
     }
 
 
-
     .envelope-front-right {
 
       position: absolute;
@@ -603,7 +646,6 @@
         );
 
     }
-
 
 
     .envelope-front-bottom {
@@ -630,9 +672,7 @@
 
 
 
-    /* ========================================
-       WHITE HEART STICKER
-    ======================================== */
+    /* WHITE HEART STICKER */
 
     .envelope-seal {
 
@@ -645,13 +685,11 @@
       top: 70px;
 
       width: 38px;
-
       height: 38px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       transform:
@@ -672,7 +710,7 @@
 
       box-shadow:
         0 3px 9px
-        rgba(73, 22, 27, 0.10);
+        rgba(73,22,27,0.10);
 
       animation:
         sealDisappear
@@ -705,7 +743,6 @@
     }
 
 
-
     .opening-names {
 
       font-family: var(--font-en);
@@ -719,7 +756,6 @@
       color: #393735;
 
     }
-
 
 
     .opening-date {
@@ -737,11 +773,9 @@
     }
 
 
-
     .opening-line {
 
       width: 1px;
-
       height: 27px;
 
       margin: 19px auto 0;
@@ -763,7 +797,7 @@
 
 
     /* ========================================
-       OPENING KEYFRAMES
+       OPENING ANIMATIONS
     ======================================== */
 
     @keyframes openingFade {
@@ -779,7 +813,6 @@
       }
 
     }
-
 
 
     @keyframes envelopeAppear {
@@ -807,10 +840,9 @@
     }
 
 
-
     @keyframes sealDisappear {
 
-      0% {
+      from {
 
         opacity: 1;
 
@@ -820,7 +852,7 @@
 
       }
 
-      100% {
+      to {
 
         opacity: 0;
 
@@ -833,51 +865,39 @@
     }
 
 
-
     @keyframes flapOpen {
 
       0% {
-
-        transform:
-          rotateX(0deg);
-
+        transform: rotateX(0deg);
       }
 
       42% {
-
-        transform:
-          rotateX(-105deg);
-
+        transform: rotateX(-105deg);
       }
 
       100% {
-
-        transform:
-          rotateX(-180deg);
-
+        transform: rotateX(-180deg);
       }
 
     }
 
 
-
     @keyframes photoWindowOpen {
 
-      0% {
+      from {
         height: var(--env-h);
       }
 
-      100% {
+      to {
         height: var(--window-open-height);
       }
 
     }
 
 
-
     @keyframes photoRise {
 
-      0% {
+      from {
 
         transform:
           translateX(-50%)
@@ -885,7 +905,7 @@
 
       }
 
-      100% {
+      to {
 
         transform:
           translateX(-50%)
@@ -894,7 +914,6 @@
       }
 
     }
-
 
 
     @keyframes openingTextShow {
@@ -920,7 +939,6 @@
     }
 
 
-
     @keyframes lineGrow {
 
       from {
@@ -936,7 +954,7 @@
 
 
     /* ========================================
-       FIXED WEDDING INFO
+       WEDDING INFO SHORTCUT
     ======================================== */
 
     .wedding-info-shortcut {
@@ -998,14 +1016,12 @@
     }
 
 
-
     body.page-ready .intro-label {
 
       animation:
         mainReveal 0.8s ease forwards;
 
     }
-
 
 
     body.page-ready .names {
@@ -1018,7 +1034,6 @@
     }
 
 
-
     body.page-ready .intro-date {
 
       animation:
@@ -1029,7 +1044,6 @@
     }
 
 
-
     body.page-ready .intro-description {
 
       animation:
@@ -1038,7 +1052,6 @@
       animation-delay: 0.24s;
 
     }
-
 
 
     body.page-ready
@@ -1052,7 +1065,6 @@
     }
 
 
-
     body.page-ready
     .season-card:nth-child(2) {
 
@@ -1062,7 +1074,6 @@
       animation-delay: 0.49s;
 
     }
-
 
 
     body.page-ready
@@ -1076,7 +1087,6 @@
     }
 
 
-
     body.page-ready
     .season-card:nth-child(4) {
 
@@ -1088,7 +1098,6 @@
     }
 
 
-
     body.page-ready .story-hint {
 
       animation:
@@ -1097,7 +1106,6 @@
       animation-delay: 0.82s;
 
     }
-
 
 
     @keyframes mainReveal {
@@ -1131,7 +1139,6 @@
         transform 1s ease;
 
     }
-
 
 
     .reveal.visible {
@@ -1171,7 +1178,6 @@
     }
 
 
-
     .intro-label {
 
       text-align: center;
@@ -1185,7 +1191,6 @@
       color: #858585;
 
     }
-
 
 
     .names {
@@ -1206,7 +1211,6 @@
     }
 
 
-
     .intro-date {
 
       margin-top: 20px;
@@ -1222,7 +1226,6 @@
       color: #555;
 
     }
-
 
 
     .intro-description {
@@ -1259,7 +1262,6 @@
     }
 
 
-
     .season-card {
 
       position: relative;
@@ -1285,7 +1287,6 @@
     }
 
 
-
     .season-image {
 
       position: absolute;
@@ -1295,7 +1296,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       color:
@@ -1309,7 +1309,6 @@
     }
 
 
-
     .season-card:active
     .season-image {
 
@@ -1317,7 +1316,6 @@
         scale(1.02);
 
     }
-
 
 
     .winter .season-image {
@@ -1338,7 +1336,6 @@
     .autumn .season-image {
       background: #dcd3ca;
     }
-
 
 
     .season-overlay {
@@ -1367,7 +1364,6 @@
     }
 
 
-
     .season-eng {
 
       font-family: var(--font-en);
@@ -1377,7 +1373,6 @@
       letter-spacing: 2px;
 
     }
-
 
 
     .season-kor {
@@ -1390,7 +1385,6 @@
         rgba(255,255,255,0.92);
 
     }
-
 
 
     .season-click {
@@ -1407,7 +1401,6 @@
         rgba(255,255,255,0.7);
 
     }
-
 
 
     .story-hint {
@@ -1454,7 +1447,6 @@
     }
 
 
-
     .again-small {
 
       font-family: var(--font-en);
@@ -1466,7 +1458,6 @@
       color: #8a8a8a;
 
     }
-
 
 
     .again-title {
@@ -1485,7 +1476,6 @@
     }
 
 
-
     .again-date {
 
       margin-top: 28px;
@@ -1499,7 +1489,6 @@
     }
 
 
-
     .again-text {
 
       margin-top: 36px;
@@ -1511,7 +1500,6 @@
       color: #666;
 
     }
-
 
 
     .fill-winter {
@@ -1544,7 +1532,6 @@
     }
 
 
-
     .section-label {
 
       font-family: var(--font-en);
@@ -1556,7 +1543,6 @@
       color: #999;
 
     }
-
 
 
     .invitation-title {
@@ -1574,7 +1560,6 @@
       letter-spacing: -0.03em;
 
     }
-
 
 
     .invitation-text {
@@ -1605,7 +1590,6 @@
     }
 
 
-
     .wedding-date-big {
 
       margin-top: 22px;
@@ -1615,7 +1599,6 @@
       font-size: 31px;
 
     }
-
 
 
     .wedding-time {
@@ -1631,7 +1614,6 @@
       color: #777;
 
     }
-
 
 
     .venue {
@@ -1650,7 +1632,6 @@
     }
 
 
-
     .venue-name {
 
       font-family: var(--font-ko-title);
@@ -1660,7 +1641,6 @@
       font-weight: 400;
 
     }
-
 
 
     .venue-address {
@@ -1695,7 +1675,6 @@
     }
 
 
-
     .map-button {
 
       min-height: 48px;
@@ -1703,7 +1682,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       border:
@@ -1738,7 +1716,6 @@
     }
 
 
-
     .parking-toggle {
 
       width: 100%;
@@ -1748,7 +1725,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content:
         space-between;
 
@@ -1763,11 +1739,9 @@
     }
 
 
-
     .parking-toggle-left {
       text-align: left;
     }
-
 
 
     .parking-title {
@@ -1781,7 +1755,6 @@
     }
 
 
-
     .parking-subtitle {
 
       margin-top: 4px;
@@ -1791,7 +1764,6 @@
       color: #888;
 
     }
-
 
 
     .parking-plus {
@@ -1804,7 +1776,6 @@
     }
 
 
-
     .parking-wrap.open
     .parking-plus {
 
@@ -1812,7 +1783,6 @@
         rotate(45deg);
 
     }
-
 
 
     .parking-content {
@@ -1830,7 +1800,6 @@
     }
 
 
-
     .parking-wrap.open
     .parking-content {
 
@@ -1841,11 +1810,9 @@
     }
 
 
-
     .parking-content-inner {
       padding-bottom: 28px;
     }
-
 
 
     .parking-highlight {
@@ -1869,7 +1836,6 @@
     }
 
 
-
     .parking-row {
 
       display: grid;
@@ -1890,7 +1856,6 @@
     }
 
 
-
     .parking-label {
 
       font-weight: 600;
@@ -1898,7 +1863,6 @@
       color: #555;
 
     }
-
 
 
     .parking-value {
@@ -1923,7 +1887,6 @@
     }
 
 
-
     .action-title {
 
       margin-top: 16px;
@@ -1937,7 +1900,6 @@
     }
 
 
-
     .action-description {
 
       margin-top: 15px;
@@ -1949,7 +1911,6 @@
       color: #777;
 
     }
-
 
 
     .action-button {
@@ -1969,18 +1930,6 @@
 
       cursor: pointer;
 
-      transition:
-        transform 0.18s ease;
-
-    }
-
-
-
-    .action-button:active {
-
-      transform:
-        scale(0.985);
-
     }
 
 
@@ -1999,7 +1948,6 @@
     }
 
 
-
     .guest-title {
 
       margin-top: 20px;
@@ -2013,7 +1961,6 @@
     }
 
 
-
     .guest-text {
 
       margin-top: 28px;
@@ -2025,7 +1972,6 @@
       color: #666;
 
     }
-
 
 
     .guest-button {
@@ -2073,7 +2019,6 @@
     }
 
 
-
     .season-page.active {
 
       display: block;
@@ -2082,7 +2027,6 @@
         detailShow 0.4s ease;
 
     }
-
 
 
     @keyframes detailShow {
@@ -2098,7 +2042,6 @@
     }
 
 
-
     .season-page-inner {
 
       width: 100%;
@@ -2111,7 +2054,6 @@
         22px 22px 100px;
 
     }
-
 
 
     .season-back {
@@ -2135,7 +2077,6 @@
     }
 
 
-
     .season-page-header {
 
       margin-top: 42px;
@@ -2143,7 +2084,6 @@
       text-align: center;
 
     }
-
 
 
     .season-page-small {
@@ -2159,7 +2099,6 @@
     }
 
 
-
     .season-page-title {
 
       margin-top: 13px;
@@ -2173,7 +2112,6 @@
     }
 
 
-
     .season-page-main-photo {
 
       width: 100%;
@@ -2185,7 +2123,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
@@ -2197,22 +2134,6 @@
       font-size: 11px;
 
     }
-
-
-
-    .season-page-main-photo img,
-    .mini-photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      display: block;
-
-      object-fit: cover;
-
-    }
-
 
 
     .season-page-text {
@@ -2230,7 +2151,6 @@
     }
 
 
-
     .mini-gallery {
 
       display: grid;
@@ -2245,7 +2165,6 @@
     }
 
 
-
     .mini-photo {
 
       aspect-ratio: 1 / 1;
@@ -2253,10 +2172,7 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
-      overflow: hidden;
 
       background: #e5e5e5;
 
@@ -2265,7 +2181,6 @@
       font-size: 10px;
 
     }
-
 
 
     .season-end {
@@ -2283,7 +2198,6 @@
       color: #aaa;
 
     }
-
 
 
     #season-winter {
@@ -2322,7 +2236,6 @@
       display: none;
 
       align-items: flex-end;
-
       justify-content: center;
 
       padding: 20px;
@@ -2333,11 +2246,9 @@
     }
 
 
-
     .modal.active {
       display: flex;
     }
-
 
 
     .modal-panel {
@@ -2358,35 +2269,7 @@
 
       background: #faf9f6;
 
-      animation:
-        modalOpen 0.35s ease;
-
     }
-
-
-
-    @keyframes modalOpen {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(25px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
-
-    }
-
 
 
     .modal-header {
@@ -2394,14 +2277,12 @@
       display: flex;
 
       align-items: flex-start;
-
       justify-content:
         space-between;
 
       gap: 20px;
 
     }
-
 
 
     .modal-label {
@@ -2417,7 +2298,6 @@
     }
 
 
-
     .modal-title {
 
       margin-top: 9px;
@@ -2431,11 +2311,9 @@
     }
 
 
-
     .modal-close {
 
       width: 42px;
-
       height: 42px;
 
       flex: 0 0 42px;
@@ -2461,7 +2339,6 @@
     }
 
 
-
     .form-label {
 
       display: block;
@@ -2473,7 +2350,6 @@
       color: #666;
 
     }
-
 
 
     .choice-row {
@@ -2488,7 +2364,6 @@
     }
 
 
-
     .choice-input {
 
       position: absolute;
@@ -2500,7 +2375,6 @@
     }
 
 
-
     .choice-label {
 
       min-height: 46px;
@@ -2508,7 +2382,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       border:
@@ -2523,7 +2396,6 @@
     }
 
 
-
     .choice-input:checked
     + .choice-label {
 
@@ -2534,7 +2406,6 @@
       color: #fff;
 
     }
-
 
 
     .text-input,
@@ -2561,7 +2432,6 @@
     }
 
 
-
     .submit-button {
 
       width: 100%;
@@ -2581,7 +2451,6 @@
       cursor: pointer;
 
     }
-
 
 
     .form-note {
@@ -2618,7 +2487,6 @@
     }
 
 
-
     .account-tab {
 
       min-height: 45px;
@@ -2635,7 +2503,6 @@
     }
 
 
-
     .account-tab.active {
 
       background: #444;
@@ -2647,7 +2514,6 @@
     }
 
 
-
     .account-group {
 
       display: none;
@@ -2657,11 +2523,9 @@
     }
 
 
-
     .account-group.active {
       display: block;
     }
-
 
 
     .account-card {
@@ -2675,16 +2539,6 @@
     }
 
 
-
-    .account-card:first-child {
-
-      border-top:
-        1px solid #dedad4;
-
-    }
-
-
-
     .account-role {
 
       font-size: 10px;
@@ -2692,7 +2546,6 @@
       color: #999;
 
     }
-
 
 
     .account-name {
@@ -2706,7 +2559,6 @@
     }
 
 
-
     .account-number {
 
       margin-top: 10px;
@@ -2716,7 +2568,6 @@
       color: #666;
 
     }
-
 
 
     .account-copy {
@@ -2776,11 +2627,9 @@
 
     @media (max-width: 420px) {
 
-
       .opening-inner {
 
         padding-left: 14px;
-
         padding-right: 14px;
 
       }
@@ -2822,7 +2671,6 @@
         top: 64px;
 
         width: 35px;
-
         height: 35px;
 
         font-size: 17px;
@@ -2838,7 +2686,6 @@
       .intro {
 
         padding-left: 18px;
-
         padding-right: 18px;
 
       }
@@ -2878,40 +2725,6 @@
 
     }
 
-
-
-    /* ========================================
-       REDUCED MOTION
-    ======================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-
-        animation-duration:
-          0.01ms !important;
-
-        animation-iteration-count:
-          1 !important;
-
-        transition-duration:
-          0.01ms !important;
-
-      }
-
-
-      .reveal {
-
-        opacity: 1;
-
-        transform: none;
-
-      }
-
-    }
-
   </style>
 
 </head>
@@ -2930,7 +2743,6 @@
     id="opening"
   >
 
-
     <button
       type="button"
       class="opening-skip"
@@ -2938,7 +2750,6 @@
     >
       SKIP →
     </button>
-
 
 
     <div class="opening-inner">
@@ -2949,33 +2760,14 @@
       </div>
 
 
-
       <div class="envelope-stage">
 
 
         <div class="envelope">
 
 
-          <!-- 봉투 뒤판 -->
-
           <div class="envelope-back"></div>
 
-
-
-          <!-- ========================================
-               PHOTO
-
-               실제 사진 넣을 때
-
-               WEDDING PHOTO 글자를 지우고
-
-               <img
-                 src="images/opening.jpg"
-                 alt="Gahyun and Jinchan"
-               >
-
-               를 넣으면 됨.
-          ======================================== -->
 
           <div class="photo-window">
 
@@ -2996,32 +2788,19 @@
           </div>
 
 
-
-          <!-- 빨간 봉투 뚜껑 -->
-
           <div class="envelope-flap"></div>
 
 
-
-          <!-- 봉투 앞부분 -->
-
           <div class="envelope-front">
-
 
             <div class="envelope-front-left"></div>
 
-
             <div class="envelope-front-right"></div>
-
 
             <div class="envelope-front-bottom"></div>
 
-
           </div>
 
-
-
-          <!-- 흰색 하트 스티커 -->
 
           <div class="envelope-seal">
             ♥
@@ -3032,7 +2811,6 @@
 
 
       </div>
-
 
 
       <div class="opening-text">
@@ -3061,9 +2839,7 @@
 
 
 
-  <!-- ========================================
-       WEDDING INFO SHORTCUT
-  ======================================== -->
+  <!-- WEDDING INFO SHORTCUT -->
 
   <button
     type="button"
@@ -3084,76 +2860,52 @@
     id="main"
   >
 
-
     <div class="inner">
 
 
       <div class="intro-label">
-
         WINTER · SPRING · SUMMER · AUTUMN · WINTER
-
       </div>
-
 
 
       <h1 class="names">
 
         Gahyun
-
         <br>
-
         &
-
         <br>
-
         Jinchan
 
       </h1>
 
 
-
       <div class="intro-date">
-
         JANUARY 30, 2027
-
       </div>
-
 
 
       <div class="intro-description">
 
-
         우리의 이야기가 시작된 3년 전 겨울,
-
         <br>
 
         몇 번의 봄과 여름, 가을을 함께 지나
-
         <br>
 
         다시 겨울을 맞이합니다.
 
-
         <br><br>
 
-
         그리고 이 겨울,
-
         <br>
 
         우리는 새로운 계절을 시작합니다.
-
 
       </div>
 
 
 
-      <!-- ========================================
-           SEASON GRID
-      ======================================== -->
-
       <div class="season-grid">
-
 
 
         <button
@@ -3162,40 +2914,25 @@
           data-season="winter"
         >
 
-
           <div class="season-image">
-
             겨울 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               WINTER
-
             </div>
-
 
             <div class="season-kor">
-
               우리의 시작
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
 
-
           </div>
-
 
         </button>
 
@@ -3207,40 +2944,25 @@
           data-season="spring"
         >
 
-
           <div class="season-image">
-
             봄 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               SPRING
-
             </div>
-
 
             <div class="season-kor">
-
               피어나는 우리
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
 
-
           </div>
-
 
         </button>
 
@@ -3252,40 +2974,25 @@
           data-season="summer"
         >
 
-
           <div class="season-image">
-
             여름 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               SUMMER
-
             </div>
-
 
             <div class="season-kor">
-
               빛나는 시간
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
 
-
           </div>
-
 
         </button>
 
@@ -3297,40 +3004,25 @@
           data-season="autumn"
         >
 
-
           <div class="season-image">
-
             가을 대표사진
-
           </div>
-
 
           <div class="season-overlay">
 
-
             <div class="season-eng">
-
               AUTUMN
-
             </div>
-
 
             <div class="season-kor">
-
               깊어진 시간
-
             </div>
-
 
             <div class="season-click">
-
               VIEW STORY →
-
             </div>
 
-
           </div>
-
 
         </button>
 
@@ -3338,16 +3030,12 @@
       </div>
 
 
-
       <div class="story-hint">
-
         TAP EACH SEASON TO SEE OUR STORY
-
       </div>
 
 
     </div>
-
 
   </section>
 
@@ -3359,67 +3047,48 @@
 
   <section class="winter-again reveal">
 
-
     <div class="inner center">
 
 
       <div class="again-small">
-
         AND WINTER AGAIN
-
       </div>
-
 
 
       <h2 class="again-title">
-
         Our Winter
-
       </h2>
 
 
-
       <div class="again-date">
-
         JANUARY 30, 2027
-
       </div>
-
 
 
       <div class="again-text">
 
-
         우리의 이야기가 시작된 겨울에서
-
         <br>
 
         몇 번의 계절을 함께 지나
-
         <br>
 
         다시 겨울을 맞이합니다.
 
-
       </div>
-
 
 
       <div class="fill-winter">
 
-
         우리의 겨울을
-
         <br>
 
         함께 채워주세요.
-
 
       </div>
 
 
     </div>
-
 
   </section>
 
@@ -3431,70 +3100,52 @@
 
   <section class="invitation reveal">
 
-
     <div class="inner center">
 
 
       <div class="section-label">
-
         INVITATION
-
       </div>
 
 
-
       <h2 class="invitation-title">
-
         소중한 분들을 초대합니다
-
       </h2>
-
 
 
       <div class="invitation-text">
 
-
         뒤돌아보면 함께한 일상 속에 행복이 있었습니다.
 
-
         <br><br>
-
 
         풀리지 않는 고민도 함께 나누고 답을 찾겠습니다.
 
-
         <br><br>
 
-
         이제 사랑과 믿음으로 한 가정을 이루어
-
         <br>
 
         서로를 너그러이 보듬으며 살아가려 합니다.
 
-
         <br><br>
 
-
         중요한 이 약속의 자리에 함께하시어
-
         <br>
 
         저희의 앞날을 축복해 주세요.
-
 
       </div>
 
 
     </div>
 
-
   </section>
 
 
 
   <!-- ========================================
-       WEDDING DAY
+       WEDDING INFO
   ======================================== -->
 
   <section
@@ -3502,65 +3153,42 @@
     id="wedding"
   >
 
-
     <div class="inner center">
 
 
       <div class="section-label">
-
         WEDDING DAY
-
       </div>
-
 
 
       <div class="wedding-date-big">
-
         January 30, 2027
-
       </div>
-
 
 
       <div class="wedding-time">
-
         SATURDAY · 5:00 PM
-
       </div>
 
 
-
-      <!-- VENUE -->
 
       <div class="venue">
 
-
         <div class="venue-name">
-
           엘로라 인 가든
-
         </div>
-
-
 
         <div class="venue-address">
 
-
           서울특별시 송파구 충민로 52
-
           <br>
-
           가든파이브 웍스 1층
 
-
         </div>
-
 
       </div>
 
 
-
-      <!-- MAP -->
 
       <div class="map-buttons">
 
@@ -3571,11 +3199,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           NAVER MAP
-
         </a>
-
 
 
         <a
@@ -3584,9 +3209,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           KAKAO MAP
-
         </a>
 
 
@@ -3594,13 +3217,10 @@
 
 
 
-      <!-- PARKING -->
-
       <div
         class="parking-wrap"
         id="parkingWrap"
       >
-
 
         <button
           type="button"
@@ -3608,32 +3228,21 @@
           id="parkingToggle"
         >
 
-
           <div class="parking-toggle-left">
 
-
             <div class="parking-title">
-
               PARKING & TRANSPORTATION
-
             </div>
-
 
             <div class="parking-subtitle">
-
               주차 및 교통 안내
-
             </div>
-
 
           </div>
 
 
-
           <div class="parking-plus">
-
             +
-
           </div>
 
 
@@ -3647,104 +3256,67 @@
           <div class="parking-content-inner">
 
 
-
             <div class="parking-highlight">
 
-
               넉넉한 주차 공간이 마련되어 있으니
-
               <br>
 
               차량 이용이 가능하신 분들은
-
               <br>
 
               편하게 차를 가지고 오셔도 됩니다.
 
-
             </div>
-
 
 
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 주차 위치
-
               </div>
 
-
               <div class="parking-value">
-
                 가든파이브 웍스동 B2–B5
-
               </div>
-
 
             </div>
 
 
-
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 주차 혜택
-
               </div>
 
-
               <div class="parking-value">
-
                 하객 3시간 무료
-
               </div>
-
 
             </div>
 
 
-
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 내비 검색
-
               </div>
-
 
               <div class="parking-value">
-
                 우리은행 가든파이브점
-
               </div>
-
 
             </div>
 
 
-
             <div class="parking-row">
 
-
               <div class="parking-label">
-
                 웨딩홀
-
               </div>
-
 
               <div class="parking-value">
-
                 주차 후 A/B/C/D동 엘리베이터 이용 → 1층
-
               </div>
-
 
             </div>
 
@@ -3759,39 +3331,27 @@
 
 
 
-      <!-- ATTENDANCE -->
-
       <div class="action-section">
 
 
         <div class="section-label">
-
           ATTENDANCE
-
         </div>
-
 
 
         <div class="action-title">
-
           참석 여부
-
         </div>
-
 
 
         <div class="action-description">
 
-
           참석 여부를 알려주시면
-
           <br>
 
           소중한 자리를 준비하는 데 도움이 됩니다.
 
-
         </div>
-
 
 
         <button
@@ -3799,9 +3359,7 @@
           class="action-button"
           id="openRsvp"
         >
-
           참석 여부 전달하기
-
         </button>
 
 
@@ -3809,39 +3367,27 @@
 
 
 
-      <!-- HEART -->
-
       <div class="action-section">
 
 
         <div class="section-label">
-
           FOR YOUR HEART
-
         </div>
-
 
 
         <div class="action-title">
-
           마음 전하실 곳
-
         </div>
-
 
 
         <div class="action-description">
 
-
           멀리서도 축하해 주시는
-
           <br>
 
           따뜻한 마음에 깊이 감사드립니다.
 
-
         </div>
-
 
 
         <button
@@ -3849,9 +3395,7 @@
           class="action-button"
           id="openAccount"
         >
-
           마음 전하기
-
         </button>
 
 
@@ -3859,7 +3403,6 @@
 
 
     </div>
-
 
   </section>
 
@@ -3871,38 +3414,27 @@
 
   <section class="guest-snap reveal">
 
-
     <div class="inner center">
 
 
       <div class="section-label">
-
         GUEST SNAP
-
       </div>
-
 
 
       <div class="guest-title">
-
         Fill Our Winter
-
       </div>
-
 
 
       <div class="guest-text">
 
-
         저희가 보지 못한 오늘의 순간을
-
         <br>
 
         여러분의 시선으로 남겨주세요.
 
-
       </div>
-
 
 
       <button
@@ -3910,21 +3442,18 @@
         class="guest-button"
         id="guestUpload"
       >
-
         사진 & 영상 올리기
-
       </button>
 
 
     </div>
-
 
   </section>
 
 
 
   <!-- ========================================
-       WINTER DETAIL
+       SEASON DETAILS
   ======================================== -->
 
   <div
@@ -3932,436 +3461,256 @@
     id="season-winter"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR FIRST SEASON
-
         </div>
-
 
         <div class="season-page-title">
-
           Winter
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         겨울 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         우리의 이야기가 시작된 겨울.
 
-
         <br><br>
-
 
         이곳에는 두 사람의
         첫 번째 겨울 이야기를 담을 예정입니다.
 
-
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-          겨울 사진 1
-        </div>
-
-
-        <div class="mini-photo">
-          겨울 사진 2
-        </div>
-
-
-        <div class="mini-photo">
-          겨울 사진 3
-        </div>
-
-
-        <div class="mini-photo">
-          겨울 사진 4
-        </div>
-
+        <div class="mini-photo">겨울 사진 1</div>
+        <div class="mini-photo">겨울 사진 2</div>
+        <div class="mini-photo">겨울 사진 3</div>
+        <div class="mini-photo">겨울 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         WINTER · OUR BEGINNING
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
-
-  <!-- ========================================
-       SPRING DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
     id="season-spring"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR SPRING
-
         </div>
-
 
         <div class="season-page-title">
-
           Spring
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         봄 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         따뜻해진 계절과 함께
 
-
         <br><br>
-
 
         우리의 시간에도
         새로운 장면들이 쌓여갔습니다.
 
-
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-          봄 사진 1
-        </div>
-
-
-        <div class="mini-photo">
-          봄 사진 2
-        </div>
-
-
-        <div class="mini-photo">
-          봄 사진 3
-        </div>
-
-
-        <div class="mini-photo">
-          봄 사진 4
-        </div>
-
+        <div class="mini-photo">봄 사진 1</div>
+        <div class="mini-photo">봄 사진 2</div>
+        <div class="mini-photo">봄 사진 3</div>
+        <div class="mini-photo">봄 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         SPRING · OUR DAYS
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
-
-  <!-- ========================================
-       SUMMER DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
     id="season-summer"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR SUMMER
-
         </div>
-
 
         <div class="season-page-title">
-
           Summer
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         여름 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         햇살이 가장 길었던 계절.
 
-
         <br><br>
-
 
         함께하는 우리의 시간도
         한층 더 선명해졌습니다.
 
-
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-          여름 사진 1
-        </div>
-
-
-        <div class="mini-photo">
-          여름 사진 2
-        </div>
-
-
-        <div class="mini-photo">
-          여름 사진 3
-        </div>
-
-
-        <div class="mini-photo">
-          여름 사진 4
-        </div>
-
+        <div class="mini-photo">여름 사진 1</div>
+        <div class="mini-photo">여름 사진 2</div>
+        <div class="mini-photo">여름 사진 3</div>
+        <div class="mini-photo">여름 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         SUMMER · OUR BRIGHT DAYS
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
-
-  <!-- ========================================
-       AUTUMN DETAIL
-  ======================================== -->
 
   <div
     class="season-page"
     id="season-autumn"
   >
 
-
     <div class="season-page-inner">
-
 
       <button
         type="button"
         class="season-back"
       >
-
         ← BACK
-
       </button>
-
 
 
       <div class="season-page-header">
 
-
         <div class="season-page-small">
-
           OUR AUTUMN
-
         </div>
-
 
         <div class="season-page-title">
-
           Autumn
-
         </div>
 
-
       </div>
-
 
 
       <div class="season-page-main-photo">
-
         가을 메인 사진
-
       </div>
-
 
 
       <div class="season-page-text">
 
-
         계절이 깊어지는 동안
 
-
         <br><br>
-
 
         우리도 함께할
         다음 계절을 준비하기 시작했습니다.
 
-
       </div>
-
 
 
       <div class="mini-gallery">
 
-
-        <div class="mini-photo">
-          가을 사진 1
-        </div>
-
-
-        <div class="mini-photo">
-          가을 사진 2
-        </div>
-
-
-        <div class="mini-photo">
-          가을 사진 3
-        </div>
-
-
-        <div class="mini-photo">
-          가을 사진 4
-        </div>
-
+        <div class="mini-photo">가을 사진 1</div>
+        <div class="mini-photo">가을 사진 2</div>
+        <div class="mini-photo">가을 사진 3</div>
+        <div class="mini-photo">가을 사진 4</div>
 
       </div>
-
 
 
       <div class="season-end">
-
         AUTUMN · OUR PROMISE
-
       </div>
 
-
     </div>
-
 
   </div>
 
@@ -4376,32 +3725,22 @@
     id="rsvpModal"
   >
 
-
     <div class="modal-panel">
 
 
       <div class="modal-header">
 
-
         <div>
 
-
           <div class="modal-label">
-
             ATTENDANCE
-
           </div>
-
 
           <div class="modal-title">
-
             참석 여부를 알려주세요
-
           </div>
 
-
         </div>
-
 
 
         <button
@@ -4409,11 +3748,8 @@
           class="modal-close"
           data-close-modal
         >
-
           ×
-
         </button>
-
 
       </div>
 
@@ -4422,76 +3758,56 @@
       <form id="rsvpForm">
 
 
-
         <div class="form-section">
 
-
           <div class="form-label">
-
             어느 분의 하객이신가요?
-
           </div>
-
 
 
           <div class="choice-row">
 
 
-
             <div>
-
 
               <input
                 type="radio"
                 name="side"
-                value="신랑측"
                 id="sideGroom"
                 class="choice-input"
                 checked
               >
 
-
               <label
                 for="sideGroom"
                 class="choice-label"
               >
-
                 신랑측
-
               </label>
-
 
             </div>
 
 
-
             <div>
-
 
               <input
                 type="radio"
                 name="side"
-                value="신부측"
                 id="sideBride"
                 class="choice-input"
               >
-
 
               <label
                 for="sideBride"
                 class="choice-label"
               >
-
                 신부측
-
               </label>
-
 
             </div>
 
 
           </div>
-
 
         </div>
 
@@ -4499,16 +3815,12 @@
 
         <div class="form-section">
 
-
           <label
             for="guestName"
             class="form-label"
           >
-
             성함
-
           </label>
-
 
 
           <input
@@ -4519,23 +3831,18 @@
             required
           >
 
-
         </div>
 
 
 
         <div class="form-section">
 
-
           <label
             for="guestCount"
             class="form-label"
           >
-
             총 참석 인원
-
           </label>
-
 
 
           <select
@@ -4543,34 +3850,13 @@
             class="select-input"
           >
 
-
-            <option value="1">
-              1명
-            </option>
-
-
-            <option value="2">
-              2명
-            </option>
-
-
-            <option value="3">
-              3명
-            </option>
-
-
-            <option value="4">
-              4명
-            </option>
-
-
-            <option value="5">
-              5명 이상
-            </option>
-
+            <option>1명</option>
+            <option>2명</option>
+            <option>3명</option>
+            <option>4명</option>
+            <option>5명 이상</option>
 
           </select>
-
 
         </div>
 
@@ -4578,73 +3864,54 @@
 
         <div class="form-section">
 
-
           <div class="form-label">
-
             참석 여부
-
           </div>
-
 
 
           <div class="choice-row">
 
 
-
             <div>
-
 
               <input
                 type="radio"
                 name="attendance"
-                value="참석"
                 id="attendYes"
                 class="choice-input"
                 checked
               >
 
-
               <label
                 for="attendYes"
                 class="choice-label"
               >
-
                 참석
-
               </label>
-
 
             </div>
 
 
-
             <div>
-
 
               <input
                 type="radio"
                 name="attendance"
-                value="불참"
                 id="attendNo"
                 class="choice-input"
               >
-
 
               <label
                 for="attendNo"
                 class="choice-label"
               >
-
                 불참
-
               </label>
-
 
             </div>
 
 
           </div>
-
 
         </div>
 
@@ -4654,22 +3921,17 @@
           type="submit"
           class="submit-button"
         >
-
           전달하기
-
         </button>
 
 
-
         <div class="form-note">
-
 
           현재는 화면 초안입니다.
 
           <br>
 
           추후 실제 참석 명단 저장 기능을 연결할 예정입니다.
-
 
         </div>
 
@@ -4678,7 +3940,6 @@
 
 
     </div>
-
 
   </div>
 
@@ -4693,32 +3954,22 @@
     id="accountModal"
   >
 
-
     <div class="modal-panel">
 
 
       <div class="modal-header">
 
-
         <div>
 
-
           <div class="modal-label">
-
             FOR YOUR HEART
-
           </div>
-
 
           <div class="modal-title">
-
             마음 전하실 곳
-
           </div>
 
-
         </div>
-
 
 
         <button
@@ -4726,11 +3977,8 @@
           class="modal-close"
           data-close-modal
         >
-
           ×
-
         </button>
-
 
       </div>
 
@@ -4738,15 +3986,12 @@
 
       <div class="account-tabs">
 
-
         <button
           type="button"
           class="account-tab active"
           data-account="groom"
         >
-
           신랑측
-
         </button>
 
 
@@ -4755,306 +4000,197 @@
           class="account-tab"
           data-account="bride"
         >
-
           신부측
-
         </button>
-
 
       </div>
 
 
-
-      <!-- GROOM -->
 
       <div
         class="account-group active"
         id="account-groom"
       >
 
-
-
         <div class="account-card">
 
-
           <div class="account-role">
-
             신랑
-
           </div>
 
-
           <div class="account-name">
-
             황진찬
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
-
 
         </div>
 
 
-
         <div class="account-card">
 
-
           <div class="account-role">
-
             신랑 아버지
-
           </div>
-
 
           <div class="account-name">
-
             성함 입력 예정
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
 
-
         </div>
-
 
 
         <div class="account-card">
 
-
           <div class="account-role">
-
             신랑 어머니
-
           </div>
-
 
           <div class="account-name">
-
             성함 입력 예정
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
 
-
         </div>
-
 
       </div>
 
 
-
-      <!-- BRIDE -->
 
       <div
         class="account-group"
         id="account-bride"
       >
 
-
-
         <div class="account-card">
 
-
           <div class="account-role">
-
             신부
-
           </div>
 
-
           <div class="account-name">
-
             김가현
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
-
 
         </div>
 
 
-
         <div class="account-card">
 
-
           <div class="account-role">
-
             신부 아버지
-
           </div>
-
 
           <div class="account-name">
-
             성함 입력 예정
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
 
-
         </div>
-
 
 
         <div class="account-card">
 
-
           <div class="account-role">
-
             신부 어머니
-
           </div>
-
 
           <div class="account-name">
-
             성함 입력 예정
-
           </div>
-
 
           <div class="account-number">
-
             은행명 000-0000-0000
-
           </div>
-
 
           <button
             type="button"
             class="account-copy"
             data-placeholder-copy
           >
-
             계좌번호 복사
-
           </button>
 
-
         </div>
-
 
       </div>
 
 
     </div>
 
-
   </div>
 
 
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
-
   <footer>
-
 
     GAHYUN & JINCHAN
 
-
     <br>
 
-
     2027. 01. 30
-
 
   </footer>
 
 
 
-  <!-- ========================================
-       JAVASCRIPT
-  ======================================== -->
-
   <script>
-
 
     /* ========================================
        OPENING
@@ -5063,56 +4199,38 @@
     const opening =
       document.getElementById("opening");
 
-
     const openingSkip =
-      document.getElementById(
-        "openingSkip"
-      );
-
+      document.getElementById("openingSkip");
 
     let openingClosed = false;
 
 
-
     function closeOpening() {
-
 
       if (openingClosed) {
         return;
       }
 
-
       openingClosed = true;
 
-
       opening.classList.add("hide");
-
 
       document.body
         .classList
         .remove("opening-active");
 
-
       document.body
         .classList
         .add("page-ready");
 
-
       setTimeout(
         function () {
-
-
-          opening.style.display =
-            "none";
-
-
+          opening.style.display = "none";
         },
         950
       );
 
-
     }
-
 
 
     openingSkip.addEventListener(
@@ -5121,16 +4239,6 @@
     );
 
 
-
-    /*
-      봉투 등장
-      → 하트 스티커
-      → 봉투 열림
-      → 사진 올라옴
-      → 이름/날짜 등장
-      → 본문
-    */
-
     setTimeout(
       closeOpening,
       4400
@@ -5138,212 +4246,139 @@
 
 
 
-    /* ========================================
-       WEDDING INFO
-    ======================================== */
+    /* WEDDING INFO */
 
     document
-      .getElementById(
-        "weddingShortcut"
-      )
+      .getElementById("weddingShortcut")
       .addEventListener(
         "click",
         function () {
 
-
           closeOpening();
-
 
           setTimeout(
             function () {
 
-
               document
-                .getElementById(
-                  "wedding"
-                )
+                .getElementById("wedding")
                 .scrollIntoView({
-
-                  behavior:
-                    "smooth"
-
+                  behavior: "smooth"
                 });
-
 
             },
             120
           );
-
 
         }
       );
 
 
 
-    /* ========================================
-       SCROLL REVEAL
-    ======================================== */
+    /* SCROLL REVEAL */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
     const revealObserver =
       new IntersectionObserver(
         function (entries) {
 
-
           entries.forEach(
             function (entry) {
 
-
-              if (
-                entry.isIntersecting
-              ) {
-
+              if (entry.isIntersecting) {
 
                 entry.target
                   .classList
                   .add("visible");
 
-
                 revealObserver
-                  .unobserve(
-                    entry.target
-                  );
-
+                  .unobserve(entry.target);
 
               }
-
 
             }
           );
 
-
         },
         {
-
           threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(
+      function (element) {
+
+        revealObserver.observe(element);
+
+      }
+    );
+
+
+
+    /* SEASONS */
+
+    document
+      .querySelectorAll(".season-card")
+      .forEach(
+        function (card) {
+
+          card.addEventListener(
+            "click",
+            function () {
+
+              const page =
+                document.getElementById(
+                  "season-" +
+                  card.dataset.season
+                );
+
+              if (!page) {
+                return;
+              }
+
+              page.classList.add("active");
+
+              page.scrollTop = 0;
+
+              document.body.style.overflow =
+                "hidden";
+
+            }
+          );
+
+        }
+      );
+
+
+    document
+      .querySelectorAll(".season-back")
+      .forEach(
+        function (button) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              button
+                .closest(".season-page")
+                .classList
+                .remove("active");
+
+              document.body.style.overflow =
+                "";
+
+            }
+          );
 
         }
       );
 
 
 
-    revealElements.forEach(
-      function (element) {
-
-
-        revealObserver.observe(
-          element
-        );
-
-
-      }
-    );
-
-
-
-    /* ========================================
-       SEASON DETAIL
-    ======================================== */
-
-    const seasonCards =
-      document.querySelectorAll(
-        ".season-card"
-      );
-
-
-    const seasonBackButtons =
-      document.querySelectorAll(
-        ".season-back"
-      );
-
-
-
-    seasonCards.forEach(
-      function (card) {
-
-
-        card.addEventListener(
-          "click",
-          function () {
-
-
-            const season =
-              card.dataset.season;
-
-
-            const page =
-              document.getElementById(
-                "season-" + season
-              );
-
-
-            if (!page) {
-              return;
-            }
-
-
-            page.classList.add(
-              "active"
-            );
-
-
-            page.scrollTop = 0;
-
-
-            document.body.style.overflow =
-              "hidden";
-
-
-          }
-        );
-
-
-      }
-    );
-
-
-
-    seasonBackButtons.forEach(
-      function (button) {
-
-
-        button.addEventListener(
-          "click",
-          function () {
-
-
-            const page =
-              button.closest(
-                ".season-page"
-              );
-
-
-            page.classList.remove(
-              "active"
-            );
-
-
-            document.body.style.overflow =
-              "";
-
-
-          }
-        );
-
-
-      }
-    );
-
-
-
-    /* ========================================
-       PARKING
-    ======================================== */
+    /* PARKING */
 
     const parkingWrap =
       document.getElementById(
@@ -5351,37 +4386,27 @@
       );
 
 
-    const parkingToggle =
-      document.getElementById(
-        "parkingToggle"
+    document
+      .getElementById("parkingToggle")
+      .addEventListener(
+        "click",
+        function () {
+
+          parkingWrap
+            .classList
+            .toggle("open");
+
+        }
       );
 
 
 
-    parkingToggle.addEventListener(
-      "click",
-      function () {
-
-
-        parkingWrap
-          .classList
-          .toggle("open");
-
-
-      }
-    );
-
-
-
-    /* ========================================
-       MODAL
-    ======================================== */
+    /* MODALS */
 
     const rsvpModal =
       document.getElementById(
         "rsvpModal"
       );
-
 
     const accountModal =
       document.getElementById(
@@ -5389,81 +4414,50 @@
       );
 
 
-
     function openModal(modal) {
 
-
-      modal.classList.add(
-        "active"
-      );
-
+      modal.classList.add("active");
 
       document.body
         .classList
-        .add(
-          "modal-open"
-        );
-
+        .add("modal-open");
 
     }
-
 
 
     function closeModal(modal) {
 
-
-      modal.classList.remove(
-        "active"
-      );
-
+      modal.classList.remove("active");
 
       document.body
         .classList
-        .remove(
-          "modal-open"
-        );
-
+        .remove("modal-open");
 
     }
 
 
-
     document
-      .getElementById(
-        "openRsvp"
-      )
+      .getElementById("openRsvp")
       .addEventListener(
         "click",
         function () {
 
-
-          openModal(
-            rsvpModal
-          );
-
+          openModal(rsvpModal);
 
         }
       );
 
 
-
     document
-      .getElementById(
-        "openAccount"
-      )
+      .getElementById("openAccount")
       .addEventListener(
         "click",
         function () {
 
-
-          openModal(
-            accountModal
-          );
-
+          openModal(accountModal);
 
         }
       );
-
 
 
     document
@@ -5473,121 +4467,85 @@
       .forEach(
         function (button) {
 
-
           button.addEventListener(
             "click",
             function () {
 
-
               closeModal(
-                button.closest(
-                  ".modal"
-                )
+                button.closest(".modal")
               );
-
 
             }
           );
-
 
         }
       );
 
 
-
     document
-      .querySelectorAll(
-        ".modal"
-      )
+      .querySelectorAll(".modal")
       .forEach(
         function (modal) {
-
 
           modal.addEventListener(
             "click",
             function (event) {
 
+              if (event.target === modal) {
 
-              if (
-                event.target === modal
-              ) {
-
-
-                closeModal(
-                  modal
-                );
-
+                closeModal(modal);
 
               }
 
-
             }
           );
-
 
         }
       );
 
 
 
-    /* ========================================
-       RSVP
-    ======================================== */
+    /* RSVP */
 
     document
-      .getElementById(
-        "rsvpForm"
-      )
+      .getElementById("rsvpForm")
       .addEventListener(
         "submit",
         function (event) {
 
-
           event.preventDefault();
-
 
           const guestName =
             document
-              .getElementById(
-                "guestName"
-              )
+              .getElementById("guestName")
               .value
               .trim();
 
-
           if (!guestName) {
-
 
             alert(
               "성함을 입력해주세요."
             );
 
-
             return;
 
-
           }
-
 
           alert(
             "현재는 화면 초안이에요.\n\n추후 실제 참석 명단 저장 기능을 연결할 예정입니다."
           );
-
 
         }
       );
 
 
 
-    /* ========================================
-       ACCOUNT TABS
-    ======================================== */
+    /* ACCOUNT */
 
     const accountTabs =
       document.querySelectorAll(
         ".account-tab"
       );
-
 
     const accountGroups =
       document.querySelectorAll(
@@ -5595,73 +4553,47 @@
       );
 
 
-
     accountTabs.forEach(
       function (tab) {
-
 
         tab.addEventListener(
           "click",
           function () {
 
-
             const target =
               tab.dataset.account;
 
-
             accountTabs.forEach(
               function (item) {
-
-
                 item.classList.remove(
                   "active"
                 );
-
-
               }
             );
-
 
             accountGroups.forEach(
               function (group) {
-
-
                 group.classList.remove(
                   "active"
                 );
-
-
               }
             );
 
-
-            tab.classList.add(
-              "active"
-            );
-
+            tab.classList.add("active");
 
             document
               .getElementById(
                 "account-" + target
               )
               .classList
-              .add(
-                "active"
-              );
-
+              .add("active");
 
           }
         );
 
-
       }
     );
 
-
-
-    /* ========================================
-       ACCOUNT COPY PLACEHOLDER
-    ======================================== */
 
     document
       .querySelectorAll(
@@ -5670,111 +4602,36 @@
       .forEach(
         function (button) {
 
-
           button.addEventListener(
             "click",
             function () {
-
 
               alert(
                 "실제 계좌번호 입력 후 복사 기능을 연결할 예정이에요."
               );
 
-
             }
           );
-
 
         }
       );
 
 
 
-    /* ========================================
-       GUEST SNAP
-    ======================================== */
+    /* GUEST SNAP */
 
     document
-      .getElementById(
-        "guestUpload"
-      )
+      .getElementById("guestUpload")
       .addEventListener(
         "click",
         function () {
-
 
           alert(
             "나중에 사진·영상 업로드 서비스를 연결할 예정이에요."
           );
 
-
         }
       );
-
-
-
-    /* ========================================
-       ESC
-    ======================================== */
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-
-        if (
-          event.key !== "Escape"
-        ) {
-          return;
-        }
-
-
-        const activeModal =
-          document.querySelector(
-            ".modal.active"
-          );
-
-
-        if (activeModal) {
-
-
-          closeModal(
-            activeModal
-          );
-
-
-          return;
-
-
-        }
-
-
-        const activeSeason =
-          document.querySelector(
-            ".season-page.active"
-          );
-
-
-        if (activeSeason) {
-
-
-          activeSeason
-            .classList
-            .remove(
-              "active"
-            );
-
-
-          document.body.style.overflow =
-            "";
-
-
-        }
-
-
-      }
-    );
-
 
   </script>
 
