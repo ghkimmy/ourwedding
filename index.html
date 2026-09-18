@@ -16,9 +16,7 @@
     content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
   >
 
-  <!-- ========================================
-       OPEN GRAPH
-  ======================================== -->
+  <!-- OPEN GRAPH -->
 
   <meta property="og:type" content="website">
 
@@ -47,19 +45,42 @@
   <meta property="og:image:type" content="image/jpeg">
 
   <meta
+    property="og:image:alt"
+    content="김가현 황진찬 결혼식 초대장"
+  >
+
+  <meta
     property="og:site_name"
     content="Gahyun & Jinchan Wedding"
   >
 
-  <!-- ========================================
-       FONT
-  ======================================== -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="김가현 ♥ 황진찬 결혼합니다."
+  >
+
+  <meta
+    name="twitter:description"
+    content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://ghkimmy.github.io/ourwedding/images/og-wedding.jpg"
+  >
+
 
   <link
     rel="stylesheet"
     crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
   >
+
 
   <style>
 
@@ -103,18 +124,16 @@
       --winter-blue-light: #e9f1f4;
       --winter-ivory: #f8f3eb;
 
-      --wedding-red: #9d2631;
       --calendar-heart: #c77d87;
 
       --text: #30363a;
-
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        BASIC
-    ======================================== */
+    ================================================== */
 
     * {
       box-sizing: border-box;
@@ -131,7 +150,6 @@
       margin: 0;
 
       background: #f7f6f2;
-
       color: var(--text);
 
       font-family: var(--font-body);
@@ -189,9 +207,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        WINTER TEXTURE
-    ======================================== */
+    ================================================== */
 
     .opening::after,
     .intro::after,
@@ -202,9 +220,9 @@
       position: absolute;
       inset: 0;
 
-      pointer-events: none;
-
       z-index: 1;
+
+      pointer-events: none;
 
       opacity: 0.11;
 
@@ -214,19 +232,19 @@
           transparent 0.55px
         );
 
-      background-size:
-        4px 4px;
+      background-size: 4px 4px;
 
       mix-blend-mode: multiply;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        SNOW
-    ======================================== */
+    ================================================== */
 
     .snow-layer {
+
       position: absolute;
       inset: 0;
 
@@ -256,8 +274,7 @@
         0 2px 5px rgba(119,156,178,0.32),
         0 0 10px rgba(255,255,255,0.92);
 
-      opacity:
-        var(--opacity);
+      opacity: var(--opacity);
 
       animation:
         snowFall
@@ -273,34 +290,24 @@
 
 
     .snow-particle.soft {
-      filter:
-        blur(1px);
+      filter: blur(1px);
     }
 
 
     @keyframes snowFall {
 
       0% {
-
         transform:
-          translate3d(
-            0,
-            -30px,
-            0
-          );
+          translate3d(0,-30px,0);
 
         opacity: 0;
       }
 
-
       8% {
-        opacity:
-          var(--opacity);
+        opacity: var(--opacity);
       }
 
-
       37% {
-
         transform:
           translate3d(
             var(--drift-a),
@@ -309,9 +316,7 @@
           );
       }
 
-
       70% {
-
         transform:
           translate3d(
             var(--drift-b),
@@ -320,9 +325,7 @@
           );
       }
 
-
       100% {
-
         transform:
           translate3d(
             var(--drift-a),
@@ -332,14 +335,13 @@
 
         opacity: 0.12;
       }
-
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        OPENING
-    ======================================== */
+    ================================================== */
 
     .opening {
 
@@ -349,7 +351,6 @@
       z-index: 10000;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -417,18 +418,15 @@
 
       min-height: 40px;
 
-      padding:
-        0 14px;
+      padding: 0 14px;
 
       border: 0;
 
       background: transparent;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 1.8px;
 
       color:
@@ -457,11 +455,9 @@
 
       margin-bottom: 31px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 4px;
 
       color: #74838a;
@@ -475,15 +471,14 @@
         openingFade
         0.8s ease forwards;
 
-      animation-delay:
-        0.08s;
+      animation-delay: 0.08s;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        ENVELOPE
-    ======================================== */
+    ================================================== */
 
     .envelope-stage {
 
@@ -517,8 +512,7 @@
         envelopeAppear
         0.8s ease forwards;
 
-      animation-delay:
-        0.3s;
+      animation-delay: 0.3s;
     }
 
 
@@ -529,11 +523,8 @@
       left: 50%;
       bottom: 18px;
 
-      width:
-        var(--env-w);
-
-      height:
-        var(--env-h);
+      width: var(--env-w);
+      height: var(--env-h);
 
       transform:
         translateX(-50%);
@@ -565,9 +556,6 @@
     }
 
 
-
-    /* PHOTO */
-
     .photo-window {
 
       position: absolute;
@@ -577,8 +565,7 @@
 
       width: 100%;
 
-      height:
-        var(--env-h);
+      height: var(--env-h);
 
       z-index: 3;
 
@@ -592,8 +579,7 @@
         cubic-bezier(.22,.72,.25,1)
         forwards;
 
-      animation-delay:
-        1.35s;
+      animation-delay: 1.35s;
     }
 
 
@@ -602,15 +588,10 @@
       position: absolute;
 
       left: 50%;
+      bottom: var(--photo-bottom);
 
-      bottom:
-        var(--photo-bottom);
-
-      width:
-        var(--photo-w);
-
-      height:
-        var(--photo-h);
+      width: var(--photo-w);
+      height: var(--photo-h);
 
       padding:
         7px 7px 23px;
@@ -631,8 +612,7 @@
         cubic-bezier(.22,.72,.25,1)
         forwards;
 
-      animation-delay:
-        1.35s;
+      animation-delay: 1.35s;
     }
 
 
@@ -642,7 +622,6 @@
       height: 100%;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -658,26 +637,9 @@
       color: #89949a;
 
       font-size: 9px;
-
       letter-spacing: 1px;
     }
 
-
-    .letter-photo-inner img {
-
-      width: 100%;
-      height: 100%;
-
-      display: block;
-
-      object-fit: cover;
-    }
-
-
-
-    /* ========================================
-       ENVELOPE RED
-    ======================================== */
 
     .envelope-flap {
 
@@ -711,8 +673,7 @@
       transform:
         rotateX(0deg);
 
-      backface-visibility:
-        hidden;
+      backface-visibility: hidden;
 
       animation:
         flapOpen
@@ -720,8 +681,7 @@
         cubic-bezier(.35,.02,.25,1)
         forwards;
 
-      animation-delay:
-        0.82s;
+      animation-delay: 0.82s;
     }
 
 
@@ -806,12 +766,9 @@
 
       color: #fff;
 
-      font-family:
-        Arial,
-        sans-serif;
+      font-family: Arial, sans-serif;
 
       font-size: 29px;
-
       line-height: 1;
 
       filter:
@@ -824,15 +781,14 @@
         sealDisappear
         0.32s ease forwards;
 
-      animation-delay:
-        0.67s;
+      animation-delay: 0.67s;
     }
 
 
 
-    /* ========================================
+    /* ==================================================
        OPENING TEXT
-    ======================================== */
+    ================================================== */
 
     .opening-text {
 
@@ -847,18 +803,15 @@
         openingTextShow
         0.85s ease forwards;
 
-      animation-delay:
-        2.38s;
+      animation-delay: 2.38s;
     }
 
 
     .opening-names {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 28px;
-
       font-weight: 400;
 
       color: #354047;
@@ -869,11 +822,9 @@
 
       margin-top: 12px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 2.5px;
 
       color: #65737a;
@@ -891,8 +842,7 @@
       background:
         rgba(74,99,111,0.28);
 
-      transform-origin:
-        top;
+      transform-origin: top;
 
       transform:
         scaleY(0);
@@ -901,15 +851,9 @@
         lineGrow
         0.7s ease forwards;
 
-      animation-delay:
-        2.75s;
+      animation-delay: 2.75s;
     }
 
-
-
-    /* ========================================
-       OPENING ANIMATION
-    ======================================== */
 
     @keyframes openingFade {
 
@@ -1049,9 +993,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        SHORTCUT
-    ======================================== */
+    ================================================== */
 
     .wedding-info-shortcut {
 
@@ -1069,8 +1013,7 @@
 
       min-height: 40px;
 
-      padding:
-        0 14px;
+      padding: 0 14px;
 
       border:
         1px solid
@@ -1089,11 +1032,9 @@
 
       color: #555;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 1.2px;
 
       cursor: pointer;
@@ -1101,9 +1042,9 @@
 
 
 
-    /* ========================================
-       REVEALS
-    ======================================== */
+    /* ==================================================
+       REVEAL
+    ================================================== */
 
     .intro-label,
     .names,
@@ -1133,8 +1074,7 @@
         mainReveal
         0.9s ease forwards;
 
-      animation-delay:
-        0.08s;
+      animation-delay: 0.08s;
     }
 
 
@@ -1144,8 +1084,7 @@
         mainReveal
         0.9s ease forwards;
 
-      animation-delay:
-        0.16s;
+      animation-delay: 0.16s;
     }
 
 
@@ -1155,8 +1094,7 @@
         mainReveal
         0.9s ease forwards;
 
-      animation-delay:
-        0.24s;
+      animation-delay: 0.24s;
     }
 
 
@@ -1166,8 +1104,7 @@
         mainReveal
         0.8s ease forwards;
 
-      animation-delay:
-        0.38s;
+      animation-delay: 0.38s;
     }
 
 
@@ -1177,8 +1114,7 @@
         mainReveal
         0.8s ease forwards;
 
-      animation-delay:
-        0.49s;
+      animation-delay: 0.49s;
     }
 
 
@@ -1188,8 +1124,7 @@
         mainReveal
         0.8s ease forwards;
 
-      animation-delay:
-        0.60s;
+      animation-delay: 0.60s;
     }
 
 
@@ -1199,8 +1134,7 @@
         mainReveal
         0.8s ease forwards;
 
-      animation-delay:
-        0.71s;
+      animation-delay: 0.71s;
     }
 
 
@@ -1210,8 +1144,7 @@
         mainReveal
         0.8s ease forwards;
 
-      animation-delay:
-        0.82s;
+      animation-delay: 0.82s;
     }
 
 
@@ -1250,9 +1183,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        INTRO
-    ======================================== */
+    ================================================== */
 
     .intro {
 
@@ -1261,7 +1194,6 @@
       min-height: 100vh;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -1310,11 +1242,9 @@
 
       text-align: center;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 3.5px;
 
       color: #73848d;
@@ -1328,11 +1258,9 @@
 
       text-align: center;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 39px;
-
       font-weight: 400;
 
       line-height: 1.15;
@@ -1347,11 +1275,9 @@
 
       text-align: center;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 12px;
-
       letter-spacing: 2.5px;
 
       color: #55656d;
@@ -1365,7 +1291,6 @@
       text-align: center;
 
       font-size: 13px;
-
       line-height: 2;
 
       color: #5f6c72;
@@ -1373,9 +1298,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        SEASONS
-    ======================================== */
+    ================================================== */
 
     .season-grid {
 
@@ -1418,7 +1343,6 @@
       inset: 0;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -1474,8 +1398,7 @@
 
     .season-eng {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 17px;
 
@@ -1495,11 +1418,9 @@
 
       margin-top: 7px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 1.2px;
 
       color:
@@ -1513,11 +1434,9 @@
 
       text-align: center;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 2.5px;
 
       color: #8e9ba2;
@@ -1525,9 +1444,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        WINTER AGAIN
-    ======================================== */
+    ================================================== */
 
     .winter-again {
 
@@ -1536,7 +1455,6 @@
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -1583,11 +1501,9 @@
 
     .again-small {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 4px;
 
       color: #738189;
@@ -1599,11 +1515,9 @@
       margin:
         20px 0 0;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 43px;
-
       font-weight: 400;
     }
 
@@ -1612,11 +1526,9 @@
 
       margin-top: 28px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 14px;
-
       letter-spacing: 2px;
     }
 
@@ -1626,7 +1538,6 @@
       margin-top: 36px;
 
       font-size: 13px;
-
       line-height: 2.1;
 
       color: #606d73;
@@ -1637,11 +1548,9 @@
 
       margin-top: 43px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 21px;
-
       line-height: 1.85;
 
       color: #414d53;
@@ -1649,17 +1558,15 @@
 
 
 
-    /* ========================================
-       COMMON
-    ======================================== */
+    /* ==================================================
+       COMMON SECTION
+    ================================================== */
 
     .section-label {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 4px;
 
       color: #999;
@@ -1667,9 +1574,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        INVITATION
-    ======================================== */
+    ================================================== */
 
     .invitation {
 
@@ -1684,11 +1591,9 @@
 
       margin-top: 22px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 27px;
-
       line-height: 1.55;
 
       letter-spacing:
@@ -1701,7 +1606,6 @@
       margin-top: 39px;
 
       font-size: 13px;
-
       line-height: 2.2;
 
       color: #666;
@@ -1709,9 +1613,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        WEDDING INFO
-    ======================================== */
+    ================================================== */
 
     .wedding-info {
 
@@ -1727,8 +1631,7 @@
 
       margin-top: 22px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 31px;
     }
@@ -1738,8 +1641,7 @@
 
       margin-top: 9px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 11px;
 
@@ -1750,9 +1652,7 @@
 
 
 
-    /* ========================================
-       CALENDAR
-    ======================================== */
+    /* CALENDAR */
 
     .wedding-calendar {
 
@@ -1771,8 +1671,7 @@
 
       margin-bottom: 34px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 15px;
 
@@ -1795,7 +1694,6 @@
       margin-bottom: 22px;
 
       font-size: 12px;
-
       font-weight: 500;
 
       color: #555;
@@ -1812,7 +1710,6 @@
       row-gap: 17px;
 
       font-size: 12px;
-
       font-weight: 300;
 
       color: #666;
@@ -1826,7 +1723,6 @@
       min-height: 28px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
     }
@@ -1854,7 +1750,6 @@
         sans-serif;
 
       font-size: 37px;
-
       line-height: 1;
 
       color:
@@ -1873,15 +1768,12 @@
       color: #fff;
 
       font-size: 11px;
-
       font-weight: 500;
     }
 
 
 
-    /* ========================================
-       VENUE / MAP
-    ======================================== */
+    /* VENUE */
 
     .venue {
 
@@ -1900,8 +1792,7 @@
 
     .venue-name {
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 17px;
     }
@@ -1912,7 +1803,6 @@
       margin-top: 8px;
 
       font-size: 12px;
-
       line-height: 1.8;
 
       color: #777;
@@ -1937,26 +1827,21 @@
       min-height: 48px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
       border:
         1px solid #cac7c1;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 10px;
-
       letter-spacing: 0.8px;
     }
 
 
 
-    /* ========================================
-       PARKING
-    ======================================== */
+    /* PARKING */
 
     .parking-wrap {
 
@@ -1998,11 +1883,9 @@
 
     .parking-title {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 11px;
-
       letter-spacing: 1.4px;
     }
 
@@ -2073,7 +1956,6 @@
       background: transparent;
 
       font-size: 13px;
-
       line-height: 1.9;
 
       text-align: center;
@@ -2094,7 +1976,6 @@
       margin-top: 14px;
 
       font-size: 12px;
-
       line-height: 1.7;
 
       text-align: left;
@@ -2113,9 +1994,7 @@
 
 
 
-    /* ========================================
-       ACTION
-    ======================================== */
+    /* ACTION */
 
     .action-section {
 
@@ -2132,8 +2011,7 @@
 
       margin-top: 16px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 23px;
     }
@@ -2144,7 +2022,6 @@
       margin-top: 15px;
 
       font-size: 12px;
-
       line-height: 1.9;
 
       color: #777;
@@ -2171,9 +2048,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        GUEST SNAP
-    ======================================== */
+    ================================================== */
 
     .guest-snap {
 
@@ -2194,8 +2071,7 @@
 
       margin-top: 20px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 34px;
     }
@@ -2206,7 +2082,6 @@
       margin-top: 28px;
 
       font-size: 13px;
-
       line-height: 2;
 
       color: #666;
@@ -2234,9 +2109,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        VIRTUAL INTRO
-    ======================================== */
+    ================================================== */
 
     .virtual-intro {
 
@@ -2264,11 +2139,9 @@
 
       margin-top: 20px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 36px;
-
       line-height: 1.25;
     }
 
@@ -2277,8 +2150,7 @@
 
       margin-top: 15px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 19px;
     }
@@ -2289,7 +2161,6 @@
       margin-top: 26px;
 
       font-size: 13px;
-
       line-height: 2;
 
       color: #627066;
@@ -2324,7 +2195,6 @@
       margin-top: 14px;
 
       font-size: 10px;
-
       line-height: 1.7;
 
       color: #879189;
@@ -2333,7 +2203,7 @@
 
 
     /* ==================================================
-       VIRTUAL WEDDING PAGE
+       VIRTUAL WEDDING
     ================================================== */
 
     .virtual-wedding {
@@ -2347,8 +2217,7 @@
 
       flex-direction: column;
 
-      background:
-        #f5f1e9;
+      background: #f5f1e9;
     }
 
 
@@ -2356,9 +2225,6 @@
       display: flex;
     }
 
-
-
-    /* TOPBAR */
 
     .virtual-topbar {
 
@@ -2399,18 +2265,15 @@
 
       min-height: 42px;
 
-      padding:
-        0 7px;
+      padding: 0 7px;
 
       border: 0;
 
       background: transparent;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 1px;
 
       cursor: pointer;
@@ -2427,11 +2290,9 @@
 
     .virtual-top-title-main {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 13px;
-
       letter-spacing: 1px;
     }
 
@@ -2459,8 +2320,7 @@
 
       border-radius: 22px;
 
-      background:
-        #fff;
+      background: #fff;
 
       font-size: 9px;
 
@@ -2481,14 +2341,14 @@
 
       overflow: hidden;
 
-      background:
-        #f0ede4;
+      background: #f0ede4;
 
       cursor: grab;
 
       touch-action: none;
 
       user-select: none;
+
       -webkit-user-select: none;
     }
 
@@ -2499,9 +2359,7 @@
 
 
 
-    /* ==================================================
-       BOTANICAL WORLD
-    ================================================== */
+    /* WORLD */
 
     .virtual-world {
 
@@ -2539,7 +2397,9 @@
 
 
 
-    /* back wall */
+    /* ==================================================
+       HALL
+    ================================================== */
 
     .garden-back-wall {
 
@@ -2561,7 +2421,6 @@
         165px 165px 12px 12px;
 
       background:
-
         linear-gradient(
           180deg,
           #fffefb,
@@ -2573,9 +2432,6 @@
         rgba(140,126,102,0.06);
     }
 
-
-
-    /* architectural arches */
 
     .wall-arch {
 
@@ -2619,9 +2475,7 @@
 
 
 
-    /* ==================================================
-       CEILING GREENERY
-    ================================================== */
+    /* GREEN CEILING */
 
     .ceiling-garden {
 
@@ -2693,80 +2547,17 @@
     }
 
 
-    .v1 {
-      left: 5%;
-      height: 56px;
-    }
-
-
-    .v2 {
-      left: 12%;
-      height: 82px;
-
-      animation-delay: -2s;
-    }
-
-
-    .v3 {
-      left: 20%;
-      height: 47px;
-    }
-
-
-    .v4 {
-      left: 29%;
-      height: 70px;
-
-      animation-delay: -1.3s;
-    }
-
-
-    .v5 {
-      left: 38%;
-      height: 45px;
-    }
-
-
-    .v6 {
-      left: 48%;
-      height: 78px;
-
-      animation-delay: -2.7s;
-    }
-
-
-    .v7 {
-      left: 58%;
-      height: 53px;
-    }
-
-
-    .v8 {
-      left: 68%;
-      height: 81px;
-
-      animation-delay: -1.8s;
-    }
-
-
-    .v9 {
-      left: 78%;
-      height: 50px;
-    }
-
-
-    .v10 {
-      left: 88%;
-      height: 72px;
-    }
-
-
-    .v11 {
-      left: 96%;
-      height: 56px;
-
-      animation-delay: -2.4s;
-    }
+    .v1 { left:5%; height:56px; }
+    .v2 { left:12%; height:82px; animation-delay:-2s; }
+    .v3 { left:20%; height:47px; }
+    .v4 { left:29%; height:70px; animation-delay:-1.3s; }
+    .v5 { left:38%; height:45px; }
+    .v6 { left:48%; height:78px; animation-delay:-2.7s; }
+    .v7 { left:58%; height:53px; }
+    .v8 { left:68%; height:81px; animation-delay:-1.8s; }
+    .v9 { left:78%; height:50px; }
+    .v10 { left:88%; height:72px; }
+    .v11 { left:96%; height:56px; animation-delay:-2.4s; }
 
 
     @keyframes vineSway {
@@ -2783,9 +2574,6 @@
     }
 
 
-
-    /* ceiling tiny flowers */
-
     .ceiling-flower {
 
       position: absolute;
@@ -2795,54 +2583,23 @@
 
       border-radius: 50%;
 
-      background:
-        #e6c3cf;
+      background: #e6c3cf;
 
       box-shadow:
-
         11px 6px 0 #efe0bd,
         -9px 11px 0 #d9c9e5,
         5px 19px 0 #fff;
     }
 
 
-    .cf1 {
-      left: 15%;
-      top: 22px;
-    }
-
-
-    .cf2 {
-      left: 34%;
-      top: 12px;
-
-      transform:
-        scale(0.85);
-    }
-
-
-    .cf3 {
-      left: 61%;
-      top: 18px;
-
-      transform:
-        scale(1.1);
-    }
-
-
-    .cf4 {
-      left: 83%;
-      top: 9px;
-
-      transform:
-        scale(0.8);
-    }
+    .cf1 { left:15%; top:22px; }
+    .cf2 { left:34%; top:12px; transform:scale(0.85); }
+    .cf3 { left:61%; top:18px; transform:scale(1.1); }
+    .cf4 { left:83%; top:9px; transform:scale(0.8); }
 
 
 
-    /* ==================================================
-       CHANDELIERS
-    ================================================== */
+    /* CHANDELIER */
 
     .chandelier {
 
@@ -2865,6 +2622,7 @@
 
 
     .chandelier.left {
+
       left: 172px;
 
       transform:
@@ -2873,6 +2631,7 @@
 
 
     .chandelier.right {
+
       right: 172px;
 
       transform:
@@ -2890,8 +2649,7 @@
       width: 1px;
       height: 21px;
 
-      background:
-        #c1ab7e;
+      background: #c1ab7e;
     }
 
 
@@ -2940,34 +2698,11 @@
     }
 
 
-    .c1 {
-      left: 20px;
-      height: 25px;
-    }
-
-
-    .c2 {
-      left: 31px;
-      height: 40px;
-    }
-
-
-    .c3 {
-      left: 44px;
-      height: 49px;
-    }
-
-
-    .c4 {
-      left: 57px;
-      height: 38px;
-    }
-
-
-    .c5 {
-      left: 69px;
-      height: 25px;
-    }
+    .c1 { left:20px; height:25px; }
+    .c2 { left:31px; height:40px; }
+    .c3 { left:44px; height:49px; }
+    .c4 { left:57px; height:38px; }
+    .c5 { left:69px; height:25px; }
 
 
     @keyframes crystalGlow {
@@ -2983,9 +2718,7 @@
 
 
 
-    /* ==================================================
-       STAGE / FLORAL ARCH
-    ================================================== */
+    /* STAGE */
 
     .hall-stage {
 
@@ -3024,16 +2757,14 @@
       position: absolute;
 
       left: 50%;
-      top: 13px;
+      top: 12px;
 
       transform:
         translateX(-50%);
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 10px;
-
       letter-spacing: 2px;
 
       color: #857b69;
@@ -3043,7 +2774,7 @@
 
 
 
-    /* floral arch */
+    /* FLOWER ARCH */
 
     .floral-arch {
 
@@ -3083,7 +2814,6 @@
       border-radius: 50%;
 
       background:
-
         radial-gradient(
           circle at 30% 30%,
           #fff 0 10%,
@@ -3095,7 +2825,6 @@
         );
 
       box-shadow:
-
         35px 9px 0 -11px #f0cbd6,
         16px 38px 0 -13px #fff,
         -18px 31px 0 -14px #eadfbf;
@@ -3117,9 +2846,7 @@
 
 
 
-    /* ==================================================
-       AISLE
-    ================================================== */
+    /* AISLE */
 
     .aisle {
 
@@ -3142,7 +2869,6 @@
         rgba(195,185,166,0.23);
 
       background:
-
         linear-gradient(
           90deg,
           rgba(215,208,194,0.05),
@@ -3155,9 +2881,7 @@
 
 
 
-    /* ==================================================
-       FULL FLOWER BEDS ALONG AISLE
-    ================================================== */
+    /* FLOWERS */
 
     .flower-bed {
 
@@ -3175,7 +2899,6 @@
 
 
     .flower-bed.left {
-
       left: 314px;
     }
 
@@ -3213,7 +2936,6 @@
       border-radius: 50%;
 
       background:
-
         radial-gradient(
           circle,
           #fff 0 18%,
@@ -3222,11 +2944,8 @@
         );
 
       box-shadow:
-
         -20px 18px 0 -3px #fff,
-
         20px 24px 0 -5px #ecddbb,
-
         3px 39px 0 -7px #d7c3e0;
     }
 
@@ -3246,66 +2965,26 @@
       border-radius:
         100% 0;
 
-      background:
-        #76916d;
+      background: #76916d;
 
       transform:
         rotate(22deg);
 
       box-shadow:
-
         -19px 9px 0 -2px #88a17e,
-
         18px 13px 0 -2px #7c9975;
     }
 
 
-    .fs1 {
-      top: 0;
-      left: 14px;
-    }
-
-
-    .fs2 {
-      top: 78px;
-      left: 1px;
-
-      transform:
-        scale(0.9);
-    }
-
-
-    .fs3 {
-      top: 157px;
-      left: 20px;
-
-      transform:
-        scale(1.08);
-    }
-
-
-    .fs4 {
-      top: 244px;
-      left: 0;
-
-      transform:
-        scale(0.88);
-    }
-
-
-    .fs5 {
-      top: 318px;
-      left: 22px;
-
-      transform:
-        scale(1);
-    }
+    .fs1 { top:0; left:14px; }
+    .fs2 { top:78px; left:1px; transform:scale(0.9); }
+    .fs3 { top:157px; left:20px; transform:scale(1.08); }
+    .fs4 { top:244px; left:0; transform:scale(0.88); }
+    .fs5 { top:318px; left:22px; transform:scale(1); }
 
 
 
-    /* ==================================================
-       SIDE TREES
-    ================================================== */
+    /* TREES */
 
     .garden-tree {
 
@@ -3349,8 +3028,7 @@
 
       border-radius: 8px;
 
-      background:
-        #887764;
+      background: #887764;
 
       transform:
         rotate(4deg);
@@ -3364,8 +3042,7 @@
       border-radius:
         48% 52% 44% 56%;
 
-      background:
-        #78936e;
+      background: #78936e;
 
       box-shadow:
         inset -12px -12px 0
@@ -3391,8 +3068,7 @@
       width: 74px;
       height: 90px;
 
-      background:
-        #829c76;
+      background: #829c76;
     }
 
 
@@ -3404,15 +3080,12 @@
       width: 82px;
       height: 93px;
 
-      background:
-        #6f8c67;
+      background: #6f8c67;
     }
 
 
 
-    /* ==================================================
-       CHAIRS
-    ================================================== */
+    /* CHAIRS */
 
     .chair {
 
@@ -3443,71 +3116,218 @@
     }
 
 
-    .l11 { left: 202px; top: 290px; }
-    .l12 { left: 255px; top: 290px; }
+    .l11 { left:202px; top:290px; }
+    .l12 { left:255px; top:290px; }
 
-    .l21 { left: 202px; top: 370px; }
-    .l22 { left: 255px; top: 370px; }
+    .l21 { left:202px; top:370px; }
+    .l22 { left:255px; top:370px; }
 
-    .l31 { left: 202px; top: 450px; }
-    .l32 { left: 255px; top: 450px; }
+    .l31 { left:202px; top:450px; }
+    .l32 { left:255px; top:450px; }
 
-    .l41 { left: 202px; top: 530px; }
-    .l42 { left: 255px; top: 530px; }
+    .l41 { left:202px; top:530px; }
+    .l42 { left:255px; top:530px; }
 
 
-    .r11 { right: 202px; top: 290px; }
-    .r12 { right: 255px; top: 290px; }
+    .r11 { right:202px; top:290px; }
+    .r12 { right:255px; top:290px; }
 
-    .r21 { right: 202px; top: 370px; }
-    .r22 { right: 255px; top: 370px; }
+    .r21 { right:202px; top:370px; }
+    .r22 { right:255px; top:370px; }
 
-    .r31 { right: 202px; top: 450px; }
-    .r32 { right: 255px; top: 450px; }
+    .r31 { right:202px; top:450px; }
+    .r32 { right:255px; top:450px; }
 
-    .r41 { right: 202px; top: 530px; }
-    .r42 { right: 255px; top: 530px; }
+    .r41 { right:202px; top:530px; }
+    .r42 { right:255px; top:530px; }
 
 
 
     /* ==================================================
-       CHARACTER BASE
+       NEW CUTE CHARACTER
     ================================================== */
 
     .person-avatar {
 
       position: relative;
 
-      width: 52px;
-      height: 72px;
+      width: 62px;
+      height: 82px;
 
       display: inline-block;
 
-      --skin: #f0d4bf;
-      --hair: #403734;
-      --outfit: #94a795;
+      --skin: #f3d7c3;
+      --hair: #493b36;
+      --outfit: #9baa9a;
+
+      transform-origin:
+        bottom center;
     }
 
+
+
+    /* SHADOW */
 
     .person-shadow {
 
       position: absolute;
 
-      left: 8px;
-      bottom: -2px;
+      z-index: 0;
 
-      width: 37px;
+      left: 12px;
+      bottom: 0;
+
+      width: 38px;
       height: 8px;
 
       border-radius: 50%;
 
       background:
-        rgba(74,69,60,0.13);
+        rgba(74,69,60,0.12);
 
       filter:
-        blur(2px);
+        blur(2.4px);
     }
 
+
+
+    /* LEGS */
+
+    .person-leg {
+
+      position: absolute;
+
+      z-index: 2;
+
+      bottom: 7px;
+
+      width: 9px;
+      height: 15px;
+
+      border-radius:
+        5px 5px 4px 4px;
+
+      background:
+        #5e5d5a;
+    }
+
+
+    .person-leg.left {
+      left: 21px;
+    }
+
+
+    .person-leg.right {
+      right: 21px;
+    }
+
+
+    .person-leg::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: -1px;
+      bottom: -2px;
+
+      width: 11px;
+      height: 5px;
+
+      border-radius:
+        8px 8px 5px 5px;
+
+      background: #4b4b49;
+    }
+
+
+
+    /* BODY */
+
+    .person-body {
+
+      position: absolute;
+
+      z-index: 3;
+
+      left: 15px;
+      bottom: 17px;
+
+      width: 32px;
+      height: 30px;
+
+      border-radius:
+        14px 14px 12px 12px;
+
+      background:
+        var(--outfit);
+
+      box-shadow:
+        inset 0 -5px 0
+        rgba(0,0,0,0.025);
+    }
+
+
+
+    /* ARMS */
+
+    .person-arm {
+
+      position: absolute;
+
+      z-index: 2;
+
+      top: 46px;
+
+      width: 8px;
+      height: 22px;
+
+      border-radius: 10px;
+
+      background:
+        var(--outfit);
+    }
+
+
+    .person-arm.left {
+
+      left: 11px;
+
+      transform:
+        rotate(7deg);
+    }
+
+
+    .person-arm.right {
+
+      right: 11px;
+
+      transform:
+        rotate(-7deg);
+    }
+
+
+    .person-arm::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 1px;
+      bottom: -2px;
+
+      width: 6px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--skin);
+    }
+
+
+
+    /* HEAD */
 
     .person-head {
 
@@ -3515,45 +3335,131 @@
 
       z-index: 5;
 
-      left: 13px;
+      left: 12px;
       top: 7px;
 
-      width: 27px;
-      height: 29px;
+      width: 38px;
+      height: 38px;
 
       border-radius:
-        48% 48% 45% 45%;
+        48% 48% 50% 50%;
 
       background:
         var(--skin);
+
+      box-shadow:
+        inset 0 -3px 0
+        rgba(185,123,97,0.05);
     }
 
+
+
+    /* EYES */
 
     .person-eye {
 
       position: absolute;
 
-      z-index: 9;
+      z-index: 10;
 
-      top: 20px;
+      top: 24px;
 
-      width: 2.4px;
-      height: 2.4px;
+      width: 4px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: #554b48;
+    }
+
+
+    .person-eye::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 1px;
+      top: 0.5px;
+
+      width: 1.4px;
+      height: 1.4px;
 
       border-radius: 50%;
 
       background:
-        #544a47;
+        rgba(255,255,255,0.9);
     }
 
 
     .person-eye.left {
-      left: 20px;
+      left: 23px;
     }
 
 
     .person-eye.right {
-      left: 31px;
+      right: 23px;
+    }
+
+
+
+    /* BLUSH */
+
+    .person-blush {
+
+      position: absolute;
+
+      z-index: 9;
+
+      top: 31px;
+
+      width: 8px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(221,137,145,0.25);
+
+      filter:
+        blur(0.25px);
+    }
+
+
+    .person-blush.left {
+      left: 16px;
+    }
+
+
+    .person-blush.right {
+      right: 16px;
+    }
+
+
+
+    /* SMILE */
+
+    .person-mouth {
+
+      position: absolute;
+
+      z-index: 10;
+
+      left: 50%;
+      top: 31px;
+
+      width: 7px;
+      height: 4px;
+
+      border-bottom:
+        1.5px solid
+        rgba(105,72,65,0.68);
+
+      border-radius:
+        0 0 8px 8px;
+
+      transform:
+        translateX(-50%);
     }
 
 
@@ -3568,14 +3474,14 @@
 
       z-index: 7;
 
-      left: 11px;
+      left: 10px;
       top: 3px;
 
-      width: 31px;
-      height: 17px;
+      width: 42px;
+      height: 23px;
 
       border-radius:
-        18px 18px 8px 8px;
+        23px 23px 10px 10px;
 
       background:
         var(--hair);
@@ -3595,72 +3501,80 @@
 
 
 
-    /* short */
+    /* SHORT */
 
     .hair-short
     .person-hair {
 
-      height: 16px;
+      height: 22px;
 
       border-radius:
-        18px 17px 6px 7px;
+        26px 22px 10px 8px;
 
       transform:
-        rotate(-2deg);
+        rotate(-1deg);
+    }
+
+
+    .hair-short
+    .person-hair::after {
+
+      right: 3px;
+      top: 14px;
+
+      width: 11px;
+      height: 9px;
+
+      border-radius:
+        0 0 10px 10px;
     }
 
 
 
-    /* bob */
+    /* BOB */
 
     .hair-bob
     .person-hair {
 
-      height: 26px;
-
-      border-radius:
-        18px 18px 10px 10px;
+      height: 27px;
     }
 
 
     .hair-bob
     .person-hair::before {
 
-      left: -2px;
-      top: 13px;
+      left: -1px;
+      top: 14px;
 
-      width: 7px;
-      height: 19px;
+      width: 8px;
+      height: 25px;
 
       border-radius:
-        6px;
+        7px 3px 8px 8px;
     }
 
 
     .hair-bob
     .person-hair::after {
 
-      right: -2px;
-      top: 13px;
+      right: -1px;
+      top: 14px;
 
-      width: 7px;
-      height: 19px;
+      width: 8px;
+      height: 25px;
 
       border-radius:
-        6px;
+        3px 7px 8px 8px;
     }
 
 
 
-    /* wave */
+    /* WAVE */
 
     .hair-wave
     .person-hair {
 
-      height: 21px;
-
-      border-radius:
-        18px 18px 9px 9px;
+      height: 25px;
     }
 
 
@@ -3668,16 +3582,16 @@
     .person-hair::before {
 
       left: -3px;
-      top: 16px;
+      top: 14px;
 
-      width: 8px;
-      height: 28px;
+      width: 10px;
+      height: 35px;
 
       border-radius:
-        7px 3px 7px 4px;
+        8px 4px 10px 7px;
 
       box-shadow:
-        29px 0 0
+        38px 0 0
         var(--hair);
     }
 
@@ -3685,46 +3599,62 @@
     .hair-wave
     .person-hair::after {
 
-      left: 2px;
-      top: 29px;
+      left: -2px;
+      top: 37px;
 
-      width: 7px;
+      width: 8px;
       height: 8px;
 
       border-radius: 50%;
 
       box-shadow:
-        8px 4px 0 var(--hair),
-        17px 1px 0 var(--hair),
-        25px 4px 0 var(--hair);
+        6px 5px 0 var(--hair),
+        37px 1px 0 var(--hair),
+        42px 6px 0 var(--hair);
     }
 
 
 
-    /* long */
+    /* LONG */
 
     .hair-long
     .person-hair {
 
-      height: 24px;
+      height: 27px;
     }
 
 
     .hair-long
     .person-hair::before {
 
-      left: -3px;
-      top: 13px;
+      left: -2px;
+      top: 14px;
 
-      width: 8px;
-      height: 40px;
+      width: 10px;
+      height: 43px;
 
       border-radius:
-        7px;
+        8px 4px 11px 8px;
 
       box-shadow:
-        29px 0 0
+        36px 0 0
         var(--hair);
+    }
+
+
+    .hair-long
+    .person-hair::after {
+
+      left: 5px;
+      top: 40px;
+
+      width: 32px;
+      height: 12px;
+
+      border-radius:
+        0 0 18px 18px;
+
+      opacity: 0.96;
     }
 
 
@@ -3732,104 +3662,59 @@
     /* HAIR COLORS */
 
     .hair-black {
-      --hair: #332d2b;
+      --hair: #342c2a;
     }
 
 
     .hair-brown {
-      --hair: #674c3e;
+      --hair: #654a3e;
     }
 
 
     .hair-ash {
-      --hair: #756f6b;
+      --hair: #726c69;
     }
 
 
 
     /* ==================================================
-       BODY / OUTFIT
+       OUTFITS
     ================================================== */
-
-    .person-body {
-
-      position: absolute;
-
-      z-index: 3;
-
-      left: 9px;
-      bottom: 5px;
-
-      width: 34px;
-      height: 38px;
-
-      background:
-        var(--outfit);
-
-      border-radius:
-        14px 14px 7px 7px;
-    }
-
-
-    .person-leg {
-
-      position: absolute;
-
-      z-index: 2;
-
-      bottom: 0;
-
-      width: 7px;
-      height: 18px;
-
-      border-radius: 5px;
-
-      background:
-        #6a6965;
-    }
-
-
-    .person-leg.left {
-      left: 15px;
-    }
-
-
-    .person-leg.right {
-      left: 29px;
-    }
-
-
-
-    /* dress */
 
     .outfit-dress
     .person-body {
 
-      left: 5px;
+      left: 10px;
 
-      width: 43px;
+      width: 42px;
+      height: 34px;
+
+      border-radius:
+        12px 12px 7px 7px;
 
       clip-path:
         polygon(
-          36% 0,
-          64% 0,
-          100% 100%,
-          0 100%
+          35% 0,
+          65% 0,
+          94% 100%,
+          6% 100%
         );
-
-      border-radius:
-        11px 11px 4px 4px;
     }
 
 
+    .outfit-dress
+    .person-leg {
 
-    /* suit */
+      background:
+        #ded8d1;
+    }
+
 
     .outfit-suit
     .person-body {
 
       border-radius:
-        10px 10px 5px 5px;
+        10px 10px 8px 8px;
     }
 
 
@@ -3841,13 +3726,13 @@
       position: absolute;
 
       left: 50%;
-      top: 0;
+      top: 1px;
 
       width: 1px;
       height: 28px;
 
       background:
-        rgba(255,255,255,0.45);
+        rgba(255,255,255,0.28);
     }
 
 
@@ -3858,14 +3743,14 @@
 
       position: absolute;
 
-      left: 14px;
+      left: 13px;
       top: 5px;
 
       width: 6px;
-      height: 8px;
+      height: 7px;
 
       background:
-        rgba(255,255,255,0.68);
+        rgba(255,255,255,0.72);
 
       clip-path:
         polygon(
@@ -3876,14 +3761,11 @@
     }
 
 
-
-    /* jacket */
-
     .outfit-jacket
     .person-body {
 
       border-radius:
-        8px;
+        9px;
     }
 
 
@@ -3898,55 +3780,52 @@
       top: 2px;
 
       width: 1px;
-      height: 32px;
+      height: 27px;
 
       background:
-        rgba(255,255,255,0.5);
+        rgba(255,255,255,0.44);
     }
 
-
-
-    /* knit */
 
     .outfit-knit
     .person-body {
 
       border-radius:
-        18px 18px 9px 9px;
+        17px 17px 11px 11px;
     }
 
 
 
-    /* OUTFIT COLORS */
+    /* COLORS */
 
     .color-sage {
-      --outfit: #98aa96;
+      --outfit: #9aac99;
     }
 
 
     .color-navy {
-      --outfit: #586a79;
+      --outfit: #506676;
     }
 
 
     .color-rose {
-      --outfit: #cda2ad;
+      --outfit: #d2a4ae;
     }
 
 
     .color-lilac {
-      --outfit: #aea0bd;
+      --outfit: #b2a5c1;
     }
 
 
     .color-beige {
-      --outfit: #c8bca9;
+      --outfit: #cdbfab;
     }
 
 
 
     /* ==================================================
-       ACCESSORIES
+       ACCESSORY
     ================================================== */
 
     .person-accessory {
@@ -3959,26 +3838,32 @@
     }
 
 
+    .accessory-none
+    .person-accessory {
+      display: none;
+    }
 
-    /* glasses */
+
+
+    /* GLASSES */
 
     .accessory-glasses
     .person-accessory {
 
-      left: 17px;
-      top: 16px;
+      left: 18px;
+      top: 21px;
 
-      width: 9px;
-      height: 7px;
+      width: 11px;
+      height: 9px;
 
       border:
-        1px solid #625b57;
+        1.2px solid #645c58;
 
       border-radius: 50%;
 
       box-shadow:
-        12px 0 0 -1px #f0d4bf,
-        12px 0 0 0 #625b57;
+        15px 0 0 -1px var(--skin),
+        15px 0 0 0 #645c58;
     }
 
 
@@ -3989,89 +3874,83 @@
 
       position: absolute;
 
-      left: 8px;
-      top: 2px;
+      left: 10px;
+      top: 3px;
 
-      width: 5px;
+      width: 6px;
       height: 1px;
 
-      background:
-        #625b57;
+      background: #645c58;
     }
 
 
 
-    /* bow */
+    /* BOW */
 
     .accessory-bow
     .person-accessory {
 
-      left: 31px;
-      top: 1px;
+      left: 37px;
+      top: 4px;
 
       width: 7px;
       height: 7px;
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      background:
-        #d896a5;
+      background: #d88395;
 
       box-shadow:
-        -6px 1px 0 1px #e1a7b4,
-        6px 1px 0 1px #e1a7b4;
+        -6px 1px 0 1px #e6a8b5,
+        6px 1px 0 1px #e6a8b5;
     }
 
 
 
-    /* heartpin */
+    /* HEART */
 
     .accessory-heartpin
     .person-accessory {
 
-      left: 33px;
-      top: 5px;
+      left: 40px;
+      top: 6px;
 
-      color:
-        #cf7e8c;
+      color: #d07e8e;
 
       font-family:
         Arial,
         sans-serif;
 
-      font-size: 10px;
+      font-size: 11px;
     }
 
 
     .accessory-heartpin
     .person-accessory::before {
-
       content: "♥";
     }
 
 
 
-    /* bouquet */
+    /* BOUQUET */
 
     .accessory-bouquet
     .person-accessory {
 
-      left: 35px;
-      top: 39px;
+      left: 40px;
+      top: 48px;
 
-      width: 15px;
-      height: 15px;
+      width: 16px;
+      height: 16px;
 
       border-radius: 50%;
 
-      background:
-        #efccd6;
+      background: #efccd6;
 
       box-shadow:
-        -7px 2px 0 #fff,
-        -2px -6px 0 #e7dcba,
-        5px -3px 0 #d4c0df;
+        -8px 2px 0 #fff,
+        -3px -7px 0 #eadfbb,
+        6px -4px 0 #d5c3df;
     }
 
 
@@ -4088,8 +3967,7 @@
       width: 3px;
       height: 17px;
 
-      background:
-        #73906b;
+      background: #73906b;
 
       transform:
         rotate(-24deg);
@@ -4098,7 +3976,7 @@
 
 
     /* ==================================================
-       BRIDE & GROOM
+       BRIDE + GROOM SPECIAL
     ================================================== */
 
     .wedding-couple {
@@ -4108,53 +3986,156 @@
       z-index: 25;
 
       left: 50%;
-      top: 161px;
+      top: 152px;
 
       display: flex;
 
       align-items: flex-end;
 
-      gap: 9px;
+      gap: 8px;
 
       transform:
-        translateX(-50%);
+        translateX(-50%)
+        scale(0.90);
+
+      transform-origin:
+        center bottom;
     }
 
 
+
+    /* GROOM */
+
+    .groom-avatar {
+
+      --hair: #332c29;
+      --outfit: #3f5260;
+    }
+
+
+    .groom-avatar::after {
+
+      content: "";
+
+      position: absolute;
+
+      z-index: 11;
+
+      left: 50%;
+      top: 48px;
+
+      width: 9px;
+      height: 6px;
+
+      transform:
+        translateX(-50%);
+
+      background: #222c31;
+
+      clip-path:
+        polygon(
+          0 0,
+          50% 36%,
+          100% 0,
+          77% 100%,
+          50% 65%,
+          23% 100%
+        );
+    }
+
+
+
+    /* BRIDE */
+
     .bride-avatar {
 
-      --hair: #413633;
-      --outfit: #fffdfa;
+      --hair: #503c34;
+      --outfit: #fffdf8;
+    }
+
+
+    .bride-avatar::before {
+
+      content: "";
+
+      position: absolute;
+
+      z-index: 1;
+
+      left: 5px;
+      top: 8px;
+
+      width: 52px;
+      height: 62px;
+
+      border-radius:
+        50% 50% 20px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.65),
+          rgba(255,255,255,0.22)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,0.76);
+
+      transform:
+        rotate(2deg);
     }
 
 
     .bride-avatar
     .person-body {
 
-      left: 4px;
+      left: 7px;
 
-      width: 44px;
+      width: 48px;
+      height: 35px;
+
+      background:
+        #fffdf9;
 
       clip-path:
         polygon(
-          37% 0,
-          63% 0,
-          100% 100%,
-          0 100%
+          38% 0,
+          62% 0,
+          98% 100%,
+          2% 100%
         );
     }
 
 
-    .groom-avatar {
+    .bride-avatar::after {
 
-      --hair: #332d2b;
-      --outfit: #3f4c55;
+      content: "";
+
+      position: absolute;
+
+      z-index: 14;
+
+      right: 1px;
+      top: 47px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+
+      background: #efced7;
+
+      box-shadow:
+        -8px 2px 0 #fff,
+        -3px -7px 0 #e9ddba,
+        5px -4px 0 #d8c5e0;
     }
 
 
 
     /* ==================================================
-       PLAYER / GUESTS
+       PLAYER + GUEST
     ================================================== */
 
     .player-character {
@@ -4163,11 +4144,11 @@
 
       z-index: 100;
 
-      width: 55px;
-      height: 78px;
+      width: 62px;
+      height: 84px;
 
       transform:
-        translate(-50%,-82%);
+        translate(-50%,-84%);
 
       pointer-events: none;
     }
@@ -4178,7 +4159,7 @@
       position: absolute;
 
       left: 50%;
-      top: -17px;
+      top: -19px;
 
       transform:
         translateX(-50%);
@@ -4214,14 +4195,16 @@
     @keyframes littleWalk {
 
       from {
+
         transform:
           translateY(0)
           rotate(-1deg);
       }
 
       to {
+
         transform:
-          translateY(-3px)
+          translateY(-4px)
           rotate(1deg);
       }
     }
@@ -4234,7 +4217,7 @@
 
       z-index: 75;
 
-      width: 67px;
+      width: 72px;
 
       padding: 0;
 
@@ -4243,7 +4226,7 @@
       background: transparent;
 
       transform:
-        translate(-50%,-80%);
+        translate(-50%,-83%);
 
       cursor: pointer;
 
@@ -4255,7 +4238,7 @@
     .person-avatar {
 
       transform:
-        scale(0.88);
+        scale(0.82);
 
       transform-origin:
         bottom center;
@@ -4269,32 +4252,30 @@
 
     .hall-guest-entry:nth-child(2n)
     .person-avatar {
-
-      animation-delay:
-        -1.2s;
+      animation-delay: -1.2s;
     }
 
 
     .hall-guest-entry:nth-child(3n)
     .person-avatar {
-
-      animation-delay:
-        -2.1s;
+      animation-delay: -2.1s;
     }
 
 
     @keyframes guestIdle {
 
       from {
+
         transform:
-          scale(0.88)
+          scale(0.82)
           translateY(0);
       }
 
       to {
+
         transform:
-          scale(0.88)
-          translateY(-2px);
+          scale(0.82)
+          translateY(-3px);
       }
     }
 
@@ -4303,10 +4284,10 @@
 
       display: block;
 
-      max-width: 65px;
+      max-width: 70px;
 
       margin:
-        -4px auto 0;
+        -6px auto 0;
 
       overflow: hidden;
 
@@ -4341,17 +4322,16 @@
 
       border:
         1px solid
-        rgba(115,111,96,0.14);
+        rgba(115,111,96,0.13);
 
-      border-radius:
-        18px;
+      border-radius: 19px;
 
       background:
-        rgba(255,253,248,0.96);
+        rgba(255,253,248,0.97);
 
       box-shadow:
-        0 12px 32px
-        rgba(64,74,63,0.12);
+        0 14px 36px
+        rgba(64,74,63,0.13);
 
       backdrop-filter:
         blur(9px);
@@ -4394,11 +4374,11 @@
 
       border-right:
         1px solid
-        rgba(115,111,96,0.14);
+        rgba(115,111,96,0.13);
 
       border-bottom:
         1px solid
-        rgba(115,111,96,0.14);
+        rgba(115,111,96,0.13);
 
       background:
         rgba(255,253,248,0.97);
@@ -4422,8 +4402,7 @@
 
     .bubble-name {
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 13px;
 
@@ -4433,8 +4412,7 @@
 
     .bubble-heart {
 
-      color:
-        #c7838d;
+      color: #c7838d;
 
       font-family:
         Arial,
@@ -4449,7 +4427,6 @@
       margin-top: 9px;
 
       font-size: 11px;
-
       line-height: 1.75;
 
       color: #646a65;
@@ -4462,16 +4439,13 @@
 
       display: flex;
 
-      align-items: center;
       justify-content: flex-end;
 
       color: #aaa59c;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 0.8px;
     }
 
@@ -4493,7 +4467,7 @@
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.92);
+        rgba(255,255,255,0.94);
 
       color: #7c827d;
 
@@ -4503,7 +4477,7 @@
 
 
     /* ==================================================
-       HALL INSTRUCTIONS + D-PAD
+       HALL CONTROLS
     ================================================== */
 
     .hall-instructions {
@@ -4534,7 +4508,6 @@
       color: #737f77;
 
       font-size: 9px;
-
       line-height: 1.6;
 
       pointer-events: none;
@@ -4658,8 +4631,7 @@
       border-radius:
         18px 18px 8px 8px;
 
-      background:
-        #faf9f6;
+      background: #faf9f6;
     }
 
 
@@ -4676,11 +4648,9 @@
 
     .modal-label {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 3px;
 
       color: #999;
@@ -4691,8 +4661,7 @@
 
       margin-top: 9px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 24px;
     }
@@ -4714,12 +4683,9 @@
 
 
 
-    /* ==================================================
-       FORM
-    ================================================== */
+    /* FORM */
 
     .form-section {
-
       margin-top: 27px;
     }
 
@@ -4760,8 +4726,7 @@
 
       min-height: 48px;
 
-      padding:
-        0 13px;
+      padding: 0 13px;
     }
 
 
@@ -4798,21 +4763,19 @@
 
 
 
-    /* ==================================================
-       CUSTOMIZER PREVIEW
-    ================================================== */
+    /* CUSTOMIZER */
 
     .customizer-preview {
 
       margin-top: 25px;
 
       padding:
-        25px 10px 19px;
+        30px 10px 22px;
 
       border:
         1px solid #e0dcd5;
 
-      border-radius: 17px;
+      border-radius: 18px;
 
       background:
 
@@ -4836,10 +4799,10 @@
     .person-avatar {
 
       transform:
-        scale(1.42);
+        scale(1.45);
 
       margin:
-        14px 0 15px;
+        17px 0 22px;
     }
 
 
@@ -4847,19 +4810,14 @@
 
       margin-top: 12px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 2px;
 
       color: #92968f;
     }
 
-
-
-    /* option grid */
 
     .custom-options {
 
@@ -4895,18 +4853,13 @@
 
     .custom-option.active {
 
-      border-color:
-        #788f80;
+      border-color: #788f80;
 
-      background:
-        #eaf1eb;
+      background: #eaf1eb;
 
       color: #46574c;
     }
 
-
-
-    /* swatches */
 
     .swatch-option {
 
@@ -4941,56 +4894,23 @@
 
 
     .swatch-option.active {
-
-      border-color:
-        #687c6e;
+      border-color: #687c6e;
     }
 
 
-    .hair-black-swatch {
-      background: #332d2b;
-    }
+    .hair-black-swatch { background:#332d2b; }
+    .hair-brown-swatch { background:#674c3e; }
+    .hair-ash-swatch { background:#756f6b; }
 
-
-    .hair-brown-swatch {
-      background: #674c3e;
-    }
-
-
-    .hair-ash-swatch {
-      background: #756f6b;
-    }
-
-
-    .sage-swatch {
-      background: #98aa96;
-    }
-
-
-    .navy-swatch {
-      background: #586a79;
-    }
-
-
-    .rose-swatch {
-      background: #cda2ad;
-    }
-
-
-    .lilac-swatch {
-      background: #aea0bd;
-    }
-
-
-    .beige-swatch {
-      background: #c8bca9;
-    }
+    .sage-swatch { background:#98aa96; }
+    .navy-swatch { background:#586a79; }
+    .rose-swatch { background:#cda2ad; }
+    .lilac-swatch { background:#aea0bd; }
+    .beige-swatch { background:#c8bca9; }
 
 
 
-    /* ========================================
-       RSVP CHOICES
-    ======================================== */
+    /* RSVP */
 
     .choice-row {
 
@@ -5018,7 +4938,6 @@
       min-height: 46px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -5045,9 +4964,7 @@
 
 
 
-    /* ========================================
-       ACCOUNT
-    ======================================== */
+    /* ACCOUNT */
 
     .account-tabs {
 
@@ -5127,8 +5044,7 @@
 
       margin-top: 4px;
 
-      font-family:
-        var(--font-ko-title);
+      font-family: var(--font-ko-title);
 
       font-size: 14px;
     }
@@ -5165,9 +5081,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        SEASON DETAIL
-    ======================================== */
+    ================================================== */
 
     .season-page {
 
@@ -5211,11 +5127,9 @@
 
       background: transparent;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 10px;
-
       letter-spacing: 1.4px;
 
       cursor: pointer;
@@ -5232,11 +5146,9 @@
 
     .season-page-small {
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 8px;
-
       letter-spacing: 4px;
 
       color: #999;
@@ -5247,8 +5159,7 @@
 
       margin-top: 13px;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 44px;
     }
@@ -5264,7 +5175,6 @@
       margin-top: 42px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -5283,7 +5193,6 @@
       text-align: center;
 
       font-size: 13px;
-
       line-height: 2.1;
 
       color: #666;
@@ -5308,7 +5217,6 @@
       aspect-ratio: 1;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -5326,41 +5234,23 @@
 
       text-align: center;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 2px;
 
       color: #aaa;
     }
 
 
-    #season-winter {
-      background: #edf3f6;
-    }
-
-
-    #season-spring {
-      background: #f5f2eb;
-    }
-
-
-    #season-summer {
-      background: #f4efe4;
-    }
-
-
-    #season-autumn {
-      background: #eee8e1;
-    }
+    #season-winter { background:#edf3f6; }
+    #season-spring { background:#f5f2eb; }
+    #season-summer { background:#f4efe4; }
+    #season-autumn { background:#eee8e1; }
 
 
 
-    /* ========================================
-       TOAST
-    ======================================== */
+    /* TOAST */
 
     .toast {
 
@@ -5406,9 +5296,7 @@
 
 
 
-    /* ========================================
-       FOOTER
-    ======================================== */
+    /* FOOTER */
 
     footer {
 
@@ -5421,11 +5309,9 @@
 
       color: #999;
 
-      font-family:
-        var(--font-en);
+      font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 2px;
 
       line-height: 2;
@@ -5433,14 +5319,11 @@
 
 
 
-    /* ========================================
-       MOBILE
-    ======================================== */
+    /* MOBILE */
 
     @media (max-width:420px) {
 
       .opening-inner {
-
         padding-left: 14px;
         padding-right: 14px;
       }
@@ -5530,15 +5413,16 @@
 
 
       .reveal {
+
         opacity:1;
+
         transform:none;
       }
 
 
       .hanging-vine,
       .crystal,
-      .hall-guest-entry
-      .person-avatar {
+      .hall-guest-entry .person-avatar {
 
         animation:none;
       }
@@ -5554,9 +5438,9 @@
 <body class="opening-active">
 
 
-  <!-- ========================================
+  <!-- ==================================================
        OPENING
-  ======================================== -->
+  ================================================== -->
 
   <div
     class="opening"
@@ -5648,8 +5532,6 @@
 
 
 
-  <!-- SHORTCUT -->
-
   <button
     type="button"
     class="wedding-info-shortcut"
@@ -5660,9 +5542,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        INTRO
-  ======================================== -->
+  ================================================== -->
 
   <section
     class="intro"
@@ -5861,9 +5743,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        WINTER AGAIN
-  ======================================== -->
+  ================================================== -->
 
   <section class="winter-again reveal">
 
@@ -5921,9 +5803,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        INVITATION
-  ======================================== -->
+  ================================================== -->
 
   <section class="invitation reveal">
 
@@ -5971,9 +5853,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        WEDDING INFO
-  ======================================== -->
+  ================================================== -->
 
   <section
     class="wedding-info reveal"
@@ -5997,8 +5879,6 @@
       </div>
 
 
-
-      <!-- CALENDAR -->
 
       <div class="wedding-calendar">
 
@@ -6241,8 +6121,6 @@
 
 
 
-      <!-- RSVP -->
-
       <div class="action-section">
 
         <div class="section-label">
@@ -6274,8 +6152,6 @@
       </div>
 
 
-
-      <!-- ACCOUNT -->
 
       <div class="action-section">
 
@@ -6313,9 +6189,7 @@
 
 
 
-  <!-- ========================================
-       GUEST SNAP
-  ======================================== -->
+  <!-- GUEST SNAP -->
 
   <section class="guest-snap reveal">
 
@@ -6356,9 +6230,7 @@
 
 
 
-  <!-- ========================================
-       VIRTUAL WEDDING INTRO
-  ======================================== -->
+  <!-- VIRTUAL INTRO -->
 
   <section class="virtual-intro reveal">
 
@@ -6438,7 +6310,7 @@
       <div class="virtual-top-title">
 
         <div class="virtual-top-title-main">
-          GAHYUN & JINCHAN
+          JINCHAN ♥ GAHYUN
         </div>
 
         <div class="virtual-top-title-sub">
@@ -6471,8 +6343,6 @@
       >
 
 
-        <!-- WALL -->
-
         <div class="garden-back-wall">
 
           <div class="wall-arch a1"></div>
@@ -6483,8 +6353,6 @@
         </div>
 
 
-
-        <!-- CEILING GARDEN -->
 
         <div class="ceiling-garden">
 
@@ -6510,8 +6378,6 @@
         </div>
 
 
-
-        <!-- CHANDELIERS -->
 
         <div class="chandelier left">
 
@@ -6556,12 +6422,10 @@
 
 
 
-        <!-- STAGE -->
-
         <div class="hall-stage">
 
           <div class="stage-title">
-            GAHYUN ♥ JINCHAN
+            JINCHAN ♥ GAHYUN
           </div>
 
         </div>
@@ -6571,7 +6435,7 @@
 
 
 
-        <!-- COUPLE -->
+        <!-- 신랑 -->
 
         <div class="wedding-couple">
 
@@ -6585,6 +6449,9 @@
             <span class="person-leg left"></span>
             <span class="person-leg right"></span>
 
+            <span class="person-arm left"></span>
+            <span class="person-arm right"></span>
+
             <span class="person-body"></span>
 
             <span class="person-head"></span>
@@ -6592,6 +6459,11 @@
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
+
+            <span class="person-blush left"></span>
+            <span class="person-blush right"></span>
+
+            <span class="person-mouth"></span>
 
             <span class="person-accessory"></span>
 
@@ -6599,14 +6471,19 @@
 
 
 
+          <!-- 신부 -->
+
           <div
-            class="person-avatar bride-avatar hair-long hair-brown outfit-dress color-beige"
+            class="person-avatar bride-avatar hair-wave hair-brown outfit-dress color-beige"
           >
 
             <span class="person-shadow"></span>
 
             <span class="person-leg left"></span>
             <span class="person-leg right"></span>
+
+            <span class="person-arm left"></span>
+            <span class="person-arm right"></span>
 
             <span class="person-body"></span>
 
@@ -6615,6 +6492,11 @@
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
+
+            <span class="person-blush left"></span>
+            <span class="person-blush right"></span>
+
+            <span class="person-mouth"></span>
 
             <span class="person-accessory"></span>
 
@@ -6625,13 +6507,9 @@
 
 
 
-        <!-- AISLE -->
-
         <div class="aisle"></div>
 
 
-
-        <!-- FLOWER BEDS -->
 
         <div class="flower-bed left">
 
@@ -6656,8 +6534,6 @@
 
 
 
-        <!-- TREES -->
-
         <div class="garden-tree tree1">
 
           <span class="tree-trunk"></span>
@@ -6681,8 +6557,6 @@
 
 
 
-        <!-- CHAIRS -->
-
         <div class="chair l11"></div>
         <div class="chair l12"></div>
 
@@ -6694,7 +6568,6 @@
 
         <div class="chair l41"></div>
         <div class="chair l42"></div>
-
 
         <div class="chair r11"></div>
         <div class="chair r12"></div>
@@ -6710,13 +6583,11 @@
 
 
 
-        <!-- SAVED GUESTS -->
-
         <div id="hallGuestEntries"></div>
 
 
 
-        <!-- PLAYER -->
+        <!-- 내 캐릭터 -->
 
         <div
           class="player-character"
@@ -6738,6 +6609,9 @@
             <span class="person-leg left"></span>
             <span class="person-leg right"></span>
 
+            <span class="person-arm left"></span>
+            <span class="person-arm right"></span>
+
             <span class="person-body"></span>
 
             <span class="person-head"></span>
@@ -6745,6 +6619,11 @@
 
             <span class="person-eye left"></span>
             <span class="person-eye right"></span>
+
+            <span class="person-blush left"></span>
+            <span class="person-blush right"></span>
+
+            <span class="person-mouth"></span>
 
             <span class="person-accessory"></span>
 
@@ -6754,7 +6633,7 @@
 
 
 
-        <!-- SPEECH BUBBLE -->
+        <!-- 말풍선 -->
 
         <div
           class="guest-speech-bubble hidden"
@@ -6861,9 +6740,9 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        SEASON DETAILS
-  ======================================== -->
+  ================================================== -->
 
   <div
     class="season-page"
@@ -6911,21 +6790,10 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">
-          겨울 사진 1
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 2
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 3
-        </div>
-
-        <div class="mini-photo">
-          겨울 사진 4
-        </div>
+        <div class="mini-photo">겨울 사진 1</div>
+        <div class="mini-photo">겨울 사진 2</div>
+        <div class="mini-photo">겨울 사진 3</div>
+        <div class="mini-photo">겨울 사진 4</div>
 
       </div>
 
@@ -7117,9 +6985,9 @@
 
 
 
-  <!-- ========================================
-       RSVP
-  ======================================== -->
+  <!-- ==================================================
+       RSVP MODAL
+  ================================================== -->
 
   <div
     class="modal"
@@ -7323,9 +7191,9 @@
 
 
 
-  <!-- ========================================
-       ACCOUNT
-  ======================================== -->
+  <!-- ==================================================
+       ACCOUNT MODAL
+  ================================================== -->
 
   <div
     class="modal"
@@ -7603,6 +7471,9 @@
           <span class="person-leg left"></span>
           <span class="person-leg right"></span>
 
+          <span class="person-arm left"></span>
+          <span class="person-arm right"></span>
+
           <span class="person-body"></span>
 
           <span class="person-head"></span>
@@ -7610,6 +7481,11 @@
 
           <span class="person-eye left"></span>
           <span class="person-eye right"></span>
+
+          <span class="person-blush left"></span>
+          <span class="person-blush right"></span>
+
+          <span class="person-mouth"></span>
 
           <span class="person-accessory"></span>
 
@@ -7647,8 +7523,6 @@
         </div>
 
 
-
-        <!-- HAIR -->
 
         <div class="form-section">
 
@@ -7700,8 +7574,6 @@
 
 
 
-        <!-- HAIR COLOR -->
-
         <div class="form-section">
 
           <div class="form-label">
@@ -7718,7 +7590,6 @@
               type="button"
               class="swatch-option"
               data-option-value="black"
-              aria-label="검정색 머리"
             >
               <span class="hair-black-swatch"></span>
             </button>
@@ -7728,7 +7599,6 @@
               type="button"
               class="swatch-option active"
               data-option-value="brown"
-              aria-label="브라운 머리"
             >
               <span class="hair-brown-swatch"></span>
             </button>
@@ -7738,7 +7608,6 @@
               type="button"
               class="swatch-option"
               data-option-value="ash"
-              aria-label="애쉬 머리"
             >
               <span class="hair-ash-swatch"></span>
             </button>
@@ -7748,8 +7617,6 @@
         </div>
 
 
-
-        <!-- OUTFIT -->
 
         <div class="form-section">
 
@@ -7801,8 +7668,6 @@
 
 
 
-        <!-- OUTFIT COLOR -->
-
         <div class="form-section">
 
           <div class="form-label">
@@ -7819,7 +7684,6 @@
               type="button"
               class="swatch-option active"
               data-option-value="sage"
-              aria-label="세이지"
             >
               <span class="sage-swatch"></span>
             </button>
@@ -7829,7 +7693,6 @@
               type="button"
               class="swatch-option"
               data-option-value="navy"
-              aria-label="네이비"
             >
               <span class="navy-swatch"></span>
             </button>
@@ -7839,7 +7702,6 @@
               type="button"
               class="swatch-option"
               data-option-value="rose"
-              aria-label="로즈"
             >
               <span class="rose-swatch"></span>
             </button>
@@ -7849,7 +7711,6 @@
               type="button"
               class="swatch-option"
               data-option-value="lilac"
-              aria-label="라일락"
             >
               <span class="lilac-swatch"></span>
             </button>
@@ -7859,7 +7720,6 @@
               type="button"
               class="swatch-option"
               data-option-value="beige"
-              aria-label="베이지"
             >
               <span class="beige-swatch"></span>
             </button>
@@ -7869,8 +7729,6 @@
         </div>
 
 
-
-        <!-- ACCESSORY -->
 
         <div class="form-section">
 
@@ -7965,8 +7823,6 @@
 
 
 
-  <!-- TOAST -->
-
   <div
     class="toast"
     id="toast"
@@ -7988,15 +7844,11 @@
 
 
 
-  <!-- ==================================================
-       JAVASCRIPT
-  ================================================== -->
-
   <script>
 
-    /* ========================================
-       START AT TOP
-    ======================================== */
+    /* ==================================================
+       TOP RESET
+    ================================================== */
 
     if (
       "scrollRestoration"
@@ -8039,9 +7891,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        SNOW
-    ======================================== */
+    ================================================== */
 
     function createSnow(
       container,
@@ -8226,9 +8078,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        OPENING
-    ======================================== */
+    ================================================== */
 
     const opening =
       document.getElementById(
@@ -8245,9 +8097,7 @@
       if (
         openingClosed
       ) {
-
         return;
-
       }
 
 
@@ -8300,9 +8150,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        WEDDING SHORTCUT
-    ======================================== */
+    ================================================== */
 
     document
       .getElementById(
@@ -8336,9 +8186,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        REVEAL
-    ======================================== */
+    ================================================== */
 
     const revealObserver =
       new IntersectionObserver(
@@ -8394,9 +8244,9 @@
 
 
 
-    /* ========================================
-       SEASONS
-    ======================================== */
+    /* ==================================================
+       SEASON
+    ================================================== */
 
     document
       .querySelectorAll(
@@ -8477,9 +8327,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        PARKING
-    ======================================== */
+    ================================================== */
 
     const parkingWrap =
       document.getElementById(
@@ -8504,9 +8354,9 @@
 
 
 
-    /* ========================================
-       MODAL
-    ======================================== */
+    /* ==================================================
+       MODALS
+    ================================================== */
 
     const rsvpModal =
       document.getElementById(
@@ -8633,9 +8483,7 @@
 
 
 
-    /* ========================================
-       RSVP
-    ======================================== */
+    /* RSVP */
 
     document
       .getElementById(
@@ -8677,9 +8525,7 @@
 
 
 
-    /* ========================================
-       ACCOUNT
-    ======================================== */
+    /* ACCOUNT TABS */
 
     document
       .querySelectorAll(
@@ -8751,6 +8597,8 @@
       );
 
 
+
+    /* ACCOUNT COPY */
 
     const toast =
       document.getElementById(
@@ -8913,10 +8761,6 @@
 
 
 
-    /* ========================================
-       GUEST SNAP
-    ======================================== */
-
     document
       .getElementById(
         "guestUpload"
@@ -8935,25 +8779,20 @@
 
 
     /* ==================================================
-       CHARACTER CUSTOMIZER
+       CUSTOMIZER
     ================================================== */
 
     const customState = {
 
-      hair:
-        "bob",
+      hair: "bob",
 
-      hairColor:
-        "brown",
+      hairColor: "brown",
 
-      outfit:
-        "dress",
+      outfit: "dress",
 
-      outfitColor:
-        "sage",
+      outfitColor: "sage",
 
-      accessory:
-        "none"
+      accessory: "none"
 
     };
 
@@ -8968,7 +8807,6 @@
       document.getElementById(
         "playerAvatar"
       );
-
 
 
     function characterClass(
@@ -8998,12 +8836,9 @@
         +
         data.accessory
 
-      ].join(
-        " "
-      );
+      ].join(" ");
 
     }
-
 
 
     function updatePreview() {
@@ -9014,7 +8849,6 @@
         );
 
     }
-
 
 
     document
@@ -9083,7 +8917,7 @@
 
 
     /* ==================================================
-       VIRTUAL WEDDING
+       VIRTUAL WORLD
     ================================================== */
 
     const virtualWedding =
@@ -9116,7 +8950,6 @@
 
     const WORLD_HEIGHT =
       680;
-
 
 
     let playerX =
@@ -9157,7 +8990,6 @@
     }
 
 
-
     function placePlayer() {
 
       playerCharacter.style.left =
@@ -9174,7 +9006,6 @@
     }
 
 
-
     function cameraBounds() {
 
       return {
@@ -9187,8 +9018,7 @@
             WORLD_WIDTH
           ),
 
-        maxX:
-          0,
+        maxX: 0,
 
         minY:
           Math.min(
@@ -9198,13 +9028,11 @@
             WORLD_HEIGHT
           ),
 
-        maxY:
-          0
+        maxY: 0
 
       };
 
     }
-
 
 
     function applyCamera() {
@@ -9243,7 +9071,6 @@
     }
 
 
-
     function centerCameraOnPlayer() {
 
       cameraX =
@@ -9265,7 +9092,6 @@
       applyCamera();
 
     }
-
 
 
     function movePlayerTo(
@@ -9312,15 +9138,11 @@
 
 
       const dx =
-        targetX
-        -
-        startX;
+        targetX - startX;
 
 
       const dy =
-        targetY
-        -
-        startY;
+        targetY - startY;
 
 
       const distance =
@@ -9422,7 +9244,6 @@
     }
 
 
-
     function openVirtualWedding() {
 
       virtualWedding.classList.add(
@@ -9446,7 +9267,6 @@
     }
 
 
-
     function closeVirtualWedding() {
 
       virtualWedding.classList.remove(
@@ -9462,7 +9282,6 @@
       hideBubble();
 
     }
-
 
 
     document
@@ -9486,9 +9305,7 @@
 
 
 
-    /* ==================================================
-       DRAG & TAP
-    ================================================== */
+    /* DRAG */
 
     let pointerDown =
       false;
@@ -9514,7 +9331,6 @@
       0;
 
 
-
     virtualViewport.addEventListener(
       "pointerdown",
       function (
@@ -9524,6 +9340,10 @@
         if (
           event.target.closest(
             "button"
+          )
+          ||
+          event.target.closest(
+            ".guest-speech-bubble"
           )
         ) {
 
@@ -9567,7 +9387,6 @@
 
       }
     );
-
 
 
     virtualViewport.addEventListener(
@@ -9629,7 +9448,6 @@
     );
 
 
-
     virtualViewport.addEventListener(
       "pointerup",
       function (
@@ -9655,6 +9473,10 @@
           &&
           !event.target.closest(
             "button"
+          )
+          &&
+          !event.target.closest(
+            ".guest-speech-bubble"
           )
         ) {
 
@@ -9691,9 +9513,7 @@
 
 
 
-    /* ==================================================
-       D-PAD
-    ================================================== */
+    /* DPAD */
 
     document
       .querySelectorAll(
@@ -9741,10 +9561,11 @@
     ================================================== */
 
     const hallStorageKey =
-      "gahyun-jinchan-virtual-guests-v2";
+      "gahyun-jinchan-virtual-guests-v3";
 
 
-    let hallGuests = [];
+    let hallGuests =
+      [];
 
 
     try {
@@ -9762,10 +9583,10 @@
       error
     ) {
 
-      hallGuests = [];
+      hallGuests =
+        [];
 
     }
-
 
 
     const guestPositions = [
@@ -9824,10 +9645,14 @@
 
       return `
         <span class="${characterClass(guest)}">
+
           <span class="person-shadow"></span>
 
           <span class="person-leg left"></span>
           <span class="person-leg right"></span>
+
+          <span class="person-arm left"></span>
+          <span class="person-arm right"></span>
 
           <span class="person-body"></span>
 
@@ -9837,7 +9662,13 @@
           <span class="person-eye left"></span>
           <span class="person-eye right"></span>
 
+          <span class="person-blush left"></span>
+          <span class="person-blush right"></span>
+
+          <span class="person-mouth"></span>
+
           <span class="person-accessory"></span>
+
         </span>
       `;
 
@@ -9904,7 +9735,6 @@
     }
 
 
-
     function showBubble(
       guest,
       x,
@@ -9949,8 +9779,8 @@
 
       bubble.style.top =
         Math.max(
-          185,
-          y - 80
+          190,
+          y - 90
         )
         +
         "px";
@@ -9961,7 +9791,6 @@
       );
 
     }
-
 
 
     function hideBubble() {
@@ -10073,13 +9902,9 @@
 
 
                 showBubble(
-
                   guest,
-
                   position[0],
-
                   position[1]
-
                 );
 
               }
@@ -10242,13 +10067,9 @@
             function () {
 
               showBubble(
-
                 newGuest,
-
                 position[0],
-
                 position[1]
-
               );
 
             },
@@ -10260,9 +10081,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        RESIZE
-    ======================================== */
+    ================================================== */
 
     window.addEventListener(
       "resize",
@@ -10285,9 +10106,9 @@
 
 
 
-    /* ========================================
+    /* ==================================================
        ESC
-    ======================================== */
+    ================================================== */
 
     document.addEventListener(
       "keydown",
@@ -10300,9 +10121,7 @@
           !==
           "Escape"
         ) {
-
           return;
-
         }
 
 
