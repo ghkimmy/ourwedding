@@ -2,7 +2,6 @@
 <html lang="ko">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -77,29 +76,6 @@
   >
 
 
-  <!-- 기타 SNS 공유 호환 -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="김가현 ♥ 황진찬 결혼합니다."
-  >
-
-  <meta
-    name="twitter:description"
-    content="2027년 1월 30일 토요일 오후 5시 · 엘로라 인 가든"
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://ghkimmy.github.io/ourwedding/images/og-wedding.jpg"
-  >
-
-
   <!-- ========================================
        PRETENDARD
   ======================================== -->
@@ -113,13 +89,15 @@
 
   <style>
 
+    /* ========================================
+       KOREAN TITLE FONT
+    ======================================== */
+
     @font-face {
       font-family: "RIDIBatang";
-
       src:
         url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/RIDIBatang.woff")
         format("woff");
-
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -127,7 +105,6 @@
 
 
     :root {
-
       --font-body:
         "Pretendard",
         -apple-system,
@@ -152,12 +129,13 @@
         sans-serif;
 
       --bg: #f7f6f2;
-
       --text: #2d2d2d;
-
       --sub: #747474;
 
+      --wedding-red: #9d2631;
+      --calendar-heart: #cb858e;
     }
+
 
 
     /* ========================================
@@ -176,21 +154,17 @@
 
 
     body {
-
       margin: 0;
 
       background: var(--bg);
-
       color: var(--text);
 
       font-family: var(--font-body);
 
       word-break: keep-all;
-
       overflow-wrap: break-word;
 
       -webkit-font-smoothing: antialiased;
-
     }
 
 
@@ -226,12 +200,9 @@
 
 
     .inner {
-
       width: 100%;
       max-width: 540px;
-
       margin: 0 auto;
-
     }
 
 
@@ -246,15 +217,12 @@
     ======================================== */
 
     .opening {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 10000;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -270,71 +238,54 @@
       transition:
         opacity 0.9s ease,
         visibility 0.9s ease;
-
     }
 
 
     .opening.hide {
-
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
-
     }
 
 
     .opening-skip {
-
       position: absolute;
 
       top: max(18px, env(safe-area-inset-top));
-
       right: 18px;
 
       z-index: 100;
 
       min-height: 40px;
-
       padding: 0 14px;
 
       border: 0;
-
       background: transparent;
 
       font-family: var(--font-en);
-
       font-size: 9px;
-
       letter-spacing: 1.8px;
 
       color: rgba(55, 55, 55, 0.55);
 
       cursor: pointer;
-
     }
 
 
     .opening-inner {
-
       width: 100%;
-
       max-width: 430px;
 
       padding: 22px;
 
       text-align: center;
-
     }
 
 
     .letter-small {
-
       margin-bottom: 31px;
 
       font-family: var(--font-en);
-
       font-size: 9px;
 
       letter-spacing: 4px;
@@ -342,14 +293,12 @@
       color: #978f88;
 
       opacity: 0;
-
       transform: translateY(7px);
 
       animation:
         openingFade 0.8s ease forwards;
 
       animation-delay: 0.08s;
-
     }
 
 
@@ -359,7 +308,6 @@
     ======================================== */
 
     .envelope-stage {
-
       --env-w: 285px;
       --env-h: 178px;
 
@@ -367,7 +315,6 @@
       --photo-h: 222px;
 
       --photo-bottom: -55px;
-
       --photo-rise: -150px;
 
       --window-open-height: 345px;
@@ -375,7 +322,6 @@
       position: relative;
 
       width: 310px;
-
       height: 340px;
 
       margin: 0 auto;
@@ -392,16 +338,13 @@
         envelopeAppear 0.8s ease forwards;
 
       animation-delay: 0.3s;
-
     }
 
 
     .envelope {
-
       position: absolute;
 
       left: 50%;
-
       bottom: 18px;
 
       width: var(--env-w);
@@ -411,14 +354,14 @@
         translateX(-50%);
 
       transform-style: preserve-3d;
-
     }
 
 
+
+    /* 봉투 뒤판 */
+
     .envelope-back {
-
       position: absolute;
-
       inset: 0;
 
       z-index: 1;
@@ -435,24 +378,22 @@
       box-shadow:
         0 18px 40px
         rgba(93, 24, 31, 0.16);
-
     }
 
 
 
     /* ========================================
        PHOTO WINDOW
+       사진이 처음에는 봉투 안에 완전히 숨겨짐
     ======================================== */
 
     .photo-window {
-
       position: absolute;
 
       left: 0;
       bottom: 0;
 
       width: 100%;
-
       height: var(--env-h);
 
       z-index: 3;
@@ -468,16 +409,13 @@
         forwards;
 
       animation-delay: 1.35s;
-
     }
 
 
     .letter-photo {
-
       position: absolute;
 
       left: 50%;
-
       bottom: var(--photo-bottom);
 
       width: var(--photo-w);
@@ -503,17 +441,14 @@
         forwards;
 
       animation-delay: 1.35s;
-
     }
 
 
     .letter-photo-inner {
-
       width: 100%;
       height: 100%;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -528,24 +463,18 @@
 
       color: #999;
 
-      font-family: var(--font-body);
-
       font-size: 9px;
-
       letter-spacing: 1px;
-
     }
 
 
     .letter-photo-inner img {
-
       width: 100%;
       height: 100%;
 
       display: block;
 
       object-fit: cover;
-
     }
 
 
@@ -555,7 +484,6 @@
     ======================================== */
 
     .envelope-flap {
-
       position: absolute;
 
       z-index: 7;
@@ -581,7 +509,6 @@
         );
 
       transform-origin: top center;
-
       transform: rotateX(0deg);
 
       backface-visibility: hidden;
@@ -593,14 +520,11 @@
         forwards;
 
       animation-delay: 0.82s;
-
     }
 
 
     .envelope-front {
-
       position: absolute;
-
       inset: 0;
 
       z-index: 5;
@@ -608,14 +532,11 @@
       overflow: hidden;
 
       pointer-events: none;
-
     }
 
 
     .envelope-front-left {
-
       position: absolute;
-
       inset: 0;
 
       background: #a92e39;
@@ -626,14 +547,11 @@
           52% 58%,
           0 100%
         );
-
     }
 
 
     .envelope-front-right {
-
       position: absolute;
-
       inset: 0;
 
       background: #922530;
@@ -644,14 +562,11 @@
           48% 58%,
           100% 100%
         );
-
     }
 
 
     .envelope-front-bottom {
-
       position: absolute;
-
       inset: 0;
 
       background:
@@ -667,57 +582,43 @@
           50% 47%,
           100% 100%
         );
-
     }
 
 
 
-    /* WHITE HEART STICKER */
+    /* ========================================
+       WHITE HEART STICKER
+    ======================================== */
 
     .envelope-seal {
-
       position: absolute;
 
       z-index: 10;
 
       left: 50%;
-
       top: 70px;
-
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
 
       transform:
         translateX(-50%)
         scale(1);
 
-      border-radius: 50%;
-
-      background: #fff;
-
-      color: #a42e38;
+      color: #fff;
 
       font-family: Arial, sans-serif;
 
-      font-size: 19px;
-
+      font-size: 29px;
       line-height: 1;
 
-      box-shadow:
-        0 3px 9px
-        rgba(73,22,27,0.10);
+      filter:
+        drop-shadow(
+          0 3px 4px rgba(70, 20, 25, 0.12)
+        );
 
       animation:
         sealDisappear
         0.32s ease forwards;
 
       animation-delay: 0.67s;
-
     }
 
 
@@ -727,11 +628,9 @@
     ======================================== */
 
     .opening-text {
-
       margin-top: 1px;
 
       opacity: 0;
-
       transform: translateY(9px);
 
       animation:
@@ -739,27 +638,22 @@
         0.85s ease forwards;
 
       animation-delay: 2.38s;
-
     }
 
 
     .opening-names {
-
       font-family: var(--font-en);
 
       font-size: 28px;
-
       font-weight: 400;
 
       line-height: 1.2;
 
       color: #393735;
-
     }
 
 
     .opening-date {
-
       margin-top: 12px;
 
       font-family: var(--font-en);
@@ -769,12 +663,10 @@
       letter-spacing: 2.5px;
 
       color: #7b7873;
-
     }
 
 
     .opening-line {
-
       width: 1px;
       height: 27px;
 
@@ -791,7 +683,6 @@
         lineGrow 0.7s ease forwards;
 
       animation-delay: 2.75s;
-
     }
 
 
@@ -801,7 +692,6 @@
     ======================================== */
 
     @keyframes openingFade {
-
       from {
         opacity: 0;
         transform: translateY(7px);
@@ -811,62 +701,48 @@
         opacity: 1;
         transform: translateY(0);
       }
-
     }
 
 
     @keyframes envelopeAppear {
-
       from {
-
         opacity: 0;
 
         transform:
           translateY(12px)
           scale(0.99);
-
       }
 
       to {
-
         opacity: 1;
 
         transform:
           translateY(0)
           scale(1);
-
       }
-
     }
 
 
     @keyframes sealDisappear {
-
       from {
-
         opacity: 1;
 
         transform:
           translateX(-50%)
           scale(1);
-
       }
 
       to {
-
         opacity: 0;
 
         transform:
           translateX(-50%)
           scale(0.82);
-
       }
-
     }
 
 
     @keyframes flapOpen {
-
       0% {
         transform: rotateX(0deg);
       }
@@ -878,12 +754,10 @@
       100% {
         transform: rotateX(-180deg);
       }
-
     }
 
 
     @keyframes photoWindowOpen {
-
       from {
         height: var(--env-h);
       }
@@ -891,56 +765,38 @@
       to {
         height: var(--window-open-height);
       }
-
     }
 
 
     @keyframes photoRise {
-
       from {
-
         transform:
           translateX(-50%)
           translateY(0);
-
       }
 
       to {
-
         transform:
           translateX(-50%)
           translateY(var(--photo-rise));
-
       }
-
     }
 
 
     @keyframes openingTextShow {
-
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(9px);
-
+        transform: translateY(9px);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
     @keyframes lineGrow {
-
       from {
         transform: scaleY(0);
       }
@@ -948,7 +804,6 @@
       to {
         transform: scaleY(1);
       }
-
     }
 
 
@@ -958,11 +813,9 @@
     ======================================== */
 
     .wedding-info-shortcut {
-
       position: fixed;
 
       top: max(18px, env(safe-area-inset-top));
-
       right: 18px;
 
       z-index: 500;
@@ -980,7 +833,6 @@
         rgba(255,255,255,0.82);
 
       backdrop-filter: blur(10px);
-
       -webkit-backdrop-filter: blur(10px);
 
       color: #555;
@@ -988,11 +840,9 @@
       font-family: var(--font-en);
 
       font-size: 9px;
-
       letter-spacing: 1.2px;
 
       cursor: pointer;
-
     }
 
 
@@ -1007,118 +857,91 @@
     .intro-description,
     .season-card,
     .story-hint {
-
       opacity: 0;
-
-      transform:
-        translateY(15px);
-
+      transform: translateY(15px);
     }
 
 
     body.page-ready .intro-label {
-
       animation:
         mainReveal 0.8s ease forwards;
-
     }
 
 
     body.page-ready .names {
-
       animation:
         mainReveal 0.9s ease forwards;
 
       animation-delay: 0.08s;
-
     }
 
 
     body.page-ready .intro-date {
-
       animation:
         mainReveal 0.9s ease forwards;
 
       animation-delay: 0.16s;
-
     }
 
 
     body.page-ready .intro-description {
-
       animation:
         mainReveal 0.9s ease forwards;
 
       animation-delay: 0.24s;
-
     }
 
 
     body.page-ready
     .season-card:nth-child(1) {
-
       animation:
         mainReveal 0.8s ease forwards;
 
       animation-delay: 0.38s;
-
     }
 
 
     body.page-ready
     .season-card:nth-child(2) {
-
       animation:
         mainReveal 0.8s ease forwards;
 
       animation-delay: 0.49s;
-
     }
 
 
     body.page-ready
     .season-card:nth-child(3) {
-
       animation:
         mainReveal 0.8s ease forwards;
 
       animation-delay: 0.60s;
-
     }
 
 
     body.page-ready
     .season-card:nth-child(4) {
-
       animation:
         mainReveal 0.8s ease forwards;
 
       animation-delay: 0.71s;
-
     }
 
 
-    body.page-ready .story-hint {
-
+    body.page-ready
+    .story-hint {
       animation:
         mainReveal 0.8s ease forwards;
 
       animation-delay: 0.82s;
-
     }
 
 
     @keyframes mainReveal {
-
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
@@ -1128,7 +951,6 @@
     ======================================== */
 
     .reveal {
-
       opacity: 0;
 
       transform:
@@ -1137,17 +959,12 @@
       transition:
         opacity 1s ease,
         transform 1s ease;
-
     }
 
 
     .reveal.visible {
-
       opacity: 1;
-
-      transform:
-        translateY(0);
-
+      transform: translateY(0);
     }
 
 
@@ -1157,11 +974,9 @@
     ======================================== */
 
     .intro {
-
       min-height: 100vh;
 
       display: flex;
-
       align-items: center;
 
       padding:
@@ -1174,12 +989,10 @@
           #faf9f6 52%,
           #f7f5f0 100%
         );
-
     }
 
 
     .intro-label {
-
       text-align: center;
 
       font-family: var(--font-en);
@@ -1189,12 +1002,10 @@
       letter-spacing: 3.5px;
 
       color: #858585;
-
     }
 
 
     .names {
-
       margin:
         24px 0 0;
 
@@ -1203,16 +1014,13 @@
       font-family: var(--font-en);
 
       font-size: 39px;
-
       font-weight: 400;
 
       line-height: 1.15;
-
     }
 
 
     .intro-date {
-
       margin-top: 20px;
 
       text-align: center;
@@ -1224,12 +1032,10 @@
       letter-spacing: 2.5px;
 
       color: #555;
-
     }
 
 
     .intro-description {
-
       margin-top: 42px;
 
       text-align: center;
@@ -1239,7 +1045,6 @@
       line-height: 2;
 
       color: #666;
-
     }
 
 
@@ -1249,7 +1054,6 @@
     ======================================== */
 
     .season-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -1258,12 +1062,10 @@
       gap: 8px;
 
       margin-top: 48px;
-
     }
 
 
     .season-card {
-
       position: relative;
 
       width: 100%;
@@ -1271,7 +1073,6 @@
       aspect-ratio: 4 / 5;
 
       margin: 0;
-
       padding: 0;
 
       border: 0;
@@ -1283,14 +1084,11 @@
       cursor: pointer;
 
       text-align: left;
-
     }
 
 
     .season-image {
-
       position: absolute;
-
       inset: 0;
 
       display: flex;
@@ -1305,16 +1103,13 @@
 
       transition:
         transform 0.6s ease;
-
     }
 
 
     .season-card:active
     .season-image {
-
       transform:
         scale(1.02);
-
     }
 
 
@@ -1339,15 +1134,12 @@
 
 
     .season-overlay {
-
       position: absolute;
-
       inset: 0;
 
       display: flex;
 
       flex-direction: column;
-
       justify-content: flex-end;
 
       padding: 17px;
@@ -1360,35 +1152,29 @@
           transparent 38%,
           rgba(0,0,0,0.45) 100%
         );
-
     }
 
 
     .season-eng {
-
       font-family: var(--font-en);
 
       font-size: 17px;
 
       letter-spacing: 2px;
-
     }
 
 
     .season-kor {
-
       margin-top: 5px;
 
       font-size: 11px;
 
       color:
         rgba(255,255,255,0.92);
-
     }
 
 
     .season-click {
-
       margin-top: 7px;
 
       font-family: var(--font-en);
@@ -1399,12 +1185,10 @@
 
       color:
         rgba(255,255,255,0.7);
-
     }
 
 
     .story-hint {
-
       margin-top: 24px;
 
       text-align: center;
@@ -1416,7 +1200,6 @@
       letter-spacing: 2.5px;
 
       color: #aaa;
-
     }
 
 
@@ -1426,11 +1209,9 @@
     ======================================== */
 
     .winter-again {
-
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
 
       padding:
@@ -1443,12 +1224,10 @@
           #f2f2ef 55%,
           #f8f7f3 100%
         );
-
     }
 
 
     .again-small {
-
       font-family: var(--font-en);
 
       font-size: 9px;
@@ -1456,28 +1235,23 @@
       letter-spacing: 4px;
 
       color: #8a8a8a;
-
     }
 
 
     .again-title {
-
       margin:
         20px 0 0;
 
       font-family: var(--font-en);
 
       font-size: 43px;
-
       font-weight: 400;
 
       line-height: 1.2;
-
     }
 
 
     .again-date {
-
       margin-top: 28px;
 
       font-family: var(--font-en);
@@ -1485,12 +1259,10 @@
       font-size: 14px;
 
       letter-spacing: 2px;
-
     }
 
 
     .again-text {
-
       margin-top: 36px;
 
       font-size: 13px;
@@ -1498,22 +1270,18 @@
       line-height: 2.1;
 
       color: #666;
-
     }
 
 
     .fill-winter {
-
       margin-top: 43px;
 
       font-family: var(--font-ko-title);
 
       font-size: 21px;
-
       font-weight: 400;
 
       line-height: 1.85;
-
     }
 
 
@@ -1523,17 +1291,14 @@
     ======================================== */
 
     .invitation {
-
       padding:
         105px 24px;
 
       background: #fff;
-
     }
 
 
     .section-label {
-
       font-family: var(--font-en);
 
       font-size: 9px;
@@ -1541,29 +1306,24 @@
       letter-spacing: 4px;
 
       color: #999;
-
     }
 
 
     .invitation-title {
-
       margin-top: 22px;
 
       font-family: var(--font-ko-title);
 
       font-size: 27px;
-
       font-weight: 400;
 
       line-height: 1.55;
 
       letter-spacing: -0.03em;
-
     }
 
 
     .invitation-text {
-
       margin-top: 39px;
 
       font-size: 13px;
@@ -1571,7 +1331,6 @@
       line-height: 2.2;
 
       color: #666;
-
     }
 
 
@@ -1581,28 +1340,23 @@
     ======================================== */
 
     .wedding-info {
-
       padding:
         100px 24px;
 
       background: #f4f2ed;
-
     }
 
 
     .wedding-date-big {
-
       margin-top: 22px;
 
       font-family: var(--font-en);
 
       font-size: 31px;
-
     }
 
 
     .wedding-time {
-
       margin-top: 9px;
 
       font-family: var(--font-en);
@@ -1612,13 +1366,146 @@
       letter-spacing: 1.6px;
 
       color: #777;
-
     }
 
 
-    .venue {
 
-      margin-top: 40px;
+    /* ========================================
+       WEDDING CALENDAR
+    ======================================== */
+
+    .wedding-calendar {
+      width: 100%;
+      max-width: 350px;
+
+      margin:
+        48px auto 0;
+
+      padding:
+        0 8px 6px;
+
+      text-align: center;
+    }
+
+
+    .calendar-month {
+      margin-bottom: 34px;
+
+      font-family: var(--font-ko-title);
+
+      font-size: 15px;
+      font-weight: 400;
+
+      color: #bf777f;
+    }
+
+
+    .calendar-weekdays,
+    .calendar-days {
+      display: grid;
+
+      grid-template-columns:
+        repeat(7, 1fr);
+    }
+
+
+    .calendar-weekdays {
+      margin-bottom: 22px;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      color: #555;
+    }
+
+
+    .calendar-weekdays span:first-child {
+      color: #c9858c;
+    }
+
+
+    .calendar-days {
+      row-gap: 17px;
+
+      font-size: 12px;
+      font-weight: 300;
+
+      color: #666;
+    }
+
+
+    .calendar-day {
+      position: relative;
+
+      min-height: 28px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .calendar-day.sunday {
+      color: #888;
+    }
+
+
+
+    /* 결혼식 날짜 */
+
+    .wedding-day {
+      position: relative;
+
+      color: #fff;
+    }
+
+
+    .calendar-heart {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      z-index: 1;
+
+      transform:
+        translate(-50%, -51%);
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 37px;
+
+      line-height: 1;
+
+      color:
+        var(--calendar-heart);
+    }
+
+
+    .calendar-heart-number {
+      position: relative;
+
+      z-index: 2;
+
+      top: -1px;
+
+      color: #fff;
+
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+
+
+    /* ========================================
+       VENUE
+    ======================================== */
+
+    .venue {
+      margin-top: 47px;
 
       padding:
         30px 0;
@@ -1628,23 +1515,18 @@
 
       border-bottom:
         1px solid #d5d2cc;
-
     }
 
 
     .venue-name {
-
       font-family: var(--font-ko-title);
 
       font-size: 17px;
-
       font-weight: 400;
-
     }
 
 
     .venue-address {
-
       margin-top: 8px;
 
       font-size: 12px;
@@ -1652,7 +1534,6 @@
       line-height: 1.8;
 
       color: #777;
-
     }
 
 
@@ -1662,7 +1543,6 @@
     ======================================== */
 
     .map-buttons {
-
       display: grid;
 
       grid-template-columns:
@@ -1671,12 +1551,10 @@
       gap: 9px;
 
       margin-top: 25px;
-
     }
 
 
     .map-button {
-
       min-height: 48px;
 
       display: flex;
@@ -1694,7 +1572,6 @@
       font-size: 10px;
 
       letter-spacing: 0.8px;
-
     }
 
 
@@ -1704,7 +1581,6 @@
     ======================================== */
 
     .parking-wrap {
-
       margin-top: 18px;
 
       border-top:
@@ -1712,12 +1588,10 @@
 
       border-bottom:
         1px solid #d7d3cc;
-
     }
 
 
     .parking-toggle {
-
       width: 100%;
 
       min-height: 60px;
@@ -1735,7 +1609,6 @@
       background: transparent;
 
       cursor: pointer;
-
     }
 
 
@@ -1745,48 +1618,39 @@
 
 
     .parking-title {
-
       font-family: var(--font-en);
 
       font-size: 11px;
 
       letter-spacing: 1.4px;
-
     }
 
 
     .parking-subtitle {
-
       margin-top: 4px;
 
       font-size: 11px;
 
       color: #888;
-
     }
 
 
     .parking-plus {
-
       font-size: 21px;
 
       transition:
         transform 0.3s ease;
-
     }
 
 
     .parking-wrap.open
     .parking-plus {
-
       transform:
         rotate(45deg);
-
     }
 
 
     .parking-content {
-
       max-height: 0;
 
       overflow: hidden;
@@ -1796,17 +1660,14 @@
       transition:
         max-height 0.55s ease,
         opacity 0.4s ease;
-
     }
 
 
     .parking-wrap.open
     .parking-content {
-
       max-height: 600px;
 
       opacity: 1;
-
     }
 
 
@@ -1816,7 +1677,6 @@
 
 
     .parking-highlight {
-
       margin:
         4px 0 24px;
 
@@ -1832,12 +1692,10 @@
       text-align: center;
 
       color: #666;
-
     }
 
 
     .parking-row {
-
       display: grid;
 
       grid-template-columns:
@@ -1852,16 +1710,13 @@
       line-height: 1.7;
 
       text-align: left;
-
     }
 
 
     .parking-label {
-
       font-weight: 600;
 
       color: #555;
-
     }
 
 
@@ -1876,32 +1731,26 @@
     ======================================== */
 
     .action-section {
-
       margin-top: 52px;
 
       padding-top: 43px;
 
       border-top:
         1px solid #d5d2cc;
-
     }
 
 
     .action-title {
-
       margin-top: 16px;
 
       font-family: var(--font-ko-title);
 
       font-size: 23px;
-
       font-weight: 400;
-
     }
 
 
     .action-description {
-
       margin-top: 15px;
 
       font-size: 12px;
@@ -1909,12 +1758,10 @@
       line-height: 1.9;
 
       color: #777;
-
     }
 
 
     .action-button {
-
       width: 100%;
 
       min-height: 52px;
@@ -1929,7 +1776,6 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
@@ -1939,30 +1785,24 @@
     ======================================== */
 
     .guest-snap {
-
       padding:
         105px 24px;
 
       background: #e9edf0;
-
     }
 
 
     .guest-title {
-
       margin-top: 20px;
 
       font-family: var(--font-en);
 
       font-size: 34px;
-
       font-weight: 400;
-
     }
 
 
     .guest-text {
-
       margin-top: 28px;
 
       font-size: 13px;
@@ -1970,12 +1810,10 @@
       line-height: 2;
 
       color: #666;
-
     }
 
 
     .guest-button {
-
       width: 100%;
 
       min-height: 54px;
@@ -1991,7 +1829,6 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
@@ -2001,9 +1838,7 @@
     ======================================== */
 
     .season-page {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 1500;
@@ -2015,22 +1850,18 @@
       background: #f7f6f2;
 
       -webkit-overflow-scrolling: touch;
-
     }
 
 
     .season-page.active {
-
       display: block;
 
       animation:
         detailShow 0.4s ease;
-
     }
 
 
     @keyframes detailShow {
-
       from {
         opacity: 0;
       }
@@ -2038,26 +1869,21 @@
       to {
         opacity: 1;
       }
-
     }
 
 
     .season-page-inner {
-
       width: 100%;
-
       max-width: 540px;
 
       margin: 0 auto;
 
       padding:
         22px 22px 100px;
-
     }
 
 
     .season-back {
-
       min-height: 44px;
 
       padding: 0;
@@ -2073,21 +1899,17 @@
       letter-spacing: 1.4px;
 
       cursor: pointer;
-
     }
 
 
     .season-page-header {
-
       margin-top: 42px;
 
       text-align: center;
-
     }
 
 
     .season-page-small {
-
       font-family: var(--font-en);
 
       font-size: 8px;
@@ -2095,25 +1917,20 @@
       letter-spacing: 4px;
 
       color: #999;
-
     }
 
 
     .season-page-title {
-
       margin-top: 13px;
 
       font-family: var(--font-en);
 
       font-size: 44px;
-
       font-weight: 400;
-
     }
 
 
     .season-page-main-photo {
-
       width: 100%;
 
       aspect-ratio: 4 / 5;
@@ -2132,12 +1949,21 @@
       color: #999;
 
       font-size: 11px;
+    }
 
+
+    .season-page-main-photo img,
+    .mini-photo img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
     }
 
 
     .season-page-text {
-
       margin-top: 34px;
 
       text-align: center;
@@ -2147,12 +1973,10 @@
       line-height: 2.1;
 
       color: #666;
-
     }
 
 
     .mini-gallery {
-
       display: grid;
 
       grid-template-columns:
@@ -2161,12 +1985,10 @@
       gap: 7px;
 
       margin-top: 35px;
-
     }
 
 
     .mini-photo {
-
       aspect-ratio: 1 / 1;
 
       display: flex;
@@ -2174,17 +1996,17 @@
       align-items: center;
       justify-content: center;
 
+      overflow: hidden;
+
       background: #e5e5e5;
 
       color: #aaa;
 
       font-size: 10px;
-
     }
 
 
     .season-end {
-
       margin-top: 50px;
 
       text-align: center;
@@ -2196,7 +2018,6 @@
       letter-spacing: 2px;
 
       color: #aaa;
-
     }
 
 
@@ -2226,9 +2047,7 @@
     ======================================== */
 
     .modal {
-
       position: fixed;
-
       inset: 0;
 
       z-index: 3000;
@@ -2242,7 +2061,6 @@
 
       background:
         rgba(0,0,0,0.38);
-
     }
 
 
@@ -2252,9 +2070,7 @@
 
 
     .modal-panel {
-
       width: 100%;
-
       max-width: 520px;
 
       max-height: 88vh;
@@ -2268,12 +2084,10 @@
         18px 18px 8px 8px;
 
       background: #faf9f6;
-
     }
 
 
     .modal-header {
-
       display: flex;
 
       align-items: flex-start;
@@ -2281,12 +2095,10 @@
         space-between;
 
       gap: 20px;
-
     }
 
 
     .modal-label {
-
       font-family: var(--font-en);
 
       font-size: 8px;
@@ -2294,25 +2106,20 @@
       letter-spacing: 3px;
 
       color: #999;
-
     }
 
 
     .modal-title {
-
       margin-top: 9px;
 
       font-family: var(--font-ko-title);
 
       font-size: 24px;
-
       font-weight: 400;
-
     }
 
 
     .modal-close {
-
       width: 42px;
       height: 42px;
 
@@ -2325,7 +2132,6 @@
       font-size: 25px;
 
       cursor: pointer;
-
     }
 
 
@@ -2340,7 +2146,6 @@
 
 
     .form-label {
-
       display: block;
 
       margin-bottom: 9px;
@@ -2348,35 +2153,29 @@
       font-size: 11px;
 
       color: #666;
-
     }
 
 
     .choice-row {
-
       display: grid;
 
       grid-template-columns:
         1fr 1fr;
 
       gap: 8px;
-
     }
 
 
     .choice-input {
-
       position: absolute;
 
       opacity: 0;
 
       pointer-events: none;
-
     }
 
 
     .choice-label {
-
       min-height: 46px;
 
       display: flex;
@@ -2392,25 +2191,21 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
     .choice-input:checked
     + .choice-label {
-
       border-color: #555;
 
       background: #444;
 
       color: #fff;
-
     }
 
 
     .text-input,
     .select-input {
-
       width: 100%;
 
       min-height: 48px;
@@ -2428,12 +2223,10 @@
       color: #333;
 
       font-size: 13px;
-
     }
 
 
     .submit-button {
-
       width: 100%;
 
       min-height: 54px;
@@ -2449,12 +2242,10 @@
       font-size: 12px;
 
       cursor: pointer;
-
     }
 
 
     .form-note {
-
       margin-top: 13px;
 
       text-align: center;
@@ -2464,7 +2255,6 @@
       line-height: 1.7;
 
       color: #999;
-
     }
 
 
@@ -2474,7 +2264,6 @@
     ======================================== */
 
     .account-tabs {
-
       display: grid;
 
       grid-template-columns:
@@ -2483,12 +2272,10 @@
       gap: 7px;
 
       margin-top: 28px;
-
     }
 
 
     .account-tab {
-
       min-height: 45px;
 
       border:
@@ -2499,27 +2286,22 @@
       color: #555;
 
       cursor: pointer;
-
     }
 
 
     .account-tab.active {
-
       background: #444;
 
       border-color: #444;
 
       color: #fff;
-
     }
 
 
     .account-group {
-
       display: none;
 
       margin-top: 25px;
-
     }
 
 
@@ -2529,49 +2311,46 @@
 
 
     .account-card {
-
       padding:
         20px 0;
 
       border-bottom:
         1px solid #dedad4;
+    }
 
+
+    .account-card:first-child {
+      border-top:
+        1px solid #dedad4;
     }
 
 
     .account-role {
-
       font-size: 10px;
 
       color: #999;
-
     }
 
 
     .account-name {
-
       margin-top: 4px;
 
       font-family: var(--font-ko-title);
 
       font-size: 14px;
-
     }
 
 
     .account-number {
-
       margin-top: 10px;
 
       font-size: 12px;
 
       color: #666;
-
     }
 
 
     .account-copy {
-
       margin-top: 12px;
 
       min-height: 38px;
@@ -2589,7 +2368,6 @@
       color: #555;
 
       cursor: pointer;
-
     }
 
 
@@ -2599,7 +2377,6 @@
     ======================================== */
 
     footer {
-
       padding:
         70px 20px;
 
@@ -2616,7 +2393,6 @@
       letter-spacing: 2px;
 
       line-height: 2;
-
     }
 
 
@@ -2628,10 +2404,8 @@
     @media (max-width: 420px) {
 
       .opening-inner {
-
         padding-left: 14px;
         padding-right: 14px;
-
       }
 
 
@@ -2641,7 +2415,6 @@
 
 
       .envelope-stage {
-
         --env-w: 260px;
         --env-h: 163px;
 
@@ -2649,15 +2422,12 @@
         --photo-h: 204px;
 
         --photo-bottom: -50px;
-
         --photo-rise: -137px;
 
         --window-open-height: 320px;
 
         width: 280px;
-
         height: 325px;
-
       }
 
 
@@ -2667,14 +2437,9 @@
 
 
       .envelope-seal {
-
         top: 64px;
 
-        width: 35px;
-        height: 35px;
-
-        font-size: 17px;
-
+        font-size: 27px;
       }
 
 
@@ -2684,10 +2449,8 @@
 
 
       .intro {
-
         padding-left: 18px;
         padding-right: 18px;
-
       }
 
 
@@ -2711,16 +2474,57 @@
       }
 
 
-      .parking-row {
+      .wedding-calendar {
+        max-width: 330px;
 
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+
+
+      .calendar-days {
+        row-gap: 16px;
+      }
+
+
+      .parking-row {
         grid-template-columns:
           74px 1fr;
-
       }
 
 
       .modal {
         padding: 10px;
+      }
+
+    }
+
+
+
+    /* ========================================
+       REDUCED MOTION
+    ======================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.01ms !important;
+      }
+
+
+      .reveal {
+        opacity: 1;
+
+        transform: none;
       }
 
     }
@@ -2760,6 +2564,7 @@
       </div>
 
 
+
       <div class="envelope-stage">
 
 
@@ -2769,26 +2574,23 @@
           <div class="envelope-back"></div>
 
 
-          <div class="photo-window">
 
+          <div class="photo-window">
 
             <div class="letter-photo">
 
-
               <div class="letter-photo-inner">
-
                 WEDDING PHOTO
-
               </div>
 
-
             </div>
-
 
           </div>
 
 
+
           <div class="envelope-flap"></div>
+
 
 
           <div class="envelope-front">
@@ -2802,6 +2604,9 @@
           </div>
 
 
+
+          <!-- 흰색 하트 스티커 -->
+
           <div class="envelope-seal">
             ♥
           </div>
@@ -2811,6 +2616,7 @@
 
 
       </div>
+
 
 
       <div class="opening-text">
@@ -2839,7 +2645,9 @@
 
 
 
-  <!-- WEDDING INFO SHORTCUT -->
+  <!-- ========================================
+       WEDDING INFO SHORTCUT
+  ======================================== -->
 
   <button
     type="button"
@@ -2904,6 +2712,8 @@
       </div>
 
 
+
+      <!-- FOUR SEASONS -->
 
       <div class="season-grid">
 
@@ -3145,7 +2955,7 @@
 
 
   <!-- ========================================
-       WEDDING INFO
+       WEDDING DAY
   ======================================== -->
 
   <section
@@ -3172,23 +2982,235 @@
 
 
 
+      <!-- ========================================
+           JANUARY 2027 CALENDAR
+      ======================================== -->
+
+      <div class="wedding-calendar">
+
+
+        <div class="calendar-month">
+          1월
+        </div>
+
+
+        <div class="calendar-weekdays">
+
+          <span>일</span>
+          <span>월</span>
+          <span>화</span>
+          <span>수</span>
+          <span>목</span>
+          <span>금</span>
+          <span>토</span>
+
+        </div>
+
+
+
+        <div class="calendar-days">
+
+
+          <!-- 첫 주 -->
+
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+          <span class="calendar-day"></span>
+
+          <span class="calendar-day">
+            1
+          </span>
+
+          <span class="calendar-day">
+            2
+          </span>
+
+
+
+          <!-- 둘째 주 -->
+
+          <span class="calendar-day sunday">
+            3
+          </span>
+
+          <span class="calendar-day">
+            4
+          </span>
+
+          <span class="calendar-day">
+            5
+          </span>
+
+          <span class="calendar-day">
+            6
+          </span>
+
+          <span class="calendar-day">
+            7
+          </span>
+
+          <span class="calendar-day">
+            8
+          </span>
+
+          <span class="calendar-day">
+            9
+          </span>
+
+
+
+          <!-- 셋째 주 -->
+
+          <span class="calendar-day sunday">
+            10
+          </span>
+
+          <span class="calendar-day">
+            11
+          </span>
+
+          <span class="calendar-day">
+            12
+          </span>
+
+          <span class="calendar-day">
+            13
+          </span>
+
+          <span class="calendar-day">
+            14
+          </span>
+
+          <span class="calendar-day">
+            15
+          </span>
+
+          <span class="calendar-day">
+            16
+          </span>
+
+
+
+          <!-- 넷째 주 -->
+
+          <span class="calendar-day sunday">
+            17
+          </span>
+
+          <span class="calendar-day">
+            18
+          </span>
+
+          <span class="calendar-day">
+            19
+          </span>
+
+          <span class="calendar-day">
+            20
+          </span>
+
+          <span class="calendar-day">
+            21
+          </span>
+
+          <span class="calendar-day">
+            22
+          </span>
+
+          <span class="calendar-day">
+            23
+          </span>
+
+
+
+          <!-- 다섯째 주 -->
+
+          <span class="calendar-day sunday">
+            24
+          </span>
+
+          <span class="calendar-day">
+            25
+          </span>
+
+          <span class="calendar-day">
+            26
+          </span>
+
+          <span class="calendar-day">
+            27
+          </span>
+
+          <span class="calendar-day">
+            28
+          </span>
+
+          <span class="calendar-day">
+            29
+          </span>
+
+
+          <!-- 결혼식 날짜 -->
+
+          <span class="calendar-day wedding-day">
+
+            <span class="calendar-heart">
+              ♥
+            </span>
+
+            <span class="calendar-heart-number">
+              30
+            </span>
+
+          </span>
+
+
+
+          <!-- 마지막 주 -->
+
+          <span class="calendar-day sunday">
+            31
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ========================================
+           VENUE
+      ======================================== -->
+
       <div class="venue">
+
 
         <div class="venue-name">
           엘로라 인 가든
         </div>
 
+
         <div class="venue-address">
 
           서울특별시 송파구 충민로 52
           <br>
+
           가든파이브 웍스 1층
 
         </div>
 
+
       </div>
 
 
+
+      <!-- ========================================
+           MAP
+      ======================================== -->
 
       <div class="map-buttons">
 
@@ -3217,10 +3239,15 @@
 
 
 
+      <!-- ========================================
+           PARKING
+      ======================================== -->
+
       <div
         class="parking-wrap"
         id="parkingWrap"
       >
+
 
         <button
           type="button"
@@ -3228,15 +3255,19 @@
           id="parkingToggle"
         >
 
+
           <div class="parking-toggle-left">
+
 
             <div class="parking-title">
               PARKING & TRANSPORTATION
             </div>
 
+
             <div class="parking-subtitle">
               주차 및 교통 안내
             </div>
+
 
           </div>
 
@@ -3269,6 +3300,7 @@
             </div>
 
 
+
             <div class="parking-row">
 
               <div class="parking-label">
@@ -3280,6 +3312,7 @@
               </div>
 
             </div>
+
 
 
             <div class="parking-row">
@@ -3295,6 +3328,7 @@
             </div>
 
 
+
             <div class="parking-row">
 
               <div class="parking-label">
@@ -3306,6 +3340,7 @@
               </div>
 
             </div>
+
 
 
             <div class="parking-row">
@@ -3330,6 +3365,10 @@
       </div>
 
 
+
+      <!-- ========================================
+           ATTENDANCE
+      ======================================== -->
 
       <div class="action-section">
 
@@ -3366,6 +3405,10 @@
       </div>
 
 
+
+      <!-- ========================================
+           FOR YOUR HEART
+      ======================================== -->
 
       <div class="action-section">
 
@@ -3453,7 +3496,7 @@
 
 
   <!-- ========================================
-       SEASON DETAILS
+       WINTER DETAIL
   ======================================== -->
 
   <div
@@ -3462,6 +3505,7 @@
   >
 
     <div class="season-page-inner">
+
 
       <button
         type="button"
@@ -3503,10 +3547,21 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">겨울 사진 1</div>
-        <div class="mini-photo">겨울 사진 2</div>
-        <div class="mini-photo">겨울 사진 3</div>
-        <div class="mini-photo">겨울 사진 4</div>
+        <div class="mini-photo">
+          겨울 사진 1
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 2
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 3
+        </div>
+
+        <div class="mini-photo">
+          겨울 사진 4
+        </div>
 
       </div>
 
@@ -3515,11 +3570,16 @@
         WINTER · OUR BEGINNING
       </div>
 
+
     </div>
 
   </div>
 
 
+
+  <!-- ========================================
+       SPRING DETAIL
+  ======================================== -->
 
   <div
     class="season-page"
@@ -3527,6 +3587,7 @@
   >
 
     <div class="season-page-inner">
+
 
       <button
         type="button"
@@ -3568,10 +3629,21 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">봄 사진 1</div>
-        <div class="mini-photo">봄 사진 2</div>
-        <div class="mini-photo">봄 사진 3</div>
-        <div class="mini-photo">봄 사진 4</div>
+        <div class="mini-photo">
+          봄 사진 1
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 2
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 3
+        </div>
+
+        <div class="mini-photo">
+          봄 사진 4
+        </div>
 
       </div>
 
@@ -3580,11 +3652,16 @@
         SPRING · OUR DAYS
       </div>
 
+
     </div>
 
   </div>
 
 
+
+  <!-- ========================================
+       SUMMER DETAIL
+  ======================================== -->
 
   <div
     class="season-page"
@@ -3592,6 +3669,7 @@
   >
 
     <div class="season-page-inner">
+
 
       <button
         type="button"
@@ -3633,10 +3711,21 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">여름 사진 1</div>
-        <div class="mini-photo">여름 사진 2</div>
-        <div class="mini-photo">여름 사진 3</div>
-        <div class="mini-photo">여름 사진 4</div>
+        <div class="mini-photo">
+          여름 사진 1
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 2
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 3
+        </div>
+
+        <div class="mini-photo">
+          여름 사진 4
+        </div>
 
       </div>
 
@@ -3645,11 +3734,16 @@
         SUMMER · OUR BRIGHT DAYS
       </div>
 
+
     </div>
 
   </div>
 
 
+
+  <!-- ========================================
+       AUTUMN DETAIL
+  ======================================== -->
 
   <div
     class="season-page"
@@ -3657,6 +3751,7 @@
   >
 
     <div class="season-page-inner">
+
 
       <button
         type="button"
@@ -3698,10 +3793,21 @@
 
       <div class="mini-gallery">
 
-        <div class="mini-photo">가을 사진 1</div>
-        <div class="mini-photo">가을 사진 2</div>
-        <div class="mini-photo">가을 사진 3</div>
-        <div class="mini-photo">가을 사진 4</div>
+        <div class="mini-photo">
+          가을 사진 1
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 2
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 3
+        </div>
+
+        <div class="mini-photo">
+          가을 사진 4
+        </div>
 
       </div>
 
@@ -3709,6 +3815,7 @@
       <div class="season-end">
         AUTUMN · OUR PROMISE
       </div>
+
 
     </div>
 
@@ -3751,6 +3858,7 @@
           ×
         </button>
 
+
       </div>
 
 
@@ -3773,6 +3881,7 @@
               <input
                 type="radio"
                 name="side"
+                value="신랑측"
                 id="sideGroom"
                 class="choice-input"
                 checked
@@ -3788,11 +3897,13 @@
             </div>
 
 
+
             <div>
 
               <input
                 type="radio"
                 name="side"
+                value="신부측"
                 id="sideBride"
                 class="choice-input"
               >
@@ -3850,11 +3961,25 @@
             class="select-input"
           >
 
-            <option>1명</option>
-            <option>2명</option>
-            <option>3명</option>
-            <option>4명</option>
-            <option>5명 이상</option>
+            <option value="1">
+              1명
+            </option>
+
+            <option value="2">
+              2명
+            </option>
+
+            <option value="3">
+              3명
+            </option>
+
+            <option value="4">
+              4명
+            </option>
+
+            <option value="5">
+              5명 이상
+            </option>
 
           </select>
 
@@ -3877,6 +4002,7 @@
               <input
                 type="radio"
                 name="attendance"
+                value="참석"
                 id="attendYes"
                 class="choice-input"
                 checked
@@ -3892,11 +4018,13 @@
             </div>
 
 
+
             <div>
 
               <input
                 type="radio"
                 name="attendance"
+                value="불참"
                 id="attendNo"
                 class="choice-input"
               >
@@ -3980,11 +4108,13 @@
           ×
         </button>
 
+
       </div>
 
 
 
       <div class="account-tabs">
+
 
         <button
           type="button"
@@ -4003,14 +4133,18 @@
           신부측
         </button>
 
+
       </div>
 
 
+
+      <!-- GROOM -->
 
       <div
         class="account-group active"
         id="account-groom"
       >
+
 
         <div class="account-card">
 
@@ -4035,6 +4169,7 @@
           </button>
 
         </div>
+
 
 
         <div class="account-card">
@@ -4062,6 +4197,7 @@
         </div>
 
 
+
         <div class="account-card">
 
           <div class="account-role">
@@ -4086,14 +4222,18 @@
 
         </div>
 
+
       </div>
 
 
+
+      <!-- BRIDE -->
 
       <div
         class="account-group"
         id="account-bride"
       >
+
 
         <div class="account-card">
 
@@ -4118,6 +4258,7 @@
           </button>
 
         </div>
+
 
 
         <div class="account-card">
@@ -4145,6 +4286,7 @@
         </div>
 
 
+
         <div class="account-card">
 
           <div class="account-role">
@@ -4169,6 +4311,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -4177,6 +4320,10 @@
   </div>
 
 
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
 
   <footer>
 
@@ -4190,53 +4337,125 @@
 
 
 
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
   <script>
+
+    /* ========================================
+       ALWAYS START FROM TOP
+
+       브라우저 / 카카오톡에서 이전 스크롤
+       위치를 복원하지 않도록 설정
+    ======================================== */
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+
+    function resetScrollPosition() {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    window.addEventListener(
+      "load",
+      resetScrollPosition
+    );
+
+
+    window.addEventListener(
+      "pageshow",
+      function () {
+
+        setTimeout(
+          resetScrollPosition,
+          0
+        );
+
+      }
+    );
+
+
 
     /* ========================================
        OPENING
     ======================================== */
 
     const opening =
-      document.getElementById("opening");
+      document.getElementById(
+        "opening"
+      );
+
 
     const openingSkip =
-      document.getElementById("openingSkip");
+      document.getElementById(
+        "openingSkip"
+      );
+
 
     let openingClosed = false;
 
 
+
     function closeOpening() {
+
 
       if (openingClosed) {
         return;
       }
 
+
       openingClosed = true;
 
-      opening.classList.add("hide");
+
+      opening.classList.add(
+        "hide"
+      );
+
 
       document.body
         .classList
-        .remove("opening-active");
+        .remove(
+          "opening-active"
+        );
+
 
       document.body
         .classList
-        .add("page-ready");
+        .add(
+          "page-ready"
+        );
+
 
       setTimeout(
         function () {
-          opening.style.display = "none";
+
+          opening.style.display =
+            "none";
+
         },
         950
       );
 
+
     }
+
 
 
     openingSkip.addEventListener(
       "click",
       closeOpening
     );
+
 
 
     setTimeout(
@@ -4246,60 +4465,91 @@
 
 
 
-    /* WEDDING INFO */
+    /* ========================================
+       WEDDING INFO
+    ======================================== */
 
     document
-      .getElementById("weddingShortcut")
+      .getElementById(
+        "weddingShortcut"
+      )
       .addEventListener(
         "click",
         function () {
 
+
           closeOpening();
+
 
           setTimeout(
             function () {
 
+
               document
-                .getElementById("wedding")
+                .getElementById(
+                  "wedding"
+                )
                 .scrollIntoView({
-                  behavior: "smooth"
+
+                  behavior:
+                    "smooth"
+
                 });
+
 
             },
             120
           );
+
 
         }
       );
 
 
 
-    /* SCROLL REVEAL */
+    /* ========================================
+       SCROLL REVEAL
+    ======================================== */
 
     const revealElements =
-      document.querySelectorAll(".reveal");
+      document.querySelectorAll(
+        ".reveal"
+      );
 
 
     const revealObserver =
       new IntersectionObserver(
         function (entries) {
 
+
           entries.forEach(
             function (entry) {
 
-              if (entry.isIntersecting) {
+
+              if (
+                entry.isIntersecting
+              ) {
+
 
                 entry.target
                   .classList
-                  .add("visible");
+                  .add(
+                    "visible"
+                  );
+
 
                 revealObserver
-                  .unobserve(entry.target);
+                  .unobserve(
+                    entry.target
+                  );
+
 
               }
 
+
             }
           );
+
 
         },
         {
@@ -4308,77 +4558,117 @@
       );
 
 
+
     revealElements.forEach(
       function (element) {
 
-        revealObserver.observe(element);
+        revealObserver.observe(
+          element
+        );
 
       }
     );
 
 
 
-    /* SEASONS */
+    /* ========================================
+       SEASON DETAIL
+    ======================================== */
 
-    document
-      .querySelectorAll(".season-card")
-      .forEach(
-        function (card) {
-
-          card.addEventListener(
-            "click",
-            function () {
-
-              const page =
-                document.getElementById(
-                  "season-" +
-                  card.dataset.season
-                );
-
-              if (!page) {
-                return;
-              }
-
-              page.classList.add("active");
-
-              page.scrollTop = 0;
-
-              document.body.style.overflow =
-                "hidden";
-
-            }
-          );
-
-        }
+    const seasonCards =
+      document.querySelectorAll(
+        ".season-card"
       );
 
 
-    document
-      .querySelectorAll(".season-back")
-      .forEach(
-        function (button) {
-
-          button.addEventListener(
-            "click",
-            function () {
-
-              button
-                .closest(".season-page")
-                .classList
-                .remove("active");
-
-              document.body.style.overflow =
-                "";
-
-            }
-          );
-
-        }
+    const seasonBackButtons =
+      document.querySelectorAll(
+        ".season-back"
       );
 
 
 
-    /* PARKING */
+    seasonCards.forEach(
+      function (card) {
+
+
+        card.addEventListener(
+          "click",
+          function () {
+
+
+            const season =
+              card.dataset.season;
+
+
+            const page =
+              document.getElementById(
+                "season-" + season
+              );
+
+
+            if (!page) {
+              return;
+            }
+
+
+            page.classList.add(
+              "active"
+            );
+
+
+            page.scrollTop = 0;
+
+
+            document.body.style.overflow =
+              "hidden";
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    seasonBackButtons.forEach(
+      function (button) {
+
+
+        button.addEventListener(
+          "click",
+          function () {
+
+
+            const page =
+              button.closest(
+                ".season-page"
+              );
+
+
+            page.classList.remove(
+              "active"
+            );
+
+
+            document.body.style.overflow =
+              "";
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       PARKING
+    ======================================== */
 
     const parkingWrap =
       document.getElementById(
@@ -4386,27 +4676,39 @@
       );
 
 
-    document
-      .getElementById("parkingToggle")
-      .addEventListener(
-        "click",
-        function () {
-
-          parkingWrap
-            .classList
-            .toggle("open");
-
-        }
+    const parkingToggle =
+      document.getElementById(
+        "parkingToggle"
       );
 
 
 
-    /* MODALS */
+    parkingToggle.addEventListener(
+      "click",
+      function () {
+
+
+        parkingWrap
+          .classList
+          .toggle(
+            "open"
+          );
+
+
+      }
+    );
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
 
     const rsvpModal =
       document.getElementById(
         "rsvpModal"
       );
+
 
     const accountModal =
       document.getElementById(
@@ -4414,50 +4716,81 @@
       );
 
 
+
     function openModal(modal) {
 
-      modal.classList.add("active");
+
+      modal.classList.add(
+        "active"
+      );
+
 
       document.body
         .classList
-        .add("modal-open");
+        .add(
+          "modal-open"
+        );
+
 
     }
+
 
 
     function closeModal(modal) {
 
-      modal.classList.remove("active");
+
+      modal.classList.remove(
+        "active"
+      );
+
 
       document.body
         .classList
-        .remove("modal-open");
+        .remove(
+          "modal-open"
+        );
+
 
     }
 
 
+
     document
-      .getElementById("openRsvp")
+      .getElementById(
+        "openRsvp"
+      )
       .addEventListener(
         "click",
         function () {
 
-          openModal(rsvpModal);
+
+          openModal(
+            rsvpModal
+          );
+
 
         }
       );
 
 
+
     document
-      .getElementById("openAccount")
+      .getElementById(
+        "openAccount"
+      )
       .addEventListener(
         "click",
         function () {
 
-          openModal(accountModal);
+
+          openModal(
+            accountModal
+          );
+
 
         }
       );
+
 
 
     document
@@ -4467,85 +4800,121 @@
       .forEach(
         function (button) {
 
+
           button.addEventListener(
             "click",
             function () {
 
+
               closeModal(
-                button.closest(".modal")
+                button.closest(
+                  ".modal"
+                )
               );
+
 
             }
           );
+
 
         }
       );
 
 
+
     document
-      .querySelectorAll(".modal")
+      .querySelectorAll(
+        ".modal"
+      )
       .forEach(
         function (modal) {
+
 
           modal.addEventListener(
             "click",
             function (event) {
 
-              if (event.target === modal) {
 
-                closeModal(modal);
+              if (
+                event.target === modal
+              ) {
+
+
+                closeModal(
+                  modal
+                );
+
 
               }
 
+
             }
           );
+
 
         }
       );
 
 
 
-    /* RSVP */
+    /* ========================================
+       RSVP
+    ======================================== */
 
     document
-      .getElementById("rsvpForm")
+      .getElementById(
+        "rsvpForm"
+      )
       .addEventListener(
         "submit",
         function (event) {
 
+
           event.preventDefault();
+
 
           const guestName =
             document
-              .getElementById("guestName")
+              .getElementById(
+                "guestName"
+              )
               .value
               .trim();
 
+
           if (!guestName) {
+
 
             alert(
               "성함을 입력해주세요."
             );
 
+
             return;
 
+
           }
+
 
           alert(
             "현재는 화면 초안이에요.\n\n추후 실제 참석 명단 저장 기능을 연결할 예정입니다."
           );
+
 
         }
       );
 
 
 
-    /* ACCOUNT */
+    /* ========================================
+       ACCOUNT TABS
+    ======================================== */
 
     const accountTabs =
       document.querySelectorAll(
         ".account-tab"
       );
+
 
     const accountGroups =
       document.querySelectorAll(
@@ -4553,47 +4922,69 @@
       );
 
 
+
     accountTabs.forEach(
       function (tab) {
+
 
         tab.addEventListener(
           "click",
           function () {
 
+
             const target =
               tab.dataset.account;
 
+
             accountTabs.forEach(
               function (item) {
+
                 item.classList.remove(
                   "active"
                 );
+
               }
             );
+
 
             accountGroups.forEach(
               function (group) {
+
                 group.classList.remove(
                   "active"
                 );
+
               }
             );
 
-            tab.classList.add("active");
+
+            tab.classList.add(
+              "active"
+            );
+
 
             document
               .getElementById(
                 "account-" + target
               )
               .classList
-              .add("active");
+              .add(
+                "active"
+              );
+
 
           }
         );
 
+
       }
     );
 
+
+
+    /* ========================================
+       ACCOUNT PLACEHOLDER
+    ======================================== */
 
     document
       .querySelectorAll(
@@ -4602,36 +4993,111 @@
       .forEach(
         function (button) {
 
+
           button.addEventListener(
             "click",
             function () {
+
 
               alert(
                 "실제 계좌번호 입력 후 복사 기능을 연결할 예정이에요."
               );
 
+
             }
           );
+
 
         }
       );
 
 
 
-    /* GUEST SNAP */
+    /* ========================================
+       GUEST SNAP
+    ======================================== */
 
     document
-      .getElementById("guestUpload")
+      .getElementById(
+        "guestUpload"
+      )
       .addEventListener(
         "click",
         function () {
+
 
           alert(
             "나중에 사진·영상 업로드 서비스를 연결할 예정이에요."
           );
 
+
         }
       );
+
+
+
+    /* ========================================
+       ESC
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+
+        if (
+          event.key !== "Escape"
+        ) {
+          return;
+        }
+
+
+        const activeModal =
+          document.querySelector(
+            ".modal.active"
+          );
+
+
+        if (activeModal) {
+
+
+          closeModal(
+            activeModal
+          );
+
+
+          return;
+
+
+        }
+
+
+        const activeSeason =
+          document.querySelector(
+            ".season-page.active"
+          );
+
+
+        if (activeSeason) {
+
+
+          activeSeason
+            .classList
+            .remove(
+              "active"
+            );
+
+
+          document.body.style.overflow =
+            "";
+
+
+        }
+
+
+      }
+    );
+
 
   </script>
 
