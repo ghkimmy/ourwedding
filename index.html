@@ -11,7 +11,42 @@
 
   <title>Gahyun & Jinchan | Our Wedding</title>
 
+  <!-- ========================================
+       WEB FONTS
+  ======================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
+    /* ========================================
+       FONT SYSTEM
+    ======================================== */
+
+    :root {
+      --font-ko-sans:
+        "Noto Sans KR",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+      --font-ko-serif:
+        "Noto Serif KR",
+        serif;
+
+      --font-en-serif:
+        Georgia,
+        "Times New Roman",
+        serif;
+    }
+
+
 
     /* ========================================
        BASIC
@@ -31,14 +66,11 @@
       background: #f7f6f2;
       color: #292929;
 
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Pretendard",
-        "Noto Sans KR",
-        sans-serif;
+      font-family: var(--font-ko-sans);
 
       -webkit-font-smoothing: antialiased;
+
+      word-break: keep-all;
     }
 
     body.modal-open {
@@ -48,7 +80,7 @@
     button,
     input,
     select {
-      font-family: inherit;
+      font-family: var(--font-ko-sans);
     }
 
     button,
@@ -98,7 +130,7 @@
 
       color: #444;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -133,7 +165,7 @@
     .intro-label {
       text-align: center;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -147,7 +179,7 @@
 
       text-align: center;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 39px;
       font-weight: 400;
@@ -160,7 +192,7 @@
 
       text-align: center;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 13px;
 
@@ -173,6 +205,8 @@
       margin-top: 42px;
 
       text-align: center;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 13px;
 
@@ -230,6 +264,8 @@
 
       color: rgba(0, 0, 0, 0.35);
 
+      font-family: var(--font-ko-sans);
+
       font-size: 11px;
 
       transition: transform 0.5s ease;
@@ -278,7 +314,7 @@
     }
 
     .season-eng {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 17px;
 
@@ -288,6 +324,8 @@
     .season-kor {
       margin-top: 5px;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 11px;
 
       color: rgba(255, 255, 255, 0.9);
@@ -295,6 +333,8 @@
 
     .season-click {
       margin-top: 7px;
+
+      font-family: var(--font-en-serif);
 
       font-size: 9px;
 
@@ -308,7 +348,7 @@
 
       text-align: center;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 9px;
 
@@ -340,7 +380,7 @@
     }
 
     .again-small {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -352,7 +392,7 @@
     .again-title {
       margin: 20px 0 0;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 43px;
       font-weight: 400;
@@ -363,7 +403,7 @@
     .again-date {
       margin-top: 30px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 16px;
 
@@ -372,6 +412,8 @@
 
     .again-text {
       margin-top: 35px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 13px;
 
@@ -383,11 +425,12 @@
     .fill-winter {
       margin-top: 42px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-ko-serif);
 
       font-size: 22px;
+      font-weight: 400;
 
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
 
@@ -403,7 +446,7 @@
     }
 
     .section-label {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -415,14 +458,20 @@
     .invitation-title {
       margin-top: 22px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-ko-serif);
 
       font-size: 29px;
       font-weight: 400;
+
+      line-height: 1.55;
+
+      letter-spacing: -0.03em;
     }
 
     .invitation-text {
       margin-top: 38px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 13px;
 
@@ -446,13 +495,15 @@
     .wedding-date-big {
       margin-top: 22px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 32px;
     }
 
     .wedding-time {
       margin-top: 9px;
+
+      font-family: var(--font-en-serif);
 
       font-size: 12px;
 
@@ -473,13 +524,17 @@
     }
 
     .venue-name {
+      font-family: var(--font-ko-serif);
+
       font-size: 17px;
 
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .venue-address {
       margin-top: 7px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -515,6 +570,8 @@
       border: 1px solid #cac7c1;
 
       background: transparent;
+
+      font-family: var(--font-en-serif);
 
       font-size: 11px;
 
@@ -562,7 +619,7 @@
     }
 
     .parking-title {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 12px;
 
@@ -571,6 +628,8 @@
 
     .parking-subtitle {
       margin-top: 4px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 11px;
 
@@ -601,14 +660,22 @@
       display: block;
     }
 
-.parking-highlight {
-  margin: 4px 0 24px;
-  padding: 12px 0 18px;
-  background: transparent;
-  font-size: 13px;
-  line-height: 1.9;
-  text-align: center;
-  color: #666;
+    .parking-highlight {
+      margin: 4px 0 24px;
+
+      padding: 12px 0 18px;
+
+      background: transparent;
+
+      font-family: var(--font-ko-sans);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      text-align: center;
+
+      color: #666;
     }
 
     .parking-row {
@@ -619,6 +686,8 @@
       gap: 12px;
 
       margin-top: 14px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -652,7 +721,7 @@
     .action-title {
       margin-top: 16px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-ko-serif);
 
       font-size: 24px;
       font-weight: 400;
@@ -660,6 +729,8 @@
 
     .action-description {
       margin-top: 15px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -681,6 +752,8 @@
 
       color: #333;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 12px;
 
       cursor: pointer;
@@ -701,7 +774,7 @@
     .guest-title {
       margin-top: 20px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 34px;
       font-weight: 400;
@@ -709,6 +782,8 @@
 
     .guest-text {
       margin-top: 28px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 13px;
 
@@ -729,6 +804,8 @@
       background: #333;
 
       color: white;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -781,7 +858,7 @@
 
       color: #555;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 11px;
 
@@ -797,7 +874,7 @@
     }
 
     .season-page-small {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 9px;
 
@@ -809,7 +886,7 @@
     .season-page-title {
       margin-top: 13px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 44px;
       font-weight: 400;
@@ -831,6 +908,8 @@
 
       color: #999;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 11px;
     }
 
@@ -838,6 +917,8 @@
       margin-top: 33px;
 
       text-align: center;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 13px;
 
@@ -868,6 +949,8 @@
 
       color: #aaa;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 10px;
     }
 
@@ -876,7 +959,7 @@
 
       text-align: center;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -953,7 +1036,7 @@
     }
 
     .modal-label {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 9px;
 
@@ -965,7 +1048,7 @@
     .modal-title {
       margin-top: 9px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-ko-serif);
 
       font-size: 26px;
       font-weight: 400;
@@ -1003,6 +1086,8 @@
 
       margin-bottom: 9px;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 11px;
 
       color: #666;
@@ -1036,6 +1121,8 @@
 
       background: white;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 12px;
 
       cursor: pointer;
@@ -1065,6 +1152,8 @@
 
       color: #333;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 13px;
     }
 
@@ -1081,6 +1170,8 @@
 
       color: white;
 
+      font-family: var(--font-ko-sans);
+
       font-size: 12px;
 
       cursor: pointer;
@@ -1090,6 +1181,8 @@
       margin-top: 13px;
 
       text-align: center;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 10px;
 
@@ -1122,6 +1215,8 @@
       background: transparent;
 
       color: #555;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -1157,6 +1252,8 @@
     }
 
     .account-role {
+      font-family: var(--font-ko-sans);
+
       font-size: 10px;
 
       color: #999;
@@ -1165,13 +1262,17 @@
     .account-name {
       margin-top: 4px;
 
+      font-family: var(--font-ko-serif);
+
       font-size: 14px;
 
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .account-number {
       margin-top: 10px;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 12px;
 
@@ -1188,6 +1289,8 @@
       border: 1px solid #c9c5be;
 
       background: transparent;
+
+      font-family: var(--font-ko-sans);
 
       font-size: 11px;
 
@@ -1211,7 +1314,7 @@
 
       color: #999;
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-en-serif);
 
       font-size: 10px;
 
@@ -2205,8 +2308,6 @@
       <form id="rsvpForm">
 
 
-        <!-- 신랑 / 신부측 -->
-
         <div class="form-section">
 
           <div class="form-label">
@@ -2262,8 +2363,6 @@
 
 
 
-        <!-- 이름 -->
-
         <div class="form-section">
 
           <label
@@ -2284,8 +2383,6 @@
         </div>
 
 
-
-        <!-- 동행 인원 -->
 
         <div class="form-section">
 
@@ -2327,8 +2424,6 @@
         </div>
 
 
-
-        <!-- 참석 / 불참 -->
 
         <div class="form-section">
 
@@ -2449,8 +2544,6 @@
 
 
 
-      <!-- 탭 -->
-
       <div class="account-tabs">
 
         <button
@@ -2473,8 +2566,6 @@
       </div>
 
 
-
-      <!-- 신랑측 -->
 
       <div
         class="account-group active"
@@ -2561,8 +2652,6 @@
       </div>
 
 
-
-      <!-- 신부측 -->
 
       <div
         class="account-group"
@@ -2942,7 +3031,7 @@
 
 
           alert(
-            "참석 여부 화면은 정상 작동해요!\\n\\n" +
+            "참석 여부 화면은 정상 작동해요!\n\n" +
             "다음 단계에서 실제 저장 기능을 연결하면 됩니다."
           );
 
